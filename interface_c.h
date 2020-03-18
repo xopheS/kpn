@@ -43,7 +43,17 @@
  * second implementation !
  */
 #define NO_RETURN_VALUE NULL
-typedef void* (*process_t)();
+#define CLOSED_PORT -1
+typedef enum {FUNCTION, COMMAND, PROGRAM} process_types; 
+typedef union {
+    void* (*function)();
+    const char* program; 
+    const char* command;
+} process;
+typedef struct {
+    process proc;
+    process_types type;
+} process_t;
 
 //=========================================================================
 /**
@@ -51,8 +61,9 @@ typedef void* (*process_t)();
  * in_port is where we can read data.
  * out_port is where can write data.
  */
-typedef void* in_port;
-typedef void* out_port;
+
+typedef int in_port;
+typedef int out_port;
 
 //=========================================================================
 /**
@@ -63,6 +74,9 @@ typedef struct {
     out_port out;
 } communication_channel_t;
 
+
+typedef const char* named_comunication_channel_t;
+
 //=========================================================================
 /**
  * @brief Specifies the communication type desired between subprocesses.
@@ -71,17 +85,9 @@ typedef struct {
  * TWO_WAY creates a FIFO file that can only with the streams that can only be 
  * started if there are two process one reading and the other writing.
  */
-typedef enum {PIPE, FILE, SUBPROCESS, TWO_WAY} communication_type; 
+typedef enum {PIPE, FIFO} communication_type; 
 
-//=========================================================================
-/**
- * @brief Data structure encapsulating a communication stream with its type.
- */
-typedef struct {
-    void* stream;
-    communication_type type;
-    const char* mode;
-} communication_stream_t;
+
 
 //=========================================================================
 /**
@@ -90,19 +96,21 @@ typedef struct {
  */
 communication_channel_t* allocate_channel (); 
 
-//=========================================================================
-/**
- * @brief opens a communication_stream_t.
- * @return communication_stream_t* opened.
- */
-communication_stream_t* open_communictaion_stream (out_port pipe_output, const char* mode, communication_type)
 
-//=========================================================================
-/**
- * @brief closes a communication_stream_t.
- * @param communication_stream_t* to be closed.
- */
-void close_communication_stream (communication_stream_t**);
+
+// // //=========================================================================
+// // /**
+// //  * @brief opens a communication_stream_t.
+// //  * @return communication_stream_t* opened.
+// //  */
+// // communication_stream_t* open_named_communictaion_stream ()
+
+// //=========================================================================
+// /**
+//  * @brief closes a communication_stream_t.
+//  * @param communication_stream_t* to be closed.
+//  */
+// void close_named_communication_channel (communication_stream_t**);
 
 //=========================================================================
 /**
@@ -113,11 +121,18 @@ void free_commmunication_channel (communication_channel_t**);
 
 //=========================================================================
 /**
+ * @brief closes a port of the communication channel.
+ * @param port to be closed.
+ */
+void close_channel_port (communication_channel_t*, int);
+
+//=========================================================================
+/**
  * @brief Put a value in the out_port of a communication channel.
  * @param Element to put in the out_port.
  * @param The out_port of the communication channel
  */
-void put (void*, size_t, size_t, communication_stream_t*);
+void put (const void*,  size_t, communication_channel_t*);
 
 //=========================================================================
 /**
@@ -125,7 +140,7 @@ void put (void*, size_t, size_t, communication_stream_t*);
  * @param The in_port of the communication_channel_t.
  * @return The value in the in_port of the communication channel.
  */
-void* get (in_port);
+void* get (size_t, communication_channel_t*);
 
 //=========================================================================
 /**
@@ -152,5 +167,5 @@ void* bind (process_t, process_t);
  * @param The process.
  * @return The return value of the process.
  */
-void* run (process_t);
+void* run (process_t*);
 
