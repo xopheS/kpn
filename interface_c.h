@@ -2,7 +2,7 @@
 
 #include <stdio.h> // FILE
 #include <error.h> // return types
-
+#include <pthread.h>
 /**
  * @file interface.h
  * @brief recoded the provided ocaml interface in C.
@@ -55,6 +55,10 @@ typedef struct {
     process_types type;
 } process_t;
 
+
+
+
+
 //=========================================================================
 /**
  * @brief these two types represent a a communication canal:
@@ -62,20 +66,34 @@ typedef struct {
  * out_port is where can write data.
  */
 
+typedef int port;
 typedef int in_port;
 typedef int out_port;
 
+typedef struct {
+    in_port in;
+    out_port out;
+} pipe_t;
+
+typedef struct {
+    const char * source;
+    port p;
+} fifo_t;
+
+typedef union {
+    fifo_t fifo;
+    pipe_t pipe;
+} channel_t;
 //=========================================================================
 /**
  * @brief Encapsulation in a tuple for the communication channel.
  */
 typedef struct {
-    in_port in;
-    out_port out;
+    channel_t channel;
+    communication_t type;
 } communication_channel_t;
 
 
-typedef const char* named_comunication_channel_t;
 
 //=========================================================================
 /**
@@ -85,7 +103,7 @@ typedef const char* named_comunication_channel_t;
  * TWO_WAY creates a FIFO file that can only with the streams that can only be 
  * started if there are two process one reading and the other writing.
  */
-typedef enum {PIPE, FIFO} communication_type; 
+typedef enum {PIPE, FIFO} communication_t; 
 
 
 
@@ -94,7 +112,7 @@ typedef enum {PIPE, FIFO} communication_type;
  * @brief Initialize communication_channel_t structure.
  * @return communication_channel_t* allocated.
  */
-communication_channel_t* allocate_channel (); 
+communication_channel_t* allocate_channel (communication_t); 
 
 
 
