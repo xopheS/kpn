@@ -140,14 +140,27 @@ void put (const void* data, size_t chunk, communication_channel_t* channel){
 
 
 void* get (size_t chunk, communication_channel_t* channel) {
-    M_REQUIRE (chunk <= PIPE_BUF && chunk > 0, ERR_BAD_PARAMETER, "chunkk must be between 0 and PIPE_BUFF for atomicity");
+    M_REQUIRE (chunk > 0, ERR_BAD_PARAMETER, "chunkk must be > 0");
     M_REQUIRE_NON_NULL(channel);
-    M_REQUIRE_NON_CLOSED(channel->out);
+    port fd;
+    switch(channel->type){
+        case PIPE:
+            M_REQUIRE_NON_CLOSED(channel->channel.pipe.out);
+            fd = channel->channel.pipe.out;
+        break;
+        case FIFO:
+            M_REQUIRE_NON_NULL(channel->channel.fifo.source);
+            if(channel->channel.fifo.p == CLOSED_PORT){
+                channel->channel.fifo.p = open(channel->channel.fifo.source, O_RDONLY);
+            }
+            fd = channel->channel.fifo.p;
+        break;
+    }
     errno = 0;
     void* buffer = NULL;
     buffer = buffer = malloc(chunk);
     M_REQUIRE_NON_NULL_CUSTOM_ERR(buffer, ERR_MEM);
-    ssize_t read_bytes = read(channel->out, buffer, chunk);
+    ssize_t read_bytes = read(fd, buffer, chunk);
     M_REQUIRE_NO_ERRNO(ERR_PIPELINE_FIFO);
     M_REQUIRE(read_bytes == chunk, ERR_IO, "read failed");
     return buffer;
