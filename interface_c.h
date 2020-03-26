@@ -1,8 +1,10 @@
 #pragma once
 
+#include <stdarg.h>
 #include <stdio.h> // FILE
 #include <error.h> // return types
 #include <pthread.h>
+
 /**
  * @file interface.h
  * @brief recoded the provided ocaml interface in C.
@@ -43,19 +45,25 @@
  * second implementation !
  */
 #define NO_RETURN_VALUE NULL
+#define MAX_ARGS 15
 #define CLOSED_PORT -1
 typedef enum {FUNCTION, COMMAND, PROGRAM} process_types; 
+
+typedef struct {
+    const char* source;
+    char** argv;
+    size_t number_of_argv;
+} program_t;
+
 typedef union {
     void* (*function)();
-    const char* program; 
-    const char* command;
+    program_t program; 
+    char* command;
 } process;
 typedef struct {
     process proc;
     process_types type;
 } process_t;
-
-
 
 
 
@@ -166,7 +174,7 @@ void* get (size_t, communication_channel_t*);
  * @param A pointer of processes.
  * @param The size of the array.
  */
-void doco (process_t*, size_t n);
+void doco (process_t**, size_t n);
 
 //=========================================================================
 /**
@@ -176,7 +184,7 @@ void doco (process_t*, size_t n);
  * @param The second process.
  * @return The return value of the second process.
  */
-void* bind (process_t, process_t);
+void* bind (process_t*, process_t*);
 
 
 //=========================================================================

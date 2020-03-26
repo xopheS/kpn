@@ -10,6 +10,7 @@
 #include <errno.h> 
 #include<stdatomic.h>
 #include <sys/mman.h>
+#include <string.h>
 
 #define ALL_RIGHTS 0777
 #define STANDARD_PIPE_SIZE 2
@@ -171,14 +172,59 @@ void* run (process_t* p) {
     switch (p->type)
     {
     case COMMAND:
-        system(p->proc.command);    
-        break;
+        M_REQUIRE_NON_NULL(p->proc.command);
+        system(p->proc.command);   
+        return NO_RETURN_VALUE;
     case FUNCTION:
-        break;
+        M_REQUIRE_NON_NULL(p->proc.function);
+        return *p->proc.function();
     case PROGRAM:
-        break;
-    default:
-        break;
+        M_REQUIRE_NON_NULL(p->proc.program.source);
+        errno = 0; 
+        execv(p->proc.program.source, p->proc.program.argv);
+        M_REQUIRE_NO_ERRNO(ERR_PROCESS);
+        return NO_RETURN_VALUE;
     }
 
+}
+
+
+void doco (process_t** list, size_t n){
+    M_REQUIRE_NON_NULL(list);
+    for (size_t i = 0; i < n; i++) {
+        errno = 0;
+        pid_t pid = fork();
+        M_REQUIRE_NO_ERRNO(ERR_PROCESS);
+        if(!pid){
+            run(p[i]);
+            exit(0);
+        }
+    }
+    while (wait(NULL) > 0); 
+}
+
+void* bind (process_t* f, process_t* s) {
+    M_REQUIRE_NON_NULL(f);
+    M_REQUIRE_NON_NULL(s);
+    M_REQUIRE(f->type == FUNCTION);
+    void* return_value = run(f);
+    switch(s->type){
+        case FUNCTION:
+            M_REQUIRE_NON_NULL(s->proc.function);
+            return *s->proc.function(return_value); 
+        case PROGRAM:
+            M_REQUIRE_NON_NULL(s->proc.program.source);
+            M_REQUIRE_NON_NULL(s->proc.program.argv);
+            M_REQUIRE (s->proc.program.number_of_argv < MAX_ARGS, ERR_BAD_PARAMETER, "too many arguments");
+            s->proc.program.argv[s->proc.program.number_of_argv++] = (char*) return_value;
+            errno = 0; 
+            execv(p->proc.program.source, p->proc.program.argv);
+            M_REQUIRE_NO_ERRNO(ERR_PROCESS);
+            return NO_RETURN_VALUE;
+        case COMMAND:
+            M_REQUIRE_NON_NULL(s->proc.command);
+            strcat(s->proc.command, (char*) return_value);
+            system(p->proc.command);   
+            return NO_RETURN_VALUE;
+    }   
 }

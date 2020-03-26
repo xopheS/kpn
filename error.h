@@ -29,7 +29,8 @@ extern "C"
         ERR_BAD_PARAMETER,
         ERR_SIZE,   // wrong size
         ERR_PIPELINE_FIFO,
-        ERR_MEM
+        ERR_MEM,
+        ERR_PROCESS
     } error_code;
 
 // ======================================================================
