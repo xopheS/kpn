@@ -167,7 +167,7 @@ void* get (size_t chunk, communication_channel_t* channel) {
     return buffer;
 }
 
-void* run (process_t* p) {
+static void* run_non_waiting (process_t* p) {
     M_REQUIRE_NON_NULL(p);
     switch (p->type)
     {
@@ -187,6 +187,8 @@ void* run (process_t* p) {
     }
 
 }
+
+void* run (process_t *p) {return NULL;}
 
 
 void doco (process_t** list, size_t n){
