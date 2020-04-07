@@ -28,9 +28,28 @@ let get inp =
     let header = Bytes.create Marshal.header_size in
     Unix.read inp header 0 Marshal.header_size |> ignore ;
     let sz = Marshal.data_size header 0 in
+      let data = Bytes.create sz in
+      Unix.read inp data 0 sz |> ignore ;
+      Marshal.from_bytes (Bytes.cat header data) 0
 
-    let data = Bytes.create sz in
-    Unix.read inp data 0 sz |> ignore ;
-    Marshal.from_bytes (Bytes.cat header data) 0
+  )
 
+let doco list = 
+  (fun () ->
+    let rec sub_routine list =
+      match list with 
+      | [] -> ()
+      | p :: l -> 
+          let pid = Unix.fork () in 
+            if pid = 0 then (
+              p ();
+              sub_routine l ();
+              exit(0)
+            )
+            else if pid = -1 then (
+              exit(0)
+            )
+            else (
+              Unix.wait () |> ignore
+            )
   )
