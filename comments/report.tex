@@ -1,20 +1,28 @@
 \documentclass{article}
 
-\title{Rapport d'echange : Ecole Normale Superieure}
+\title{Kahn}
 \author{Christophe Saad}
 \date{\today}
-
 
 \begin{document}
 
 
 \maketitle
 
+\section{Sequential}
 The implentation of the sequencial part is manly taken from the paper  A poor man’s concurrency monad. We consider the process as a monad transformer which takes an action (which contains the actual computation) and link it a continuation. Its type is $$\texttt{type 'a process = ('a -> action) -> action}$$
 The type action is $$\texttt{type action  = Atom of (unit -> action) | Fork of action * action | Stop}$$
 We use \texttt{Fork} to instanciate new processes and \texttt{Atom} to represent a computation.\\
 In the \texttt{run} function, we recreate a pipeline containing the first \texttt{Fork} action to execute. Each time a \texttt{Fork} is executed, we push the two actions in the pipeline. When an \texttt{Atom} is read, we execute its computation and store his continuation back in the pipeline. This procedures ends when all the continuations are \texttt{Stop}.
 
+\section{Mandelbrot}
+\begin{itemize}
+	\item $P_c(z) = z^2 + c$	
+	\item
+	$c \in \mathcal{M}  \quad \Longleftrightarrow \quad |\mathcal{P}^n_c(0)| \leq 2 \quad \forall n\geq 0$
+	\item Goes to infinity if ever crosses 2
+	\item $[-2, \frac{1}{4}]$ intersection of $\mathcal{M}$ with the real axis
+\end{itemize}
 
 
 
