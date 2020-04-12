@@ -1,0 +1,22 @@
+### Starting build.
+# Target: mandelbrot.ml.depends, tags: { annot, debug, extension:ml, file:mandelbrot.ml, ocaml, ocamldep, quiet, thread }
+/home/chris/.opam/4.07.1/bin/ocamldep.opt -modules mandelbrot.ml > mandelbrot.ml.depends
+# Target: kahn.ml.depends, tags: { annot, debug, extension:ml, file:kahn.ml, ocaml, ocamldep, quiet, thread }
+/home/chris/.opam/4.07.1/bin/ocamldep.opt -modules kahn.ml > kahn.ml.depends # cached
+# Target: kahn.cmo, tags: { annot, byte, compile, debug, extension:cmo, extension:ml, file:kahn.cmo, file:kahn.ml, implem, ocaml, quiet, thread }
+/home/chris/.opam/4.07.1/bin/ocamlc.opt -c -g -annot -thread -o kahn.cmo kahn.ml # cached
+# Target: sequential.ml.depends, tags: { annot, debug, extension:ml, file:sequential.ml, ocaml, ocamldep, quiet, thread }
+/home/chris/.opam/4.07.1/bin/ocamldep.opt -modules sequential.ml > sequential.ml.depends # cached
+# Target: sequential.cmo, tags: { annot, byte, compile, debug, extension:cmo, extension:ml, file:sequential.cmo, file:sequential.ml, implem, ocaml, quiet, thread }
+/home/chris/.opam/4.07.1/bin/ocamlc.opt -c -g -annot -thread -o sequential.cmo sequential.ml # cached
+# Target: mandelbrot.cmo, tags: { annot, byte, compile, debug, extension:cmo, extension:ml, file:mandelbrot.cmo, file:mandelbrot.ml, implem, ocaml, quiet, thread }
+/home/chris/.opam/4.07.1/bin/ocamlc.opt -c -g -annot -thread -o mandelbrot.cmo mandelbrot.ml
+# Target: kahn.cmx, tags: { annot, compile, debug, extension:cmx, extension:ml, file:kahn.cmx, file:kahn.ml, implem, native, ocaml, quiet, thread }
+/home/chris/.opam/4.07.1/bin/ocamlopt.opt -c -g -annot -thread -o kahn.cmx kahn.ml # cached
+# Target: sequential.cmx, tags: { annot, compile, debug, extension:cmx, extension:ml, file:sequential.cmx, file:sequential.ml, implem, native, ocaml, quiet, thread }
+/home/chris/.opam/4.07.1/bin/ocamlopt.opt -c -g -annot -thread -o sequential.cmx sequential.ml # cached
+# Target: mandelbrot.cmx, tags: { annot, compile, debug, extension:cmx, extension:ml, file:mandelbrot.cmx, file:mandelbrot.ml, implem, native, ocaml, quiet, thread }
+/home/chris/.opam/4.07.1/bin/ocamlopt.opt -c -g -annot -thread -o mandelbrot.cmx mandelbrot.ml
+# Target: mandelbrot.native, tags: { annot, debug, dont_link_with, extension:native, file:mandelbrot.native, link, native, ocaml, program, quiet, thread }
+/home/chris/.opam/4.07.1/bin/ocamlopt.opt unix.cmxa graphics.cmxa -g -thread threads.cmxa kahn.cmx sequential.cmx mandelbrot.cmx -o mandelbrot.native
+# Compilation successful.
