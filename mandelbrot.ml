@@ -5,8 +5,7 @@ module Example (K : Kahn.S) = struct
 	module K = K
 	module Lib = Kahn.Lib(K)
 	open Lib
-	
-	
+
 	(** TYPE COMPLEX WITH SOME OPERATIONS **)
 	type complex = float * float
 	
@@ -14,6 +13,14 @@ module Example (K : Kahn.S) = struct
 	let im ((_ , y) : complex) : float = y
 	
 	let squared_modulus (z : complex) : float = re z ** 2. +. im z ** 2.
+	
+	
+	(** GLOBAL VARIABLES **)
+	let width : int ref = ref 1300
+	let height : int ref = ref 1000
+	let n_iter : int ref = ref 255 
+	let origin : complex ref = ref (-0.5 , 0.)
+	let zm : float ref = ref 2.	
 	
 
 	(** MANDELBROT SEQUENCE STEP **)
@@ -23,7 +30,6 @@ module Example (K : Kahn.S) = struct
 	
 		 
 	(** CHANGE PIXEL COORDINATES TO COMPLEX NUMBER **)
-	
 	let center (v : float) (dim : float) (st : float) : float =
 			v -. dim /. 2. -. st 
 
@@ -31,43 +37,41 @@ module Example (K : Kahn.S) = struct
 			(v +. dim /. 2.) *. (max_val -. min_val) /. dim +. min_val
 		
 
-
-	let scale (x : int) (y : int) (x_st : float) (y_st : float) (width : int) (height : int) (zm : float) : complex =
+	let scale ((x, y) : int * int) : complex =
 		
 		(** center around (x_st, y_st) and normalize according to zoom scale **)
 
-		let x_cart = center (float_of_int x) (float_of_int width) x_st in
-		let r = normalize x_cart (x_st -. zm) (x_st +. zm) (float_of_int width) in
+		let x_cart = center (float_of_int x) (float_of_int !width) (re !origin) in
+		let r = normalize x_cart ((re !origin) -. !zm) ((re !origin) +. !zm) (float_of_int !width) in
 
-		let y_cart = center (float_of_int y) (float_of_int height) y_st in
-		let i = normalize y_cart (y_st -. zm) (y_st +. zm) (float_of_int height) in
+		let y_cart = center (float_of_int y) (float_of_int !height) (im !origin) in
+		let i = normalize y_cart ((im !origin) -. !zm) ((im !origin) +. !zm) (float_of_int !height) in
 
 		r , i
 
 
 	(** COLOR FUNCTION OF ITERATION **)	
-
-	let red (v : int) (n_iter : int) : int =
+	let red (v : int) : int =
 		(**if v = n_iter then 0 else 255**)
 		v
 	
-	let green (v : int ) (n_iter : int) : int = 
+	let green (v : int ) : int = 
 		(**if v = n_iter then 0 else 255**)
 		v
 
-	let blue (v : int) (n_iter : int) : int =	
+	let blue (v : int) : int =	
 		(**if v = n_iter then 0 else 255**)
 		v
 	
 
 	
-	let eval_point (x : int) (y : int) (x_st : float) (y_st : float) (width : int) (height : int) (zm : float) (n_iter : int) : unit = 
+	let eval_point ((x, y) : int * int) : unit = 
 		
-		let c : complex = scale x y x_st y_st width height zm in
+		let c : complex = scale (x, y) in
 	
 		let rec eval_rec (z : complex) (iter : int) : int = 
 
-			if squared_modulus z > 4. || iter = n_iter then
+			if squared_modulus z > 4. || iter = !n_iter then
 				iter
 
 			else
@@ -76,20 +80,45 @@ module Example (K : Kahn.S) = struct
 		
 		let i = eval_rec (0. , 0.) 0 in
 		
-		Format.printf "(%f , %f, %i)\n" (re c) (im c) i;
-		let new_color = rgb (red i n_iter) (green i n_iter) (blue i n_iter) in
+		(** Format.printf "(%f , %f, %i)\n" (re c) (im c) i; **)
+		let new_color = rgb (red i) (green i) (blue i) in
 		set_color new_color;
 		plot x y
 	 
+	
+	
+	let divide_canvas (width : int) (height : int) (n : int) : int * int =
+		(** M_REQUIRE **)
+		height / n , width / n
+
+	
+	let eval_canvas ((x_st, y_st) : int * int) (cw : int) (ch : int) : unit =
 		
+		let max_x : int = x_st + cw - 1 in
+		let max_y : int = y_st + ch - 1 in
+		
+		let rec compute_row ((x, y) : int * int) : unit =
+			eval_point (x, y);
+			if x <= max_x then compute_row (x + 1, y)
+		in
+		
+		let rec compute_col (y : int) : unit =
+			compute_row (x_st, y);
+			if y <= max_y then compute_col (y + 1)		
+		in
+
+		compute_col (y_st)
+		
+	
 	let main : unit = 
 		open_graph " 1300x1000";
 		set_window_title "Mandelbrot";
-		for i = 1300 downto 1 do
+		(**for i = 1300 downto 1 do
 			for j = 1000 downto 1 do
-				eval_point i j (0.) (0.) 1300 1000 1. 255; 
+				eval_point (i, j)
 			done;
-		done;
+		done;**)
+		eval_canvas (650, 500) !width !height;
 		let v = read_line () in
 		()
 
