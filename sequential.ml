@@ -83,16 +83,14 @@ module Seq : Kahn.S = struct
 				let x = Queue.pop q in
 				match x with
 					| Atom a ->
-						Format.printf "ATOM\n";
 						let na = a () in
 						Queue.push na q;
 						execute q
 					| Fork (a1 , a2) ->
-						Format.printf "FORK\n";
 						Queue.push a1 q;
 						Queue.push a2 q;
 						execute q
-					| Stop -> Format.printf "STOP\n"; execute q 
+					| Stop -> execute q 
 
 		in
 
