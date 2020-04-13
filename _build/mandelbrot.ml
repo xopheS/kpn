@@ -142,7 +142,7 @@ module Example (K : Kahn.S) = struct
 		Arg.parse (Arg.align user_inputs) (fun _ -> ()) "";
 		
 		(** check validity **)
-		require (!width mod !np = 0) "Number of processes must divide width";
+		require (!width mod !np == 0) "Number of processes must divide width";
 		require (!zm > 0.) "Zoom must have a positive value";
 		w := !width / !np;
 		
@@ -150,7 +150,7 @@ module Example (K : Kahn.S) = struct
 		open_graph (
 			String.concat "" [" "; (string_of_int !width); "x"; (string_of_int !height)]
 		);
-		set_window_title "Mandelbrot";
+		set_window_title "Mandelbrot"
 		
 
 
@@ -161,6 +161,7 @@ module Example (K : Kahn.S) = struct
 		(fun (qi, qo) -> K.doco (
 		List.append (List.map (fun i -> eval_canvas (i * !w) qo) (0--(!np-1)))
 			    [plot_all qi]))
+
 
 
 end
