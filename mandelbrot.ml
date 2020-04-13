@@ -28,7 +28,7 @@ module Example (K : Kahn.S) = struct
 	(** GLOBAL VARIABLES **)
 	let width : int ref = ref 1300
 	let height : int ref = ref 1000
-	let n_iter : int ref = ref 255
+	let n_iter : int ref = ref 1000
 	let np : int ref = ref 1
 
 	let xo : float ref = ref (-0.5)
