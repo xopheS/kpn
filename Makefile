@@ -4,7 +4,7 @@ OCAMLBUILD=ocamlbuild -classic-display \
 TARGET=native
 
 example:
-	$(OCAMLBUILD) unix_pipes.$(TARGET)
+	$(OCAMLBUILD) example.$(TARGET)
 
 
 clean:
