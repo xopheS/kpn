@@ -1,7 +1,10 @@
 OCAMLBUILD=ocamlbuild -classic-display \
 		-tags annot,debug,thread \
-		-libs unix
+		-libs unix,graphics
 TARGET=native
+
+mandelbrot:
+	$(OCAMLBUILD) mandelbrot.$(TARGET)
 
 example:
 	$(OCAMLBUILD) example.$(TARGET)
