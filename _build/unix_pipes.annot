@@ -3,7 +3,7 @@ type(
   unit -> Unix.file_descr * Unix.file_descr
 )
 ident(
-  def new_channel "unix_pipes.ml" 10 173 175 "unix_pipes.ml" 60 1323 1326
+  def new_channel "unix_pipes.ml" 10 173 175 "unix_pipes.ml" 60 1324 1327
 )
 "unix_pipes.ml" 7 133 151 "unix_pipes.ml" 7 133 153
 type(
@@ -32,7 +32,7 @@ type(
   (unit -> 'a) -> 'a
 )
 ident(
-  def run "unix_pipes.ml" 13 198 200 "unix_pipes.ml" 60 1323 1326
+  def run "unix_pipes.ml" 13 198 200 "unix_pipes.ml" 60 1324 1327
 )
 "unix_pipes.ml" 10 173 183 "unix_pipes.ml" 10 173 184
 type(
@@ -64,7 +64,7 @@ type(
   (unit -> 'b) -> ('b -> unit -> 'c) -> unit -> 'c
 )
 ident(
-  def bind "unix_pipes.ml" 18 275 277 "unix_pipes.ml" 60 1323 1326
+  def bind "unix_pipes.ml" 18 275 277 "unix_pipes.ml" 60 1324 1327
 )
 "unix_pipes.ml" 13 198 209 "unix_pipes.ml" 13 198 210
 type(
@@ -147,7 +147,7 @@ type(
   'd -> unit -> 'd
 )
 ident(
-  def return "unix_pipes.ml" 21 311 313 "unix_pipes.ml" 60 1323 1326
+  def return "unix_pipes.ml" 21 311 313 "unix_pipes.ml" 60 1324 1327
 )
 "unix_pipes.ml" 18 275 288 "unix_pipes.ml" 18 275 289
 type(
@@ -176,7 +176,7 @@ type(
   'e -> Unix.file_descr -> unit -> unit
 )
 ident(
-  def put "unix_pipes.ml" 27 452 454 "unix_pipes.ml" 60 1323 1326
+  def put "unix_pipes.ml" 27 452 454 "unix_pipes.ml" 60 1324 1327
 )
 "unix_pipes.ml" 21 311 321 "unix_pipes.ml" 21 311 322
 type(
@@ -299,7 +299,7 @@ type(
   Unix.file_descr -> unit -> 'f
 )
 ident(
-  def get "unix_pipes.ml" 38 791 793 "unix_pipes.ml" 60 1323 1326
+  def get "unix_pipes.ml" 38 791 793 "unix_pipes.ml" 60 1324 1327
 )
 "unix_pipes.ml" 27 452 462 "unix_pipes.ml" 27 452 465
 type(
@@ -583,14 +583,14 @@ type(
   (unit -> 'g) list -> unit -> unit
 )
 ident(
-  def doco "unix_pipes.ml" 59 1317 1322 "unix_pipes.ml" 60 1323 1326
+  def doco "unix_pipes.ml" 59 1318 1323 "unix_pipes.ml" 60 1324 1327
 )
 "unix_pipes.ml" 38 791 802 "unix_pipes.ml" 38 791 803
 type(
   (unit -> 'g) list
 )
 ident(
-  def l "unix_pipes.ml" 39 807 811 "unix_pipes.ml" 59 1317 1322
+  def l "unix_pipes.ml" 39 807 811 "unix_pipes.ml" 59 1318 1323
 )
 "unix_pipes.ml" 39 807 816 "unix_pipes.ml" 39 807 818
 type(
@@ -601,14 +601,14 @@ type(
   (unit -> 'h) list -> unit
 )
 ident(
-  def sub_routine "unix_pipes.ml" 40 822 828 "unix_pipes.ml" 58 1294 1316
+  def sub_routine "unix_pipes.ml" 40 822 828 "unix_pipes.ml" 58 1295 1317
 )
 "unix_pipes.ml" 40 822 848 "unix_pipes.ml" 40 822 849
 type(
   (unit -> 'h) list
 )
 ident(
-  def l "unix_pipes.ml" 41 852 860 "unix_pipes.ml" 57 1278 1293
+  def l "unix_pipes.ml" 41 852 860 "unix_pipes.ml" 57 1279 1294
 )
 "unix_pipes.ml" 41 852 866 "unix_pipes.ml" 41 852 867
 type(
@@ -630,14 +630,14 @@ type(
   unit -> 'h
 )
 ident(
-  def p "unix_pipes.ml" 44 914 926 "unix_pipes.ml" 57 1278 1293
+  def p "unix_pipes.ml" 44 914 926 "unix_pipes.ml" 57 1279 1294
 )
 "unix_pipes.ml" 43 893 908 "unix_pipes.ml" 43 893 909
 type(
   (unit -> 'h) list
 )
 ident(
-  def r "unix_pipes.ml" 44 914 926 "unix_pipes.ml" 57 1278 1293
+  def r "unix_pipes.ml" 44 914 926 "unix_pipes.ml" 57 1279 1294
 )
 "unix_pipes.ml" 43 893 903 "unix_pipes.ml" 43 893 909
 type(
@@ -648,7 +648,7 @@ type(
   int
 )
 ident(
-  def pid "unix_pipes.ml" 46 973 989 "unix_pipes.ml" 56 1260 1277
+  def pid "unix_pipes.ml" 46 973 989 "unix_pipes.ml" 56 1261 1278
 )
 "unix_pipes.ml" 45 932 956 "unix_pipes.ml" 45 932 965
 type(
@@ -778,109 +778,109 @@ call(
 type(
   unit
 )
-"unix_pipes.ml" 54 1186 1204 "unix_pipes.ml" 54 1186 1215
+"unix_pipes.ml" 54 1187 1205 "unix_pipes.ml" 54 1187 1216
 type(
   (unit -> 'h) list -> unit
 )
 ident(
   int_ref sub_routine "unix_pipes.ml" 40 822 836 "unix_pipes.ml" 40 822 847
 )
-"unix_pipes.ml" 54 1186 1216 "unix_pipes.ml" 54 1186 1217
+"unix_pipes.ml" 54 1187 1217 "unix_pipes.ml" 54 1187 1218
 type(
   (unit -> 'h) list
 )
 ident(
   int_ref r "unix_pipes.ml" 43 893 908 "unix_pipes.ml" 43 893 909
 )
-"unix_pipes.ml" 54 1186 1204 "unix_pipes.ml" 54 1186 1217
+"unix_pipes.ml" 54 1187 1205 "unix_pipes.ml" 54 1187 1218
 call(
   stack
 )
 type(
   unit
 )
-"unix_pipes.ml" 55 1219 1237 "unix_pipes.ml" 55 1219 1246
+"unix_pipes.ml" 55 1220 1238 "unix_pipes.ml" 55 1220 1247
 type(
   unit -> int * Unix.process_status
 )
 ident(
   ext_ref Unix.wait
 )
-"unix_pipes.ml" 55 1219 1247 "unix_pipes.ml" 55 1219 1249
+"unix_pipes.ml" 55 1220 1248 "unix_pipes.ml" 55 1220 1250
 type(
   unit
 )
-"unix_pipes.ml" 55 1219 1237 "unix_pipes.ml" 55 1219 1249
+"unix_pipes.ml" 55 1220 1238 "unix_pipes.ml" 55 1220 1250
 call(
   stack
 )
 type(
   int * Unix.process_status
 )
-"unix_pipes.ml" 55 1219 1250 "unix_pipes.ml" 55 1219 1252
+"unix_pipes.ml" 55 1220 1251 "unix_pipes.ml" 55 1220 1253
 type(
   int * Unix.process_status -> (int * Unix.process_status -> unit) -> unit
 )
 ident(
   ext_ref Pervasives.( |> )
 )
-"unix_pipes.ml" 55 1219 1253 "unix_pipes.ml" 55 1219 1259
+"unix_pipes.ml" 55 1220 1254 "unix_pipes.ml" 55 1220 1260
 type(
   int * Unix.process_status -> unit
 )
 ident(
   ext_ref Pervasives.ignore
 )
-"unix_pipes.ml" 55 1219 1237 "unix_pipes.ml" 55 1219 1259
+"unix_pipes.ml" 55 1220 1238 "unix_pipes.ml" 55 1220 1260
 type(
   unit
 )
-"unix_pipes.ml" 53 1163 1184 "unix_pipes.ml" 56 1260 1277
+"unix_pipes.ml" 53 1164 1185 "unix_pipes.ml" 56 1261 1278
 type(
   unit
 )
-"unix_pipes.ml" 50 1077 1098 "unix_pipes.ml" 56 1260 1277
+"unix_pipes.ml" 50 1077 1098 "unix_pipes.ml" 56 1261 1278
 type(
   unit
 )
-"unix_pipes.ml" 46 973 989 "unix_pipes.ml" 56 1260 1277
+"unix_pipes.ml" 46 973 989 "unix_pipes.ml" 56 1261 1278
 type(
   unit
 )
-"unix_pipes.ml" 44 914 926 "unix_pipes.ml" 57 1278 1293
+"unix_pipes.ml" 44 914 926 "unix_pipes.ml" 57 1279 1294
 type(
   unit
 )
-"unix_pipes.ml" 41 852 860 "unix_pipes.ml" 57 1278 1293
+"unix_pipes.ml" 41 852 860 "unix_pipes.ml" 57 1279 1294
 type(
   unit
 )
-"unix_pipes.ml" 58 1294 1303 "unix_pipes.ml" 58 1294 1314
+"unix_pipes.ml" 58 1295 1304 "unix_pipes.ml" 58 1295 1315
 type(
   (unit -> 'g) list -> unit
 )
 ident(
   int_ref sub_routine "unix_pipes.ml" 40 822 836 "unix_pipes.ml" 40 822 847
 )
-"unix_pipes.ml" 58 1294 1315 "unix_pipes.ml" 58 1294 1316
+"unix_pipes.ml" 58 1295 1316 "unix_pipes.ml" 58 1295 1317
 type(
   (unit -> 'g) list
 )
 ident(
   int_ref l "unix_pipes.ml" 38 791 802 "unix_pipes.ml" 38 791 803
 )
-"unix_pipes.ml" 58 1294 1303 "unix_pipes.ml" 58 1294 1316
+"unix_pipes.ml" 58 1295 1304 "unix_pipes.ml" 58 1295 1317
 call(
   tail
 )
 type(
   unit
 )
-"unix_pipes.ml" 40 822 828 "unix_pipes.ml" 58 1294 1316
+"unix_pipes.ml" 40 822 828 "unix_pipes.ml" 58 1295 1317
 type(
   unit
 )
-"unix_pipes.ml" 39 807 811 "unix_pipes.ml" 59 1317 1322
+"unix_pipes.ml" 39 807 811 "unix_pipes.ml" 59 1318 1323
 type(
   unit -> unit
 )
