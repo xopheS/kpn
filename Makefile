@@ -1,6 +1,6 @@
-OCAMLBUILD=ocamlbuild -classic-display \
-		-tags annot,debug,thread \
-		-libs unix,graphics
+OCAMLBUILD=ocamlbuild -use-ocamlfind -pkg graphics \
+		-classic-display \
+		-tags annot,debug,thread
 TARGET=native
 
 mandelbrot:
