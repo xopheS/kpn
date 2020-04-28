@@ -1,1 +1,1 @@
-k_means.ml: Array Format Kahn Random Unix_pipes
+k_means.ml: Array Kahn List Random Unix_pipes

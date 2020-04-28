@@ -1,0 +1,142 @@
+"k_means.ml" 5 53 59 "k_means.ml" 5 53 64
+type(
+  int -> point
+)
+ident(
+  def zeros "k_means.ml" 7 101 103 "k_means.ml" 17 407 410
+)
+"k_means.ml" 5 53 66 "k_means.ml" 5 53 67
+type(
+  int
+)
+ident(
+  def n "k_means.ml" 5 53 74 "k_means.ml" 5 53 99
+)
+"k_means.ml" 5 53 84 "k_means.ml" 5 53 94
+type(
+  int -> float -> point
+)
+ident(
+  ext_ref Array.make
+)
+"k_means.ml" 5 53 95 "k_means.ml" 5 53 96
+type(
+  int
+)
+ident(
+  int_ref n "k_means.ml" 5 53 66 "k_means.ml" 5 53 67
+)
+"k_means.ml" 5 53 97 "k_means.ml" 5 53 99
+type(
+  float
+)
+"k_means.ml" 5 53 84 "k_means.ml" 5 53 99
+type(
+  point
+)
+type(
+  point
+)
+"k_means.ml" 7 101 107 "k_means.ml" 7 101 118
+type(
+  point -> point -> '_a
+)
+ident(
+  def l2_distance "k_means.ml" 10 234 236 "k_means.ml" 17 407 410
+)
+"k_means.ml" 7 101 120 "k_means.ml" 7 101 121
+type(
+  point
+)
+ident(
+  def x "k_means.ml" 7 101 131 "k_means.ml" 8 155 232
+)
+"k_means.ml" 7 101 132 "k_means.ml" 7 101 133
+type(
+  point
+)
+ident(
+  def y "k_means.ml" 7 101 143 "k_means.ml" 8 155 232
+)
+"k_means.ml" 8 155 159 "k_means.ml" 8 155 163
+type(
+  float -> float
+)
+ident(
+  ext_ref Pervasives.sqrt
+)
+"k_means.ml" 8 155 165 "k_means.ml" 8 155 180
+type(
+  (float -> float -> float) -> float -> float array -> float
+)
+ident(
+  ext_ref Array.fold_left
+)
+"k_means.ml" 8 155 180 "k_means.ml" 8 155 186
+type(
+  float -> float -> float
+)
+ident(
+  ext_ref Pervasives.( +. )
+)
+"k_means.ml" 8 155 187 "k_means.ml" 8 155 189
+type(
+  float
+)
+"k_means.ml" 8 155 191 "k_means.ml" 8 155 201
+type(
+  (float -> float -> '_b) -> float array -> float array -> '_b array
+)
+ident(
+  ext_ref Array.map2
+)
+"k_means.ml" 8 155 207 "k_means.ml" 8 155 208
+type(
+  float
+)
+ident(
+  def x "k_means.ml" 8 155 209 "k_means.ml" 8 155 225
+)
+"k_means.ml" 8 155 209 "k_means.ml" 8 155 210
+type(
+  float
+)
+ident(
+  def y "k_means.ml" 8 155 214 "k_means.ml" 8 155 225
+)
+"k_means.ml" 8 155 215 "k_means.ml" 8 155 216
+type(
+  float
+)
+ident(
+  int_ref x "k_means.ml" 8 155 207 "k_means.ml" 8 155 208
+)
+"k_means.ml" 8 155 217 "k_means.ml" 8 155 219
+type(
+  float -> float -> float
+)
+ident(
+  ext_ref Pervasives.( -. )
+)
+"k_means.ml" 8 155 220 "k_means.ml" 8 155 221
+type(
+  float
+)
+ident(
+  int_ref y "k_means.ml" 8 155 209 "k_means.ml" 8 155 210
+)
+"k_means.ml" 8 155 214 "k_means.ml" 8 155 222
+type(
+  float
+)
+"k_means.ml" 8 155 222 "k_means.ml" 8 155 224
+type(
+  float -> float -> float
+)
+ident(
+  ext_ref Pervasives.( ** )
+)
+"k_means.ml" 8 155 224 "k_means.ml" 8 155 225
+type(
+  int
+)

@@ -1,37 +1,83 @@
+module Vector = struct 
+
+  type point = float array
+
+  let zeros (n : int): point = Array.make n 0.
+
+  let l2_distance (x : point) (y : point) : float =  
+    sqrt (Array.fold_left( +. ) 0. (Array.map2 (fun x y -> (x -. y)**2) x y))
+
+  let vectorized_binary_op f (x : point) (y : point): point = 
+    Array.map2 f x y
+
+  let satisfies predicate (x : point): point = 
+    Array.for_all predicate x
+    
+    
+end
+
+
+
+
+
 module K_means (K : Kahn.S) = struct
   module K = K
   module Lib = Kahn.Lib(K)
   open Lib 
+  open Vector
 
-  type point = float array
 
-  let number_of_proc := 0;;
-
-  let parrallel_map f l: a' list =
-    let rec take k tail head  = 
-      match k with
-        | 0 -> (head, tail)
-        | k -> 
-          match tail with
-            | [] -> (head, tail)
-            | y::ys -> take k-1 ys head @ [y]
-    in
-    let rec aux f l acc =
-      let (x, y) = take number_of_proc l [] in
-        match y with 
-        | [] -> acc @ (par_map f x)
-        | y::ys -> aux f y (acc @ (par_map f x))
+  let number_of_proc = ref 0;;
+ 
+  let split_workload a r = 
+    let n = Array.length a in
+    let m = n / r + 1 in 
+    let l = n % r in 
+    let it = min r n in
+    let rec split a k acc s = 
+      match k with 
+      | it -> List.rev acc
+      | k -> if k < l then split a k+1 ((Array.sub a k*s m) :: acc) m else split a k+1 ((Array.sub a k*s m-1) :: acc) m-1
     in 
-    aux f l []
+    split a 0 [] m
 
 
-  let l2_distance (x: point) (y: point) : float = 
-    let d = Array.create_float (Array.length x) in 
-    sqrt (Array.fold_left( +. ) 0 (Array.map (fun _ -> (x -. y)**2) d))
+  let parallel_map f a ?n_p: (n_p = number_of_proc): a' array =
+    Array.concat (par_map (fun x -> Array.map f x) (split_workload a n_p))
+
+
+  let parallel_group_by f a means ?n_p: (n_p = number_of_proc) =
+    let s_partition l b = if b then b::l else l 
+    in
+    parallel_map (fun x -> Array.of_list (Array.fold_left s_partition [] (parallel_map (f x) a))) means
+   (* let group_by f l =
+            let rec grouping acc = function
+      | [] -> acc
+      | hd::tl ->
+        let l1,l2 = List.fold_left s_partition [] List.map (f (fst hd)) tl in
+        grouping (((snd hd)::l1) :: acc) l2
+      in 
+      grouping [] l
+    in 
+    *)
+
+    
+
   
-  let rec initialize_means (k : int) (points : point array) : point list =
+  let rec shuffle_and_initialize_means (k : int) (points : point array) : point array =
 
-    let rec distinct_random_sequence upperbound number_of_points list_of_indices: int list =
+    let shuffle_in_place =
+      Random.self_init ();
+      let n = Array.length points in
+      for i = 0 to n-2 do
+        let k = Random.int (n-i) in
+        let tmp = points.(i) in
+        points.(i) <- points.(i+k);
+        points.(i+k) <- tmp 
+      done
+    in
+
+    (* let rec distinct_random_sequence upperbound number_of_points list_of_indices: int list =
       match number_of_points with 
         | 0 -> list_of_indices
         | number_of_points ->
@@ -41,67 +87,57 @@ module K_means (K : Kahn.S) = struct
     in  
 
     let l = distinct_random_sequence (Array.length points) k [] in 
-      parrallel_map (fun i -> Array.copy points.(i)) l 
+      parrallel_map (fun i -> Array.copy points.(i)) l *)
 
 
-  let classify (points : point array) (means : point list) distance_function : point array =
+      shuffle_in_place;
+      Array.sub points 0 k
+
+
+  let classify (points : point array) (means : point array) distance_function : point array =
     (* coded in imperative style otherwise too heavy on memory *)
     let find_closest x : point =
       let n = Array.length means in 
-      let closest := ref means.(0)
-      let minDistance := ref (distance_function means.(0) x) 
+      let closest = ref (means.(0)) in 
+      let minDistance = ref (distance_function means.(0) x)in
       for i = 1 to n do
-        let tmp := ref (distance_function x means.(i))
+        let tmp = ref (distance_function x means.(i)) in
         if tmp < minDistance then begin 
           closest := means.(i);
-          minDistance := !tmp;
-        end
-      done
+          minDistance := !tmp
+        end;
+      done;
       closest 
     in 
-
-    let group_by f l =
-      let rec grouping acc = function
-      | [] -> acc
-      | hd::tl ->
-        let l1,l2 = List.partition (f (fst hd)) tl in
-        grouping (acc @ [((snd hd)::l1))]) l2
-      in 
-      grouping [] l
-    in 
-
-    group_by (fun x y -> fst x = fst y) (parrallel_map (fun x -> ((find_closest x), x)) (Array.to_list points))
+    parallel_group_by (fun x y -> (x = fst y, snd y)) (parallel_map (fun x -> ((find_closest x), x)) points) means
+    
     
   let update points means = 
-    let vectorize f a b=
-      let n = Array.length a in 
-      let c = Array.copy a in
-      for i = 0 to n do 
-        c.(i) <- (f a.(i) b.(i));
-      done
-    c
-    in
-
     let find_average p = 
       let n = Array.length p in
-      List.map (fun x -> x /. n ) (List.fold_left (vectorize +.) p) 
+      let d = Array.length p.(0) in
+      Array.map (fun x -> x /. n ) (Array.fold_left (vectorized_binary_op (+.)) (zeros d) p) 
     in
-
     parrallel_map find_average points
 
-  let converged old_means new_means epsilon =
-    (parrallel_map (fun x -> (l2_distance (fst x) (snd x)) < epsilon) (List.combine old_means new_means))
+  let stop_cnd old_means new_means epsilon =
+    satisfies (fun x -> x < epsilon) 
+    (parrallel_map (fun x -> l2_distance (fst x) (snd x)) (vectorized_binary_op (fun x y -> (x, y)) old_means new_means))
 
 
   let main : unit K.process =
-    let K_means points means =
+
+
+    let exec points means =
       let p = classify points means in
       let nm = update p means in 
       if (converged means nm) then 
         nm
       else 
-       K_means points nm 
+       exec points nm 
     in 
+    let a = Array.make_matrix 20 3 in 
+    exec a (initialize_means 2 a)
 
 
 end
