@@ -1,10 +1,12 @@
-OCAMLBUILD=ocamlbuild -use-ocamlfind -pkg graphics \
-		-classic-display \
-		-tags annot,debug,thread
+OCAMLBUILD=ocamlbuild -classic-display \
+		-tags annot,debug,thread \
+		-libs unix
+		# -use-ocamlfind -pkg graphics \
+
 TARGET=native
 
-mandelbrot:
-	$(OCAMLBUILD) mandelbrot.$(TARGET)
+#mandelbrot:
+#	$(OCAMLBUILD) mandelbrot.$(TARGET)
 
 example:
 	$(OCAMLBUILD) example.$(TARGET)
