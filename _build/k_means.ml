@@ -4,16 +4,16 @@ module Vector = struct
 
   let zeros (n : int): point = Array.make n 0.
 
-  let l2_distance (x : point) (y : point) : float =  
-    sqrt (Array.fold_left( +. ) 0. (Array.map2 (fun x y -> (x -. y)**2) x y))
+  let l2_distance (x : point) (y : point): float =  
+    sqrt (Array.fold_left( +. ) 0. (Array.map2 (fun x y -> (x -. y)**2.) x y))
 
   let vectorized_binary_op f (x : point) (y : point): point = 
     Array.map2 f x y
 
-  let satisfies predicate (x : point): point = 
+  let satisfies predicate (x : point): bool = 
     Array.for_all predicate x
     
-    
+  
 end
 
 
@@ -29,34 +29,36 @@ module K_means (K : Kahn.S) = struct
 
   let number_of_proc = ref 0;;
  
-  let split_workload a r = 
+  let split_workload (a : 'a array) (r : int) : 'a array list = 
     let n = Array.length a in
     let m = n / r + 1 in 
-    let l = n % r in 
+    let l = n mod r in 
     let it = min r n in
     let rec split a k acc s = 
       match k with 
       | it -> List.rev acc
-      | k -> if k < l then split a k+1 ((Array.sub a k*s m) :: acc) m else split a k+1 ((Array.sub a k*s m-1) :: acc) m-1
+      | k -> if (k < l) then split a (k+1) ((Array.sub a (k*s) m) :: acc) m else split a (k+1) ((Array.sub a (k*s) (m-1)) :: acc) (m-1)
     in 
     split a 0 [] m
 
 
-  let parallel_map f a ?n_p: (n_p = number_of_proc): a' array =
-    Array.concat (par_map (fun x -> Array.map f x) (split_workload a n_p))
+  let parallel_map ?(n_p = !number_of_proc) f (a : 'a array) : 'a array =
+    Array.concat (par_map (fun x -> Array.map f x) (split_workload a !number_of_proc))
 
 
-  let parallel_group_by f a means ?n_p: (n_p = number_of_proc) =
-    let s_partition l b = if b then b::l else l 
+  let parallel_group_by ?(n_p = !number_of_proc) f a possible_values: 'a list array =
+    let s_partition l b = if (fst b) then (snd b)::l else l 
     in
-    parallel_map (fun x -> Array.of_list (Array.fold_left s_partition [] (parallel_map (f x) a))) means
+    let outter = min n_p (Array.length possible_values) in
+    let inner = (max n_p (Array.length possible_values)) / outter in
+    parallel_map ~n_p:outter (fun x -> Array.fold_left s_partition [] (parallel_map ~n_p:outter (f x) a)) possible_values
    (* let group_by f l =
             let rec grouping acc = function
       | [] -> acc
       | hd::tl ->
         let l1,l2 = List.fold_left s_partition [] List.map (f (fst hd)) tl in
         grouping (((snd hd)::l1) :: acc) l2
-      in 
+      in *
       grouping [] l
     in 
     *)
@@ -107,16 +109,19 @@ module K_means (K : Kahn.S) = struct
           minDistance := !tmp
         end;
       done;
-      closest 
+      !closest 
     in 
-    parallel_group_by (fun x y -> (x = fst y, snd y)) (parallel_map (fun x -> ((find_closest x), x)) points) means
+    parallel_group_by
+     (fun x y -> ((x = (fst y)), (snd y))) 
+     (parallel_map (fun x -> ((find_closest x), x)) points) 
+     means
     
     
   let update points means = 
     let find_average p = 
       let n = Array.length p in
       let d = Array.length p.(0) in
-      Array.map (fun x -> x /. n ) (Array.fold_left (vectorized_binary_op (+.)) (zeros d) p) 
+      Array.map (fun x -> x /. n ) (List.fold_left (vectorized_binary_op (+.)) (zeros d) p) 
     in
     parrallel_map find_average points
 

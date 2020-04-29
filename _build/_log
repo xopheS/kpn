@@ -12,8 +12,8 @@ ocamlc.opt -c -g -annot -thread -o unix_pipes.cmo unix_pipes.ml # cached
 # Target: k_means.cmo, tags: { annot, byte, compile, debug, extension:cmo, extension:ml, file:k_means.cmo, file:k_means.ml, implem, ocaml, quiet, thread }
 ocamlc.opt -c -g -annot -thread -o k_means.cmo k_means.ml
 + ocamlc.opt -c -g -annot -thread -o k_means.cmo k_means.ml
-File "k_means.ml", line 8, characters 69-70:
-Error: This expression has type int but an expression was expected of type
-         float
+File "k_means.ml", line 115, characters 23-30:
+Error: This expression has type bool but an expression was expected of type
+         'a list
 Command exited with code 2.
 # Compilation unsuccessful.
