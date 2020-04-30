@@ -132,28 +132,61 @@ module K_means (K : Kahn.S) = struct
     (vectorized_binary_op (fun x y -> (x, y)) old_means new_means))
 
 
-  let main : unit K.process =
 
-
-    let rec exec points means =
-      let p = classify points means l2_distance in
-      let nm = update p means in 
-      if (stop_cnd means nm (10.**(-3.))) then 
-        nm
-      else 
-       exec points nm 
-    in 
-    let a = Array.make_matrix 20 3 in 
-    exec a (initialize_means 2 a)
+  let rec exec points means epsilon number_of_processes =
+    number_of_proc := number_of_proc;
+    let p = classify points means l2_distance in
+    let nm = update p means in 
+    if (stop_cnd means nm epsilon) then 
+      nm
+    else 
+      exec points nm 
 
 
 end
 
-module run_K_means (K: Kahn.S) = struct 
+module Run_K_means (K: Kahn.S) = struct 
 
-  let import_data path separator =
+  open K_means
+
+  let k = ref 0 
+  let dimension = ref 0 
+  let data_size = ref 0
+  let number_of_processes = ref 10
+
+  let path_name = ref ""
+  let output_file = ref "K_means_output.txt"
+
+  let plot = ref True
+
+  let usage = 
+    "Usage: " ^ Sys.argv.(0) ^ " [options] <filename>" ^
+    "\nOptions:"
+
+  let options =
+    [ "-k", Arg.Set_int k,
+      " number of clusters k in the algorithm";
+      "-d", Arg.Int (fun i -> d := Some i),
+      " dimension of data examples (must be consistent with the data)";
+      "-p", Arg.Set_int number_of_processes,
+      " number of parallel processes used in the computation (default 10)";
+      "-o", Arg.Set_string output_file,
+      " name of the output file (containing cluster centers)";
+      "-plot", Arg.Set plot,
+      " plot the result's accuracy"; ]
+
+  let parse_cmd () =
+    Arg.parse (Arg.align options)
+      (fun str -> if str <> "" then
+        match !data_file with 
+        | None -> data_file := Some str
+        | _ -> Format.eprintf 
+            "%s: At most one data file can be given.@." Sys.argv.(0); exit 1)
+      usage
+
+  let import_data path separator nbr_of_features size =
     let reg_separator = Str.regexp separator in
-    let value_array = Array.make_matrix 1600 12 0. in
+    let value_array = Array.make_matrix size nbr_of_features 0. in
     let i = ref 0 in
     try
       let ic = open_in file_name in
@@ -173,6 +206,12 @@ module run_K_means (K: Kahn.S) = struct
         | End_of_file -> close_in ic; value_array
       with
         | e -> raise e;;
+
+  let get_hyper_parameters 
+
+  
+
+    
 end 
 module E = K_means(Kahn.Th)
 

@@ -18,10 +18,10 @@ module Z : Kahn.S = struct
   let return v =
     (fun () -> v)
 
-  let put v outp =
+  let put value output =
     (fun () ->
-      let data = Marshal.to_bytes v [] in
-      ignore (Unix.write outp data 0 (Bytes.length data))
+      let data = Marshal.to_bytes value [] in
+      ignore (Unix.write output data 0 (Bytes.length data))
     )
 
   let get inp =
