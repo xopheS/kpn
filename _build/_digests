@@ -11,6 +11,6 @@
 "Rule: ocaml dependencies ml (%=example )": "L\187\b\174;\255\"\191\236\176\176\236m\"W+"
 "Resource: /home/nizar/Desktop/kpn/kahn.ml": "\002\179w(\157\166\174\170AQ\151\151O\000\005\015"
 "Resource: /home/nizar/Desktop/kpn/unix.c": "H\016U\229\2071\129\241\159\172\221\203n\211,\023"
-"Resource: /home/nizar/Desktop/kpn/k_means.ml": "\166\162z\230\002\169\225\0049z\133\236\175\134\020\152"
-"Rule: ocaml dependencies ml (%=k_means )": "\222\251\030\024\248~\139C\160\170\225{\212\160w<"
+"Resource: /home/nizar/Desktop/kpn/k_means.ml": "A\158\244\188\014\149\017\253\020\012\141+\204\184[E"
+"Rule: ocaml dependencies ml (%=k_means )": "\208\246}J\144\161\1303\023\n\172S\178\011\006\207"
 "Rule: ocaml: cmx* & o* -> native (%=example )": "\231\214}[(\014n\206\232\129\205\027\1840\170\249"

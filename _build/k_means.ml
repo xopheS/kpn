@@ -2,15 +2,15 @@ module Vector = struct
 
   type point = float array
 
-  let zeros (n : int): point = Array.make n 0.
+  let zeros (n : int): point = Array.make n (0.)
 
   let l2_distance (x : point) (y : point): float =  
     sqrt (Array.fold_left( +. ) 0. (Array.map2 (fun x y -> (x -. y)**2.) x y))
 
-  let vectorized_binary_op f (x : point) (y : point): point = 
+  let vectorized_binary_op f x y= 
     Array.map2 f x y
 
-  let satisfies predicate (x : point): bool = 
+  let satisfies predicate x: bool = 
     Array.for_all predicate x
     
   
@@ -42,21 +42,21 @@ module K_means (K : Kahn.S) = struct
     split a 0 [] m
 
 
-  let parallel_map ?(n_p = !number_of_proc) f (a : 'a array) : 'a array =
-    Array.concat (par_map (fun x -> Array.map f x) (split_workload a !number_of_proc))
+  let parallel_map ?(n_p = !number_of_proc) f a =
+    Array.concat (par_map (fun x -> Array.map f x) (split_workload a n_p))
 
 
-  let parallel_group_by ?(n_p = !number_of_proc) f a possible_values: 'a list array =
-    let s_partition l b = if (fst b) then (snd b)::l else l 
+  let parallel_group_by ?(n_p = !number_of_proc) f a possible_values =
+    let s_partition (x : 'a) (l: 'a list) (b: ('a * 'a)): 'a list = if (f x b) then (snd b)::l else l 
     in
     let outter = min n_p (Array.length possible_values) in
     let inner = (max n_p (Array.length possible_values)) / outter in
-    parallel_map ~n_p:outter (fun x -> Array.fold_left s_partition [] (parallel_map ~n_p:outter (f x) a)) possible_values
+    parallel_map ~n_p:outter (fun x -> Array.fold_left (s_partition x) [] a) possible_values
    (* let group_by f l =
             let rec grouping acc = function
       | [] -> acc
       | hd::tl ->
-        let l1,l2 = List.fold_left s_partition [] List.map (f (fst hd)) tl in
+        let l1,l2 = List.fold_left s_partition [] List.map (f (fst hd)) tl innumber_of_proc
         grouping (((snd hd)::l1) :: acc) l2
       in *
       grouping [] l
@@ -92,11 +92,11 @@ module K_means (K : Kahn.S) = struct
       parrallel_map (fun i -> Array.copy points.(i)) l *)
 
 
-      shuffle_in_place;
-      Array.sub points 0 k
+    shuffle_in_place;
+    Array.sub points 0 k
 
 
-  let classify (points : point array) (means : point array) distance_function : point array =
+  let classify (points : point array) (means : point array) distance_function : point list array =
     (* coded in imperative style otherwise too heavy on memory *)
     let find_closest x : point =
       let n = Array.length means in 
@@ -112,31 +112,33 @@ module K_means (K : Kahn.S) = struct
       !closest 
     in 
     parallel_group_by
-     (fun x y -> ((x = (fst y)), (snd y))) 
+     (fun x y -> x = (fst y))
      (parallel_map (fun x -> ((find_closest x), x)) points) 
      means
     
     
   let update points means = 
     let find_average p = 
-      let n = Array.length p in
-      let d = Array.length p.(0) in
-      Array.map (fun x -> x /. n ) (List.fold_left (vectorized_binary_op (+.)) (zeros d) p) 
+      let n = float_of_int (List.length p) in 
+      let d = Array.length (List.hd p) in
+      Array.map (fun x -> x /. n) 
+      (List.fold_left (vectorized_binary_op (+.)) (zeros d) p) 
     in
-    parrallel_map find_average points
+    parallel_map find_average points
 
   let stop_cnd old_means new_means epsilon =
     satisfies (fun x -> x < epsilon) 
-    (parrallel_map (fun x -> l2_distance (fst x) (snd x)) (vectorized_binary_op (fun x y -> (x, y)) old_means new_means))
+    (parallel_map (fun x -> l2_distance (fst x) (snd x)) 
+    (vectorized_binary_op (fun x y -> (x, y)) old_means new_means))
 
 
   let main : unit K.process =
 
 
-    let exec points means =
-      let p = classify points means in
+    let rec exec points means =
+      let p = classify points means l2_distance in
       let nm = update p means in 
-      if (converged means nm) then 
+      if (stop_cnd means nm (10.**(-3.))) then 
         nm
       else 
        exec points nm 
@@ -148,6 +150,6 @@ module K_means (K : Kahn.S) = struct
 end
 
 
-module E = K_means(Unix_pipes.Z)
+module E = K_means(Kahn.Th)
 
 let () = E.K.run E.main

@@ -5,15 +5,11 @@ ocamldep.opt -modules k_means.ml > k_means.ml.depends
 ocamldep.opt -modules kahn.ml > kahn.ml.depends # cached
 # Target: kahn.cmo, tags: { annot, byte, compile, debug, extension:cmo, extension:ml, file:kahn.cmo, file:kahn.ml, implem, ocaml, quiet, thread }
 ocamlc.opt -c -g -annot -thread -o kahn.cmo kahn.ml # cached
-# Target: unix_pipes.ml.depends, tags: { annot, debug, extension:ml, file:unix_pipes.ml, ocaml, ocamldep, quiet, thread }
-ocamldep.opt -modules unix_pipes.ml > unix_pipes.ml.depends # cached
-# Target: unix_pipes.cmo, tags: { annot, byte, compile, debug, extension:cmo, extension:ml, file:unix_pipes.cmo, file:unix_pipes.ml, implem, ocaml, quiet, thread }
-ocamlc.opt -c -g -annot -thread -o unix_pipes.cmo unix_pipes.ml # cached
 # Target: k_means.cmo, tags: { annot, byte, compile, debug, extension:cmo, extension:ml, file:k_means.cmo, file:k_means.ml, implem, ocaml, quiet, thread }
 ocamlc.opt -c -g -annot -thread -o k_means.cmo k_means.ml
 + ocamlc.opt -c -g -annot -thread -o k_means.cmo k_means.ml
-File "k_means.ml", line 115, characters 23-30:
-Error: This expression has type bool but an expression was expected of type
-         'a list
+File "k_means.ml", line 147, characters 9-10:
+Error: This expression has type 'a -> 'a array array
+       but an expression was expected of type Vector.point array
 Command exited with code 2.
 # Compilation unsuccessful.
