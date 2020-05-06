@@ -1,15 +1,16 @@
 ### Starting build.
 # Target: k_means.ml.depends, tags: { annot, debug, extension:ml, file:k_means.ml, ocaml, ocamldep, quiet, thread }
-ocamldep.opt -modules k_means.ml > k_means.ml.depends
+ocamldep.opt -modules k_means.ml > k_means.ml.depends # cached
 # Target: kahn.ml.depends, tags: { annot, debug, extension:ml, file:kahn.ml, ocaml, ocamldep, quiet, thread }
 ocamldep.opt -modules kahn.ml > kahn.ml.depends # cached
 # Target: kahn.cmo, tags: { annot, byte, compile, debug, extension:cmo, extension:ml, file:kahn.cmo, file:kahn.ml, implem, ocaml, quiet, thread }
-ocamlc.opt -c -g -annot -thread -o kahn.cmo kahn.ml # cached
+ocamlc str.cma -c -g -annot -thread -o kahn.cmo kahn.ml
 # Target: k_means.cmo, tags: { annot, byte, compile, debug, extension:cmo, extension:ml, file:k_means.cmo, file:k_means.ml, implem, ocaml, quiet, thread }
-ocamlc.opt -c -g -annot -thread -o k_means.cmo k_means.ml
-+ ocamlc.opt -c -g -annot -thread -o k_means.cmo k_means.ml
-File "k_means.ml", line 147, characters 9-10:
-Error: This expression has type 'a -> 'a array array
-       but an expression was expected of type Vector.point array
-Command exited with code 2.
-# Compilation unsuccessful.
+ocamlc str.cma -c -g -annot -thread -o k_means.cmo k_means.ml
+# Target: kahn.cmx, tags: { annot, compile, debug, extension:cmx, extension:ml, file:kahn.cmx, file:kahn.ml, implem, native, ocaml, quiet, thread }
+ocamlopt str.cmxa -c -g -annot -thread -o kahn.cmx kahn.ml
+# Target: k_means.cmx, tags: { annot, compile, debug, extension:cmx, extension:ml, file:k_means.cmx, file:k_means.ml, implem, native, ocaml, quiet, thread }
+ocamlopt str.cmxa -c -g -annot -thread -o k_means.cmx k_means.ml
+# Target: k_means.native, tags: { annot, debug, dont_link_with, extension:native, file:k_means.native, link, native, ocaml, program, quiet, thread }
+ocamlopt str.cmxa unix.cmxa -g -thread threads.cmxa kahn.cmx k_means.cmx -o k_means.native
+# Compilation successful.

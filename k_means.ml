@@ -12,6 +12,10 @@ module Vector = struct
 
   let satisfies predicate x: bool = 
     Array.for_all predicate x
+
+  let string_of_vector vect =
+    vect |> Array.map string_of_float |> Array.to_list |> 
+    String.concat ", " |> Format.sprintf "(%s)"
     
   
 end
@@ -26,8 +30,9 @@ module K_means (K : Kahn.S) = struct
   open Lib 
   open Vector
 
+  type label = int
 
-  let number_of_proc = ref 0;;
+  let number_of_proc = ref 0
  
   let split_workload (a : 'a array) (r : int) : 'a array list = 
     let n = Array.length a in
@@ -35,9 +40,10 @@ module K_means (K : Kahn.S) = struct
     let l = n mod r in 
     let it = min r n in
     let rec split a k acc s = 
-      match k with 
-      | it -> List.rev acc
-      | k -> if (k < l) then split a (k+1) ((Array.sub a (k*s) m) :: acc) m else split a (k+1) ((Array.sub a (k*s) (m-1)) :: acc) (m-1)
+      if (k < it) then (
+        if (k < l) then split a (k+1) ((Array.sub a (k*s) m) :: acc) m else split a (k+1) ((Array.sub a (k*s) (m-1)) :: acc) (m-1)
+      )
+      else List.rev acc
     in 
     split a 0 [] m
 
@@ -47,26 +53,12 @@ module K_means (K : Kahn.S) = struct
 
 
   let parallel_group_by ?(n_p = !number_of_proc) f a possible_values =
-    let s_partition (x : 'a) (l: 'a list) (b: ('a * 'a)): 'a list = if (f x b) then (snd b)::l else l 
+    let s_partition x l b: 'a list = if (f x b) then (snd b)::l else l 
     in
-    let outter = min n_p (Array.length possible_values) in
-    let inner = (max n_p (Array.length possible_values)) / outter in
-    parallel_map ~n_p:outter (fun x -> Array.fold_left (s_partition x) [] a) possible_values
-   (* let group_by f l =
-            let rec grouping acc = function
-      | [] -> acc
-      | hd::tl ->
-        let l1,l2 = List.fold_left s_partition [] List.map (f (fst hd)) tl innumber_of_proc
-        grouping (((snd hd)::l1) :: acc) l2
-      in *
-      grouping [] l
-    in 
-    *)
-
+    parallel_map (fun x -> Array.fold_left (s_partition x) [] a) possible_values
     
-
   
-  let rec shuffle_and_initialize_means (k : int) (points : point array) : point array =
+  let rec shuffle_and_initialize_means (k : int) (points : (point * label) array) : point array =
 
     let shuffle_in_place =
       Random.self_init ();
@@ -79,50 +71,42 @@ module K_means (K : Kahn.S) = struct
       done
     in
 
-    (* let rec distinct_random_sequence upperbound number_of_points list_of_indices: int list =
-      match number_of_points with 
-        | 0 -> list_of_indices
-        | number_of_points ->
-          let r =  Random.int upperbound in 
-          if (List.mem r list_of_indices) then distinct_random_sequence upperbound number_of_points list_of_indices
-          else distinct_random_sequence upperbound number_of_points-1 r::list_of_indices
-    in  
-
-    let l = distinct_random_sequence (Array.length points) k [] in 
-      parrallel_map (fun i -> Array.copy points.(i)) l *)
-
-
     shuffle_in_place;
-    Array.sub points 0 k
+    parallel_map (fun x -> fst x) (Array.sub points 0 k)
 
 
-  let classify (points : point array) (means : point array) distance_function : point list array =
+  let classify ?(distance_function = l2_distance) (points : (point*label) array) (means : point array)  =
     (* coded in imperative style otherwise too heavy on memory *)
-    let find_closest x : point =
+    let find_closest (x : (point*label)) : point =
       let n = Array.length means in 
       let closest = ref (means.(0)) in 
-      let minDistance = ref (distance_function means.(0) x)in
+      let minDistance = ref (distance_function means.(0) (fst x))in
       for i = 1 to n do
-        let tmp = ref (distance_function x means.(i)) in
+        let tmp = ref (distance_function (fst x) means.(i)) in
         if tmp < minDistance then begin 
           closest := means.(i);
           minDistance := !tmp
         end;
       done;
       !closest 
-    in 
+    in
     parallel_group_by
-     (fun x y -> x = (fst y))
-     (parallel_map (fun x -> ((find_closest x), x)) points) 
-     means
+    (fun x y -> x = (fst y))
+    (parallel_map (fun x -> ((find_closest x), x)) points) 
+    means
+   
+   
     
     
-  let update points means = 
+  let update (points: (point*label) list array) = 
     let find_average p = 
       let n = float_of_int (List.length p) in 
-      let d = Array.length (List.hd p) in
+      let d = Array.length (fst (List.hd p)) in
       Array.map (fun x -> x /. n) 
-      (List.fold_left (vectorized_binary_op (+.)) (zeros d) p) 
+      (List.fold_left 
+      (fun x y -> vectorized_binary_op (+.) x (fst y)) 
+      (zeros d) 
+      p) 
     in
     parallel_map find_average points
 
@@ -133,86 +117,106 @@ module K_means (K : Kahn.S) = struct
 
 
 
-  let rec exec points means epsilon number_of_processes =
-    number_of_proc := number_of_proc;
-    let p = classify points means l2_distance in
-    let nm = update p means in 
-    if (stop_cnd means nm epsilon) then 
-      nm
-    else 
-      exec points nm 
+  
 
 
 end
 
-module Run_K_means (K: Kahn.S) = struct 
+module Card_fraud_K_means (K: Kahn.S) = struct 
 
+  module K_means = K_means(K)
   open K_means
 
-  let k = ref 0 
-  let dimension = ref 0 
-  let data_size = ref 0
+  let k = ref 2 
+  let dimension = ref 29 
   let number_of_processes = ref 10
+  let epsilon = ref 0.001
+  let training_perc = ref 0.9
 
-  let path_name = ref ""
-  let output_file = ref "K_means_output.txt"
 
-  let plot = ref True
 
-  let usage = 
-    "Usage: " ^ Sys.argv.(0) ^ " [options] <filename>" ^
-    "\nOptions:"
-
-  let options =
-    [ "-k", Arg.Set_int k,
-      " number of clusters k in the algorithm";
-      "-d", Arg.Int (fun i -> d := Some i),
-      " dimension of data examples (must be consistent with the data)";
-      "-p", Arg.Set_int number_of_processes,
-      " number of parallel processes used in the computation (default 10)";
-      "-o", Arg.Set_string output_file,
-      " name of the output file (containing cluster centers)";
-      "-plot", Arg.Set plot,
-      " plot the result's accuracy"; ]
-
-  let parse_cmd () =
-    Arg.parse (Arg.align options)
-      (fun str -> if str <> "" then
-        match !data_file with 
-        | None -> data_file := Some str
-        | _ -> Format.eprintf 
-            "%s: At most one data file can be given.@." Sys.argv.(0); exit 1)
-      usage
-
-  let import_data path separator nbr_of_features size =
-    let reg_separator = Str.regexp separator in
-    let value_array = Array.make_matrix size nbr_of_features 0. in
-    let i = ref 0 in
-    try
-      let ic = open_in file_name in
-      (* Skip the first line, columns headers *)
-      let _ = input_line ic in
+  let preprocess_data path = 
+    let import_data path separator nbr_of_features: float array array =
+      let reg_separator = Str.regexp separator in
+      let value_list = ref [] in
       try
-        while true; do
-          (* Create a list of values from a line *)
-          let line_list = Str.split reg_separator (input_line ic) in
-          List.iteri
-          (fun j elem -> value_array.(!i).(j) <- float_of_string elem)
-          line_list;
-          i := !i + 1
-        done;
-        value_array
-      with 
-        | End_of_file -> close_in ic; value_array
+        let ic = open_in path in
+        (* Skip the first line, columns headers *)
+        let _ = input_line ic in
+        try
+          while true; do
+            (* Create a list of values from a line *)
+            let line_list = Str.split reg_separator (input_line ic) in
+            let tmp = Array.of_list (List.map float_of_string line_list) in
+            value_list := tmp::(!value_list);
+          done;
+            Array.of_list (!value_list)
+        with 
+          | End_of_file -> close_in ic; Array.of_list (!value_list)
       with
-        | e -> raise e;;
+        | e -> raise e
+    in 
+    let get_values_labels (data: float array array): (float array * int) array = 
+      parallel_map (fun x -> ((Array.sub x 0 !dimension), int_of_float x.(!dimension))) data
+    in  
+    let seperate_to_training_and_test (data:(float array * int) array) : ((float array * int) array * (float array * int) array)  =
+      let n = Array.length data in 
+      let l = int_of_float ((float_of_int n) *. !training_perc) in 
+      (Array.sub data 0 l, Array.sub data l (n-l))
+    in
+    seperate_to_training_and_test (get_values_labels (import_data path  ","  ((!dimension)+1))) 
 
-  let get_hyper_parameters 
+  let test acc points =
+    let eval l = 
+      let n = float_of_int (List.fold_left (fun x y -> x + snd(y)) 0 l) in 
+      let s = float_of_int (List.length l) in
+      let r = n /. s in 
+      if r > 0.5 then n else s -. n
+    in 
+    let s = Array.fold_left (+.) 0. (parallel_map eval points) in 
+    let q = float_of_int (Array.fold_left (fun x y -> x + (List.length y)) 0 points) in 
+    (s /. q) :: acc
 
-  
 
+  let exec training_data test_data = 
+    let rec aux means acc_training acc_test = 
+      let p_tr = classify training_data means in
+      let p_te = classify test_data means in
+      let nm = update p_tr in 
+      if (stop_cnd means nm !epsilon) then 
+        nm, (List.rev acc_training), (List.rev acc_test) 
+      else 
+        aux nm (test acc_training p_tr) (test acc_test p_te)
+    in 
+    aux (shuffle_and_initialize_means !k training_data) [] []
+
+
+
+  let plot training test = 
+    let rec print_numbers oc = function 
+      | [] -> ()
+      | e::tl -> Printf.fprintf oc "%f\n" e; print_numbers oc tl
+    in
+    let tr = open_out "training_accuracy.txt" in
+    let te = open_out "test_accuracy.txt" in
+    print_numbers tr training;
+    print_numbers te test;
+    close_out tr;
+    close_out te;
+    ignore (Sys.command "python plot.py")
     
-end 
-module E = K_means(Kahn.Th)
 
-let () = E.K.run E.main
+  let main =
+    let path = Sys.argv.(1) in
+    let training, test = preprocess_data path in 
+    let means, training_accuracy, test_accuracy = exec training test in 
+    plot training_accuracy test_accuracy;
+    ()
+    
+    
+end   
+
+
+
+module E = Card_fraud_K_means(Kahn.Th)
+let () = E.main

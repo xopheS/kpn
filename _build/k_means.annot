@@ -3,7 +3,7 @@ type(
   int -> point
 )
 ident(
-  def zeros "k_means.ml" 7 103 105 "k_means.ml" 17 368 371
+  def zeros "k_means.ml" 7 103 105 "k_means.ml" 21 506 509
 )
 "k_means.ml" 5 53 66 "k_means.ml" 5 53 67
 type(
@@ -42,7 +42,7 @@ type(
   point -> point -> float
 )
 ident(
-  def l2_distance "k_means.ml" 10 236 238 "k_means.ml" 17 368 371
+  def l2_distance "k_means.ml" 10 236 238 "k_means.ml" 21 506 509
 )
 "k_means.ml" 7 103 122 "k_means.ml" 7 103 123
 type(
@@ -163,10 +163,16 @@ ident(
   int_ref y "k_means.ml" 7 103 134 "k_means.ml" 7 103 135
 )
 "k_means.ml" 8 156 191 "k_means.ml" 8 156 233
+call(
+  stack
+)
 type(
   float array
 )
 "k_means.ml" 8 156 165 "k_means.ml" 8 156 234
+call(
+  stack
+)
 type(
   float
 )
@@ -182,7 +188,7 @@ type(
   ('a -> 'b -> 'c) -> 'a array -> 'b array -> 'c array
 )
 ident(
-  def vectorized_binary_op "k_means.ml" 13 293 295 "k_means.ml" 17 368 371
+  def vectorized_binary_op "k_means.ml" 13 293 295 "k_means.ml" 21 506 509
 )
 "k_means.ml" 10 236 263 "k_means.ml" 10 236 264
 type(
@@ -234,6 +240,9 @@ ident(
   int_ref y "k_means.ml" 10 236 267 "k_means.ml" 10 236 268
 )
 "k_means.ml" 11 271 275 "k_means.ml" 11 271 291
+call(
+  tail
+)
 type(
   'c array
 )
@@ -242,7 +251,7 @@ type(
   ('d -> bool) -> 'd array -> bool
 )
 ident(
-  def satisfies "k_means.ml" 14 330 359 "k_means.ml" 17 368 371
+  def satisfies "k_means.ml" 16 361 363 "k_means.ml" 21 506 509
 )
 "k_means.ml" 13 293 309 "k_means.ml" 13 293 318
 type(
@@ -280,626 +289,790 @@ ident(
   int_ref x "k_means.ml" 13 293 319 "k_means.ml" 13 293 320
 )
 "k_means.ml" 14 330 334 "k_means.ml" 14 330 359
-type(
-  bool
+call(
+  tail
 )
 type(
   bool
 )
-"k_means.ml" 30 484 490 "k_means.ml" 30 484 504
+type(
+  bool
+)
+"k_means.ml" 16 361 367 "k_means.ml" 16 361 383
+type(
+  float array -> string
+)
+ident(
+  def string_of_vector "k_means.ml" 18 450 497 "k_means.ml" 21 506 509
+)
+"k_means.ml" 16 361 384 "k_means.ml" 16 361 388
+type(
+  float array
+)
+ident(
+  def vect "k_means.ml" 17 391 395 "k_means.ml" 18 450 497
+)
+"k_means.ml" 17 391 395 "k_means.ml" 17 391 399
+type(
+  float array
+)
+ident(
+  int_ref vect "k_means.ml" 16 361 384 "k_means.ml" 16 361 388
+)
+"k_means.ml" 17 391 400 "k_means.ml" 17 391 402
+type(
+  float array -> (float array -> string array) -> string array
+)
+ident(
+  ext_ref Pervasives.( |> )
+)
+"k_means.ml" 17 391 403 "k_means.ml" 17 391 412
+type(
+  (float -> string) -> float array -> string array
+)
+ident(
+  ext_ref Array.map
+)
+"k_means.ml" 17 391 413 "k_means.ml" 17 391 428
+type(
+  float -> string
+)
+ident(
+  ext_ref Pervasives.string_of_float
+)
+"k_means.ml" 17 391 403 "k_means.ml" 17 391 428
+type(
+  float array -> string array
+)
+"k_means.ml" 17 391 395 "k_means.ml" 17 391 428
+call(
+  stack
+)
+type(
+  string array
+)
+"k_means.ml" 17 391 429 "k_means.ml" 17 391 431
+type(
+  string array -> (string array -> string list) -> string list
+)
+ident(
+  ext_ref Pervasives.( |> )
+)
+"k_means.ml" 17 391 432 "k_means.ml" 17 391 445
+type(
+  string array -> string list
+)
+ident(
+  ext_ref Array.to_list
+)
+"k_means.ml" 17 391 395 "k_means.ml" 17 391 445
+call(
+  stack
+)
+type(
+  string list
+)
+"k_means.ml" 17 391 446 "k_means.ml" 17 391 448
+type(
+  string list -> (string list -> string) -> string
+)
+ident(
+  ext_ref Pervasives.( |> )
+)
+"k_means.ml" 18 450 454 "k_means.ml" 18 450 467
+type(
+  string -> string list -> string
+)
+ident(
+  ext_ref String.concat
+)
+"k_means.ml" 18 450 468 "k_means.ml" 18 450 472
+type(
+  string
+)
+"k_means.ml" 18 450 454 "k_means.ml" 18 450 472
+type(
+  string list -> string
+)
+"k_means.ml" 17 391 395 "k_means.ml" 18 450 472
+call(
+  stack
+)
+type(
+  string
+)
+"k_means.ml" 18 450 473 "k_means.ml" 18 450 475
+type(
+  string -> (string -> string) -> string
+)
+ident(
+  ext_ref Pervasives.( |> )
+)
+"k_means.ml" 18 450 476 "k_means.ml" 18 450 490
+type(
+  (string -> string, unit, string) format -> string -> string
+)
+ident(
+  ext_ref Format.sprintf
+)
+"k_means.ml" 18 450 491 "k_means.ml" 18 450 497
+type(
+  (string -> string, unit, string) format
+)
+"k_means.ml" 18 450 476 "k_means.ml" 18 450 497
+type(
+  string -> string
+)
+"k_means.ml" 17 391 395 "k_means.ml" 18 450 497
+call(
+  tail
+)
+type(
+  string
+)
+"k_means.ml" 29 567 582 "k_means.ml" 29 567 593
+call(
+  stack
+)
+"k_means.ml" 35 641 647 "k_means.ml" 35 641 661
 type(
   int ref
 )
 ident(
-  def number_of_proc "k_means.ml" 32 517 519 "k_means.ml" 150 4271 4274
+  def number_of_proc "k_means.ml" 37 672 674 "k_means.ml" 123 3224 3227
 )
-"k_means.ml" 30 484 507 "k_means.ml" 30 484 510
+"k_means.ml" 35 641 664 "k_means.ml" 35 641 667
 type(
   int -> int ref
 )
 ident(
   ext_ref Pervasives.ref
 )
-"k_means.ml" 30 484 511 "k_means.ml" 30 484 512
+"k_means.ml" 35 641 668 "k_means.ml" 35 641 669
 type(
   int
 )
-"k_means.ml" 30 484 507 "k_means.ml" 30 484 512
+"k_means.ml" 35 641 664 "k_means.ml" 35 641 669
 type(
   int ref
 )
-"k_means.ml" 32 517 523 "k_means.ml" 32 517 537
+"k_means.ml" 37 672 678 "k_means.ml" 37 672 692
 type(
   'a array -> int -> 'a array list
 )
 ident(
-  def split_workload "k_means.ml" 45 929 931 "k_means.ml" 150 4271 4274
+  def split_workload "k_means.ml" 51 1089 1091 "k_means.ml" 123 3224 3227
 )
-"k_means.ml" 32 517 539 "k_means.ml" 32 517 540
+"k_means.ml" 37 672 694 "k_means.ml" 37 672 695
 type(
   'a array
 )
 ident(
-  def a "k_means.ml" 32 517 553 "k_means.ml" 42 908 926
+  def a "k_means.ml" 37 672 708 "k_means.ml" 48 1068 1086
 )
-"k_means.ml" 32 517 554 "k_means.ml" 32 517 555
+"k_means.ml" 37 672 709 "k_means.ml" 37 672 710
 type(
   int
 )
 ident(
-  def r "k_means.ml" 32 517 563 "k_means.ml" 42 908 926
+  def r "k_means.ml" 37 672 718 "k_means.ml" 48 1068 1086
 )
-"k_means.ml" 33 582 590 "k_means.ml" 33 582 591
+"k_means.ml" 38 737 745 "k_means.ml" 38 737 746
 type(
   int
 )
 ident(
-  def n "k_means.ml" 34 612 616 "k_means.ml" 42 908 926
+  def n "k_means.ml" 39 767 771 "k_means.ml" 48 1068 1086
 )
-"k_means.ml" 33 582 594 "k_means.ml" 33 582 606
+"k_means.ml" 38 737 749 "k_means.ml" 38 737 761
 type(
   'a array -> int
 )
 ident(
   ext_ref Array.length
 )
-"k_means.ml" 33 582 607 "k_means.ml" 33 582 608
+"k_means.ml" 38 737 762 "k_means.ml" 38 737 763
 type(
   'a array
 )
 ident(
-  int_ref a "k_means.ml" 32 517 539 "k_means.ml" 32 517 540
+  int_ref a "k_means.ml" 37 672 694 "k_means.ml" 37 672 695
 )
-"k_means.ml" 33 582 594 "k_means.ml" 33 582 608
+"k_means.ml" 38 737 749 "k_means.ml" 38 737 763
 type(
   int
 )
-"k_means.ml" 34 612 620 "k_means.ml" 34 612 621
-type(
-  int
-)
-ident(
-  def m "k_means.ml" 35 638 642 "k_means.ml" 42 908 926
-)
-"k_means.ml" 34 612 624 "k_means.ml" 34 612 625
+"k_means.ml" 39 767 775 "k_means.ml" 39 767 776
 type(
   int
 )
 ident(
-  int_ref n "k_means.ml" 33 582 590 "k_means.ml" 33 582 591
+  def m "k_means.ml" 40 793 797 "k_means.ml" 48 1068 1086
 )
-"k_means.ml" 34 612 626 "k_means.ml" 34 612 627
+"k_means.ml" 39 767 779 "k_means.ml" 39 767 780
+type(
+  int
+)
+ident(
+  int_ref n "k_means.ml" 38 737 745 "k_means.ml" 38 737 746
+)
+"k_means.ml" 39 767 781 "k_means.ml" 39 767 782
 type(
   int -> int -> int
 )
 ident(
   ext_ref Pervasives.( / )
 )
-"k_means.ml" 34 612 628 "k_means.ml" 34 612 629
+"k_means.ml" 39 767 783 "k_means.ml" 39 767 784
 type(
   int
 )
 ident(
-  int_ref r "k_means.ml" 32 517 554 "k_means.ml" 32 517 555
+  int_ref r "k_means.ml" 37 672 709 "k_means.ml" 37 672 710
 )
-"k_means.ml" 34 612 624 "k_means.ml" 34 612 629
+"k_means.ml" 39 767 779 "k_means.ml" 39 767 784
 type(
   int
 )
-"k_means.ml" 34 612 630 "k_means.ml" 34 612 631
+"k_means.ml" 39 767 785 "k_means.ml" 39 767 786
 type(
   int -> int -> int
 )
 ident(
   ext_ref Pervasives.( + )
 )
-"k_means.ml" 34 612 632 "k_means.ml" 34 612 633
+"k_means.ml" 39 767 787 "k_means.ml" 39 767 788
 type(
   int
 )
-"k_means.ml" 34 612 624 "k_means.ml" 34 612 633
+"k_means.ml" 39 767 779 "k_means.ml" 39 767 788
 type(
   int
 )
-"k_means.ml" 35 638 646 "k_means.ml" 35 638 647
-type(
-  int
-)
-ident(
-  def l "k_means.ml" 36 662 666 "k_means.ml" 42 908 926
-)
-"k_means.ml" 35 638 650 "k_means.ml" 35 638 651
+"k_means.ml" 40 793 801 "k_means.ml" 40 793 802
 type(
   int
 )
 ident(
-  int_ref n "k_means.ml" 33 582 590 "k_means.ml" 33 582 591
+  def l "k_means.ml" 41 817 821 "k_means.ml" 48 1068 1086
 )
-"k_means.ml" 35 638 652 "k_means.ml" 35 638 655
+"k_means.ml" 40 793 805 "k_means.ml" 40 793 806
+type(
+  int
+)
+ident(
+  int_ref n "k_means.ml" 38 737 745 "k_means.ml" 38 737 746
+)
+"k_means.ml" 40 793 807 "k_means.ml" 40 793 810
 type(
   int -> int -> int
 )
 ident(
   ext_ref Pervasives.( mod )
 )
-"k_means.ml" 35 638 656 "k_means.ml" 35 638 657
+"k_means.ml" 40 793 811 "k_means.ml" 40 793 812
 type(
   int
 )
 ident(
-  int_ref r "k_means.ml" 32 517 554 "k_means.ml" 32 517 555
+  int_ref r "k_means.ml" 37 672 709 "k_means.ml" 37 672 710
 )
-"k_means.ml" 35 638 650 "k_means.ml" 35 638 657
+"k_means.ml" 40 793 805 "k_means.ml" 40 793 812
 type(
   int
 )
-"k_means.ml" 36 662 670 "k_means.ml" 36 662 672
+"k_means.ml" 41 817 825 "k_means.ml" 41 817 827
 type(
   int
 )
 ident(
-  def it "k_means.ml" 37 686 690 "k_means.ml" 42 908 926
+  def it "k_means.ml" 42 841 845 "k_means.ml" 48 1068 1086
 )
-"k_means.ml" 36 662 675 "k_means.ml" 36 662 678
+"k_means.ml" 41 817 830 "k_means.ml" 41 817 833
 type(
   int -> int -> int
 )
 ident(
   ext_ref Pervasives.min
 )
-"k_means.ml" 36 662 679 "k_means.ml" 36 662 680
+"k_means.ml" 41 817 834 "k_means.ml" 41 817 835
 type(
   int
 )
 ident(
-  int_ref r "k_means.ml" 32 517 554 "k_means.ml" 32 517 555
+  int_ref r "k_means.ml" 37 672 709 "k_means.ml" 37 672 710
 )
-"k_means.ml" 36 662 681 "k_means.ml" 36 662 682
+"k_means.ml" 41 817 836 "k_means.ml" 41 817 837
 type(
   int
 )
 ident(
-  int_ref n "k_means.ml" 33 582 590 "k_means.ml" 33 582 591
+  int_ref n "k_means.ml" 38 737 745 "k_means.ml" 38 737 746
 )
-"k_means.ml" 36 662 675 "k_means.ml" 36 662 682
+"k_means.ml" 41 817 830 "k_means.ml" 41 817 837
+call(
+  stack
+)
 type(
   int
 )
-"k_means.ml" 37 686 698 "k_means.ml" 37 686 703
+"k_means.ml" 42 841 853 "k_means.ml" 42 841 858
 type(
   'b array -> int -> 'b array list -> int -> 'b array list
 )
 ident(
-  def split "k_means.ml" 37 686 690 "k_means.ml" 42 908 926
+  def split "k_means.ml" 42 841 845 "k_means.ml" 48 1068 1086
 )
-"k_means.ml" 37 686 704 "k_means.ml" 37 686 705
+"k_means.ml" 42 841 859 "k_means.ml" 42 841 860
 type(
   'b array
 )
 ident(
-  def a "k_means.ml" 37 686 706 "k_means.ml" 40 764 899
+  def a "k_means.ml" 42 841 861 "k_means.ml" 46 1036 1059
 )
-"k_means.ml" 37 686 706 "k_means.ml" 37 686 707
+"k_means.ml" 42 841 861 "k_means.ml" 42 841 862
 type(
   int
 )
 ident(
-  def k "k_means.ml" 37 686 708 "k_means.ml" 40 764 899
+  def k "k_means.ml" 42 841 863 "k_means.ml" 46 1036 1059
 )
-"k_means.ml" 37 686 708 "k_means.ml" 37 686 711
+"k_means.ml" 42 841 863 "k_means.ml" 42 841 866
 type(
   'b array list
 )
 ident(
-  def acc "k_means.ml" 37 686 712 "k_means.ml" 40 764 899
+  def acc "k_means.ml" 42 841 867 "k_means.ml" 46 1036 1059
 )
-"k_means.ml" 37 686 712 "k_means.ml" 37 686 713
+"k_means.ml" 42 841 867 "k_means.ml" 42 841 868
 type(
   int
 )
 ident(
-  def s "k_means.ml" 38 717 723 "k_means.ml" 40 764 899
+  def s "k_means.ml" 43 872 878 "k_means.ml" 46 1036 1059
 )
-"k_means.ml" 38 717 729 "k_means.ml" 38 717 730
+"k_means.ml" 43 872 882 "k_means.ml" 43 872 883
 type(
   int
 )
 ident(
-  int_ref k "k_means.ml" 37 686 706 "k_means.ml" 37 686 707
+  int_ref k "k_means.ml" 42 841 861 "k_means.ml" 42 841 862
 )
-"k_means.ml" 39 737 745 "k_means.ml" 39 737 747
-type(
-  int
-)
-ident(
-  def it "k_means.ml" 39 737 751 "k_means.ml" 39 737 763
-)
-"k_means.ml" 39 737 751 "k_means.ml" 39 737 759
-type(
-  'b array list -> 'b array list
-)
-ident(
-  ext_ref List.rev
-)
-"k_means.ml" 39 737 760 "k_means.ml" 39 737 763
-type(
-  'b array list
-)
-ident(
-  int_ref acc "k_means.ml" 37 686 708 "k_means.ml" 37 686 711
-)
-"k_means.ml" 39 737 751 "k_means.ml" 39 737 763
-type(
-  'b array list
-)
-"k_means.ml" 40 764 772 "k_means.ml" 40 764 773
-type(
-  int
-)
-ident(
-  def k "k_means.ml" 40 764 777 "k_means.ml" 40 764 899
-)
-"k_means.ml" 40 764 781 "k_means.ml" 40 764 782
-type(
-  int
-)
-ident(
-  int_ref k "k_means.ml" 40 764 772 "k_means.ml" 40 764 773
-)
-"k_means.ml" 40 764 783 "k_means.ml" 40 764 784
+"k_means.ml" 43 872 884 "k_means.ml" 43 872 885
 type(
   int -> int -> bool
 )
 ident(
   ext_ref Pervasives.( < )
 )
-"k_means.ml" 40 764 785 "k_means.ml" 40 764 786
+"k_means.ml" 43 872 886 "k_means.ml" 43 872 888
 type(
   int
 )
 ident(
-  int_ref l "k_means.ml" 35 638 646 "k_means.ml" 35 638 647
+  int_ref it "k_means.ml" 41 817 825 "k_means.ml" 41 817 827
 )
-"k_means.ml" 40 764 780 "k_means.ml" 40 764 787
+"k_means.ml" 43 872 881 "k_means.ml" 43 872 889
 type(
   bool
 )
-"k_means.ml" 40 764 793 "k_means.ml" 40 764 798
-type(
-  'b array -> int -> 'b array list -> int -> 'b array list
-)
-ident(
-  int_ref split "k_means.ml" 37 686 698 "k_means.ml" 37 686 703
-)
-"k_means.ml" 40 764 799 "k_means.ml" 40 764 800
-type(
-  'b array
-)
-ident(
-  int_ref a "k_means.ml" 37 686 704 "k_means.ml" 37 686 705
-)
-"k_means.ml" 40 764 802 "k_means.ml" 40 764 803
+"k_means.ml" 44 897 909 "k_means.ml" 44 897 910
 type(
   int
 )
 ident(
-  int_ref k "k_means.ml" 40 764 772 "k_means.ml" 40 764 773
+  int_ref k "k_means.ml" 42 841 861 "k_means.ml" 42 841 862
 )
-"k_means.ml" 40 764 803 "k_means.ml" 40 764 804
+"k_means.ml" 44 897 911 "k_means.ml" 44 897 912
+type(
+  int -> int -> bool
+)
+ident(
+  ext_ref Pervasives.( < )
+)
+"k_means.ml" 44 897 913 "k_means.ml" 44 897 914
+type(
+  int
+)
+ident(
+  int_ref l "k_means.ml" 40 793 801 "k_means.ml" 40 793 802
+)
+"k_means.ml" 44 897 908 "k_means.ml" 44 897 915
+type(
+  bool
+)
+"k_means.ml" 44 897 921 "k_means.ml" 44 897 926
+type(
+  'b array -> int -> 'b array list -> int -> 'b array list
+)
+ident(
+  int_ref split "k_means.ml" 42 841 853 "k_means.ml" 42 841 858
+)
+"k_means.ml" 44 897 927 "k_means.ml" 44 897 928
+type(
+  'b array
+)
+ident(
+  int_ref a "k_means.ml" 42 841 859 "k_means.ml" 42 841 860
+)
+"k_means.ml" 44 897 930 "k_means.ml" 44 897 931
+type(
+  int
+)
+ident(
+  int_ref k "k_means.ml" 42 841 861 "k_means.ml" 42 841 862
+)
+"k_means.ml" 44 897 931 "k_means.ml" 44 897 932
 type(
   int -> int -> int
 )
 ident(
   ext_ref Pervasives.( + )
 )
-"k_means.ml" 40 764 804 "k_means.ml" 40 764 805
+"k_means.ml" 44 897 932 "k_means.ml" 44 897 933
 type(
   int
 )
-"k_means.ml" 40 764 801 "k_means.ml" 40 764 806
+"k_means.ml" 44 897 929 "k_means.ml" 44 897 934
 type(
   int
 )
-"k_means.ml" 40 764 809 "k_means.ml" 40 764 818
+"k_means.ml" 44 897 937 "k_means.ml" 44 897 946
 type(
   'b array -> int -> int -> 'b array
 )
 ident(
   ext_ref Array.sub
 )
-"k_means.ml" 40 764 819 "k_means.ml" 40 764 820
+"k_means.ml" 44 897 947 "k_means.ml" 44 897 948
 type(
   'b array
 )
 ident(
-  int_ref a "k_means.ml" 37 686 704 "k_means.ml" 37 686 705
+  int_ref a "k_means.ml" 42 841 859 "k_means.ml" 42 841 860
 )
-"k_means.ml" 40 764 822 "k_means.ml" 40 764 823
+"k_means.ml" 44 897 950 "k_means.ml" 44 897 951
 type(
   int
 )
 ident(
-  int_ref k "k_means.ml" 40 764 772 "k_means.ml" 40 764 773
+  int_ref k "k_means.ml" 42 841 861 "k_means.ml" 42 841 862
 )
-"k_means.ml" 40 764 823 "k_means.ml" 40 764 824
+"k_means.ml" 44 897 951 "k_means.ml" 44 897 952
 type(
   int -> int -> int
 )
 ident(
   ext_ref Pervasives.( * )
 )
-"k_means.ml" 40 764 824 "k_means.ml" 40 764 825
+"k_means.ml" 44 897 952 "k_means.ml" 44 897 953
 type(
   int
 )
 ident(
-  int_ref s "k_means.ml" 37 686 712 "k_means.ml" 37 686 713
+  int_ref s "k_means.ml" 42 841 867 "k_means.ml" 42 841 868
 )
-"k_means.ml" 40 764 821 "k_means.ml" 40 764 826
+"k_means.ml" 44 897 949 "k_means.ml" 44 897 954
 type(
   int
 )
-"k_means.ml" 40 764 827 "k_means.ml" 40 764 828
+"k_means.ml" 44 897 955 "k_means.ml" 44 897 956
 type(
   int
 )
 ident(
-  int_ref m "k_means.ml" 34 612 620 "k_means.ml" 34 612 621
+  int_ref m "k_means.ml" 39 767 775 "k_means.ml" 39 767 776
 )
-"k_means.ml" 40 764 808 "k_means.ml" 40 764 829
+"k_means.ml" 44 897 936 "k_means.ml" 44 897 957
+call(
+  stack
+)
 type(
   'b array
 )
-"k_means.ml" 40 764 833 "k_means.ml" 40 764 836
+"k_means.ml" 44 897 961 "k_means.ml" 44 897 964
 type(
   'b array list
 )
 ident(
-  int_ref acc "k_means.ml" 37 686 708 "k_means.ml" 37 686 711
+  int_ref acc "k_means.ml" 42 841 863 "k_means.ml" 42 841 866
 )
-"k_means.ml" 40 764 807 "k_means.ml" 40 764 837
+"k_means.ml" 44 897 935 "k_means.ml" 44 897 965
 type(
   'b array list
 )
-"k_means.ml" 40 764 838 "k_means.ml" 40 764 839
+"k_means.ml" 44 897 966 "k_means.ml" 44 897 967
 type(
   int
 )
 ident(
-  int_ref m "k_means.ml" 34 612 620 "k_means.ml" 34 612 621
+  int_ref m "k_means.ml" 39 767 775 "k_means.ml" 39 767 776
 )
-"k_means.ml" 40 764 793 "k_means.ml" 40 764 839
+"k_means.ml" 44 897 921 "k_means.ml" 44 897 967
+call(
+  tail
+)
 type(
   'b array list
 )
-"k_means.ml" 40 764 845 "k_means.ml" 40 764 850
+"k_means.ml" 44 897 973 "k_means.ml" 44 897 978
 type(
   'b array -> int -> 'b array list -> int -> 'b array list
 )
 ident(
-  int_ref split "k_means.ml" 37 686 698 "k_means.ml" 37 686 703
+  int_ref split "k_means.ml" 42 841 853 "k_means.ml" 42 841 858
 )
-"k_means.ml" 40 764 851 "k_means.ml" 40 764 852
+"k_means.ml" 44 897 979 "k_means.ml" 44 897 980
 type(
   'b array
 )
 ident(
-  int_ref a "k_means.ml" 37 686 704 "k_means.ml" 37 686 705
+  int_ref a "k_means.ml" 42 841 859 "k_means.ml" 42 841 860
 )
-"k_means.ml" 40 764 854 "k_means.ml" 40 764 855
+"k_means.ml" 44 897 982 "k_means.ml" 44 897 983
 type(
   int
 )
 ident(
-  int_ref k "k_means.ml" 40 764 772 "k_means.ml" 40 764 773
+  int_ref k "k_means.ml" 42 841 861 "k_means.ml" 42 841 862
 )
-"k_means.ml" 40 764 855 "k_means.ml" 40 764 856
+"k_means.ml" 44 897 983 "k_means.ml" 44 897 984
 type(
   int -> int -> int
 )
 ident(
   ext_ref Pervasives.( + )
 )
-"k_means.ml" 40 764 856 "k_means.ml" 40 764 857
+"k_means.ml" 44 897 984 "k_means.ml" 44 897 985
 type(
   int
 )
-"k_means.ml" 40 764 853 "k_means.ml" 40 764 858
+"k_means.ml" 44 897 981 "k_means.ml" 44 897 986
 type(
   int
 )
-"k_means.ml" 40 764 861 "k_means.ml" 40 764 870
+"k_means.ml" 44 897 989 "k_means.ml" 44 897 998
 type(
   'b array -> int -> int -> 'b array
 )
 ident(
   ext_ref Array.sub
 )
-"k_means.ml" 40 764 871 "k_means.ml" 40 764 872
+"k_means.ml" 44 897 999 "k_means.ml" 44 897 1000
 type(
   'b array
 )
 ident(
-  int_ref a "k_means.ml" 37 686 704 "k_means.ml" 37 686 705
+  int_ref a "k_means.ml" 42 841 859 "k_means.ml" 42 841 860
 )
-"k_means.ml" 40 764 874 "k_means.ml" 40 764 875
+"k_means.ml" 44 897 1002 "k_means.ml" 44 897 1003
 type(
   int
 )
 ident(
-  int_ref k "k_means.ml" 40 764 772 "k_means.ml" 40 764 773
+  int_ref k "k_means.ml" 42 841 861 "k_means.ml" 42 841 862
 )
-"k_means.ml" 40 764 875 "k_means.ml" 40 764 876
+"k_means.ml" 44 897 1003 "k_means.ml" 44 897 1004
 type(
   int -> int -> int
 )
 ident(
   ext_ref Pervasives.( * )
 )
-"k_means.ml" 40 764 876 "k_means.ml" 40 764 877
+"k_means.ml" 44 897 1004 "k_means.ml" 44 897 1005
 type(
   int
 )
 ident(
-  int_ref s "k_means.ml" 37 686 712 "k_means.ml" 37 686 713
+  int_ref s "k_means.ml" 42 841 867 "k_means.ml" 42 841 868
 )
-"k_means.ml" 40 764 873 "k_means.ml" 40 764 878
+"k_means.ml" 44 897 1001 "k_means.ml" 44 897 1006
 type(
   int
 )
-"k_means.ml" 40 764 880 "k_means.ml" 40 764 881
+"k_means.ml" 44 897 1008 "k_means.ml" 44 897 1009
 type(
   int
 )
 ident(
-  int_ref m "k_means.ml" 34 612 620 "k_means.ml" 34 612 621
+  int_ref m "k_means.ml" 39 767 775 "k_means.ml" 39 767 776
 )
-"k_means.ml" 40 764 881 "k_means.ml" 40 764 882
+"k_means.ml" 44 897 1009 "k_means.ml" 44 897 1010
 type(
   int -> int -> int
 )
 ident(
   ext_ref Pervasives.( - )
 )
-"k_means.ml" 40 764 882 "k_means.ml" 40 764 883
+"k_means.ml" 44 897 1010 "k_means.ml" 44 897 1011
 type(
   int
 )
-"k_means.ml" 40 764 879 "k_means.ml" 40 764 884
+"k_means.ml" 44 897 1007 "k_means.ml" 44 897 1012
 type(
   int
 )
-"k_means.ml" 40 764 860 "k_means.ml" 40 764 885
+"k_means.ml" 44 897 988 "k_means.ml" 44 897 1013
+call(
+  stack
+)
 type(
   'b array
 )
-"k_means.ml" 40 764 889 "k_means.ml" 40 764 892
+"k_means.ml" 44 897 1017 "k_means.ml" 44 897 1020
 type(
   'b array list
 )
 ident(
-  int_ref acc "k_means.ml" 37 686 708 "k_means.ml" 37 686 711
+  int_ref acc "k_means.ml" 42 841 863 "k_means.ml" 42 841 866
 )
-"k_means.ml" 40 764 859 "k_means.ml" 40 764 893
+"k_means.ml" 44 897 987 "k_means.ml" 44 897 1021
 type(
   'b array list
 )
-"k_means.ml" 40 764 895 "k_means.ml" 40 764 896
+"k_means.ml" 44 897 1023 "k_means.ml" 44 897 1024
 type(
   int
 )
 ident(
-  int_ref m "k_means.ml" 34 612 620 "k_means.ml" 34 612 621
+  int_ref m "k_means.ml" 39 767 775 "k_means.ml" 39 767 776
 )
-"k_means.ml" 40 764 896 "k_means.ml" 40 764 897
+"k_means.ml" 44 897 1024 "k_means.ml" 44 897 1025
 type(
   int -> int -> int
 )
 ident(
   ext_ref Pervasives.( - )
 )
-"k_means.ml" 40 764 897 "k_means.ml" 40 764 898
+"k_means.ml" 44 897 1025 "k_means.ml" 44 897 1026
 type(
   int
 )
-"k_means.ml" 40 764 894 "k_means.ml" 40 764 899
+"k_means.ml" 44 897 1022 "k_means.ml" 44 897 1027
 type(
   int
 )
-"k_means.ml" 40 764 845 "k_means.ml" 40 764 899
+"k_means.ml" 44 897 973 "k_means.ml" 44 897 1027
+call(
+  tail
+)
 type(
   'b array list
 )
-"k_means.ml" 40 764 777 "k_means.ml" 40 764 899
+"k_means.ml" 43 872 895 "k_means.ml" 45 1028 1035
 type(
   'b array list
 )
-"k_means.ml" 38 717 723 "k_means.ml" 40 764 899
+"k_means.ml" 46 1036 1047 "k_means.ml" 46 1036 1055
+type(
+  'b array list -> 'b array list
+)
+ident(
+  ext_ref List.rev
+)
+"k_means.ml" 46 1036 1056 "k_means.ml" 46 1036 1059
 type(
   'b array list
 )
-"k_means.ml" 42 908 912 "k_means.ml" 42 908 917
+ident(
+  int_ref acc "k_means.ml" 42 841 863 "k_means.ml" 42 841 866
+)
+"k_means.ml" 46 1036 1047 "k_means.ml" 46 1036 1059
+call(
+  tail
+)
+type(
+  'b array list
+)
+"k_means.ml" 43 872 878 "k_means.ml" 46 1036 1059
+type(
+  'b array list
+)
+"k_means.ml" 48 1068 1072 "k_means.ml" 48 1068 1077
 type(
   'a array -> int -> 'a array list -> int -> 'a array list
 )
 ident(
-  int_ref split "k_means.ml" 37 686 698 "k_means.ml" 37 686 703
+  int_ref split "k_means.ml" 42 841 853 "k_means.ml" 42 841 858
 )
-"k_means.ml" 42 908 918 "k_means.ml" 42 908 919
+"k_means.ml" 48 1068 1078 "k_means.ml" 48 1068 1079
 type(
   'a array
 )
 ident(
-  int_ref a "k_means.ml" 32 517 539 "k_means.ml" 32 517 540
+  int_ref a "k_means.ml" 37 672 694 "k_means.ml" 37 672 695
 )
-"k_means.ml" 42 908 920 "k_means.ml" 42 908 921
+"k_means.ml" 48 1068 1080 "k_means.ml" 48 1068 1081
 type(
   int
 )
-"k_means.ml" 42 908 922 "k_means.ml" 42 908 924
+"k_means.ml" 48 1068 1082 "k_means.ml" 48 1068 1084
 type(
   'a array list
 )
-"k_means.ml" 42 908 925 "k_means.ml" 42 908 926
+"k_means.ml" 48 1068 1085 "k_means.ml" 48 1068 1086
 type(
   int
 )
 ident(
-  int_ref m "k_means.ml" 34 612 620 "k_means.ml" 34 612 621
+  int_ref m "k_means.ml" 39 767 775 "k_means.ml" 39 767 776
 )
-"k_means.ml" 42 908 912 "k_means.ml" 42 908 926
-type(
-  'a array list
-)
-"k_means.ml" 37 686 690 "k_means.ml" 42 908 926
-type(
-  'a array list
-)
-"k_means.ml" 36 662 666 "k_means.ml" 42 908 926
-type(
-  'a array list
-)
-"k_means.ml" 35 638 642 "k_means.ml" 42 908 926
-type(
-  'a array list
-)
-"k_means.ml" 34 612 616 "k_means.ml" 42 908 926
-type(
-  'a array list
-)
-"k_means.ml" 33 582 586 "k_means.ml" 42 908 926
-type(
-  'a array list
+"k_means.ml" 48 1068 1072 "k_means.ml" 48 1068 1086
+call(
+  tail
 )
 type(
   'a array list
 )
-"k_means.ml" 45 929 935 "k_means.ml" 45 929 947
+"k_means.ml" 42 841 845 "k_means.ml" 48 1068 1086
+type(
+  'a array list
+)
+"k_means.ml" 41 817 821 "k_means.ml" 48 1068 1086
+type(
+  'a array list
+)
+"k_means.ml" 40 793 797 "k_means.ml" 48 1068 1086
+type(
+  'a array list
+)
+"k_means.ml" 39 767 771 "k_means.ml" 48 1068 1086
+type(
+  'a array list
+)
+"k_means.ml" 38 737 741 "k_means.ml" 48 1068 1086
+type(
+  'a array list
+)
+type(
+  'a array list
+)
+"k_means.ml" 51 1089 1095 "k_means.ml" 51 1089 1107
 type(
   ?n_p:int -> ('c -> 'd) -> 'c array -> 'd array
 )
 ident(
-  def parallel_map "k_means.ml" 49 1056 1058 "k_means.ml" 150 4271 4274
+  def parallel_map "k_means.ml" 55 1216 1218 "k_means.ml" 123 3224 3227
 )
-"k_means.ml" 45 929 950 "k_means.ml" 45 929 953
+"k_means.ml" 51 1089 1110 "k_means.ml" 51 1089 1113
 type(
   int
 )
-"k_means.ml" 45 929 956 "k_means.ml" 45 929 957
+"k_means.ml" 51 1089 1116 "k_means.ml" 51 1089 1117
 type(
   int ref -> int
 )
 ident(
   ext_ref Pervasives.( ! )
 )
-"k_means.ml" 45 929 957 "k_means.ml" 45 929 971
+"k_means.ml" 51 1089 1117 "k_means.ml" 51 1089 1131
 type(
   int ref
 )
 ident(
-  int_ref number_of_proc "k_means.ml" 30 484 490 "k_means.ml" 30 484 504
+  int_ref number_of_proc "k_means.ml" 35 641 647 "k_means.ml" 35 641 661
 )
-"k_means.ml" 45 929 956 "k_means.ml" 45 929 971
+"k_means.ml" 51 1089 1116 "k_means.ml" 51 1089 1131
 type(
   int
 )
@@ -907,7 +1080,7 @@ type(
   int
 )
 ident(
-  int_ref *sth* "k_means.ml" 45 929 956 "k_means.ml" 45 929 971
+  int_ref *sth* "k_means.ml" 51 1089 1116 "k_means.ml" 51 1089 1131
 )
 type(
   int option
@@ -918,131 +1091,142 @@ type(
 type(
   int
 )
-"k_means.ml" 45 929 973 "k_means.ml" 45 929 974
+"k_means.ml" 51 1089 1133 "k_means.ml" 51 1089 1134
 type(
   'c -> 'd
 )
 ident(
-  def f "k_means.ml" 45 929 975 "k_means.ml" 46 979 1053
+  def f "k_means.ml" 51 1089 1135 "k_means.ml" 52 1139 1213
 )
-"k_means.ml" 45 929 975 "k_means.ml" 45 929 976
+"k_means.ml" 51 1089 1135 "k_means.ml" 51 1089 1136
 type(
   'c array
 )
 ident(
-  def a "k_means.ml" 46 979 983 "k_means.ml" 46 979 1053
+  def a "k_means.ml" 52 1139 1143 "k_means.ml" 52 1139 1213
 )
-"k_means.ml" 46 979 983 "k_means.ml" 46 979 995
+"k_means.ml" 52 1139 1143 "k_means.ml" 52 1139 1155
 type(
   'd array list -> 'd array
 )
 ident(
   ext_ref Array.concat
 )
-"k_means.ml" 46 979 997 "k_means.ml" 46 979 1004
+"k_means.ml" 52 1139 1157 "k_means.ml" 52 1139 1164
 type(
   ('c array -> 'd array) -> 'c array list -> 'd array list
 )
 ident(
   ext_ref Lib.par_map
 )
-"k_means.ml" 46 979 1010 "k_means.ml" 46 979 1011
+"k_means.ml" 52 1139 1170 "k_means.ml" 52 1139 1171
 type(
   'c array
 )
 ident(
-  def x "k_means.ml" 46 979 1015 "k_means.ml" 46 979 1028
+  def x "k_means.ml" 52 1139 1175 "k_means.ml" 52 1139 1188
 )
-"k_means.ml" 46 979 1015 "k_means.ml" 46 979 1024
+"k_means.ml" 52 1139 1175 "k_means.ml" 52 1139 1184
 type(
   ('c -> 'd) -> 'c array -> 'd array
 )
 ident(
   ext_ref Array.map
 )
-"k_means.ml" 46 979 1025 "k_means.ml" 46 979 1026
+"k_means.ml" 52 1139 1185 "k_means.ml" 52 1139 1186
 type(
   'c -> 'd
 )
 ident(
-  int_ref f "k_means.ml" 45 929 973 "k_means.ml" 45 929 974
+  int_ref f "k_means.ml" 51 1089 1133 "k_means.ml" 51 1089 1134
 )
-"k_means.ml" 46 979 1027 "k_means.ml" 46 979 1028
+"k_means.ml" 52 1139 1187 "k_means.ml" 52 1139 1188
 type(
   'c array
 )
 ident(
-  int_ref x "k_means.ml" 46 979 1010 "k_means.ml" 46 979 1011
+  int_ref x "k_means.ml" 52 1139 1170 "k_means.ml" 52 1139 1171
 )
-"k_means.ml" 46 979 1015 "k_means.ml" 46 979 1028
+"k_means.ml" 52 1139 1175 "k_means.ml" 52 1139 1188
+call(
+  tail
+)
 type(
   'd array
 )
-"k_means.ml" 46 979 1005 "k_means.ml" 46 979 1029
+"k_means.ml" 52 1139 1165 "k_means.ml" 52 1139 1189
 type(
   'c array -> 'd array
 )
-"k_means.ml" 46 979 1031 "k_means.ml" 46 979 1045
+"k_means.ml" 52 1139 1191 "k_means.ml" 52 1139 1205
 type(
   'c array -> int -> 'c array list
 )
 ident(
-  int_ref split_workload "k_means.ml" 32 517 523 "k_means.ml" 32 517 537
+  int_ref split_workload "k_means.ml" 37 672 678 "k_means.ml" 37 672 692
 )
-"k_means.ml" 46 979 1046 "k_means.ml" 46 979 1047
+"k_means.ml" 52 1139 1206 "k_means.ml" 52 1139 1207
 type(
   'c array
 )
 ident(
-  int_ref a "k_means.ml" 45 929 975 "k_means.ml" 45 929 976
+  int_ref a "k_means.ml" 51 1089 1135 "k_means.ml" 51 1089 1136
 )
-"k_means.ml" 46 979 1048 "k_means.ml" 46 979 1051
+"k_means.ml" 52 1139 1208 "k_means.ml" 52 1139 1211
 type(
   int
 )
 ident(
-  int_ref n_p "k_means.ml" 45 929 950 "k_means.ml" 45 929 953
+  int_ref n_p "k_means.ml" 51 1089 1110 "k_means.ml" 51 1089 1113
 )
-"k_means.ml" 46 979 1030 "k_means.ml" 46 979 1052
+"k_means.ml" 52 1139 1190 "k_means.ml" 52 1139 1212
+call(
+  stack
+)
 type(
   'c array list
 )
-"k_means.ml" 46 979 996 "k_means.ml" 46 979 1053
+"k_means.ml" 52 1139 1156 "k_means.ml" 52 1139 1213
+call(
+  stack
+)
 type(
   'd array list
 )
-"k_means.ml" 46 979 983 "k_means.ml" 46 979 1053
+"k_means.ml" 52 1139 1143 "k_means.ml" 52 1139 1213
+call(
+  tail
+)
 type(
   'd array
 )
-"k_means.ml" 49 1056 1062 "k_means.ml" 49 1056 1079
+"k_means.ml" 55 1216 1222 "k_means.ml" 55 1216 1239
 type(
   ?n_p:int ->
-  ('a0 -> 'a0 * 'a0 -> bool) ->
-  ('a0 * 'a0) array -> 'a0 array -> 'a0 list array
+  ('e -> 'f * 'a0 -> bool) -> ('f * 'a0) array -> 'e array -> 'a0 list array
 )
 ident(
-  def parallel_group_by "k_means.ml" 69 1755 1757 "k_means.ml" 150 4271 4274
+  def parallel_group_by "k_means.ml" 61 1455 1457 "k_means.ml" 123 3224 3227
 )
-"k_means.ml" 49 1056 1082 "k_means.ml" 49 1056 1085
+"k_means.ml" 55 1216 1242 "k_means.ml" 55 1216 1245
 type(
   int
 )
-"k_means.ml" 49 1056 1088 "k_means.ml" 49 1056 1089
+"k_means.ml" 55 1216 1248 "k_means.ml" 55 1216 1249
 type(
   int ref -> int
 )
 ident(
   ext_ref Pervasives.( ! )
 )
-"k_means.ml" 49 1056 1089 "k_means.ml" 49 1056 1103
+"k_means.ml" 55 1216 1249 "k_means.ml" 55 1216 1263
 type(
   int ref
 )
 ident(
-  int_ref number_of_proc "k_means.ml" 30 484 490 "k_means.ml" 30 484 504
+  int_ref number_of_proc "k_means.ml" 35 641 647 "k_means.ml" 35 641 661
 )
-"k_means.ml" 49 1056 1088 "k_means.ml" 49 1056 1103
+"k_means.ml" 55 1216 1248 "k_means.ml" 55 1216 1263
 type(
   int
 )
@@ -1050,7 +1234,7 @@ type(
   int
 )
 ident(
-  int_ref *sth* "k_means.ml" 49 1056 1088 "k_means.ml" 49 1056 1103
+  int_ref *sth* "k_means.ml" 55 1216 1248 "k_means.ml" 55 1216 1263
 )
 type(
   int option
@@ -1061,1543 +1245,1615 @@ type(
 type(
   int
 )
-"k_means.ml" 49 1056 1105 "k_means.ml" 49 1056 1106
+"k_means.ml" 55 1216 1265 "k_means.ml" 55 1216 1266
 type(
-  'a0 -> 'a0 * 'a0 -> bool
+  'e -> 'f * 'a0 -> bool
 )
 ident(
-  def f "k_means.ml" 49 1056 1107 "k_means.ml" 54 1365 1457
+  def f "k_means.ml" 55 1216 1267 "k_means.ml" 58 1366 1446
 )
-"k_means.ml" 49 1056 1107 "k_means.ml" 49 1056 1108
+"k_means.ml" 55 1216 1267 "k_means.ml" 55 1216 1268
 type(
-  ('a0 * 'a0) array
+  ('f * 'a0) array
 )
 ident(
-  def a "k_means.ml" 49 1056 1109 "k_means.ml" 54 1365 1457
+  def a "k_means.ml" 55 1216 1269 "k_means.ml" 58 1366 1446
 )
-"k_means.ml" 49 1056 1109 "k_means.ml" 49 1056 1124
+"k_means.ml" 55 1216 1269 "k_means.ml" 55 1216 1284
 type(
-  'a0 array
+  'e array
 )
 ident(
-  def possible_values "k_means.ml" 50 1127 1131 "k_means.ml" 54 1365 1457
+  def possible_values "k_means.ml" 56 1287 1291 "k_means.ml" 58 1366 1446
 )
-"k_means.ml" 50 1127 1135 "k_means.ml" 50 1127 1146
+"k_means.ml" 56 1287 1295 "k_means.ml" 56 1287 1306
 type(
-  'a0 -> 'a0 list -> 'a0 * 'a0 -> 'a0 list
+  'e -> 'a0 list -> 'f * 'a0 -> 'a0 list
 )
 ident(
-  def s_partition "k_means.ml" 52 1237 1241 "k_means.ml" 54 1365 1457
+  def s_partition "k_means.ml" 58 1366 1370 "k_means.ml" 58 1366 1446
 )
-"k_means.ml" 50 1127 1148 "k_means.ml" 50 1127 1149
+"k_means.ml" 56 1287 1307 "k_means.ml" 56 1287 1308
 type(
-  'a0
+  'e
 )
 ident(
-  def x "k_means.ml" 50 1127 1156 "k_means.ml" 50 1127 1228
+  def x "k_means.ml" 56 1287 1309 "k_means.ml" 56 1287 1357
 )
-"k_means.ml" 50 1127 1157 "k_means.ml" 50 1127 1158
+"k_means.ml" 56 1287 1309 "k_means.ml" 56 1287 1310
 type(
   'a0 list
 )
 ident(
-  def l "k_means.ml" 50 1127 1169 "k_means.ml" 50 1127 1228
+  def l "k_means.ml" 56 1287 1311 "k_means.ml" 56 1287 1357
 )
-"k_means.ml" 50 1127 1170 "k_means.ml" 50 1127 1171
+"k_means.ml" 56 1287 1311 "k_means.ml" 56 1287 1312
 type(
-  'a0 * 'a0
+  'f * 'a0
 )
 ident(
-  def b "k_means.ml" 50 1127 1183 "k_means.ml" 50 1127 1228
+  def b "k_means.ml" 56 1287 1312 "k_means.ml" 56 1287 1357
 )
-"k_means.ml" 50 1127 1199 "k_means.ml" 50 1127 1200
+"k_means.ml" 56 1287 1328 "k_means.ml" 56 1287 1329
 type(
-  'a0 -> 'a0 * 'a0 -> bool
+  'e -> 'f * 'a0 -> bool
 )
 ident(
-  int_ref f "k_means.ml" 49 1056 1105 "k_means.ml" 49 1056 1106
+  int_ref f "k_means.ml" 55 1216 1265 "k_means.ml" 55 1216 1266
 )
-"k_means.ml" 50 1127 1201 "k_means.ml" 50 1127 1202
+"k_means.ml" 56 1287 1330 "k_means.ml" 56 1287 1331
 type(
-  'a0
+  'e
 )
 ident(
-  int_ref x "k_means.ml" 50 1127 1148 "k_means.ml" 50 1127 1149
+  int_ref x "k_means.ml" 56 1287 1307 "k_means.ml" 56 1287 1308
 )
-"k_means.ml" 50 1127 1203 "k_means.ml" 50 1127 1204
+"k_means.ml" 56 1287 1332 "k_means.ml" 56 1287 1333
 type(
-  'a0 * 'a0
+  'f * 'a0
 )
 ident(
-  int_ref b "k_means.ml" 50 1127 1170 "k_means.ml" 50 1127 1171
+  int_ref b "k_means.ml" 56 1287 1311 "k_means.ml" 56 1287 1312
 )
-"k_means.ml" 50 1127 1198 "k_means.ml" 50 1127 1205
+"k_means.ml" 56 1287 1327 "k_means.ml" 56 1287 1334
+call(
+  stack
+)
 type(
   bool
 )
-"k_means.ml" 50 1127 1212 "k_means.ml" 50 1127 1215
+"k_means.ml" 56 1287 1341 "k_means.ml" 56 1287 1344
 type(
-  'a0 * 'a0 -> 'a0
+  'f * 'a0 -> 'a0
 )
 ident(
   ext_ref Pervasives.snd
 )
-"k_means.ml" 50 1127 1216 "k_means.ml" 50 1127 1217
+"k_means.ml" 56 1287 1345 "k_means.ml" 56 1287 1346
 type(
-  'a0 * 'a0
+  'f * 'a0
 )
 ident(
-  int_ref b "k_means.ml" 50 1127 1170 "k_means.ml" 50 1127 1171
+  int_ref b "k_means.ml" 56 1287 1311 "k_means.ml" 56 1287 1312
 )
-"k_means.ml" 50 1127 1211 "k_means.ml" 50 1127 1218
+"k_means.ml" 56 1287 1340 "k_means.ml" 56 1287 1347
 type(
   'a0
 )
-"k_means.ml" 50 1127 1220 "k_means.ml" 50 1127 1221
+"k_means.ml" 56 1287 1349 "k_means.ml" 56 1287 1350
 type(
   'a0 list
 )
 ident(
-  int_ref l "k_means.ml" 50 1127 1157 "k_means.ml" 50 1127 1158
+  int_ref l "k_means.ml" 56 1287 1309 "k_means.ml" 56 1287 1310
 )
-"k_means.ml" 50 1127 1211 "k_means.ml" 50 1127 1221
+"k_means.ml" 56 1287 1340 "k_means.ml" 56 1287 1350
 type(
   'a0 list
 )
-"k_means.ml" 50 1127 1227 "k_means.ml" 50 1127 1228
+"k_means.ml" 56 1287 1356 "k_means.ml" 56 1287 1357
 type(
   'a0 list
 )
 ident(
-  int_ref l "k_means.ml" 50 1127 1157 "k_means.ml" 50 1127 1158
+  int_ref l "k_means.ml" 56 1287 1309 "k_means.ml" 56 1287 1310
 )
-"k_means.ml" 50 1127 1195 "k_means.ml" 50 1127 1228
+"k_means.ml" 56 1287 1324 "k_means.ml" 56 1287 1357
 type(
   'a0 list
 )
 type(
   'a0 list
 )
-"k_means.ml" 52 1237 1245 "k_means.ml" 52 1237 1251
+"k_means.ml" 58 1366 1370 "k_means.ml" 58 1366 1382
 type(
-  int
+  ?n_p:int -> ('e -> 'a0 list) -> 'e array -> 'a0 list array
 )
 ident(
-  def outter "k_means.ml" 53 1296 1300 "k_means.ml" 54 1365 1457
+  int_ref parallel_map "k_means.ml" 51 1089 1095 "k_means.ml" 51 1089 1107
 )
-"k_means.ml" 52 1237 1254 "k_means.ml" 52 1237 1257
+"k_means.ml" 58 1366 1388 "k_means.ml" 58 1366 1389
 type(
-  int -> int -> int
+  'e
 )
 ident(
-  ext_ref Pervasives.min
+  def x "k_means.ml" 58 1366 1393 "k_means.ml" 58 1366 1429
 )
-"k_means.ml" 52 1237 1258 "k_means.ml" 52 1237 1261
+"k_means.ml" 58 1366 1393 "k_means.ml" 58 1366 1408
 type(
-  int
-)
-ident(
-  int_ref n_p "k_means.ml" 49 1056 1082 "k_means.ml" 49 1056 1085
-)
-"k_means.ml" 52 1237 1263 "k_means.ml" 52 1237 1275
-type(
-  'a0 array -> int
-)
-ident(
-  ext_ref Array.length
-)
-"k_means.ml" 52 1237 1276 "k_means.ml" 52 1237 1291
-type(
-  'a0 array
-)
-ident(
-  int_ref possible_values "k_means.ml" 49 1056 1109 "k_means.ml" 49 1056 1124
-)
-"k_means.ml" 52 1237 1262 "k_means.ml" 52 1237 1292
-type(
-  int
-)
-"k_means.ml" 52 1237 1254 "k_means.ml" 52 1237 1292
-type(
-  int
-)
-"k_means.ml" 53 1296 1304 "k_means.ml" 53 1296 1309
-type(
-  int
-)
-ident(
-  def inner "k_means.ml" 54 1365 1369 "k_means.ml" 54 1365 1457
-)
-"k_means.ml" 53 1296 1313 "k_means.ml" 53 1296 1316
-type(
-  int -> int -> int
-)
-ident(
-  ext_ref Pervasives.max
-)
-"k_means.ml" 53 1296 1317 "k_means.ml" 53 1296 1320
-type(
-  int
-)
-ident(
-  int_ref n_p "k_means.ml" 49 1056 1082 "k_means.ml" 49 1056 1085
-)
-"k_means.ml" 53 1296 1322 "k_means.ml" 53 1296 1334
-type(
-  'a0 array -> int
-)
-ident(
-  ext_ref Array.length
-)
-"k_means.ml" 53 1296 1335 "k_means.ml" 53 1296 1350
-type(
-  'a0 array
-)
-ident(
-  int_ref possible_values "k_means.ml" 49 1056 1109 "k_means.ml" 49 1056 1124
-)
-"k_means.ml" 53 1296 1321 "k_means.ml" 53 1296 1351
-type(
-  int
-)
-"k_means.ml" 53 1296 1312 "k_means.ml" 53 1296 1352
-type(
-  int
-)
-"k_means.ml" 53 1296 1353 "k_means.ml" 53 1296 1354
-type(
-  int -> int -> int
-)
-ident(
-  ext_ref Pervasives.( / )
-)
-"k_means.ml" 53 1296 1355 "k_means.ml" 53 1296 1361
-type(
-  int
-)
-ident(
-  int_ref outter "k_means.ml" 52 1237 1245 "k_means.ml" 52 1237 1251
-)
-"k_means.ml" 53 1296 1312 "k_means.ml" 53 1296 1361
-type(
-  int
-)
-"k_means.ml" 54 1365 1369 "k_means.ml" 54 1365 1381
-type(
-  ?n_p:int -> ('a0 -> 'a0 list) -> 'a0 array -> 'a0 list array
-)
-ident(
-  int_ref parallel_map "k_means.ml" 45 929 935 "k_means.ml" 45 929 947
-)
-"k_means.ml" 54 1365 1387 "k_means.ml" 54 1365 1393
-type(
-  int
-)
-ident(
-  int_ref outter "k_means.ml" 52 1237 1245 "k_means.ml" 52 1237 1251
-)
-"k_means.ml" 54 1365 1399 "k_means.ml" 54 1365 1400
-type(
-  'a0
-)
-ident(
-  def x "k_means.ml" 54 1365 1404 "k_means.ml" 54 1365 1440
-)
-"k_means.ml" 54 1365 1404 "k_means.ml" 54 1365 1419
-type(
-  ('a0 list -> 'a0 * 'a0 -> 'a0 list) ->
-  'a0 list -> ('a0 * 'a0) array -> 'a0 list
+  ('a0 list -> 'f * 'a0 -> 'a0 list) ->
+  'a0 list -> ('f * 'a0) array -> 'a0 list
 )
 ident(
   ext_ref Array.fold_left
 )
-"k_means.ml" 54 1365 1421 "k_means.ml" 54 1365 1432
+"k_means.ml" 58 1366 1410 "k_means.ml" 58 1366 1421
 type(
-  'a0 -> 'a0 list -> 'a0 * 'a0 -> 'a0 list
+  'e -> 'a0 list -> 'f * 'a0 -> 'a0 list
 )
 ident(
-  int_ref s_partition "k_means.ml" 50 1127 1135 "k_means.ml" 50 1127 1146
+  int_ref s_partition "k_means.ml" 56 1287 1295 "k_means.ml" 56 1287 1306
 )
-"k_means.ml" 54 1365 1433 "k_means.ml" 54 1365 1434
+"k_means.ml" 58 1366 1422 "k_means.ml" 58 1366 1423
 type(
-  'a0
+  'e
 )
 ident(
-  int_ref x "k_means.ml" 54 1365 1399 "k_means.ml" 54 1365 1400
+  int_ref x "k_means.ml" 58 1366 1388 "k_means.ml" 58 1366 1389
 )
-"k_means.ml" 54 1365 1420 "k_means.ml" 54 1365 1435
+"k_means.ml" 58 1366 1409 "k_means.ml" 58 1366 1424
+call(
+  stack
+)
 type(
-  'a0 list -> 'a0 * 'a0 -> 'a0 list
+  'a0 list -> 'f * 'a0 -> 'a0 list
 )
-"k_means.ml" 54 1365 1436 "k_means.ml" 54 1365 1438
+"k_means.ml" 58 1366 1425 "k_means.ml" 58 1366 1427
 type(
   'a0 list
 )
-"k_means.ml" 54 1365 1439 "k_means.ml" 54 1365 1440
+"k_means.ml" 58 1366 1428 "k_means.ml" 58 1366 1429
 type(
-  ('a0 * 'a0) array
+  ('f * 'a0) array
 )
 ident(
-  int_ref a "k_means.ml" 49 1056 1107 "k_means.ml" 49 1056 1108
+  int_ref a "k_means.ml" 55 1216 1267 "k_means.ml" 55 1216 1268
 )
-"k_means.ml" 54 1365 1404 "k_means.ml" 54 1365 1440
+"k_means.ml" 58 1366 1393 "k_means.ml" 58 1366 1429
+call(
+  tail
+)
 type(
   'a0 list
 )
-"k_means.ml" 54 1365 1394 "k_means.ml" 54 1365 1441
+"k_means.ml" 58 1366 1383 "k_means.ml" 58 1366 1430
 type(
-  'a0 -> 'a0 list
+  'e -> 'a0 list
 )
-"k_means.ml" 54 1365 1442 "k_means.ml" 54 1365 1457
+"k_means.ml" 58 1366 1431 "k_means.ml" 58 1366 1446
 type(
-  'a0 array
+  'e array
 )
 ident(
-  int_ref possible_values "k_means.ml" 49 1056 1109 "k_means.ml" 49 1056 1124
+  int_ref possible_values "k_means.ml" 55 1216 1269 "k_means.ml" 55 1216 1284
 )
-"k_means.ml" 54 1365 1369 "k_means.ml" 54 1365 1457
+"k_means.ml" 58 1366 1370 "k_means.ml" 58 1366 1446
+call(
+  tail
+)
 type(
   'a0 list array
 )
-"k_means.ml" 53 1296 1300 "k_means.ml" 54 1365 1457
+"k_means.ml" 56 1287 1291 "k_means.ml" 58 1366 1446
 type(
   'a0 list array
 )
-"k_means.ml" 52 1237 1241 "k_means.ml" 54 1365 1457
+"k_means.ml" 61 1455 1465 "k_means.ml" 61 1455 1493
 type(
-  'a0 list array
-)
-"k_means.ml" 50 1127 1131 "k_means.ml" 54 1365 1457
-type(
-  'a0 list array
-)
-"k_means.ml" 69 1755 1765 "k_means.ml" 69 1755 1793
-type(
-  int -> Vector.point array -> Vector.point array
+  int -> (Vector.point * label) array -> Vector.point array
 )
 ident(
-  def shuffle_and_initialize_means "k_means.ml" 69 1755 1757 "k_means.ml" 150 4271 4274
+  def shuffle_and_initialize_means "k_means.ml" 61 1455 1457 "k_means.ml" 123 3224 3227
 )
-"k_means.ml" 69 1755 1795 "k_means.ml" 69 1755 1796
+"k_means.ml" 61 1455 1495 "k_means.ml" 61 1455 1496
 type(
   int
 )
 ident(
-  def k "k_means.ml" 69 1755 1804 "k_means.ml" 96 2715 2739
+  def k "k_means.ml" 61 1455 1504 "k_means.ml" 75 1845 1901
 )
-"k_means.ml" 69 1755 1805 "k_means.ml" 69 1755 1811
+"k_means.ml" 61 1455 1505 "k_means.ml" 61 1455 1511
 type(
-  Vector.point array
+  (Vector.point * label) array
 )
 ident(
-  def points "k_means.ml" 69 1755 1827 "k_means.ml" 96 2715 2739
+  def points "k_means.ml" 61 1455 1537 "k_means.ml" 75 1845 1901
 )
-"k_means.ml" 71 1844 1852 "k_means.ml" 71 1844 1868
+"k_means.ml" 63 1554 1562 "k_means.ml" 63 1554 1578
 type(
   unit
 )
 ident(
-  def shuffle_in_place "k_means.ml" 95 2693 2697 "k_means.ml" 96 2715 2739
+  def shuffle_in_place "k_means.ml" 74 1823 1827 "k_means.ml" 75 1845 1901
 )
-"k_means.ml" 72 1871 1877 "k_means.ml" 72 1871 1893
+"k_means.ml" 64 1581 1587 "k_means.ml" 64 1581 1603
 type(
   unit -> unit
 )
 ident(
   ext_ref Random.self_init
 )
-"k_means.ml" 72 1871 1894 "k_means.ml" 72 1871 1896
+"k_means.ml" 64 1581 1604 "k_means.ml" 64 1581 1606
 type(
   unit
 )
-"k_means.ml" 72 1871 1877 "k_means.ml" 72 1871 1896
+"k_means.ml" 64 1581 1587 "k_means.ml" 64 1581 1606
+call(
+  stack
+)
 type(
   unit
 )
-"k_means.ml" 73 1898 1908 "k_means.ml" 73 1898 1909
+"k_means.ml" 65 1608 1618 "k_means.ml" 65 1608 1619
 type(
   int
 )
 ident(
-  def n "k_means.ml" 74 1935 1941 "k_means.ml" 79 2094 2104
+  def n "k_means.ml" 66 1645 1651 "k_means.ml" 71 1804 1814
 )
-"k_means.ml" 73 1898 1912 "k_means.ml" 73 1898 1924
+"k_means.ml" 65 1608 1622 "k_means.ml" 65 1608 1634
 type(
-  Vector.point array -> int
+  (Vector.point * label) array -> int
 )
 ident(
   ext_ref Array.length
 )
-"k_means.ml" 73 1898 1925 "k_means.ml" 73 1898 1931
+"k_means.ml" 65 1608 1635 "k_means.ml" 65 1608 1641
 type(
-  Vector.point array
+  (Vector.point * label) array
 )
 ident(
-  int_ref points "k_means.ml" 69 1755 1805 "k_means.ml" 69 1755 1811
+  int_ref points "k_means.ml" 61 1455 1505 "k_means.ml" 61 1455 1511
 )
-"k_means.ml" 73 1898 1912 "k_means.ml" 73 1898 1931
+"k_means.ml" 65 1608 1622 "k_means.ml" 65 1608 1641
 type(
   int
 )
-"k_means.ml" 74 1935 1949 "k_means.ml" 74 1935 1950
+"k_means.ml" 66 1645 1659 "k_means.ml" 66 1645 1660
 type(
   int
 )
-"k_means.ml" 74 1935 1954 "k_means.ml" 74 1935 1955
+"k_means.ml" 66 1645 1664 "k_means.ml" 66 1645 1665
 type(
   int
 )
 ident(
-  int_ref n "k_means.ml" 73 1898 1908 "k_means.ml" 73 1898 1909
+  int_ref n "k_means.ml" 65 1608 1618 "k_means.ml" 65 1608 1619
 )
-"k_means.ml" 74 1935 1955 "k_means.ml" 74 1935 1956
+"k_means.ml" 66 1645 1665 "k_means.ml" 66 1645 1666
 type(
   int -> int -> int
 )
 ident(
   ext_ref Pervasives.( - )
 )
-"k_means.ml" 74 1935 1956 "k_means.ml" 74 1935 1957
+"k_means.ml" 66 1645 1666 "k_means.ml" 66 1645 1667
 type(
   int
 )
-"k_means.ml" 74 1935 1954 "k_means.ml" 74 1935 1957
+"k_means.ml" 66 1645 1664 "k_means.ml" 66 1645 1667
 type(
   int
 )
-"k_means.ml" 75 1961 1973 "k_means.ml" 75 1961 1974
+"k_means.ml" 67 1671 1683 "k_means.ml" 67 1671 1684
 type(
   int
 )
 ident(
-  def k "k_means.ml" 76 1997 2005 "k_means.ml" 78 2065 2092
+  def k "k_means.ml" 68 1707 1715 "k_means.ml" 70 1775 1802
 )
-"k_means.ml" 75 1961 1977 "k_means.ml" 75 1961 1987
+"k_means.ml" 67 1671 1687 "k_means.ml" 67 1671 1697
 type(
   int -> int
 )
 ident(
   ext_ref Random.int
 )
-"k_means.ml" 75 1961 1989 "k_means.ml" 75 1961 1990
+"k_means.ml" 67 1671 1699 "k_means.ml" 67 1671 1700
 type(
   int
 )
 ident(
-  int_ref n "k_means.ml" 73 1898 1908 "k_means.ml" 73 1898 1909
+  int_ref n "k_means.ml" 65 1608 1618 "k_means.ml" 65 1608 1619
 )
-"k_means.ml" 75 1961 1990 "k_means.ml" 75 1961 1991
+"k_means.ml" 67 1671 1700 "k_means.ml" 67 1671 1701
 type(
   int -> int -> int
 )
 ident(
   ext_ref Pervasives.( - )
 )
-"k_means.ml" 75 1961 1991 "k_means.ml" 75 1961 1992
+"k_means.ml" 67 1671 1701 "k_means.ml" 67 1671 1702
 type(
   int
 )
 ident(
-  int_ref i "k_means.ml" 74 1935 1941 "k_means.ml" 79 2094 2104
+  int_ref i "k_means.ml" 66 1645 1651 "k_means.ml" 71 1804 1814
 )
-"k_means.ml" 75 1961 1988 "k_means.ml" 75 1961 1993
+"k_means.ml" 67 1671 1698 "k_means.ml" 67 1671 1703
 type(
   int
 )
-"k_means.ml" 75 1961 1977 "k_means.ml" 75 1961 1993
+"k_means.ml" 67 1671 1687 "k_means.ml" 67 1671 1703
+call(
+  stack
+)
 type(
   int
 )
-"k_means.ml" 76 1997 2009 "k_means.ml" 76 1997 2012
+"k_means.ml" 68 1707 1719 "k_means.ml" 68 1707 1722
 type(
-  Vector.point
+  Vector.point * label
 )
 ident(
-  def tmp "k_means.ml" 77 2029 2037 "k_means.ml" 78 2065 2092
+  def tmp "k_means.ml" 69 1739 1747 "k_means.ml" 70 1775 1802
 )
-"k_means.ml" 76 1997 2015 "k_means.ml" 76 1997 2021
+"k_means.ml" 68 1707 1725 "k_means.ml" 68 1707 1731
 type(
-  Vector.point array
+  (Vector.point * label) array
 )
 ident(
-  int_ref points "k_means.ml" 69 1755 1805 "k_means.ml" 69 1755 1811
+  int_ref points "k_means.ml" 61 1455 1505 "k_means.ml" 61 1455 1511
 )
-"k_means.ml" 76 1997 2023 "k_means.ml" 76 1997 2024
-type(
-  int
-)
-ident(
-  int_ref i "k_means.ml" 74 1935 1941 "k_means.ml" 79 2094 2104
-)
-"k_means.ml" 76 1997 2015 "k_means.ml" 76 1997 2025
-type(
-  Vector.point
-)
-"k_means.ml" 77 2029 2037 "k_means.ml" 77 2029 2043
-type(
-  Vector.point array
-)
-ident(
-  int_ref points "k_means.ml" 69 1755 1805 "k_means.ml" 69 1755 1811
-)
-"k_means.ml" 77 2029 2045 "k_means.ml" 77 2029 2046
+"k_means.ml" 68 1707 1733 "k_means.ml" 68 1707 1734
 type(
   int
 )
 ident(
-  int_ref i "k_means.ml" 74 1935 1941 "k_means.ml" 79 2094 2104
+  int_ref i "k_means.ml" 66 1645 1651 "k_means.ml" 71 1804 1814
 )
-"k_means.ml" 77 2029 2051 "k_means.ml" 77 2029 2057
+"k_means.ml" 68 1707 1725 "k_means.ml" 68 1707 1735
 type(
-  Vector.point array
+  Vector.point * label
+)
+"k_means.ml" 69 1739 1747 "k_means.ml" 69 1739 1753
+type(
+  (Vector.point * label) array
 )
 ident(
-  int_ref points "k_means.ml" 69 1755 1805 "k_means.ml" 69 1755 1811
+  int_ref points "k_means.ml" 61 1455 1505 "k_means.ml" 61 1455 1511
 )
-"k_means.ml" 77 2029 2059 "k_means.ml" 77 2029 2060
+"k_means.ml" 69 1739 1755 "k_means.ml" 69 1739 1756
 type(
   int
 )
 ident(
-  int_ref i "k_means.ml" 74 1935 1941 "k_means.ml" 79 2094 2104
+  int_ref i "k_means.ml" 66 1645 1651 "k_means.ml" 71 1804 1814
 )
-"k_means.ml" 77 2029 2060 "k_means.ml" 77 2029 2061
+"k_means.ml" 69 1739 1761 "k_means.ml" 69 1739 1767
+type(
+  (Vector.point * label) array
+)
+ident(
+  int_ref points "k_means.ml" 61 1455 1505 "k_means.ml" 61 1455 1511
+)
+"k_means.ml" 69 1739 1769 "k_means.ml" 69 1739 1770
+type(
+  int
+)
+ident(
+  int_ref i "k_means.ml" 66 1645 1651 "k_means.ml" 71 1804 1814
+)
+"k_means.ml" 69 1739 1770 "k_means.ml" 69 1739 1771
 type(
   int -> int -> int
 )
 ident(
   ext_ref Pervasives.( + )
 )
-"k_means.ml" 77 2029 2061 "k_means.ml" 77 2029 2062
+"k_means.ml" 69 1739 1771 "k_means.ml" 69 1739 1772
 type(
   int
 )
 ident(
-  int_ref k "k_means.ml" 75 1961 1973 "k_means.ml" 75 1961 1974
+  int_ref k "k_means.ml" 67 1671 1683 "k_means.ml" 67 1671 1684
 )
-"k_means.ml" 77 2029 2059 "k_means.ml" 77 2029 2062
+"k_means.ml" 69 1739 1769 "k_means.ml" 69 1739 1772
 type(
   int
 )
-"k_means.ml" 77 2029 2051 "k_means.ml" 77 2029 2063
+"k_means.ml" 69 1739 1761 "k_means.ml" 69 1739 1773
 type(
-  Vector.point
+  Vector.point * label
 )
-"k_means.ml" 77 2029 2037 "k_means.ml" 77 2029 2063
+"k_means.ml" 69 1739 1747 "k_means.ml" 69 1739 1773
 type(
   unit
 )
-"k_means.ml" 78 2065 2073 "k_means.ml" 78 2065 2079
+"k_means.ml" 70 1775 1783 "k_means.ml" 70 1775 1789
 type(
-  Vector.point array
+  (Vector.point * label) array
 )
 ident(
-  int_ref points "k_means.ml" 69 1755 1805 "k_means.ml" 69 1755 1811
+  int_ref points "k_means.ml" 61 1455 1505 "k_means.ml" 61 1455 1511
 )
-"k_means.ml" 78 2065 2081 "k_means.ml" 78 2065 2082
+"k_means.ml" 70 1775 1791 "k_means.ml" 70 1775 1792
 type(
   int
 )
 ident(
-  int_ref i "k_means.ml" 74 1935 1941 "k_means.ml" 79 2094 2104
+  int_ref i "k_means.ml" 66 1645 1651 "k_means.ml" 71 1804 1814
 )
-"k_means.ml" 78 2065 2082 "k_means.ml" 78 2065 2083
+"k_means.ml" 70 1775 1792 "k_means.ml" 70 1775 1793
 type(
   int -> int -> int
 )
 ident(
   ext_ref Pervasives.( + )
 )
-"k_means.ml" 78 2065 2083 "k_means.ml" 78 2065 2084
+"k_means.ml" 70 1775 1793 "k_means.ml" 70 1775 1794
 type(
   int
 )
 ident(
-  int_ref k "k_means.ml" 75 1961 1973 "k_means.ml" 75 1961 1974
+  int_ref k "k_means.ml" 67 1671 1683 "k_means.ml" 67 1671 1684
 )
-"k_means.ml" 78 2065 2081 "k_means.ml" 78 2065 2084
+"k_means.ml" 70 1775 1791 "k_means.ml" 70 1775 1794
 type(
   int
 )
-"k_means.ml" 78 2065 2089 "k_means.ml" 78 2065 2092
+"k_means.ml" 70 1775 1799 "k_means.ml" 70 1775 1802
 type(
-  Vector.point
+  Vector.point * label
 )
 ident(
-  int_ref tmp "k_means.ml" 76 1997 2009 "k_means.ml" 76 1997 2012
+  int_ref tmp "k_means.ml" 68 1707 1719 "k_means.ml" 68 1707 1722
 )
-"k_means.ml" 78 2065 2073 "k_means.ml" 78 2065 2092
+"k_means.ml" 70 1775 1783 "k_means.ml" 70 1775 1802
 type(
   unit
 )
-"k_means.ml" 77 2029 2037 "k_means.ml" 78 2065 2092
+"k_means.ml" 69 1739 1747 "k_means.ml" 70 1775 1802
 type(
   unit
 )
-"k_means.ml" 76 1997 2005 "k_means.ml" 78 2065 2092
+"k_means.ml" 68 1707 1715 "k_means.ml" 70 1775 1802
 type(
   unit
 )
-"k_means.ml" 75 1961 1969 "k_means.ml" 78 2065 2092
+"k_means.ml" 67 1671 1679 "k_means.ml" 70 1775 1802
 type(
   unit
 )
-"k_means.ml" 74 1935 1941 "k_means.ml" 79 2094 2104
+"k_means.ml" 66 1645 1651 "k_means.ml" 71 1804 1814
 type(
   unit
 )
-"k_means.ml" 73 1898 1904 "k_means.ml" 79 2094 2104
+"k_means.ml" 65 1608 1614 "k_means.ml" 71 1804 1814
 type(
   unit
 )
-"k_means.ml" 72 1871 1877 "k_means.ml" 79 2094 2104
+"k_means.ml" 64 1581 1587 "k_means.ml" 71 1804 1814
 type(
   unit
 )
-"k_means.ml" 95 2693 2697 "k_means.ml" 95 2693 2713
+"k_means.ml" 74 1823 1827 "k_means.ml" 74 1823 1843
 type(
   unit
 )
 ident(
-  int_ref shuffle_in_place "k_means.ml" 71 1844 1852 "k_means.ml" 71 1844 1868
+  int_ref shuffle_in_place "k_means.ml" 63 1554 1562 "k_means.ml" 63 1554 1578
 )
-"k_means.ml" 96 2715 2719 "k_means.ml" 96 2715 2728
-type(
-  Vector.point array -> int -> int -> Vector.point array
-)
-ident(
-  ext_ref Array.sub
-)
-"k_means.ml" 96 2715 2729 "k_means.ml" 96 2715 2735
-type(
-  Vector.point array
-)
-ident(
-  int_ref points "k_means.ml" 69 1755 1805 "k_means.ml" 69 1755 1811
-)
-"k_means.ml" 96 2715 2736 "k_means.ml" 96 2715 2737
-type(
-  int
-)
-"k_means.ml" 96 2715 2738 "k_means.ml" 96 2715 2739
-type(
-  int
-)
-ident(
-  int_ref k "k_means.ml" 69 1755 1795 "k_means.ml" 69 1755 1796
-)
-"k_means.ml" 96 2715 2719 "k_means.ml" 96 2715 2739
-type(
-  Vector.point array
-)
-"k_means.ml" 95 2693 2697 "k_means.ml" 96 2715 2739
-type(
-  Vector.point array
-)
-"k_means.ml" 71 1844 1848 "k_means.ml" 96 2715 2739
-type(
-  Vector.point array
-)
-type(
-  Vector.point array
-)
-"k_means.ml" 99 2742 2748 "k_means.ml" 99 2742 2756
-type(
-  Vector.point array ->
-  Vector.point array ->
-  (Vector.point -> Vector.point -> 'e) -> Vector.point list array
-)
-ident(
-  def classify "k_means.ml" 120 3446 3448 "k_means.ml" 150 4271 4274
-)
-"k_means.ml" 99 2742 2758 "k_means.ml" 99 2742 2764
-type(
-  Vector.point array
-)
-ident(
-  def points "k_means.ml" 99 2742 2780 "k_means.ml" 117 3425 3435
-)
-"k_means.ml" 99 2742 2781 "k_means.ml" 99 2742 2786
-type(
-  Vector.point array
-)
-ident(
-  def means "k_means.ml" 99 2742 2802 "k_means.ml" 117 3425 3435
-)
-"k_means.ml" 99 2742 2802 "k_means.ml" 99 2742 2819
-type(
-  Vector.point -> Vector.point -> 'e
-)
-ident(
-  def distance_function "k_means.ml" 99 2742 2820 "k_means.ml" 117 3425 3435
-)
-"k_means.ml" 101 2907 2915 "k_means.ml" 101 2907 2927
-type(
-  Vector.point -> Vector.point
-)
-ident(
-  def find_closest "k_means.ml" 114 3312 3316 "k_means.ml" 117 3425 3435
-)
-"k_means.ml" 101 2907 2928 "k_means.ml" 101 2907 2929
-type(
-  Vector.point
-)
-ident(
-  def x "k_means.ml" 101 2907 2930 "k_means.ml" 112 3288 3302
-)
-"k_means.ml" 102 2940 2950 "k_means.ml" 102 2940 2951
-type(
-  int
-)
-ident(
-  def n "k_means.ml" 103 2977 2983 "k_means.ml" 112 3288 3302
-)
-"k_means.ml" 102 2940 2954 "k_means.ml" 102 2940 2966
-type(
-  Vector.point array -> int
-)
-ident(
-  ext_ref Array.length
-)
-"k_means.ml" 102 2940 2967 "k_means.ml" 102 2940 2972
-type(
-  Vector.point array
-)
-ident(
-  int_ref means "k_means.ml" 99 2742 2781 "k_means.ml" 99 2742 2786
-)
-"k_means.ml" 102 2940 2954 "k_means.ml" 102 2940 2972
-type(
-  int
-)
-"k_means.ml" 103 2977 2987 "k_means.ml" 103 2977 2994
-type(
-  Vector.point ref
-)
-ident(
-  def closest "k_means.ml" 104 3017 3023 "k_means.ml" 112 3288 3302
-)
-"k_means.ml" 103 2977 2997 "k_means.ml" 103 2977 3000
-type(
-  Vector.point -> Vector.point ref
-)
-ident(
-  ext_ref Pervasives.ref
-)
-"k_means.ml" 103 2977 3002 "k_means.ml" 103 2977 3007
-type(
-  Vector.point array
-)
-ident(
-  int_ref means "k_means.ml" 99 2742 2781 "k_means.ml" 99 2742 2786
-)
-"k_means.ml" 103 2977 3009 "k_means.ml" 103 2977 3010
-type(
-  int
-)
-"k_means.ml" 103 2977 3001 "k_means.ml" 103 2977 3012
-type(
-  Vector.point
-)
-"k_means.ml" 103 2977 2997 "k_means.ml" 103 2977 3012
-type(
-  Vector.point ref
-)
-"k_means.ml" 104 3017 3027 "k_means.ml" 104 3017 3038
-type(
-  'e ref
-)
-ident(
-  def minDistance "k_means.ml" 105 3079 3085 "k_means.ml" 112 3288 3302
-)
-"k_means.ml" 104 3017 3041 "k_means.ml" 104 3017 3044
-type(
-  'e -> 'e ref
-)
-ident(
-  ext_ref Pervasives.ref
-)
-"k_means.ml" 104 3017 3046 "k_means.ml" 104 3017 3063
-type(
-  Vector.point -> Vector.point -> 'e
-)
-ident(
-  int_ref distance_function "k_means.ml" 99 2742 2802 "k_means.ml" 99 2742 2819
-)
-"k_means.ml" 104 3017 3064 "k_means.ml" 104 3017 3069
-type(
-  Vector.point array
-)
-ident(
-  int_ref means "k_means.ml" 99 2742 2781 "k_means.ml" 99 2742 2786
-)
-"k_means.ml" 104 3017 3071 "k_means.ml" 104 3017 3072
-type(
-  int
-)
-"k_means.ml" 104 3017 3064 "k_means.ml" 104 3017 3073
-type(
-  Vector.point
-)
-"k_means.ml" 104 3017 3074 "k_means.ml" 104 3017 3075
-type(
-  Vector.point
-)
-ident(
-  int_ref x "k_means.ml" 101 2907 2928 "k_means.ml" 101 2907 2929
-)
-"k_means.ml" 104 3017 3045 "k_means.ml" 104 3017 3076
-type(
-  'e
-)
-"k_means.ml" 104 3017 3041 "k_means.ml" 104 3017 3076
-type(
-  'e ref
-)
-"k_means.ml" 105 3079 3093 "k_means.ml" 105 3079 3094
-type(
-  int
-)
-"k_means.ml" 105 3079 3098 "k_means.ml" 105 3079 3099
-type(
-  int
-)
-ident(
-  int_ref n "k_means.ml" 102 2940 2950 "k_means.ml" 102 2940 2951
-)
-"k_means.ml" 106 3103 3115 "k_means.ml" 106 3103 3118
-type(
-  'e ref
-)
-ident(
-  def tmp "k_means.ml" 107 3160 3168 "k_means.ml" 110 3263 3275
-)
-"k_means.ml" 106 3103 3121 "k_means.ml" 106 3103 3124
-type(
-  'e -> 'e ref
-)
-ident(
-  ext_ref Pervasives.ref
-)
-"k_means.ml" 106 3103 3126 "k_means.ml" 106 3103 3143
-type(
-  Vector.point -> Vector.point -> 'e
-)
-ident(
-  int_ref distance_function "k_means.ml" 99 2742 2802 "k_means.ml" 99 2742 2819
-)
-"k_means.ml" 106 3103 3144 "k_means.ml" 106 3103 3145
-type(
-  Vector.point
-)
-ident(
-  int_ref x "k_means.ml" 101 2907 2928 "k_means.ml" 101 2907 2929
-)
-"k_means.ml" 106 3103 3146 "k_means.ml" 106 3103 3151
-type(
-  Vector.point array
-)
-ident(
-  int_ref means "k_means.ml" 99 2742 2781 "k_means.ml" 99 2742 2786
-)
-"k_means.ml" 106 3103 3153 "k_means.ml" 106 3103 3154
-type(
-  int
-)
-ident(
-  int_ref i "k_means.ml" 105 3079 3085 "k_means.ml" 111 3276 3286
-)
-"k_means.ml" 106 3103 3146 "k_means.ml" 106 3103 3155
-type(
-  Vector.point
-)
-"k_means.ml" 106 3103 3125 "k_means.ml" 106 3103 3156
-type(
-  'e
-)
-"k_means.ml" 106 3103 3121 "k_means.ml" 106 3103 3156
-type(
-  'e ref
-)
-"k_means.ml" 107 3160 3171 "k_means.ml" 107 3160 3174
-type(
-  'e ref
-)
-ident(
-  int_ref tmp "k_means.ml" 106 3103 3115 "k_means.ml" 106 3103 3118
-)
-"k_means.ml" 107 3160 3175 "k_means.ml" 107 3160 3176
-type(
-  'e ref -> 'e ref -> bool
-)
-ident(
-  ext_ref Pervasives.( < )
-)
-"k_means.ml" 107 3160 3177 "k_means.ml" 107 3160 3188
-type(
-  'e ref
-)
-ident(
-  int_ref minDistance "k_means.ml" 104 3017 3027 "k_means.ml" 104 3017 3038
-)
-"k_means.ml" 107 3160 3171 "k_means.ml" 107 3160 3188
-type(
-  bool
-)
-"k_means.ml" 108 3201 3211 "k_means.ml" 108 3201 3218
-type(
-  Vector.point ref
-)
-ident(
-  int_ref closest "k_means.ml" 103 2977 2987 "k_means.ml" 103 2977 2994
-)
-"k_means.ml" 108 3201 3219 "k_means.ml" 108 3201 3221
-type(
-  Vector.point ref -> Vector.point -> unit
-)
-ident(
-  ext_ref Pervasives.( := )
-)
-"k_means.ml" 108 3201 3222 "k_means.ml" 108 3201 3227
-type(
-  Vector.point array
-)
-ident(
-  int_ref means "k_means.ml" 99 2742 2781 "k_means.ml" 99 2742 2786
-)
-"k_means.ml" 108 3201 3229 "k_means.ml" 108 3201 3230
-type(
-  int
-)
-ident(
-  int_ref i "k_means.ml" 105 3079 3085 "k_means.ml" 111 3276 3286
-)
-"k_means.ml" 108 3201 3222 "k_means.ml" 108 3201 3231
-type(
-  Vector.point
-)
-"k_means.ml" 108 3201 3211 "k_means.ml" 108 3201 3231
-type(
-  unit
-)
-"k_means.ml" 109 3233 3243 "k_means.ml" 109 3233 3254
-type(
-  'e ref
-)
-ident(
-  int_ref minDistance "k_means.ml" 104 3017 3027 "k_means.ml" 104 3017 3038
-)
-"k_means.ml" 109 3233 3255 "k_means.ml" 109 3233 3257
-type(
-  'e ref -> 'e -> unit
-)
-ident(
-  ext_ref Pervasives.( := )
-)
-"k_means.ml" 109 3233 3258 "k_means.ml" 109 3233 3259
-type(
-  'e ref -> 'e
-)
-ident(
-  ext_ref Pervasives.( ! )
-)
-"k_means.ml" 109 3233 3259 "k_means.ml" 109 3233 3262
-type(
-  'e ref
-)
-ident(
-  int_ref tmp "k_means.ml" 106 3103 3115 "k_means.ml" 106 3103 3118
-)
-"k_means.ml" 109 3233 3258 "k_means.ml" 109 3233 3262
-type(
-  'e
-)
-"k_means.ml" 109 3233 3243 "k_means.ml" 109 3233 3262
-type(
-  unit
-)
-"k_means.ml" 107 3160 3194 "k_means.ml" 110 3263 3274
-type(
-  unit
-)
-"k_means.ml" 107 3160 3168 "k_means.ml" 110 3263 3275
-type(
-  unit
-)
-"k_means.ml" 106 3103 3111 "k_means.ml" 110 3263 3275
-type(
-  unit
-)
-"k_means.ml" 105 3079 3085 "k_means.ml" 111 3276 3286
-type(
-  unit
-)
-"k_means.ml" 112 3288 3294 "k_means.ml" 112 3288 3295
-type(
-  Vector.point ref -> Vector.point
-)
-ident(
-  ext_ref Pervasives.( ! )
-)
-"k_means.ml" 112 3288 3295 "k_means.ml" 112 3288 3302
-type(
-  Vector.point ref
-)
-ident(
-  int_ref closest "k_means.ml" 103 2977 2987 "k_means.ml" 103 2977 2994
-)
-"k_means.ml" 112 3288 3294 "k_means.ml" 112 3288 3302
-type(
-  Vector.point
-)
-"k_means.ml" 105 3079 3085 "k_means.ml" 112 3288 3302
-type(
-  Vector.point
-)
-"k_means.ml" 104 3017 3023 "k_means.ml" 112 3288 3302
-type(
-  Vector.point
-)
-"k_means.ml" 103 2977 2983 "k_means.ml" 112 3288 3302
-type(
-  Vector.point
-)
-"k_means.ml" 102 2940 2946 "k_means.ml" 112 3288 3302
-type(
-  Vector.point
-)
-type(
-  Vector.point
-)
-"k_means.ml" 114 3312 3316 "k_means.ml" 114 3312 3333
+"k_means.ml" 75 1845 1849 "k_means.ml" 75 1845 1861
 type(
   ?n_p:int ->
-  (Vector.point -> Vector.point * Vector.point -> bool) ->
-  (Vector.point * Vector.point) array ->
-  Vector.point array -> Vector.point list array
+  (Vector.point * label -> Vector.point) ->
+  (Vector.point * label) array -> Vector.point array
 )
 ident(
-  int_ref parallel_group_by "k_means.ml" 49 1056 1062 "k_means.ml" 49 1056 1079
+  int_ref parallel_map "k_means.ml" 51 1089 1095 "k_means.ml" 51 1089 1107
 )
-"k_means.ml" 115 3334 3344 "k_means.ml" 115 3334 3345
+"k_means.ml" 75 1845 1867 "k_means.ml" 75 1845 1868
 type(
-  Vector.point
+  Vector.point * label
 )
 ident(
-  def x "k_means.ml" 115 3334 3346 "k_means.ml" 115 3334 3362
+  def x "k_means.ml" 75 1845 1872 "k_means.ml" 75 1845 1877
 )
-"k_means.ml" 115 3334 3346 "k_means.ml" 115 3334 3347
+"k_means.ml" 75 1845 1872 "k_means.ml" 75 1845 1875
 type(
-  Vector.point * Vector.point
-)
-ident(
-  def y "k_means.ml" 115 3334 3351 "k_means.ml" 115 3334 3362
-)
-"k_means.ml" 115 3334 3351 "k_means.ml" 115 3334 3352
-type(
-  Vector.point
-)
-ident(
-  int_ref x "k_means.ml" 115 3334 3344 "k_means.ml" 115 3334 3345
-)
-"k_means.ml" 115 3334 3353 "k_means.ml" 115 3334 3354
-type(
-  Vector.point -> Vector.point -> bool
-)
-ident(
-  ext_ref Pervasives.( = )
-)
-"k_means.ml" 115 3334 3356 "k_means.ml" 115 3334 3359
-type(
-  Vector.point * Vector.point -> Vector.point
+  Vector.point * label -> Vector.point
 )
 ident(
   ext_ref Pervasives.fst
 )
-"k_means.ml" 115 3334 3360 "k_means.ml" 115 3334 3361
+"k_means.ml" 75 1845 1876 "k_means.ml" 75 1845 1877
 type(
-  Vector.point * Vector.point
+  Vector.point * label
 )
 ident(
-  int_ref y "k_means.ml" 115 3334 3346 "k_means.ml" 115 3334 3347
+  int_ref x "k_means.ml" 75 1845 1867 "k_means.ml" 75 1845 1868
 )
-"k_means.ml" 115 3334 3355 "k_means.ml" 115 3334 3362
+"k_means.ml" 75 1845 1872 "k_means.ml" 75 1845 1877
 type(
   Vector.point
 )
-"k_means.ml" 115 3334 3351 "k_means.ml" 115 3334 3362
+"k_means.ml" 75 1845 1862 "k_means.ml" 75 1845 1878
 type(
-  bool
+  Vector.point * label -> Vector.point
 )
-"k_means.ml" 115 3334 3339 "k_means.ml" 115 3334 3363
+"k_means.ml" 75 1845 1880 "k_means.ml" 75 1845 1889
 type(
-  Vector.point -> Vector.point * Vector.point -> bool
-)
-"k_means.ml" 116 3364 3370 "k_means.ml" 116 3364 3382
-type(
-  ?n_p:int ->
-  (Vector.point -> Vector.point * Vector.point) ->
-  Vector.point array -> (Vector.point * Vector.point) array
+  (Vector.point * label) array -> int -> int -> (Vector.point * label) array
 )
 ident(
-  int_ref parallel_map "k_means.ml" 45 929 935 "k_means.ml" 45 929 947
+  ext_ref Array.sub
 )
-"k_means.ml" 116 3364 3388 "k_means.ml" 116 3364 3389
+"k_means.ml" 75 1845 1890 "k_means.ml" 75 1845 1896
 type(
-  Vector.point
+  (Vector.point * label) array
 )
 ident(
-  def x "k_means.ml" 116 3364 3393 "k_means.ml" 116 3364 3414
+  int_ref points "k_means.ml" 61 1455 1505 "k_means.ml" 61 1455 1511
 )
-"k_means.ml" 116 3364 3395 "k_means.ml" 116 3364 3407
-type(
-  Vector.point -> Vector.point
-)
-ident(
-  int_ref find_closest "k_means.ml" 101 2907 2915 "k_means.ml" 101 2907 2927
-)
-"k_means.ml" 116 3364 3408 "k_means.ml" 116 3364 3409
-type(
-  Vector.point
-)
-ident(
-  int_ref x "k_means.ml" 116 3364 3388 "k_means.ml" 116 3364 3389
-)
-"k_means.ml" 116 3364 3394 "k_means.ml" 116 3364 3410
-type(
-  Vector.point
-)
-"k_means.ml" 116 3364 3412 "k_means.ml" 116 3364 3413
-type(
-  Vector.point
-)
-ident(
-  int_ref x "k_means.ml" 116 3364 3388 "k_means.ml" 116 3364 3389
-)
-"k_means.ml" 116 3364 3393 "k_means.ml" 116 3364 3414
-type(
-  Vector.point * Vector.point
-)
-"k_means.ml" 116 3364 3383 "k_means.ml" 116 3364 3415
-type(
-  Vector.point -> Vector.point * Vector.point
-)
-"k_means.ml" 116 3364 3416 "k_means.ml" 116 3364 3422
-type(
-  Vector.point array
-)
-ident(
-  int_ref points "k_means.ml" 99 2742 2758 "k_means.ml" 99 2742 2764
-)
-"k_means.ml" 116 3364 3369 "k_means.ml" 116 3364 3423
-type(
-  (Vector.point * Vector.point) array
-)
-"k_means.ml" 117 3425 3430 "k_means.ml" 117 3425 3435
-type(
-  Vector.point array
-)
-ident(
-  int_ref means "k_means.ml" 99 2742 2781 "k_means.ml" 99 2742 2786
-)
-"k_means.ml" 114 3312 3316 "k_means.ml" 117 3425 3435
-type(
-  Vector.point list array
-)
-"k_means.ml" 101 2907 2911 "k_means.ml" 117 3425 3435
-type(
-  Vector.point list array
-)
-type(
-  Vector.point list array
-)
-"k_means.ml" 120 3446 3452 "k_means.ml" 120 3446 3458
-type(
-  float array list array -> 'f -> float array array
-)
-ident(
-  def update "k_means.ml" 129 3734 3736 "k_means.ml" 150 4271 4274
-)
-"k_means.ml" 120 3446 3459 "k_means.ml" 120 3446 3465
-type(
-  float array list array
-)
-ident(
-  def points "k_means.ml" 120 3446 3466 "k_means.ml" 127 3696 3732
-)
-"k_means.ml" 120 3446 3466 "k_means.ml" 120 3446 3471
-type(
-  'f
-)
-ident(
-  def means "k_means.ml" 121 3475 3479 "k_means.ml" 127 3696 3732
-)
-"k_means.ml" 121 3475 3483 "k_means.ml" 121 3475 3495
-type(
-  float array list -> float array
-)
-ident(
-  def find_average "k_means.ml" 127 3696 3700 "k_means.ml" 127 3696 3732
-)
-"k_means.ml" 121 3475 3496 "k_means.ml" 121 3475 3497
-type(
-  float array list
-)
-ident(
-  def p "k_means.ml" 122 3501 3507 "k_means.ml" 125 3625 3687
-)
-"k_means.ml" 122 3501 3511 "k_means.ml" 122 3501 3512
-type(
-  float
-)
-ident(
-  def n "k_means.ml" 123 3548 3554 "k_means.ml" 125 3625 3687
-)
-"k_means.ml" 122 3501 3515 "k_means.ml" 122 3501 3527
-type(
-  int -> float
-)
-ident(
-  ext_ref Pervasives.float_of_int
-)
-"k_means.ml" 122 3501 3529 "k_means.ml" 122 3501 3540
-type(
-  float array list -> int
-)
-ident(
-  ext_ref List.length
-)
-"k_means.ml" 122 3501 3541 "k_means.ml" 122 3501 3542
-type(
-  float array list
-)
-ident(
-  int_ref p "k_means.ml" 121 3475 3496 "k_means.ml" 121 3475 3497
-)
-"k_means.ml" 122 3501 3528 "k_means.ml" 122 3501 3543
+"k_means.ml" 75 1845 1897 "k_means.ml" 75 1845 1898
 type(
   int
 )
-"k_means.ml" 122 3501 3515 "k_means.ml" 122 3501 3543
-type(
-  float
-)
-"k_means.ml" 123 3548 3558 "k_means.ml" 123 3548 3559
+"k_means.ml" 75 1845 1899 "k_means.ml" 75 1845 1900
 type(
   int
 )
 ident(
-  def d "k_means.ml" 124 3590 3596 "k_means.ml" 125 3625 3687
+  int_ref k "k_means.ml" 61 1455 1495 "k_means.ml" 61 1455 1496
 )
-"k_means.ml" 123 3548 3562 "k_means.ml" 123 3548 3574
+"k_means.ml" 75 1845 1879 "k_means.ml" 75 1845 1901
+call(
+  stack
+)
 type(
-  float array -> int
+  (Vector.point * label) array
 )
-ident(
-  ext_ref Array.length
+"k_means.ml" 75 1845 1849 "k_means.ml" 75 1845 1901
+call(
+  tail
 )
-"k_means.ml" 123 3548 3576 "k_means.ml" 123 3548 3583
-type(
-  float array list -> float array
-)
-ident(
-  ext_ref List.hd
-)
-"k_means.ml" 123 3548 3584 "k_means.ml" 123 3548 3585
-type(
-  float array list
-)
-ident(
-  int_ref p "k_means.ml" 121 3475 3496 "k_means.ml" 121 3475 3497
-)
-"k_means.ml" 123 3548 3575 "k_means.ml" 123 3548 3586
-type(
-  float array
-)
-"k_means.ml" 123 3548 3562 "k_means.ml" 123 3548 3586
-type(
-  int
-)
-"k_means.ml" 124 3590 3596 "k_means.ml" 124 3590 3605
-type(
-  (float -> float) -> Vector.point -> float array
-)
-ident(
-  ext_ref Array.map
-)
-"k_means.ml" 124 3590 3611 "k_means.ml" 124 3590 3612
-type(
-  float
-)
-ident(
-  def x "k_means.ml" 124 3590 3616 "k_means.ml" 124 3590 3622
-)
-"k_means.ml" 124 3590 3616 "k_means.ml" 124 3590 3617
-type(
-  float
-)
-ident(
-  int_ref x "k_means.ml" 124 3590 3611 "k_means.ml" 124 3590 3612
-)
-"k_means.ml" 124 3590 3618 "k_means.ml" 124 3590 3620
-type(
-  float -> float -> float
-)
-ident(
-  ext_ref Pervasives.( /. )
-)
-"k_means.ml" 124 3590 3621 "k_means.ml" 124 3590 3622
-type(
-  float
-)
-ident(
-  int_ref n "k_means.ml" 122 3501 3511 "k_means.ml" 122 3501 3512
-)
-"k_means.ml" 124 3590 3616 "k_means.ml" 124 3590 3622
-type(
-  float
-)
-"k_means.ml" 124 3590 3606 "k_means.ml" 124 3590 3623
-type(
-  float -> float
-)
-"k_means.ml" 125 3625 3632 "k_means.ml" 125 3625 3646
-type(
-  (Vector.point -> float array -> Vector.point) ->
-  Vector.point -> float array list -> Vector.point
-)
-ident(
-  ext_ref List.fold_left
-)
-"k_means.ml" 125 3625 3648 "k_means.ml" 125 3625 3668
-type(
-  (float -> float -> float) -> Vector.point -> float array -> Vector.point
-)
-ident(
-  int_ref Vector.vectorized_binary_op "k_means.ml" 10 236 242 "k_means.ml" 10 236 262
-)
-"k_means.ml" 125 3625 3669 "k_means.ml" 125 3625 3673
-type(
-  float -> float -> float
-)
-ident(
-  ext_ref Pervasives.( +. )
-)
-"k_means.ml" 125 3625 3647 "k_means.ml" 125 3625 3674
-type(
-  Vector.point -> float array -> Vector.point
-)
-"k_means.ml" 125 3625 3676 "k_means.ml" 125 3625 3681
-type(
-  int -> Vector.point
-)
-ident(
-  int_ref Vector.zeros "k_means.ml" 5 53 59 "k_means.ml" 5 53 64
-)
-"k_means.ml" 125 3625 3682 "k_means.ml" 125 3625 3683
-type(
-  int
-)
-ident(
-  int_ref d "k_means.ml" 123 3548 3558 "k_means.ml" 123 3548 3559
-)
-"k_means.ml" 125 3625 3675 "k_means.ml" 125 3625 3684
-type(
-  Vector.point
-)
-"k_means.ml" 125 3625 3685 "k_means.ml" 125 3625 3686
-type(
-  float array list
-)
-ident(
-  int_ref p "k_means.ml" 121 3475 3496 "k_means.ml" 121 3475 3497
-)
-"k_means.ml" 125 3625 3631 "k_means.ml" 125 3625 3687
-type(
-  Vector.point
-)
-"k_means.ml" 124 3590 3596 "k_means.ml" 125 3625 3687
-type(
-  float array
-)
-"k_means.ml" 123 3548 3554 "k_means.ml" 125 3625 3687
-type(
-  float array
-)
-"k_means.ml" 122 3501 3507 "k_means.ml" 125 3625 3687
-type(
-  float array
-)
-"k_means.ml" 127 3696 3700 "k_means.ml" 127 3696 3712
-type(
-  ?n_p:int ->
-  (float array list -> float array) ->
-  float array list array -> float array array
-)
-ident(
-  int_ref parallel_map "k_means.ml" 45 929 935 "k_means.ml" 45 929 947
-)
-"k_means.ml" 127 3696 3713 "k_means.ml" 127 3696 3725
-type(
-  float array list -> float array
-)
-ident(
-  int_ref find_average "k_means.ml" 121 3475 3483 "k_means.ml" 121 3475 3495
-)
-"k_means.ml" 127 3696 3726 "k_means.ml" 127 3696 3732
-type(
-  float array list array
-)
-ident(
-  int_ref points "k_means.ml" 120 3446 3459 "k_means.ml" 120 3446 3465
-)
-"k_means.ml" 127 3696 3700 "k_means.ml" 127 3696 3732
-type(
-  float array array
-)
-"k_means.ml" 121 3475 3479 "k_means.ml" 127 3696 3732
-type(
-  float array array
-)
-"k_means.ml" 129 3734 3740 "k_means.ml" 129 3734 3748
-type(
-  Vector.point array -> Vector.point array -> float -> bool
-)
-ident(
-  def stop_cnd "k_means.ml" 135 3945 3947 "k_means.ml" 150 4271 4274
-)
-"k_means.ml" 129 3734 3749 "k_means.ml" 129 3734 3758
 type(
   Vector.point array
 )
-ident(
-  def old_means "k_means.ml" 129 3734 3759 "k_means.ml" 132 3875 3942
-)
-"k_means.ml" 129 3734 3759 "k_means.ml" 129 3734 3768
+"k_means.ml" 74 1823 1827 "k_means.ml" 75 1845 1901
 type(
   Vector.point array
 )
-ident(
-  def new_means "k_means.ml" 129 3734 3769 "k_means.ml" 132 3875 3942
-)
-"k_means.ml" 129 3734 3769 "k_means.ml" 129 3734 3776
+"k_means.ml" 63 1554 1558 "k_means.ml" 75 1845 1901
 type(
-  float
+  Vector.point array
 )
-ident(
-  def epsilon "k_means.ml" 130 3779 3783 "k_means.ml" 132 3875 3942
-)
-"k_means.ml" 130 3779 3783 "k_means.ml" 130 3779 3792
 type(
-  (float -> bool) -> float array -> bool
+  Vector.point array
 )
-ident(
-  int_ref Vector.satisfies "k_means.ml" 13 293 299 "k_means.ml" 13 293 308
-)
-"k_means.ml" 130 3779 3798 "k_means.ml" 130 3779 3799
+"k_means.ml" 78 1904 1910 "k_means.ml" 78 1904 1918
 type(
-  float
+  ?distance_function:(Vector.point -> Vector.point -> float) ->
+  (Vector.point * label) array ->
+  Vector.point array -> (Vector.point * label) list array
 )
 ident(
-  def x "k_means.ml" 130 3779 3803 "k_means.ml" 130 3779 3814
+  def classify "k_means.ml" 101 2649 2651 "k_means.ml" 123 3224 3227
 )
-"k_means.ml" 130 3779 3803 "k_means.ml" 130 3779 3804
+"k_means.ml" 78 1904 1921 "k_means.ml" 78 1904 1938
 type(
-  float
+  Vector.point -> Vector.point -> float
 )
-ident(
-  int_ref x "k_means.ml" 130 3779 3798 "k_means.ml" 130 3779 3799
-)
-"k_means.ml" 130 3779 3805 "k_means.ml" 130 3779 3806
-type(
-  float -> float -> bool
-)
-ident(
-  ext_ref Pervasives.( < )
-)
-"k_means.ml" 130 3779 3807 "k_means.ml" 130 3779 3814
-type(
-  float
-)
-ident(
-  int_ref epsilon "k_means.ml" 129 3734 3769 "k_means.ml" 129 3734 3776
-)
-"k_means.ml" 130 3779 3803 "k_means.ml" 130 3779 3814
-type(
-  bool
-)
-"k_means.ml" 130 3779 3793 "k_means.ml" 130 3779 3815
-type(
-  float -> bool
-)
-"k_means.ml" 131 3817 3822 "k_means.ml" 131 3817 3834
-type(
-  ?n_p:int ->
-  (Vector.point * Vector.point -> float) ->
-  (Vector.point * Vector.point) array -> float array
-)
-ident(
-  int_ref parallel_map "k_means.ml" 45 929 935 "k_means.ml" 45 929 947
-)
-"k_means.ml" 131 3817 3840 "k_means.ml" 131 3817 3841
-type(
-  Vector.point * Vector.point
-)
-ident(
-  def x "k_means.ml" 131 3817 3845 "k_means.ml" 131 3817 3872
-)
-"k_means.ml" 131 3817 3845 "k_means.ml" 131 3817 3856
+"k_means.ml" 78 1904 1941 "k_means.ml" 78 1904 1952
 type(
   Vector.point -> Vector.point -> float
 )
 ident(
   int_ref Vector.l2_distance "k_means.ml" 7 103 109 "k_means.ml" 7 103 120
 )
-"k_means.ml" 131 3817 3858 "k_means.ml" 131 3817 3861
+type(
+  Vector.point -> Vector.point -> float
+)
+ident(
+  int_ref *sth* "k_means.ml" 78 1904 1941 "k_means.ml" 78 1904 1952
+)
+type(
+  (Vector.point -> Vector.point -> float) option
+)
+type(
+  (Vector.point -> Vector.point -> float) option
+)
+type(
+  Vector.point -> Vector.point -> float
+)
+"k_means.ml" 78 1904 1955 "k_means.ml" 78 1904 1961
+type(
+  (Vector.point * label) array
+)
+ident(
+  def points "k_means.ml" 78 1904 1985 "k_means.ml" 96 2621 2630
+)
+"k_means.ml" 78 1904 1986 "k_means.ml" 78 1904 1991
+type(
+  Vector.point array
+)
+ident(
+  def means "k_means.ml" 80 2076 2080 "k_means.ml" 96 2621 2630
+)
+"k_means.ml" 80 2076 2084 "k_means.ml" 80 2076 2096
+type(
+  Vector.point * label -> Vector.point
+)
+ident(
+  def find_closest "k_means.ml" 93 2510 2514 "k_means.ml" 96 2621 2630
+)
+"k_means.ml" 80 2076 2098 "k_means.ml" 80 2076 2099
+type(
+  Vector.point * label
+)
+ident(
+  def x "k_means.ml" 80 2076 2117 "k_means.ml" 91 2487 2501
+)
+"k_means.ml" 81 2127 2137 "k_means.ml" 81 2127 2138
+type(
+  int
+)
+ident(
+  def n "k_means.ml" 82 2164 2170 "k_means.ml" 91 2487 2501
+)
+"k_means.ml" 81 2127 2141 "k_means.ml" 81 2127 2153
+type(
+  Vector.point array -> int
+)
+ident(
+  ext_ref Array.length
+)
+"k_means.ml" 81 2127 2154 "k_means.ml" 81 2127 2159
+type(
+  Vector.point array
+)
+ident(
+  int_ref means "k_means.ml" 78 1904 1986 "k_means.ml" 78 1904 1991
+)
+"k_means.ml" 81 2127 2141 "k_means.ml" 81 2127 2159
+type(
+  int
+)
+"k_means.ml" 82 2164 2174 "k_means.ml" 82 2164 2181
+type(
+  Vector.point ref
+)
+ident(
+  def closest "k_means.ml" 83 2204 2210 "k_means.ml" 91 2487 2501
+)
+"k_means.ml" 82 2164 2184 "k_means.ml" 82 2164 2187
+type(
+  Vector.point -> Vector.point ref
+)
+ident(
+  ext_ref Pervasives.ref
+)
+"k_means.ml" 82 2164 2189 "k_means.ml" 82 2164 2194
+type(
+  Vector.point array
+)
+ident(
+  int_ref means "k_means.ml" 78 1904 1986 "k_means.ml" 78 1904 1991
+)
+"k_means.ml" 82 2164 2196 "k_means.ml" 82 2164 2197
+type(
+  int
+)
+"k_means.ml" 82 2164 2188 "k_means.ml" 82 2164 2199
+type(
+  Vector.point
+)
+"k_means.ml" 82 2164 2184 "k_means.ml" 82 2164 2199
+type(
+  Vector.point ref
+)
+"k_means.ml" 83 2204 2214 "k_means.ml" 83 2204 2225
+type(
+  float ref
+)
+ident(
+  def minDistance "k_means.ml" 84 2272 2278 "k_means.ml" 91 2487 2501
+)
+"k_means.ml" 83 2204 2228 "k_means.ml" 83 2204 2231
+type(
+  float -> float ref
+)
+ident(
+  ext_ref Pervasives.ref
+)
+"k_means.ml" 83 2204 2233 "k_means.ml" 83 2204 2250
+type(
+  Vector.point -> Vector.point -> float
+)
+ident(
+  int_ref distance_function "k_means.ml" 78 1904 1921 "k_means.ml" 78 1904 1938
+)
+"k_means.ml" 83 2204 2251 "k_means.ml" 83 2204 2256
+type(
+  Vector.point array
+)
+ident(
+  int_ref means "k_means.ml" 78 1904 1986 "k_means.ml" 78 1904 1991
+)
+"k_means.ml" 83 2204 2258 "k_means.ml" 83 2204 2259
+type(
+  int
+)
+"k_means.ml" 83 2204 2251 "k_means.ml" 83 2204 2260
+type(
+  Vector.point
+)
+"k_means.ml" 83 2204 2262 "k_means.ml" 83 2204 2265
+type(
+  Vector.point * label -> Vector.point
+)
+ident(
+  ext_ref Pervasives.fst
+)
+"k_means.ml" 83 2204 2266 "k_means.ml" 83 2204 2267
+type(
+  Vector.point * label
+)
+ident(
+  int_ref x "k_means.ml" 80 2076 2098 "k_means.ml" 80 2076 2099
+)
+"k_means.ml" 83 2204 2261 "k_means.ml" 83 2204 2268
+type(
+  Vector.point
+)
+"k_means.ml" 83 2204 2232 "k_means.ml" 83 2204 2269
+call(
+  stack
+)
+type(
+  float
+)
+"k_means.ml" 83 2204 2228 "k_means.ml" 83 2204 2269
+type(
+  float ref
+)
+"k_means.ml" 84 2272 2286 "k_means.ml" 84 2272 2287
+type(
+  int
+)
+"k_means.ml" 84 2272 2291 "k_means.ml" 84 2272 2292
+type(
+  int
+)
+ident(
+  int_ref n "k_means.ml" 81 2127 2137 "k_means.ml" 81 2127 2138
+)
+"k_means.ml" 85 2296 2308 "k_means.ml" 85 2296 2311
+type(
+  float ref
+)
+ident(
+  def tmp "k_means.ml" 86 2359 2367 "k_means.ml" 89 2462 2474
+)
+"k_means.ml" 85 2296 2314 "k_means.ml" 85 2296 2317
+type(
+  float -> float ref
+)
+ident(
+  ext_ref Pervasives.ref
+)
+"k_means.ml" 85 2296 2319 "k_means.ml" 85 2296 2336
+type(
+  Vector.point -> Vector.point -> float
+)
+ident(
+  int_ref distance_function "k_means.ml" 78 1904 1921 "k_means.ml" 78 1904 1938
+)
+"k_means.ml" 85 2296 2338 "k_means.ml" 85 2296 2341
+type(
+  Vector.point * label -> Vector.point
+)
+ident(
+  ext_ref Pervasives.fst
+)
+"k_means.ml" 85 2296 2342 "k_means.ml" 85 2296 2343
+type(
+  Vector.point * label
+)
+ident(
+  int_ref x "k_means.ml" 80 2076 2098 "k_means.ml" 80 2076 2099
+)
+"k_means.ml" 85 2296 2337 "k_means.ml" 85 2296 2344
+type(
+  Vector.point
+)
+"k_means.ml" 85 2296 2345 "k_means.ml" 85 2296 2350
+type(
+  Vector.point array
+)
+ident(
+  int_ref means "k_means.ml" 78 1904 1986 "k_means.ml" 78 1904 1991
+)
+"k_means.ml" 85 2296 2352 "k_means.ml" 85 2296 2353
+type(
+  int
+)
+ident(
+  int_ref i "k_means.ml" 84 2272 2278 "k_means.ml" 90 2475 2485
+)
+"k_means.ml" 85 2296 2345 "k_means.ml" 85 2296 2354
+type(
+  Vector.point
+)
+"k_means.ml" 85 2296 2318 "k_means.ml" 85 2296 2355
+call(
+  stack
+)
+type(
+  float
+)
+"k_means.ml" 85 2296 2314 "k_means.ml" 85 2296 2355
+type(
+  float ref
+)
+"k_means.ml" 86 2359 2370 "k_means.ml" 86 2359 2373
+type(
+  float ref
+)
+ident(
+  int_ref tmp "k_means.ml" 85 2296 2308 "k_means.ml" 85 2296 2311
+)
+"k_means.ml" 86 2359 2374 "k_means.ml" 86 2359 2375
+type(
+  float ref -> float ref -> bool
+)
+ident(
+  ext_ref Pervasives.( < )
+)
+"k_means.ml" 86 2359 2376 "k_means.ml" 86 2359 2387
+type(
+  float ref
+)
+ident(
+  int_ref minDistance "k_means.ml" 83 2204 2214 "k_means.ml" 83 2204 2225
+)
+"k_means.ml" 86 2359 2370 "k_means.ml" 86 2359 2387
+type(
+  bool
+)
+"k_means.ml" 87 2400 2410 "k_means.ml" 87 2400 2417
+type(
+  Vector.point ref
+)
+ident(
+  int_ref closest "k_means.ml" 82 2164 2174 "k_means.ml" 82 2164 2181
+)
+"k_means.ml" 87 2400 2418 "k_means.ml" 87 2400 2420
+type(
+  Vector.point ref -> Vector.point -> unit
+)
+ident(
+  ext_ref Pervasives.( := )
+)
+"k_means.ml" 87 2400 2421 "k_means.ml" 87 2400 2426
+type(
+  Vector.point array
+)
+ident(
+  int_ref means "k_means.ml" 78 1904 1986 "k_means.ml" 78 1904 1991
+)
+"k_means.ml" 87 2400 2428 "k_means.ml" 87 2400 2429
+type(
+  int
+)
+ident(
+  int_ref i "k_means.ml" 84 2272 2278 "k_means.ml" 90 2475 2485
+)
+"k_means.ml" 87 2400 2421 "k_means.ml" 87 2400 2430
+type(
+  Vector.point
+)
+"k_means.ml" 87 2400 2410 "k_means.ml" 87 2400 2430
+type(
+  unit
+)
+"k_means.ml" 88 2432 2442 "k_means.ml" 88 2432 2453
+type(
+  float ref
+)
+ident(
+  int_ref minDistance "k_means.ml" 83 2204 2214 "k_means.ml" 83 2204 2225
+)
+"k_means.ml" 88 2432 2454 "k_means.ml" 88 2432 2456
+type(
+  float ref -> float -> unit
+)
+ident(
+  ext_ref Pervasives.( := )
+)
+"k_means.ml" 88 2432 2457 "k_means.ml" 88 2432 2458
+type(
+  float ref -> float
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"k_means.ml" 88 2432 2458 "k_means.ml" 88 2432 2461
+type(
+  float ref
+)
+ident(
+  int_ref tmp "k_means.ml" 85 2296 2308 "k_means.ml" 85 2296 2311
+)
+"k_means.ml" 88 2432 2457 "k_means.ml" 88 2432 2461
+type(
+  float
+)
+"k_means.ml" 88 2432 2442 "k_means.ml" 88 2432 2461
+type(
+  unit
+)
+"k_means.ml" 86 2359 2393 "k_means.ml" 89 2462 2473
+type(
+  unit
+)
+"k_means.ml" 86 2359 2367 "k_means.ml" 89 2462 2474
+type(
+  unit
+)
+"k_means.ml" 85 2296 2304 "k_means.ml" 89 2462 2474
+type(
+  unit
+)
+"k_means.ml" 84 2272 2278 "k_means.ml" 90 2475 2485
+type(
+  unit
+)
+"k_means.ml" 91 2487 2493 "k_means.ml" 91 2487 2494
+type(
+  Vector.point ref -> Vector.point
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"k_means.ml" 91 2487 2494 "k_means.ml" 91 2487 2501
+type(
+  Vector.point ref
+)
+ident(
+  int_ref closest "k_means.ml" 82 2164 2174 "k_means.ml" 82 2164 2181
+)
+"k_means.ml" 91 2487 2493 "k_means.ml" 91 2487 2501
+type(
+  Vector.point
+)
+"k_means.ml" 84 2272 2278 "k_means.ml" 91 2487 2501
+type(
+  Vector.point
+)
+"k_means.ml" 83 2204 2210 "k_means.ml" 91 2487 2501
+type(
+  Vector.point
+)
+"k_means.ml" 82 2164 2170 "k_means.ml" 91 2487 2501
+type(
+  Vector.point
+)
+"k_means.ml" 81 2127 2133 "k_means.ml" 91 2487 2501
+type(
+  Vector.point
+)
+type(
+  Vector.point
+)
+"k_means.ml" 93 2510 2514 "k_means.ml" 93 2510 2531
+type(
+  ?n_p:int ->
+  (Vector.point -> Vector.point * (Vector.point * label) -> bool) ->
+  (Vector.point * (Vector.point * label)) array ->
+  Vector.point array -> (Vector.point * label) list array
+)
+ident(
+  int_ref parallel_group_by "k_means.ml" 55 1216 1222 "k_means.ml" 55 1216 1239
+)
+"k_means.ml" 94 2532 2541 "k_means.ml" 94 2532 2542
+type(
+  Vector.point
+)
+ident(
+  def x "k_means.ml" 94 2532 2543 "k_means.ml" 94 2532 2559
+)
+"k_means.ml" 94 2532 2543 "k_means.ml" 94 2532 2544
+type(
+  Vector.point * (Vector.point * label)
+)
+ident(
+  def y "k_means.ml" 94 2532 2548 "k_means.ml" 94 2532 2559
+)
+"k_means.ml" 94 2532 2548 "k_means.ml" 94 2532 2549
+type(
+  Vector.point
+)
+ident(
+  int_ref x "k_means.ml" 94 2532 2541 "k_means.ml" 94 2532 2542
+)
+"k_means.ml" 94 2532 2550 "k_means.ml" 94 2532 2551
+type(
+  Vector.point -> Vector.point -> bool
+)
+ident(
+  ext_ref Pervasives.( = )
+)
+"k_means.ml" 94 2532 2553 "k_means.ml" 94 2532 2556
+type(
+  Vector.point * (Vector.point * label) -> Vector.point
+)
+ident(
+  ext_ref Pervasives.fst
+)
+"k_means.ml" 94 2532 2557 "k_means.ml" 94 2532 2558
+type(
+  Vector.point * (Vector.point * label)
+)
+ident(
+  int_ref y "k_means.ml" 94 2532 2543 "k_means.ml" 94 2532 2544
+)
+"k_means.ml" 94 2532 2552 "k_means.ml" 94 2532 2559
+type(
+  Vector.point
+)
+"k_means.ml" 94 2532 2548 "k_means.ml" 94 2532 2559
+type(
+  bool
+)
+"k_means.ml" 94 2532 2536 "k_means.ml" 94 2532 2560
+type(
+  Vector.point -> Vector.point * (Vector.point * label) -> bool
+)
+"k_means.ml" 95 2561 2566 "k_means.ml" 95 2561 2578
+type(
+  ?n_p:int ->
+  (Vector.point * label -> Vector.point * (Vector.point * label)) ->
+  (Vector.point * label) array ->
+  (Vector.point * (Vector.point * label)) array
+)
+ident(
+  int_ref parallel_map "k_means.ml" 51 1089 1095 "k_means.ml" 51 1089 1107
+)
+"k_means.ml" 95 2561 2584 "k_means.ml" 95 2561 2585
+type(
+  Vector.point * label
+)
+ident(
+  def x "k_means.ml" 95 2561 2589 "k_means.ml" 95 2561 2610
+)
+"k_means.ml" 95 2561 2591 "k_means.ml" 95 2561 2603
+type(
+  Vector.point * label -> Vector.point
+)
+ident(
+  int_ref find_closest "k_means.ml" 80 2076 2084 "k_means.ml" 80 2076 2096
+)
+"k_means.ml" 95 2561 2604 "k_means.ml" 95 2561 2605
+type(
+  Vector.point * label
+)
+ident(
+  int_ref x "k_means.ml" 95 2561 2584 "k_means.ml" 95 2561 2585
+)
+"k_means.ml" 95 2561 2590 "k_means.ml" 95 2561 2606
+call(
+  stack
+)
+type(
+  Vector.point
+)
+"k_means.ml" 95 2561 2608 "k_means.ml" 95 2561 2609
+type(
+  Vector.point * label
+)
+ident(
+  int_ref x "k_means.ml" 95 2561 2584 "k_means.ml" 95 2561 2585
+)
+"k_means.ml" 95 2561 2589 "k_means.ml" 95 2561 2610
+type(
+  Vector.point * (Vector.point * label)
+)
+"k_means.ml" 95 2561 2579 "k_means.ml" 95 2561 2611
+type(
+  Vector.point * label -> Vector.point * (Vector.point * label)
+)
+"k_means.ml" 95 2561 2612 "k_means.ml" 95 2561 2618
+type(
+  (Vector.point * label) array
+)
+ident(
+  int_ref points "k_means.ml" 78 1904 1955 "k_means.ml" 78 1904 1961
+)
+"k_means.ml" 95 2561 2565 "k_means.ml" 95 2561 2619
+call(
+  stack
+)
+type(
+  (Vector.point * (Vector.point * label)) array
+)
+"k_means.ml" 96 2621 2625 "k_means.ml" 96 2621 2630
+type(
+  Vector.point array
+)
+ident(
+  int_ref means "k_means.ml" 78 1904 1986 "k_means.ml" 78 1904 1991
+)
+"k_means.ml" 93 2510 2514 "k_means.ml" 96 2621 2630
+call(
+  tail
+)
+type(
+  (Vector.point * label) list array
+)
+"k_means.ml" 80 2076 2080 "k_means.ml" 96 2621 2630
+type(
+  (Vector.point * label) list array
+)
+"k_means.ml" 101 2649 2655 "k_means.ml" 101 2649 2661
+type(
+  (Vector.point * label) list array -> float array array
+)
+ident(
+  def update "k_means.ml" 113 3007 3009 "k_means.ml" 123 3224 3227
+)
+"k_means.ml" 101 2649 2663 "k_means.ml" 101 2649 2669
+type(
+  (Vector.point * label) list array
+)
+ident(
+  def points "k_means.ml" 102 2700 2704 "k_means.ml" 111 2969 3005
+)
+"k_means.ml" 102 2700 2708 "k_means.ml" 102 2700 2720
+type(
+  (float array * 'g) list -> float array
+)
+ident(
+  def find_average "k_means.ml" 111 2969 2973 "k_means.ml" 111 2969 3005
+)
+"k_means.ml" 102 2700 2721 "k_means.ml" 102 2700 2722
+type(
+  (float array * 'g) list
+)
+ident(
+  def p "k_means.ml" 103 2726 2732 "k_means.ml" 109 2952 2960
+)
+"k_means.ml" 103 2726 2736 "k_means.ml" 103 2726 2737
+type(
+  float
+)
+ident(
+  def n "k_means.ml" 104 2773 2779 "k_means.ml" 109 2952 2960
+)
+"k_means.ml" 103 2726 2740 "k_means.ml" 103 2726 2752
+type(
+  int -> float
+)
+ident(
+  ext_ref Pervasives.float_of_int
+)
+"k_means.ml" 103 2726 2754 "k_means.ml" 103 2726 2765
+type(
+  (float array * 'g) list -> int
+)
+ident(
+  ext_ref List.length
+)
+"k_means.ml" 103 2726 2766 "k_means.ml" 103 2726 2767
+type(
+  (float array * 'g) list
+)
+ident(
+  int_ref p "k_means.ml" 102 2700 2721 "k_means.ml" 102 2700 2722
+)
+"k_means.ml" 103 2726 2753 "k_means.ml" 103 2726 2768
+call(
+  stack
+)
+type(
+  int
+)
+"k_means.ml" 103 2726 2740 "k_means.ml" 103 2726 2768
+type(
+  float
+)
+"k_means.ml" 104 2773 2783 "k_means.ml" 104 2773 2784
+type(
+  int
+)
+ident(
+  def d "k_means.ml" 105 2821 2827 "k_means.ml" 109 2952 2960
+)
+"k_means.ml" 104 2773 2787 "k_means.ml" 104 2773 2799
+type(
+  float array -> int
+)
+ident(
+  ext_ref Array.length
+)
+"k_means.ml" 104 2773 2801 "k_means.ml" 104 2773 2804
+type(
+  float array * 'g -> float array
+)
+ident(
+  ext_ref Pervasives.fst
+)
+"k_means.ml" 104 2773 2806 "k_means.ml" 104 2773 2813
+type(
+  (float array * 'g) list -> float array * 'g
+)
+ident(
+  ext_ref List.hd
+)
+"k_means.ml" 104 2773 2814 "k_means.ml" 104 2773 2815
+type(
+  (float array * 'g) list
+)
+ident(
+  int_ref p "k_means.ml" 102 2700 2721 "k_means.ml" 102 2700 2722
+)
+"k_means.ml" 104 2773 2805 "k_means.ml" 104 2773 2816
+call(
+  stack
+)
+type(
+  float array * 'g
+)
+"k_means.ml" 104 2773 2800 "k_means.ml" 104 2773 2817
+type(
+  float array
+)
+"k_means.ml" 104 2773 2787 "k_means.ml" 104 2773 2817
+type(
+  int
+)
+"k_means.ml" 105 2821 2827 "k_means.ml" 105 2821 2836
+type(
+  (float -> float) -> Vector.point -> float array
+)
+ident(
+  ext_ref Array.map
+)
+"k_means.ml" 105 2821 2842 "k_means.ml" 105 2821 2843
+type(
+  float
+)
+ident(
+  def x "k_means.ml" 105 2821 2847 "k_means.ml" 105 2821 2853
+)
+"k_means.ml" 105 2821 2847 "k_means.ml" 105 2821 2848
+type(
+  float
+)
+ident(
+  int_ref x "k_means.ml" 105 2821 2842 "k_means.ml" 105 2821 2843
+)
+"k_means.ml" 105 2821 2849 "k_means.ml" 105 2821 2851
+type(
+  float -> float -> float
+)
+ident(
+  ext_ref Pervasives.( /. )
+)
+"k_means.ml" 105 2821 2852 "k_means.ml" 105 2821 2853
+type(
+  float
+)
+ident(
+  int_ref n "k_means.ml" 103 2726 2736 "k_means.ml" 103 2726 2737
+)
+"k_means.ml" 105 2821 2847 "k_means.ml" 105 2821 2853
+type(
+  float
+)
+"k_means.ml" 105 2821 2837 "k_means.ml" 105 2821 2854
+type(
+  float -> float
+)
+"k_means.ml" 106 2856 2863 "k_means.ml" 106 2856 2877
+type(
+  (Vector.point -> float array * 'g -> Vector.point) ->
+  Vector.point -> (float array * 'g) list -> Vector.point
+)
+ident(
+  ext_ref List.fold_left
+)
+"k_means.ml" 107 2879 2890 "k_means.ml" 107 2879 2891
+type(
+  Vector.point
+)
+ident(
+  def x "k_means.ml" 107 2879 2892 "k_means.ml" 107 2879 2932
+)
+"k_means.ml" 107 2879 2892 "k_means.ml" 107 2879 2893
+type(
+  float array * 'g
+)
+ident(
+  def y "k_means.ml" 107 2879 2897 "k_means.ml" 107 2879 2932
+)
+"k_means.ml" 107 2879 2897 "k_means.ml" 107 2879 2917
+type(
+  (float -> float -> float) -> Vector.point -> float array -> Vector.point
+)
+ident(
+  int_ref Vector.vectorized_binary_op "k_means.ml" 10 236 242 "k_means.ml" 10 236 262
+)
+"k_means.ml" 107 2879 2918 "k_means.ml" 107 2879 2922
+type(
+  float -> float -> float
+)
+ident(
+  ext_ref Pervasives.( +. )
+)
+"k_means.ml" 107 2879 2923 "k_means.ml" 107 2879 2924
+type(
+  Vector.point
+)
+ident(
+  int_ref x "k_means.ml" 107 2879 2890 "k_means.ml" 107 2879 2891
+)
+"k_means.ml" 107 2879 2926 "k_means.ml" 107 2879 2929
+type(
+  float array * 'g -> float array
+)
+ident(
+  ext_ref Pervasives.fst
+)
+"k_means.ml" 107 2879 2930 "k_means.ml" 107 2879 2931
+type(
+  float array * 'g
+)
+ident(
+  int_ref y "k_means.ml" 107 2879 2892 "k_means.ml" 107 2879 2893
+)
+"k_means.ml" 107 2879 2925 "k_means.ml" 107 2879 2932
+type(
+  float array
+)
+"k_means.ml" 107 2879 2897 "k_means.ml" 107 2879 2932
+call(
+  tail
+)
+type(
+  Vector.point
+)
+"k_means.ml" 107 2879 2885 "k_means.ml" 107 2879 2933
+type(
+  Vector.point -> float array * 'g -> Vector.point
+)
+"k_means.ml" 108 2935 2942 "k_means.ml" 108 2935 2947
+type(
+  int -> Vector.point
+)
+ident(
+  int_ref Vector.zeros "k_means.ml" 5 53 59 "k_means.ml" 5 53 64
+)
+"k_means.ml" 108 2935 2948 "k_means.ml" 108 2935 2949
+type(
+  int
+)
+ident(
+  int_ref d "k_means.ml" 104 2773 2783 "k_means.ml" 104 2773 2784
+)
+"k_means.ml" 108 2935 2941 "k_means.ml" 108 2935 2950
+call(
+  stack
+)
+type(
+  Vector.point
+)
+"k_means.ml" 109 2952 2958 "k_means.ml" 109 2952 2959
+type(
+  (float array * 'g) list
+)
+ident(
+  int_ref p "k_means.ml" 102 2700 2721 "k_means.ml" 102 2700 2722
+)
+"k_means.ml" 106 2856 2862 "k_means.ml" 109 2952 2960
+call(
+  stack
+)
+type(
+  Vector.point
+)
+"k_means.ml" 105 2821 2827 "k_means.ml" 109 2952 2960
+call(
+  tail
+)
+type(
+  float array
+)
+"k_means.ml" 104 2773 2779 "k_means.ml" 109 2952 2960
+type(
+  float array
+)
+"k_means.ml" 103 2726 2732 "k_means.ml" 109 2952 2960
+type(
+  float array
+)
+"k_means.ml" 111 2969 2973 "k_means.ml" 111 2969 2985
+type(
+  ?n_p:int ->
+  ((Vector.point * label) list -> float array) ->
+  (Vector.point * label) list array -> float array array
+)
+ident(
+  int_ref parallel_map "k_means.ml" 51 1089 1095 "k_means.ml" 51 1089 1107
+)
+"k_means.ml" 111 2969 2986 "k_means.ml" 111 2969 2998
+type(
+  (Vector.point * label) list -> float array
+)
+ident(
+  int_ref find_average "k_means.ml" 102 2700 2708 "k_means.ml" 102 2700 2720
+)
+"k_means.ml" 111 2969 2999 "k_means.ml" 111 2969 3005
+type(
+  (Vector.point * label) list array
+)
+ident(
+  int_ref points "k_means.ml" 101 2649 2663 "k_means.ml" 101 2649 2669
+)
+"k_means.ml" 111 2969 2973 "k_means.ml" 111 2969 3005
+call(
+  tail
+)
+type(
+  float array array
+)
+"k_means.ml" 102 2700 2704 "k_means.ml" 111 2969 3005
+type(
+  float array array
+)
+"k_means.ml" 113 3007 3013 "k_means.ml" 113 3007 3021
+type(
+  Vector.point array -> Vector.point array -> float -> bool
+)
+ident(
+  def stop_cnd "k_means.ml" 116 3148 3215 "k_means.ml" 123 3224 3227
+)
+"k_means.ml" 113 3007 3022 "k_means.ml" 113 3007 3031
+type(
+  Vector.point array
+)
+ident(
+  def old_means "k_means.ml" 113 3007 3032 "k_means.ml" 116 3148 3215
+)
+"k_means.ml" 113 3007 3032 "k_means.ml" 113 3007 3041
+type(
+  Vector.point array
+)
+ident(
+  def new_means "k_means.ml" 113 3007 3042 "k_means.ml" 116 3148 3215
+)
+"k_means.ml" 113 3007 3042 "k_means.ml" 113 3007 3049
+type(
+  float
+)
+ident(
+  def epsilon "k_means.ml" 114 3052 3056 "k_means.ml" 116 3148 3215
+)
+"k_means.ml" 114 3052 3056 "k_means.ml" 114 3052 3065
+type(
+  (float -> bool) -> float array -> bool
+)
+ident(
+  int_ref Vector.satisfies "k_means.ml" 13 293 299 "k_means.ml" 13 293 308
+)
+"k_means.ml" 114 3052 3071 "k_means.ml" 114 3052 3072
+type(
+  float
+)
+ident(
+  def x "k_means.ml" 114 3052 3076 "k_means.ml" 114 3052 3087
+)
+"k_means.ml" 114 3052 3076 "k_means.ml" 114 3052 3077
+type(
+  float
+)
+ident(
+  int_ref x "k_means.ml" 114 3052 3071 "k_means.ml" 114 3052 3072
+)
+"k_means.ml" 114 3052 3078 "k_means.ml" 114 3052 3079
+type(
+  float -> float -> bool
+)
+ident(
+  ext_ref Pervasives.( < )
+)
+"k_means.ml" 114 3052 3080 "k_means.ml" 114 3052 3087
+type(
+  float
+)
+ident(
+  int_ref epsilon "k_means.ml" 113 3007 3042 "k_means.ml" 113 3007 3049
+)
+"k_means.ml" 114 3052 3076 "k_means.ml" 114 3052 3087
+type(
+  bool
+)
+"k_means.ml" 114 3052 3066 "k_means.ml" 114 3052 3088
+type(
+  float -> bool
+)
+"k_means.ml" 115 3090 3095 "k_means.ml" 115 3090 3107
+type(
+  ?n_p:int ->
+  (Vector.point * Vector.point -> float) ->
+  (Vector.point * Vector.point) array -> float array
+)
+ident(
+  int_ref parallel_map "k_means.ml" 51 1089 1095 "k_means.ml" 51 1089 1107
+)
+"k_means.ml" 115 3090 3113 "k_means.ml" 115 3090 3114
+type(
+  Vector.point * Vector.point
+)
+ident(
+  def x "k_means.ml" 115 3090 3118 "k_means.ml" 115 3090 3145
+)
+"k_means.ml" 115 3090 3118 "k_means.ml" 115 3090 3129
+type(
+  Vector.point -> Vector.point -> float
+)
+ident(
+  int_ref Vector.l2_distance "k_means.ml" 7 103 109 "k_means.ml" 7 103 120
+)
+"k_means.ml" 115 3090 3131 "k_means.ml" 115 3090 3134
 type(
   Vector.point * Vector.point -> Vector.point
 )
 ident(
   ext_ref Pervasives.fst
 )
-"k_means.ml" 131 3817 3862 "k_means.ml" 131 3817 3863
+"k_means.ml" 115 3090 3135 "k_means.ml" 115 3090 3136
 type(
   Vector.point * Vector.point
 )
 ident(
-  int_ref x "k_means.ml" 131 3817 3840 "k_means.ml" 131 3817 3841
+  int_ref x "k_means.ml" 115 3090 3113 "k_means.ml" 115 3090 3114
 )
-"k_means.ml" 131 3817 3857 "k_means.ml" 131 3817 3864
+"k_means.ml" 115 3090 3130 "k_means.ml" 115 3090 3137
 type(
   Vector.point
 )
-"k_means.ml" 131 3817 3866 "k_means.ml" 131 3817 3869
+"k_means.ml" 115 3090 3139 "k_means.ml" 115 3090 3142
 type(
   Vector.point * Vector.point -> Vector.point
 )
 ident(
   ext_ref Pervasives.snd
 )
-"k_means.ml" 131 3817 3870 "k_means.ml" 131 3817 3871
+"k_means.ml" 115 3090 3143 "k_means.ml" 115 3090 3144
 type(
   Vector.point * Vector.point
 )
 ident(
-  int_ref x "k_means.ml" 131 3817 3840 "k_means.ml" 131 3817 3841
+  int_ref x "k_means.ml" 115 3090 3113 "k_means.ml" 115 3090 3114
 )
-"k_means.ml" 131 3817 3865 "k_means.ml" 131 3817 3872
+"k_means.ml" 115 3090 3138 "k_means.ml" 115 3090 3145
 type(
   Vector.point
 )
-"k_means.ml" 131 3817 3845 "k_means.ml" 131 3817 3872
+"k_means.ml" 115 3090 3118 "k_means.ml" 115 3090 3145
+call(
+  tail
+)
 type(
   float
 )
-"k_means.ml" 131 3817 3835 "k_means.ml" 131 3817 3873
+"k_means.ml" 115 3090 3108 "k_means.ml" 115 3090 3146
 type(
   Vector.point * Vector.point -> float
 )
-"k_means.ml" 132 3875 3880 "k_means.ml" 132 3875 3900
+"k_means.ml" 116 3148 3153 "k_means.ml" 116 3148 3173
 type(
   (Vector.point -> Vector.point -> Vector.point * Vector.point) ->
   Vector.point array ->
@@ -2606,294 +2862,2497 @@ type(
 ident(
   int_ref Vector.vectorized_binary_op "k_means.ml" 10 236 242 "k_means.ml" 10 236 262
 )
-"k_means.ml" 132 3875 3906 "k_means.ml" 132 3875 3907
+"k_means.ml" 116 3148 3179 "k_means.ml" 116 3148 3180
 type(
   Vector.point
 )
 ident(
-  def x "k_means.ml" 132 3875 3908 "k_means.ml" 132 3875 3919
+  def x "k_means.ml" 116 3148 3181 "k_means.ml" 116 3148 3192
 )
-"k_means.ml" 132 3875 3908 "k_means.ml" 132 3875 3909
+"k_means.ml" 116 3148 3181 "k_means.ml" 116 3148 3182
 type(
   Vector.point
 )
 ident(
-  def y "k_means.ml" 132 3875 3913 "k_means.ml" 132 3875 3919
+  def y "k_means.ml" 116 3148 3186 "k_means.ml" 116 3148 3192
 )
-"k_means.ml" 132 3875 3914 "k_means.ml" 132 3875 3915
+"k_means.ml" 116 3148 3187 "k_means.ml" 116 3148 3188
 type(
   Vector.point
 )
 ident(
-  int_ref x "k_means.ml" 132 3875 3906 "k_means.ml" 132 3875 3907
+  int_ref x "k_means.ml" 116 3148 3179 "k_means.ml" 116 3148 3180
 )
-"k_means.ml" 132 3875 3917 "k_means.ml" 132 3875 3918
+"k_means.ml" 116 3148 3190 "k_means.ml" 116 3148 3191
 type(
   Vector.point
 )
 ident(
-  int_ref y "k_means.ml" 132 3875 3908 "k_means.ml" 132 3875 3909
+  int_ref y "k_means.ml" 116 3148 3181 "k_means.ml" 116 3148 3182
 )
-"k_means.ml" 132 3875 3913 "k_means.ml" 132 3875 3919
+"k_means.ml" 116 3148 3186 "k_means.ml" 116 3148 3192
 type(
   Vector.point * Vector.point
 )
-"k_means.ml" 132 3875 3901 "k_means.ml" 132 3875 3920
+"k_means.ml" 116 3148 3174 "k_means.ml" 116 3148 3193
 type(
   Vector.point -> Vector.point -> Vector.point * Vector.point
 )
-"k_means.ml" 132 3875 3921 "k_means.ml" 132 3875 3930
+"k_means.ml" 116 3148 3194 "k_means.ml" 116 3148 3203
 type(
   Vector.point array
 )
 ident(
-  int_ref old_means "k_means.ml" 129 3734 3749 "k_means.ml" 129 3734 3758
+  int_ref old_means "k_means.ml" 113 3007 3022 "k_means.ml" 113 3007 3031
 )
-"k_means.ml" 132 3875 3931 "k_means.ml" 132 3875 3940
+"k_means.ml" 116 3148 3204 "k_means.ml" 116 3148 3213
 type(
   Vector.point array
 )
 ident(
-  int_ref new_means "k_means.ml" 129 3734 3759 "k_means.ml" 129 3734 3768
+  int_ref new_means "k_means.ml" 113 3007 3032 "k_means.ml" 113 3007 3041
 )
-"k_means.ml" 132 3875 3879 "k_means.ml" 132 3875 3941
+"k_means.ml" 116 3148 3152 "k_means.ml" 116 3148 3214
+call(
+  stack
+)
 type(
   (Vector.point * Vector.point) array
 )
-"k_means.ml" 131 3817 3821 "k_means.ml" 132 3875 3942
+"k_means.ml" 115 3090 3094 "k_means.ml" 116 3148 3215
+call(
+  stack
+)
 type(
   float array
 )
-"k_means.ml" 130 3779 3783 "k_means.ml" 132 3875 3942
+"k_means.ml" 114 3052 3056 "k_means.ml" 116 3148 3215
+call(
+  tail
+)
 type(
   bool
 )
-"k_means.ml" 135 3945 3951 "k_means.ml" 135 3945 3955
+"k_means.ml" 127 3278 3297 "k_means.ml" 127 3278 3307
+call(
+  stack
+)
+"k_means.ml" 130 3324 3330 "k_means.ml" 130 3324 3331
 type(
-  '_g
+  int ref
 )
 ident(
-  def main "k_means.ml" 147 4235 4268 "k_means.ml" 150 4271 4274
+  def k "k_means.ml" 131 3341 3343 "k_means.ml" 217 6302 6305
 )
-"k_means.ml" 138 3977 3989 "k_means.ml" 138 3977 3993
+"k_means.ml" 130 3324 3334 "k_means.ml" 130 3324 3337
 type(
-  Vector.point array -> Vector.point array -> float array array
+  int -> int ref
 )
 ident(
-  def exec "k_means.ml" 138 3977 3981 "k_means.ml" 147 4235 4268
+  ext_ref Pervasives.ref
 )
-"k_means.ml" 138 3977 3994 "k_means.ml" 138 3977 4000
+"k_means.ml" 130 3324 3338 "k_means.ml" 130 3324 3339
 type(
-  Vector.point array
+  int
+)
+"k_means.ml" 130 3324 3334 "k_means.ml" 130 3324 3339
+type(
+  int ref
+)
+"k_means.ml" 131 3341 3347 "k_means.ml" 131 3341 3356
+type(
+  int ref
 )
 ident(
-  def points "k_means.ml" 138 3977 4001 "k_means.ml" 144 4165 4186
+  def dimension "k_means.ml" 132 3367 3369 "k_means.ml" 217 6302 6305
 )
-"k_means.ml" 138 3977 4001 "k_means.ml" 138 3977 4006
+"k_means.ml" 131 3341 3359 "k_means.ml" 131 3341 3362
 type(
-  Vector.point array
+  int -> int ref
 )
 ident(
-  def means "k_means.ml" 139 4009 4015 "k_means.ml" 144 4165 4186
+  ext_ref Pervasives.ref
 )
-"k_means.ml" 139 4009 4019 "k_means.ml" 139 4009 4020
+"k_means.ml" 131 3341 3363 "k_means.ml" 131 3341 3365
 type(
-  Vector.point list array
+  int
+)
+"k_means.ml" 131 3341 3359 "k_means.ml" 131 3341 3365
+type(
+  int ref
+)
+"k_means.ml" 132 3367 3373 "k_means.ml" 132 3367 3392
+type(
+  int ref
 )
 ident(
-  def p "k_means.ml" 140 4060 4066 "k_means.ml" 144 4165 4186
+  def number_of_processes "k_means.ml" 133 3402 3404 "k_means.ml" 217 6302 6305
 )
-"k_means.ml" 139 4009 4023 "k_means.ml" 139 4009 4031
+"k_means.ml" 132 3367 3395 "k_means.ml" 132 3367 3398
 type(
-  Vector.point array ->
-  Vector.point array ->
-  (Vector.point -> Vector.point -> float) -> Vector.point list array
+  int -> int ref
 )
 ident(
-  int_ref classify "k_means.ml" 99 2742 2748 "k_means.ml" 99 2742 2756
+  ext_ref Pervasives.ref
 )
-"k_means.ml" 139 4009 4032 "k_means.ml" 139 4009 4038
+"k_means.ml" 132 3367 3399 "k_means.ml" 132 3367 3401
 type(
-  Vector.point array
+  int
+)
+"k_means.ml" 132 3367 3395 "k_means.ml" 132 3367 3401
+type(
+  int ref
+)
+"k_means.ml" 133 3402 3408 "k_means.ml" 133 3402 3415
+type(
+  float ref
 )
 ident(
-  int_ref points "k_means.ml" 138 3977 3994 "k_means.ml" 138 3977 4000
+  def epsilon "k_means.ml" 134 3428 3430 "k_means.ml" 217 6302 6305
 )
-"k_means.ml" 139 4009 4039 "k_means.ml" 139 4009 4044
+"k_means.ml" 133 3402 3418 "k_means.ml" 133 3402 3421
 type(
-  Vector.point array
+  float -> float ref
 )
 ident(
-  int_ref means "k_means.ml" 138 3977 4001 "k_means.ml" 138 3977 4006
+  ext_ref Pervasives.ref
 )
-"k_means.ml" 139 4009 4045 "k_means.ml" 139 4009 4056
-type(
-  Vector.point -> Vector.point -> float
-)
-ident(
-  int_ref Vector.l2_distance "k_means.ml" 7 103 109 "k_means.ml" 7 103 120
-)
-"k_means.ml" 139 4009 4023 "k_means.ml" 139 4009 4056
-type(
-  Vector.point list array
-)
-"k_means.ml" 140 4060 4070 "k_means.ml" 140 4060 4072
-type(
-  float array array
-)
-ident(
-  def nm "k_means.ml" 141 4094 4100 "k_means.ml" 144 4165 4186
-)
-"k_means.ml" 140 4060 4075 "k_means.ml" 140 4060 4081
-type(
-  Vector.point list array -> Vector.point array -> float array array
-)
-ident(
-  int_ref update "k_means.ml" 120 3446 3452 "k_means.ml" 120 3446 3458
-)
-"k_means.ml" 140 4060 4082 "k_means.ml" 140 4060 4083
-type(
-  Vector.point list array
-)
-ident(
-  int_ref p "k_means.ml" 139 4009 4019 "k_means.ml" 139 4009 4020
-)
-"k_means.ml" 140 4060 4084 "k_means.ml" 140 4060 4089
-type(
-  Vector.point array
-)
-ident(
-  int_ref means "k_means.ml" 138 3977 4001 "k_means.ml" 138 3977 4006
-)
-"k_means.ml" 140 4060 4075 "k_means.ml" 140 4060 4089
-type(
-  float array array
-)
-"k_means.ml" 141 4094 4104 "k_means.ml" 141 4094 4112
-type(
-  Vector.point array -> Vector.point array -> float -> bool
-)
-ident(
-  int_ref stop_cnd "k_means.ml" 129 3734 3740 "k_means.ml" 129 3734 3748
-)
-"k_means.ml" 141 4094 4113 "k_means.ml" 141 4094 4118
-type(
-  Vector.point array
-)
-ident(
-  int_ref means "k_means.ml" 138 3977 4001 "k_means.ml" 138 3977 4006
-)
-"k_means.ml" 141 4094 4119 "k_means.ml" 141 4094 4121
-type(
-  Vector.point array
-)
-ident(
-  int_ref nm "k_means.ml" 140 4060 4070 "k_means.ml" 140 4060 4072
-)
-"k_means.ml" 141 4094 4123 "k_means.ml" 141 4094 4126
+"k_means.ml" 133 3402 3422 "k_means.ml" 133 3402 3427
 type(
   float
 )
-"k_means.ml" 141 4094 4126 "k_means.ml" 141 4094 4128
+"k_means.ml" 133 3402 3418 "k_means.ml" 133 3402 3427
+type(
+  float ref
+)
+"k_means.ml" 134 3428 3434 "k_means.ml" 134 3428 3447
+type(
+  float ref
+)
+ident(
+  def training_perc "k_means.ml" 138 3461 3463 "k_means.ml" 217 6302 6305
+)
+"k_means.ml" 134 3428 3450 "k_means.ml" 134 3428 3453
+type(
+  float -> float ref
+)
+ident(
+  ext_ref Pervasives.ref
+)
+"k_means.ml" 134 3428 3454 "k_means.ml" 134 3428 3457
+type(
+  float
+)
+"k_means.ml" 134 3428 3450 "k_means.ml" 134 3428 3457
+type(
+  float ref
+)
+"k_means.ml" 138 3461 3467 "k_means.ml" 138 3461 3482
+type(
+  string -> (float array * int) array * (float array * int) array
+)
+ident(
+  def preprocess_data "k_means.ml" 169 4813 4815 "k_means.ml" 217 6302 6305
+)
+"k_means.ml" 138 3461 3483 "k_means.ml" 138 3461 3487
+type(
+  string
+)
+ident(
+  def path "k_means.ml" 139 3491 3495 "k_means.ml" 167 4715 4810
+)
+"k_means.ml" 139 3491 3499 "k_means.ml" 139 3491 3510
+type(
+  string -> string -> 'a -> float array array
+)
+ident(
+  def import_data "k_means.ml" 159 4237 4241 "k_means.ml" 167 4715 4810
+)
+"k_means.ml" 139 3491 3511 "k_means.ml" 139 3491 3515
+type(
+  string
+)
+ident(
+  def path "k_means.ml" 139 3491 3516 "k_means.ml" 157 4206 4228
+)
+"k_means.ml" 139 3491 3516 "k_means.ml" 139 3491 3525
+type(
+  string
+)
+ident(
+  def separator "k_means.ml" 139 3491 3526 "k_means.ml" 157 4206 4228
+)
+"k_means.ml" 139 3491 3526 "k_means.ml" 139 3491 3541
+type(
+  'a
+)
+ident(
+  def nbr_of_features "k_means.ml" 139 3491 3541 "k_means.ml" 157 4206 4228
+)
+"k_means.ml" 140 3563 3573 "k_means.ml" 140 3563 3586
+type(
+  Str.regexp
+)
+ident(
+  def reg_separator "k_means.ml" 141 3613 3619 "k_means.ml" 157 4206 4228
+)
+"k_means.ml" 140 3563 3589 "k_means.ml" 140 3563 3599
+type(
+  string -> Str.regexp
+)
+ident(
+  ext_ref Str.regexp
+)
+"k_means.ml" 140 3563 3600 "k_means.ml" 140 3563 3609
+type(
+  string
+)
+ident(
+  int_ref separator "k_means.ml" 139 3491 3516 "k_means.ml" 139 3491 3525
+)
+"k_means.ml" 140 3563 3589 "k_means.ml" 140 3563 3609
+call(
+  stack
+)
+type(
+  Str.regexp
+)
+"k_means.ml" 141 3613 3623 "k_means.ml" 141 3613 3633
+type(
+  float array list ref
+)
+ident(
+  def value_list "k_means.ml" 142 3646 3652 "k_means.ml" 157 4206 4228
+)
+"k_means.ml" 141 3613 3636 "k_means.ml" 141 3613 3639
+type(
+  float array list -> float array list ref
+)
+ident(
+  ext_ref Pervasives.ref
+)
+"k_means.ml" 141 3613 3640 "k_means.ml" 141 3613 3642
+type(
+  float array list
+)
+"k_means.ml" 141 3613 3636 "k_means.ml" 141 3613 3642
+type(
+  float array list ref
+)
+"k_means.ml" 143 3656 3668 "k_means.ml" 143 3656 3670
+type(
+  in_channel
+)
+ident(
+  def ic "k_means.ml" 145 3740 3748 "k_means.ml" 155 4127 4194
+)
+"k_means.ml" 143 3656 3673 "k_means.ml" 143 3656 3680
+type(
+  string -> in_channel
+)
+ident(
+  ext_ref Pervasives.open_in
+)
+"k_means.ml" 143 3656 3681 "k_means.ml" 143 3656 3685
+type(
+  string
+)
+ident(
+  int_ref path "k_means.ml" 139 3491 3511 "k_means.ml" 139 3491 3515
+)
+"k_means.ml" 143 3656 3673 "k_means.ml" 143 3656 3685
+call(
+  stack
+)
+type(
+  in_channel
+)
+"k_means.ml" 145 3740 3752 "k_means.ml" 145 3740 3753
+type(
+  string
+)
+"k_means.ml" 145 3740 3756 "k_means.ml" 145 3740 3766
+type(
+  in_channel -> string
+)
+ident(
+  ext_ref Pervasives.input_line
+)
+"k_means.ml" 145 3740 3767 "k_means.ml" 145 3740 3769
+type(
+  in_channel
+)
+ident(
+  int_ref ic "k_means.ml" 143 3656 3668 "k_means.ml" 143 3656 3670
+)
+"k_means.ml" 145 3740 3756 "k_means.ml" 145 3740 3769
+call(
+  stack
+)
+type(
+  string
+)
+"k_means.ml" 147 3785 3801 "k_means.ml" 147 3785 3806
+type(
+  bool
+)
+"k_means.ml" 149 3864 3880 "k_means.ml" 149 3864 3889
+type(
+  string list
+)
+ident(
+  def line_list "k_means.ml" 150 3935 3947 "k_means.ml" 151 4011 4056
+)
+"k_means.ml" 149 3864 3892 "k_means.ml" 149 3864 3901
+type(
+  Str.regexp -> string -> string list
+)
+ident(
+  ext_ref Str.split
+)
+"k_means.ml" 149 3864 3902 "k_means.ml" 149 3864 3915
+type(
+  Str.regexp
+)
+ident(
+  int_ref reg_separator "k_means.ml" 140 3563 3573 "k_means.ml" 140 3563 3586
+)
+"k_means.ml" 149 3864 3917 "k_means.ml" 149 3864 3927
+type(
+  in_channel -> string
+)
+ident(
+  ext_ref Pervasives.input_line
+)
+"k_means.ml" 149 3864 3928 "k_means.ml" 149 3864 3930
+type(
+  in_channel
+)
+ident(
+  int_ref ic "k_means.ml" 143 3656 3668 "k_means.ml" 143 3656 3670
+)
+"k_means.ml" 149 3864 3916 "k_means.ml" 149 3864 3931
+call(
+  stack
+)
+type(
+  string
+)
+"k_means.ml" 149 3864 3892 "k_means.ml" 149 3864 3931
+call(
+  stack
+)
+type(
+  string list
+)
+"k_means.ml" 150 3935 3951 "k_means.ml" 150 3935 3954
+type(
+  float array
+)
+ident(
+  def tmp "k_means.ml" 151 4011 4023 "k_means.ml" 151 4011 4056
+)
+"k_means.ml" 150 3935 3957 "k_means.ml" 150 3935 3970
+type(
+  float list -> float array
+)
+ident(
+  ext_ref Array.of_list
+)
+"k_means.ml" 150 3935 3972 "k_means.ml" 150 3935 3980
+type(
+  (string -> float) -> string list -> float list
+)
+ident(
+  ext_ref List.map
+)
+"k_means.ml" 150 3935 3981 "k_means.ml" 150 3935 3996
+type(
+  string -> float
+)
+ident(
+  ext_ref Pervasives.float_of_string
+)
+"k_means.ml" 150 3935 3997 "k_means.ml" 150 3935 4006
+type(
+  string list
+)
+ident(
+  int_ref line_list "k_means.ml" 149 3864 3880 "k_means.ml" 149 3864 3889
+)
+"k_means.ml" 150 3935 3971 "k_means.ml" 150 3935 4007
+call(
+  stack
+)
+type(
+  float list
+)
+"k_means.ml" 150 3935 3957 "k_means.ml" 150 3935 4007
+call(
+  stack
+)
+type(
+  float array
+)
+"k_means.ml" 151 4011 4023 "k_means.ml" 151 4011 4033
+type(
+  float array list ref
+)
+ident(
+  int_ref value_list "k_means.ml" 141 3613 3623 "k_means.ml" 141 3613 3633
+)
+"k_means.ml" 151 4011 4034 "k_means.ml" 151 4011 4036
+type(
+  float array list ref -> float array list -> unit
+)
+ident(
+  ext_ref Pervasives.( := )
+)
+"k_means.ml" 151 4011 4037 "k_means.ml" 151 4011 4040
+type(
+  float array
+)
+ident(
+  int_ref tmp "k_means.ml" 150 3935 3951 "k_means.ml" 150 3935 3954
+)
+"k_means.ml" 151 4011 4043 "k_means.ml" 151 4011 4044
+type(
+  float array list ref -> float array list
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"k_means.ml" 151 4011 4044 "k_means.ml" 151 4011 4054
+type(
+  float array list ref
+)
+ident(
+  int_ref value_list "k_means.ml" 141 3613 3623 "k_means.ml" 141 3613 3633
+)
+"k_means.ml" 151 4011 4042 "k_means.ml" 151 4011 4055
+type(
+  float array list
+)
+"k_means.ml" 151 4011 4037 "k_means.ml" 151 4011 4055
+type(
+  float array list
+)
+"k_means.ml" 151 4011 4023 "k_means.ml" 151 4011 4056
+type(
+  unit
+)
+"k_means.ml" 150 3935 3947 "k_means.ml" 151 4011 4056
+type(
+  unit
+)
+"k_means.ml" 149 3864 3876 "k_means.ml" 151 4011 4056
+type(
+  unit
+)
+"k_means.ml" 147 3785 3795 "k_means.ml" 152 4057 4071
+type(
+  unit
+)
+"k_means.ml" 153 4073 4085 "k_means.ml" 153 4073 4098
+type(
+  float array list -> float array array
+)
+ident(
+  ext_ref Array.of_list
+)
+"k_means.ml" 153 4073 4100 "k_means.ml" 153 4073 4101
+type(
+  float array list ref -> float array list
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"k_means.ml" 153 4073 4101 "k_means.ml" 153 4073 4111
+type(
+  float array list ref
+)
+ident(
+  int_ref value_list "k_means.ml" 141 3613 3623 "k_means.ml" 141 3613 3633
+)
+"k_means.ml" 153 4073 4099 "k_means.ml" 153 4073 4112
+type(
+  float array list
+)
+"k_means.ml" 153 4073 4085 "k_means.ml" 153 4073 4112
+call(
+  stack
+)
+type(
+  float array array
+)
+"k_means.ml" 147 3785 3795 "k_means.ml" 153 4073 4112
+type(
+  float array array
+)
+"k_means.ml" 155 4127 4139 "k_means.ml" 155 4127 4150
+type(
+  exn
+)
+"k_means.ml" 155 4127 4154 "k_means.ml" 155 4127 4162
+type(
+  in_channel -> unit
+)
+ident(
+  ext_ref Pervasives.close_in
+)
+"k_means.ml" 155 4127 4163 "k_means.ml" 155 4127 4165
+type(
+  in_channel
+)
+ident(
+  int_ref ic "k_means.ml" 143 3656 3668 "k_means.ml" 143 3656 3670
+)
+"k_means.ml" 155 4127 4154 "k_means.ml" 155 4127 4165
+call(
+  stack
+)
+type(
+  unit
+)
+"k_means.ml" 155 4127 4167 "k_means.ml" 155 4127 4180
+type(
+  float array list -> float array array
+)
+ident(
+  ext_ref Array.of_list
+)
+"k_means.ml" 155 4127 4182 "k_means.ml" 155 4127 4183
+type(
+  float array list ref -> float array list
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"k_means.ml" 155 4127 4183 "k_means.ml" 155 4127 4193
+type(
+  float array list ref
+)
+ident(
+  int_ref value_list "k_means.ml" 141 3613 3623 "k_means.ml" 141 3613 3633
+)
+"k_means.ml" 155 4127 4181 "k_means.ml" 155 4127 4194
+type(
+  float array list
+)
+"k_means.ml" 155 4127 4167 "k_means.ml" 155 4127 4194
+call(
+  stack
+)
+type(
+  float array array
+)
+"k_means.ml" 155 4127 4154 "k_means.ml" 155 4127 4194
+type(
+  float array array
+)
+"k_means.ml" 146 3773 3781 "k_means.ml" 155 4127 4194
+type(
+  float array array
+)
+"k_means.ml" 145 3740 3748 "k_means.ml" 155 4127 4194
+type(
+  float array array
+)
+"k_means.ml" 143 3656 3664 "k_means.ml" 155 4127 4194
+type(
+  float array array
+)
+"k_means.ml" 157 4206 4216 "k_means.ml" 157 4206 4217
+type(
+  exn
+)
+ident(
+  def e "k_means.ml" 157 4206 4221 "k_means.ml" 157 4206 4228
+)
+"k_means.ml" 157 4206 4221 "k_means.ml" 157 4206 4226
+type(
+  exn -> float array array
+)
+ident(
+  ext_ref Pervasives.raise
+)
+"k_means.ml" 157 4206 4227 "k_means.ml" 157 4206 4228
+type(
+  exn
+)
+ident(
+  int_ref e "k_means.ml" 157 4206 4216 "k_means.ml" 157 4206 4217
+)
+"k_means.ml" 157 4206 4221 "k_means.ml" 157 4206 4228
+type(
+  float array array
+)
+"k_means.ml" 142 3646 3652 "k_means.ml" 157 4206 4228
+type(
+  float array array
+)
+"k_means.ml" 141 3613 3619 "k_means.ml" 157 4206 4228
+type(
+  float array array
+)
+"k_means.ml" 140 3563 3569 "k_means.ml" 157 4206 4228
+type(
+  float array array
+)
+type(
+  float array array
+)
+"k_means.ml" 159 4237 4245 "k_means.ml" 159 4237 4262
+type(
+  float array array -> (float array * int) array
+)
+ident(
+  def get_values_labels "k_means.ml" 162 4421 4425 "k_means.ml" 167 4715 4810
+)
+"k_means.ml" 159 4237 4264 "k_means.ml" 159 4237 4268
+type(
+  float array array
+)
+ident(
+  def data "k_means.ml" 159 4237 4288 "k_means.ml" 160 4319 4411
+)
+"k_means.ml" 160 4319 4325 "k_means.ml" 160 4319 4337
+type(
+  ?n_p:int ->
+  (float array -> float array * int) ->
+  float array array -> (float array * int) array
+)
+ident(
+  int_ref K_means.parallel_map "k_means.ml" 51 1089 1095 "k_means.ml" 51 1089 1107
+)
+"k_means.ml" 160 4319 4343 "k_means.ml" 160 4319 4344
+type(
+  float array
+)
+ident(
+  def x "k_means.ml" 160 4319 4348 "k_means.ml" 160 4319 4405
+)
+"k_means.ml" 160 4319 4350 "k_means.ml" 160 4319 4359
+type(
+  float array -> int -> int -> float array
+)
+ident(
+  ext_ref Array.sub
+)
+"k_means.ml" 160 4319 4360 "k_means.ml" 160 4319 4361
+type(
+  float array
+)
+ident(
+  int_ref x "k_means.ml" 160 4319 4343 "k_means.ml" 160 4319 4344
+)
+"k_means.ml" 160 4319 4362 "k_means.ml" 160 4319 4363
+type(
+  int
+)
+"k_means.ml" 160 4319 4364 "k_means.ml" 160 4319 4365
+type(
+  int ref -> int
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"k_means.ml" 160 4319 4365 "k_means.ml" 160 4319 4374
+type(
+  int ref
+)
+ident(
+  int_ref dimension "k_means.ml" 131 3341 3347 "k_means.ml" 131 3341 3356
+)
+"k_means.ml" 160 4319 4364 "k_means.ml" 160 4319 4374
+type(
+  int
+)
+"k_means.ml" 160 4319 4349 "k_means.ml" 160 4319 4375
+call(
+  stack
+)
+type(
+  float array
+)
+"k_means.ml" 160 4319 4377 "k_means.ml" 160 4319 4389
+type(
+  float -> int
+)
+ident(
+  ext_ref Pervasives.int_of_float
+)
+"k_means.ml" 160 4319 4390 "k_means.ml" 160 4319 4391
+type(
+  float array
+)
+ident(
+  int_ref x "k_means.ml" 160 4319 4343 "k_means.ml" 160 4319 4344
+)
+"k_means.ml" 160 4319 4393 "k_means.ml" 160 4319 4394
+type(
+  int ref -> int
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"k_means.ml" 160 4319 4394 "k_means.ml" 160 4319 4403
+type(
+  int ref
+)
+ident(
+  int_ref dimension "k_means.ml" 131 3341 3347 "k_means.ml" 131 3341 3356
+)
+"k_means.ml" 160 4319 4393 "k_means.ml" 160 4319 4403
+type(
+  int
+)
+"k_means.ml" 160 4319 4390 "k_means.ml" 160 4319 4404
+type(
+  float
+)
+"k_means.ml" 160 4319 4377 "k_means.ml" 160 4319 4404
+type(
+  int
+)
+"k_means.ml" 160 4319 4348 "k_means.ml" 160 4319 4405
+type(
+  float array * int
+)
+"k_means.ml" 160 4319 4338 "k_means.ml" 160 4319 4406
+type(
+  float array -> float array * int
+)
+"k_means.ml" 160 4319 4407 "k_means.ml" 160 4319 4411
+type(
+  float array array
+)
+ident(
+  int_ref data "k_means.ml" 159 4237 4264 "k_means.ml" 159 4237 4268
+)
+"k_means.ml" 160 4319 4325 "k_means.ml" 160 4319 4411
+call(
+  tail
+)
+type(
+  (float array * int) array
+)
+type(
+  (float array * int) array
+)
+"k_means.ml" 162 4421 4429 "k_means.ml" 162 4421 4458
+type(
+  (float array * int) array ->
+  (float array * int) array * (float array * int) array
+)
+ident(
+  def seperate_to_training_and_test "k_means.ml" 167 4715 4719 "k_means.ml" 167 4715 4810
+)
+"k_means.ml" 162 4421 4460 "k_means.ml" 162 4421 4464
+type(
+  (float array * int) array
+)
+ident(
+  def data "k_means.ml" 162 4421 4492 "k_means.ml" 165 4657 4707
+)
+"k_means.ml" 163 4553 4563 "k_means.ml" 163 4553 4564
+type(
+  int
+)
+ident(
+  def n "k_means.ml" 164 4589 4595 "k_means.ml" 165 4657 4707
+)
+"k_means.ml" 163 4553 4567 "k_means.ml" 163 4553 4579
+type(
+  (float array * int) array -> int
+)
+ident(
+  ext_ref Array.length
+)
+"k_means.ml" 163 4553 4580 "k_means.ml" 163 4553 4584
+type(
+  (float array * int) array
+)
+ident(
+  int_ref data "k_means.ml" 162 4421 4460 "k_means.ml" 162 4421 4464
+)
+"k_means.ml" 163 4553 4567 "k_means.ml" 163 4553 4584
+type(
+  int
+)
+"k_means.ml" 164 4589 4599 "k_means.ml" 164 4589 4600
+type(
+  int
+)
+ident(
+  def l "k_means.ml" 165 4657 4663 "k_means.ml" 165 4657 4707
+)
+"k_means.ml" 164 4589 4603 "k_means.ml" 164 4589 4615
+type(
+  float -> int
+)
+ident(
+  ext_ref Pervasives.int_of_float
+)
+"k_means.ml" 164 4589 4618 "k_means.ml" 164 4589 4630
+type(
+  int -> float
+)
+ident(
+  ext_ref Pervasives.float_of_int
+)
+"k_means.ml" 164 4589 4631 "k_means.ml" 164 4589 4632
+type(
+  int
+)
+ident(
+  int_ref n "k_means.ml" 163 4553 4563 "k_means.ml" 163 4553 4564
+)
+"k_means.ml" 164 4589 4617 "k_means.ml" 164 4589 4633
+type(
+  float
+)
+"k_means.ml" 164 4589 4634 "k_means.ml" 164 4589 4636
 type(
   float -> float -> float
 )
 ident(
-  ext_ref Pervasives.( ** )
+  ext_ref Pervasives.( *. )
 )
-"k_means.ml" 141 4094 4128 "k_means.ml" 141 4094 4133
+"k_means.ml" 164 4589 4637 "k_means.ml" 164 4589 4638
+type(
+  float ref -> float
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"k_means.ml" 164 4589 4638 "k_means.ml" 164 4589 4651
+type(
+  float ref
+)
+ident(
+  int_ref training_perc "k_means.ml" 134 3428 3434 "k_means.ml" 134 3428 3447
+)
+"k_means.ml" 164 4589 4637 "k_means.ml" 164 4589 4651
 type(
   float
 )
-"k_means.ml" 141 4094 4122 "k_means.ml" 141 4094 4134
+"k_means.ml" 164 4589 4616 "k_means.ml" 164 4589 4652
 type(
   float
 )
-"k_means.ml" 141 4094 4103 "k_means.ml" 141 4094 4135
+"k_means.ml" 164 4589 4603 "k_means.ml" 164 4589 4652
+type(
+  int
+)
+"k_means.ml" 165 4657 4664 "k_means.ml" 165 4657 4673
+type(
+  (float array * int) array -> int -> int -> (float array * int) array
+)
+ident(
+  ext_ref Array.sub
+)
+"k_means.ml" 165 4657 4674 "k_means.ml" 165 4657 4678
+type(
+  (float array * int) array
+)
+ident(
+  int_ref data "k_means.ml" 162 4421 4460 "k_means.ml" 162 4421 4464
+)
+"k_means.ml" 165 4657 4679 "k_means.ml" 165 4657 4680
+type(
+  int
+)
+"k_means.ml" 165 4657 4681 "k_means.ml" 165 4657 4682
+type(
+  int
+)
+ident(
+  int_ref l "k_means.ml" 164 4589 4599 "k_means.ml" 164 4589 4600
+)
+"k_means.ml" 165 4657 4664 "k_means.ml" 165 4657 4682
+call(
+  stack
+)
+type(
+  (float array * int) array
+)
+"k_means.ml" 165 4657 4684 "k_means.ml" 165 4657 4693
+type(
+  (float array * int) array -> int -> int -> (float array * int) array
+)
+ident(
+  ext_ref Array.sub
+)
+"k_means.ml" 165 4657 4694 "k_means.ml" 165 4657 4698
+type(
+  (float array * int) array
+)
+ident(
+  int_ref data "k_means.ml" 162 4421 4460 "k_means.ml" 162 4421 4464
+)
+"k_means.ml" 165 4657 4699 "k_means.ml" 165 4657 4700
+type(
+  int
+)
+ident(
+  int_ref l "k_means.ml" 164 4589 4599 "k_means.ml" 164 4589 4600
+)
+"k_means.ml" 165 4657 4702 "k_means.ml" 165 4657 4703
+type(
+  int
+)
+ident(
+  int_ref n "k_means.ml" 163 4553 4563 "k_means.ml" 163 4553 4564
+)
+"k_means.ml" 165 4657 4703 "k_means.ml" 165 4657 4704
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( - )
+)
+"k_means.ml" 165 4657 4704 "k_means.ml" 165 4657 4705
+type(
+  int
+)
+ident(
+  int_ref l "k_means.ml" 164 4589 4599 "k_means.ml" 164 4589 4600
+)
+"k_means.ml" 165 4657 4701 "k_means.ml" 165 4657 4706
+type(
+  int
+)
+"k_means.ml" 165 4657 4684 "k_means.ml" 165 4657 4706
+call(
+  stack
+)
+type(
+  (float array * int) array
+)
+"k_means.ml" 165 4657 4663 "k_means.ml" 165 4657 4707
+type(
+  (float array * int) array * (float array * int) array
+)
+"k_means.ml" 164 4589 4595 "k_means.ml" 165 4657 4707
+type(
+  (float array * int) array * (float array * int) array
+)
+"k_means.ml" 163 4553 4559 "k_means.ml" 165 4657 4707
+type(
+  (float array * int) array * (float array * int) array
+)
+type(
+  (float array * int) array * (float array * int) array
+)
+"k_means.ml" 167 4715 4719 "k_means.ml" 167 4715 4748
+type(
+  (float array * int) array ->
+  (float array * int) array * (float array * int) array
+)
+ident(
+  int_ref seperate_to_training_and_test "k_means.ml" 162 4421 4429 "k_means.ml" 162 4421 4458
+)
+"k_means.ml" 167 4715 4750 "k_means.ml" 167 4715 4767
+type(
+  float array array -> (float array * int) array
+)
+ident(
+  int_ref get_values_labels "k_means.ml" 159 4237 4245 "k_means.ml" 159 4237 4262
+)
+"k_means.ml" 167 4715 4769 "k_means.ml" 167 4715 4780
+type(
+  string -> string -> int -> float array array
+)
+ident(
+  int_ref import_data "k_means.ml" 139 3491 3499 "k_means.ml" 139 3491 3510
+)
+"k_means.ml" 167 4715 4781 "k_means.ml" 167 4715 4785
+type(
+  string
+)
+ident(
+  int_ref path "k_means.ml" 138 3461 3483 "k_means.ml" 138 3461 3487
+)
+"k_means.ml" 167 4715 4787 "k_means.ml" 167 4715 4790
+type(
+  string
+)
+"k_means.ml" 167 4715 4794 "k_means.ml" 167 4715 4795
+type(
+  int ref -> int
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"k_means.ml" 167 4715 4795 "k_means.ml" 167 4715 4804
+type(
+  int ref
+)
+ident(
+  int_ref dimension "k_means.ml" 131 3341 3347 "k_means.ml" 131 3341 3356
+)
+"k_means.ml" 167 4715 4793 "k_means.ml" 167 4715 4805
+type(
+  int
+)
+"k_means.ml" 167 4715 4805 "k_means.ml" 167 4715 4806
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"k_means.ml" 167 4715 4806 "k_means.ml" 167 4715 4807
+type(
+  int
+)
+"k_means.ml" 167 4715 4792 "k_means.ml" 167 4715 4808
+type(
+  int
+)
+"k_means.ml" 167 4715 4768 "k_means.ml" 167 4715 4809
+call(
+  stack
+)
+type(
+  float array array
+)
+"k_means.ml" 167 4715 4749 "k_means.ml" 167 4715 4810
+call(
+  stack
+)
+type(
+  (float array * int) array
+)
+"k_means.ml" 167 4715 4719 "k_means.ml" 167 4715 4810
+call(
+  tail
+)
+type(
+  (float array * int) array * (float array * int) array
+)
+"k_means.ml" 162 4421 4425 "k_means.ml" 167 4715 4810
+type(
+  (float array * int) array * (float array * int) array
+)
+"k_means.ml" 159 4237 4241 "k_means.ml" 167 4715 4810
+type(
+  (float array * int) array * (float array * int) array
+)
+"k_means.ml" 139 3491 3495 "k_means.ml" 167 4715 4810
+type(
+  (float array * int) array * (float array * int) array
+)
+"k_means.ml" 169 4813 4819 "k_means.ml" 169 4813 4823
+type(
+  float list -> ('b * int) list array -> float list
+)
+ident(
+  def test "k_means.ml" 181 5224 5226 "k_means.ml" 217 6302 6305
+)
+"k_means.ml" 169 4813 4824 "k_means.ml" 169 4813 4827
+type(
+  float list
+)
+ident(
+  def acc "k_means.ml" 169 4813 4828 "k_means.ml" 178 5202 5221
+)
+"k_means.ml" 169 4813 4828 "k_means.ml" 169 4813 4834
+type(
+  ('b * int) list array
+)
+ident(
+  def points "k_means.ml" 170 4837 4841 "k_means.ml" 178 5202 5221
+)
+"k_means.ml" 170 4837 4845 "k_means.ml" 170 4837 4849
+type(
+  ('c * int) list -> float
+)
+ident(
+  def eval "k_means.ml" 176 5046 5050 "k_means.ml" 178 5202 5221
+)
+"k_means.ml" 170 4837 4850 "k_means.ml" 170 4837 4851
+type(
+  ('c * int) list
+)
+ident(
+  def l "k_means.ml" 171 4855 4861 "k_means.ml" 174 5002 5037
+)
+"k_means.ml" 171 4855 4865 "k_means.ml" 171 4855 4866
+type(
+  float
+)
+ident(
+  def n "k_means.ml" 172 4931 4937 "k_means.ml" 174 5002 5037
+)
+"k_means.ml" 171 4855 4869 "k_means.ml" 171 4855 4881
+type(
+  int -> float
+)
+ident(
+  ext_ref Pervasives.float_of_int
+)
+"k_means.ml" 171 4855 4883 "k_means.ml" 171 4855 4897
+type(
+  (int -> 'c * int -> int) -> int -> ('c * int) list -> int
+)
+ident(
+  ext_ref List.fold_left
+)
+"k_means.ml" 171 4855 4903 "k_means.ml" 171 4855 4904
+type(
+  int
+)
+ident(
+  def x "k_means.ml" 171 4855 4905 "k_means.ml" 171 4855 4920
+)
+"k_means.ml" 171 4855 4905 "k_means.ml" 171 4855 4906
+type(
+  'c * int
+)
+ident(
+  def y "k_means.ml" 171 4855 4910 "k_means.ml" 171 4855 4920
+)
+"k_means.ml" 171 4855 4910 "k_means.ml" 171 4855 4911
+type(
+  int
+)
+ident(
+  int_ref x "k_means.ml" 171 4855 4903 "k_means.ml" 171 4855 4904
+)
+"k_means.ml" 171 4855 4912 "k_means.ml" 171 4855 4913
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"k_means.ml" 171 4855 4914 "k_means.ml" 171 4855 4917
+type(
+  'c * int -> int
+)
+ident(
+  ext_ref Pervasives.snd
+)
+"k_means.ml" 171 4855 4917 "k_means.ml" 171 4855 4920
+type(
+  'c * int
+)
+ident(
+  int_ref y "k_means.ml" 171 4855 4905 "k_means.ml" 171 4855 4906
+)
+"k_means.ml" 171 4855 4914 "k_means.ml" 171 4855 4920
+type(
+  int
+)
+"k_means.ml" 171 4855 4910 "k_means.ml" 171 4855 4920
+type(
+  int
+)
+"k_means.ml" 171 4855 4898 "k_means.ml" 171 4855 4921
+type(
+  int -> 'c * int -> int
+)
+"k_means.ml" 171 4855 4922 "k_means.ml" 171 4855 4923
+type(
+  int
+)
+"k_means.ml" 171 4855 4924 "k_means.ml" 171 4855 4925
+type(
+  ('c * int) list
+)
+ident(
+  int_ref l "k_means.ml" 170 4837 4850 "k_means.ml" 170 4837 4851
+)
+"k_means.ml" 171 4855 4882 "k_means.ml" 171 4855 4926
+call(
+  stack
+)
+type(
+  int
+)
+"k_means.ml" 171 4855 4869 "k_means.ml" 171 4855 4926
+type(
+  float
+)
+"k_means.ml" 172 4931 4941 "k_means.ml" 172 4931 4942
+type(
+  float
+)
+ident(
+  def s "k_means.ml" 173 4977 4983 "k_means.ml" 174 5002 5037
+)
+"k_means.ml" 172 4931 4945 "k_means.ml" 172 4931 4957
+type(
+  int -> float
+)
+ident(
+  ext_ref Pervasives.float_of_int
+)
+"k_means.ml" 172 4931 4959 "k_means.ml" 172 4931 4970
+type(
+  ('c * int) list -> int
+)
+ident(
+  ext_ref List.length
+)
+"k_means.ml" 172 4931 4971 "k_means.ml" 172 4931 4972
+type(
+  ('c * int) list
+)
+ident(
+  int_ref l "k_means.ml" 170 4837 4850 "k_means.ml" 170 4837 4851
+)
+"k_means.ml" 172 4931 4958 "k_means.ml" 172 4931 4973
+call(
+  stack
+)
+type(
+  int
+)
+"k_means.ml" 172 4931 4945 "k_means.ml" 172 4931 4973
+type(
+  float
+)
+"k_means.ml" 173 4977 4987 "k_means.ml" 173 4977 4988
+type(
+  float
+)
+ident(
+  def r "k_means.ml" 174 5002 5008 "k_means.ml" 174 5002 5037
+)
+"k_means.ml" 173 4977 4991 "k_means.ml" 173 4977 4992
+type(
+  float
+)
+ident(
+  int_ref n "k_means.ml" 171 4855 4865 "k_means.ml" 171 4855 4866
+)
+"k_means.ml" 173 4977 4993 "k_means.ml" 173 4977 4995
+type(
+  float -> float -> float
+)
+ident(
+  ext_ref Pervasives.( /. )
+)
+"k_means.ml" 173 4977 4996 "k_means.ml" 173 4977 4997
+type(
+  float
+)
+ident(
+  int_ref s "k_means.ml" 172 4931 4941 "k_means.ml" 172 4931 4942
+)
+"k_means.ml" 173 4977 4991 "k_means.ml" 173 4977 4997
+type(
+  float
+)
+"k_means.ml" 174 5002 5011 "k_means.ml" 174 5002 5012
+type(
+  float
+)
+ident(
+  int_ref r "k_means.ml" 173 4977 4987 "k_means.ml" 173 4977 4988
+)
+"k_means.ml" 174 5002 5013 "k_means.ml" 174 5002 5014
+type(
+  float -> float -> bool
+)
+ident(
+  ext_ref Pervasives.( > )
+)
+"k_means.ml" 174 5002 5015 "k_means.ml" 174 5002 5018
+type(
+  float
+)
+"k_means.ml" 174 5002 5011 "k_means.ml" 174 5002 5018
 type(
   bool
 )
-"k_means.ml" 142 4142 4150 "k_means.ml" 142 4142 4152
+"k_means.ml" 174 5002 5024 "k_means.ml" 174 5002 5025
 type(
-  float array array
+  float
 )
 ident(
-  int_ref nm "k_means.ml" 140 4060 4070 "k_means.ml" 140 4060 4072
+  int_ref n "k_means.ml" 171 4855 4865 "k_means.ml" 171 4855 4866
 )
-"k_means.ml" 144 4165 4172 "k_means.ml" 144 4165 4176
+"k_means.ml" 174 5002 5031 "k_means.ml" 174 5002 5032
 type(
-  Vector.point array -> Vector.point array -> float array array
+  float
 )
 ident(
-  int_ref exec "k_means.ml" 138 3977 3989 "k_means.ml" 138 3977 3993
+  int_ref s "k_means.ml" 172 4931 4941 "k_means.ml" 172 4931 4942
 )
-"k_means.ml" 144 4165 4177 "k_means.ml" 144 4165 4183
+"k_means.ml" 174 5002 5033 "k_means.ml" 174 5002 5035
+type(
+  float -> float -> float
+)
+ident(
+  ext_ref Pervasives.( -. )
+)
+"k_means.ml" 174 5002 5036 "k_means.ml" 174 5002 5037
+type(
+  float
+)
+ident(
+  int_ref n "k_means.ml" 171 4855 4865 "k_means.ml" 171 4855 4866
+)
+"k_means.ml" 174 5002 5031 "k_means.ml" 174 5002 5037
+type(
+  float
+)
+"k_means.ml" 174 5002 5008 "k_means.ml" 174 5002 5037
+type(
+  float
+)
+"k_means.ml" 173 4977 4983 "k_means.ml" 174 5002 5037
+type(
+  float
+)
+"k_means.ml" 172 4931 4937 "k_means.ml" 174 5002 5037
+type(
+  float
+)
+"k_means.ml" 171 4855 4861 "k_means.ml" 174 5002 5037
+type(
+  float
+)
+"k_means.ml" 176 5046 5054 "k_means.ml" 176 5046 5055
+type(
+  float
+)
+ident(
+  def s "k_means.ml" 177 5113 5117 "k_means.ml" 178 5202 5221
+)
+"k_means.ml" 176 5046 5058 "k_means.ml" 176 5046 5073
+type(
+  (float -> float -> float) -> float -> float array -> float
+)
+ident(
+  ext_ref Array.fold_left
+)
+"k_means.ml" 176 5046 5074 "k_means.ml" 176 5046 5078
+type(
+  float -> float -> float
+)
+ident(
+  ext_ref Pervasives.( +. )
+)
+"k_means.ml" 176 5046 5079 "k_means.ml" 176 5046 5081
+type(
+  float
+)
+"k_means.ml" 176 5046 5083 "k_means.ml" 176 5046 5095
+type(
+  ?n_p:int ->
+  (('b * int) list -> float) -> ('b * int) list array -> float array
+)
+ident(
+  int_ref K_means.parallel_map "k_means.ml" 51 1089 1095 "k_means.ml" 51 1089 1107
+)
+"k_means.ml" 176 5046 5096 "k_means.ml" 176 5046 5100
+type(
+  ('b * int) list -> float
+)
+ident(
+  int_ref eval "k_means.ml" 170 4837 4845 "k_means.ml" 170 4837 4849
+)
+"k_means.ml" 176 5046 5101 "k_means.ml" 176 5046 5107
+type(
+  ('b * int) list array
+)
+ident(
+  int_ref points "k_means.ml" 169 4813 4828 "k_means.ml" 169 4813 4834
+)
+"k_means.ml" 176 5046 5082 "k_means.ml" 176 5046 5108
+call(
+  stack
+)
+type(
+  float array
+)
+"k_means.ml" 176 5046 5058 "k_means.ml" 176 5046 5108
+call(
+  stack
+)
+type(
+  float
+)
+"k_means.ml" 177 5113 5121 "k_means.ml" 177 5113 5122
+type(
+  float
+)
+ident(
+  def q "k_means.ml" 178 5202 5206 "k_means.ml" 178 5202 5221
+)
+"k_means.ml" 177 5113 5125 "k_means.ml" 177 5113 5137
+type(
+  int -> float
+)
+ident(
+  ext_ref Pervasives.float_of_int
+)
+"k_means.ml" 177 5113 5139 "k_means.ml" 177 5113 5154
+type(
+  (int -> ('b * int) list -> int) -> int -> ('b * int) list array -> int
+)
+ident(
+  ext_ref Array.fold_left
+)
+"k_means.ml" 177 5113 5160 "k_means.ml" 177 5113 5161
+type(
+  int
+)
+ident(
+  def x "k_means.ml" 177 5113 5162 "k_means.ml" 177 5113 5186
+)
+"k_means.ml" 177 5113 5162 "k_means.ml" 177 5113 5163
+type(
+  ('b * int) list
+)
+ident(
+  def y "k_means.ml" 177 5113 5167 "k_means.ml" 177 5113 5186
+)
+"k_means.ml" 177 5113 5167 "k_means.ml" 177 5113 5168
+type(
+  int
+)
+ident(
+  int_ref x "k_means.ml" 177 5113 5160 "k_means.ml" 177 5113 5161
+)
+"k_means.ml" 177 5113 5169 "k_means.ml" 177 5113 5170
+type(
+  int -> int -> int
+)
+ident(
+  ext_ref Pervasives.( + )
+)
+"k_means.ml" 177 5113 5172 "k_means.ml" 177 5113 5183
+type(
+  ('b * int) list -> int
+)
+ident(
+  ext_ref List.length
+)
+"k_means.ml" 177 5113 5184 "k_means.ml" 177 5113 5185
+type(
+  ('b * int) list
+)
+ident(
+  int_ref y "k_means.ml" 177 5113 5162 "k_means.ml" 177 5113 5163
+)
+"k_means.ml" 177 5113 5171 "k_means.ml" 177 5113 5186
+call(
+  stack
+)
+type(
+  int
+)
+"k_means.ml" 177 5113 5167 "k_means.ml" 177 5113 5186
+type(
+  int
+)
+"k_means.ml" 177 5113 5155 "k_means.ml" 177 5113 5187
+type(
+  int -> ('b * int) list -> int
+)
+"k_means.ml" 177 5113 5188 "k_means.ml" 177 5113 5189
+type(
+  int
+)
+"k_means.ml" 177 5113 5190 "k_means.ml" 177 5113 5196
+type(
+  ('b * int) list array
+)
+ident(
+  int_ref points "k_means.ml" 169 4813 4828 "k_means.ml" 169 4813 4834
+)
+"k_means.ml" 177 5113 5138 "k_means.ml" 177 5113 5197
+call(
+  stack
+)
+type(
+  int
+)
+"k_means.ml" 177 5113 5125 "k_means.ml" 177 5113 5197
+type(
+  float
+)
+"k_means.ml" 178 5202 5207 "k_means.ml" 178 5202 5208
+type(
+  float
+)
+ident(
+  int_ref s "k_means.ml" 176 5046 5054 "k_means.ml" 176 5046 5055
+)
+"k_means.ml" 178 5202 5209 "k_means.ml" 178 5202 5211
+type(
+  float -> float -> float
+)
+ident(
+  ext_ref Pervasives.( /. )
+)
+"k_means.ml" 178 5202 5212 "k_means.ml" 178 5202 5213
+type(
+  float
+)
+ident(
+  int_ref q "k_means.ml" 177 5113 5121 "k_means.ml" 177 5113 5122
+)
+"k_means.ml" 178 5202 5206 "k_means.ml" 178 5202 5214
+type(
+  float
+)
+"k_means.ml" 178 5202 5218 "k_means.ml" 178 5202 5221
+type(
+  float list
+)
+ident(
+  int_ref acc "k_means.ml" 169 4813 4824 "k_means.ml" 169 4813 4827
+)
+"k_means.ml" 178 5202 5206 "k_means.ml" 178 5202 5221
+type(
+  float list
+)
+"k_means.ml" 177 5113 5117 "k_means.ml" 178 5202 5221
+type(
+  float list
+)
+"k_means.ml" 176 5046 5050 "k_means.ml" 178 5202 5221
+type(
+  float list
+)
+"k_means.ml" 170 4837 4841 "k_means.ml" 178 5202 5221
+type(
+  float list
+)
+"k_means.ml" 181 5224 5230 "k_means.ml" 181 5224 5234
+type(
+  (Vector.point * K_means.label) array ->
+  (Vector.point * K_means.label) array ->
+  float array array * float list * float list
+)
+ident(
+  def exec "k_means.ml" 195 5682 5684 "k_means.ml" 217 6302 6305
+)
+"k_means.ml" 181 5224 5235 "k_means.ml" 181 5224 5248
+type(
+  (Vector.point * K_means.label) array
+)
+ident(
+  def training_data "k_means.ml" 181 5224 5249 "k_means.ml" 191 5617 5678
+)
+"k_means.ml" 181 5224 5249 "k_means.ml" 181 5224 5258
+type(
+  (Vector.point * K_means.label) array
+)
+ident(
+  def test_data "k_means.ml" 182 5262 5266 "k_means.ml" 191 5617 5678
+)
+"k_means.ml" 182 5262 5274 "k_means.ml" 182 5262 5277
+type(
+  Vector.point array ->
+  float list -> float list -> float array array * float list * float list
+)
+ident(
+  def aux "k_means.ml" 182 5262 5266 "k_means.ml" 191 5617 5678
+)
+"k_means.ml" 182 5262 5278 "k_means.ml" 182 5262 5283
 type(
   Vector.point array
 )
 ident(
-  int_ref points "k_means.ml" 138 3977 3994 "k_means.ml" 138 3977 4000
+  def means "k_means.ml" 182 5262 5284 "k_means.ml" 189 5548 5608
 )
-"k_means.ml" 144 4165 4184 "k_means.ml" 144 4165 4186
+"k_means.ml" 182 5262 5284 "k_means.ml" 182 5262 5296
+type(
+  float list
+)
+ident(
+  def acc_training "k_means.ml" 182 5262 5297 "k_means.ml" 189 5548 5608
+)
+"k_means.ml" 182 5262 5297 "k_means.ml" 182 5262 5305
+type(
+  float list
+)
+ident(
+  def acc_test "k_means.ml" 183 5309 5315 "k_means.ml" 189 5548 5608
+)
+"k_means.ml" 183 5309 5319 "k_means.ml" 183 5309 5323
+type(
+  (Vector.point * K_means.label) list array
+)
+ident(
+  def p_tr "k_means.ml" 184 5358 5364 "k_means.ml" 189 5548 5608
+)
+"k_means.ml" 183 5309 5326 "k_means.ml" 183 5309 5334
+type(
+  ?distance_function:(Vector.point -> Vector.point -> float) ->
+  (Vector.point * K_means.label) array ->
+  Vector.point array -> (Vector.point * K_means.label) list array
+)
+ident(
+  int_ref K_means.classify "k_means.ml" 78 1904 1910 "k_means.ml" 78 1904 1918
+)
+"k_means.ml" 183 5309 5335 "k_means.ml" 183 5309 5348
+type(
+  (Vector.point * K_means.label) array
+)
+ident(
+  int_ref training_data "k_means.ml" 181 5224 5235 "k_means.ml" 181 5224 5248
+)
+"k_means.ml" 183 5309 5349 "k_means.ml" 183 5309 5354
 type(
   Vector.point array
 )
 ident(
-  int_ref nm "k_means.ml" 140 4060 4070 "k_means.ml" 140 4060 4072
+  int_ref means "k_means.ml" 182 5262 5278 "k_means.ml" 182 5262 5283
 )
-"k_means.ml" 144 4165 4172 "k_means.ml" 144 4165 4186
-type(
-  float array array
+"k_means.ml" 183 5309 5326 "k_means.ml" 183 5309 5354
+call(
+  stack
 )
-"k_means.ml" 141 4094 4100 "k_means.ml" 144 4165 4186
 type(
-  float array array
+  (Vector.point * K_means.label) list array
 )
-"k_means.ml" 140 4060 4066 "k_means.ml" 144 4165 4186
+"k_means.ml" 184 5358 5368 "k_means.ml" 184 5358 5372
 type(
-  float array array
-)
-"k_means.ml" 139 4009 4015 "k_means.ml" 144 4165 4186
-type(
-  float array array
-)
-"k_means.ml" 146 4196 4204 "k_means.ml" 146 4196 4205
-type(
-  '_h -> '_h array array
+  (Vector.point * K_means.label) list array
 )
 ident(
-  def a "k_means.ml" 147 4235 4239 "k_means.ml" 147 4235 4268
+  def p_te "k_means.ml" 185 5403 5409 "k_means.ml" 189 5548 5608
 )
-"k_means.ml" 146 4196 4208 "k_means.ml" 146 4196 4225
+"k_means.ml" 184 5358 5375 "k_means.ml" 184 5358 5383
 type(
-  int -> int -> '_h -> '_h array array
+  ?distance_function:(Vector.point -> Vector.point -> float) ->
+  (Vector.point * K_means.label) array ->
+  Vector.point array -> (Vector.point * K_means.label) list array
 )
 ident(
-  ext_ref Array.make_matrix
+  int_ref K_means.classify "k_means.ml" 78 1904 1910 "k_means.ml" 78 1904 1918
 )
-"k_means.ml" 146 4196 4226 "k_means.ml" 146 4196 4228
+"k_means.ml" 184 5358 5384 "k_means.ml" 184 5358 5393
+type(
+  (Vector.point * K_means.label) array
+)
+ident(
+  int_ref test_data "k_means.ml" 181 5224 5249 "k_means.ml" 181 5224 5258
+)
+"k_means.ml" 184 5358 5394 "k_means.ml" 184 5358 5399
+type(
+  Vector.point array
+)
+ident(
+  int_ref means "k_means.ml" 182 5262 5278 "k_means.ml" 182 5262 5283
+)
+"k_means.ml" 184 5358 5375 "k_means.ml" 184 5358 5399
+call(
+  stack
+)
+type(
+  (Vector.point * K_means.label) list array
+)
+"k_means.ml" 185 5403 5413 "k_means.ml" 185 5403 5415
+type(
+  float array array
+)
+ident(
+  def nm "k_means.ml" 186 5434 5440 "k_means.ml" 189 5548 5608
+)
+"k_means.ml" 185 5403 5418 "k_means.ml" 185 5403 5424
+type(
+  (Vector.point * K_means.label) list array -> float array array
+)
+ident(
+  int_ref K_means.update "k_means.ml" 101 2649 2655 "k_means.ml" 101 2649 2661
+)
+"k_means.ml" 185 5403 5425 "k_means.ml" 185 5403 5429
+type(
+  (Vector.point * K_means.label) list array
+)
+ident(
+  int_ref p_tr "k_means.ml" 183 5309 5319 "k_means.ml" 183 5309 5323
+)
+"k_means.ml" 185 5403 5418 "k_means.ml" 185 5403 5429
+call(
+  stack
+)
+type(
+  float array array
+)
+"k_means.ml" 186 5434 5444 "k_means.ml" 186 5434 5452
+type(
+  Vector.point array -> Vector.point array -> float -> bool
+)
+ident(
+  int_ref K_means.stop_cnd "k_means.ml" 113 3007 3013 "k_means.ml" 113 3007 3021
+)
+"k_means.ml" 186 5434 5453 "k_means.ml" 186 5434 5458
+type(
+  Vector.point array
+)
+ident(
+  int_ref means "k_means.ml" 182 5262 5278 "k_means.ml" 182 5262 5283
+)
+"k_means.ml" 186 5434 5459 "k_means.ml" 186 5434 5461
+type(
+  Vector.point array
+)
+ident(
+  int_ref nm "k_means.ml" 185 5403 5413 "k_means.ml" 185 5403 5415
+)
+"k_means.ml" 186 5434 5462 "k_means.ml" 186 5434 5463
+type(
+  float ref -> float
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"k_means.ml" 186 5434 5463 "k_means.ml" 186 5434 5470
+type(
+  float ref
+)
+ident(
+  int_ref epsilon "k_means.ml" 133 3402 3408 "k_means.ml" 133 3402 3415
+)
+"k_means.ml" 186 5434 5462 "k_means.ml" 186 5434 5470
+type(
+  float
+)
+"k_means.ml" 186 5434 5443 "k_means.ml" 186 5434 5471
+call(
+  stack
+)
+type(
+  bool
+)
+"k_means.ml" 187 5478 5486 "k_means.ml" 187 5478 5488
+type(
+  float array array
+)
+ident(
+  int_ref nm "k_means.ml" 185 5403 5413 "k_means.ml" 185 5403 5415
+)
+"k_means.ml" 187 5478 5491 "k_means.ml" 187 5478 5499
+type(
+  float list -> float list
+)
+ident(
+  ext_ref List.rev
+)
+"k_means.ml" 187 5478 5500 "k_means.ml" 187 5478 5512
+type(
+  float list
+)
+ident(
+  int_ref acc_training "k_means.ml" 182 5262 5284 "k_means.ml" 182 5262 5296
+)
+"k_means.ml" 187 5478 5490 "k_means.ml" 187 5478 5513
+call(
+  stack
+)
+type(
+  float list
+)
+"k_means.ml" 187 5478 5516 "k_means.ml" 187 5478 5524
+type(
+  float list -> float list
+)
+ident(
+  ext_ref List.rev
+)
+"k_means.ml" 187 5478 5525 "k_means.ml" 187 5478 5533
+type(
+  float list
+)
+ident(
+  int_ref acc_test "k_means.ml" 182 5262 5297 "k_means.ml" 182 5262 5305
+)
+"k_means.ml" 187 5478 5515 "k_means.ml" 187 5478 5534
+call(
+  stack
+)
+type(
+  float list
+)
+"k_means.ml" 187 5478 5486 "k_means.ml" 187 5478 5534
+type(
+  float array array * float list * float list
+)
+"k_means.ml" 189 5548 5556 "k_means.ml" 189 5548 5559
+type(
+  Vector.point array ->
+  float list -> float list -> float array array * float list * float list
+)
+ident(
+  int_ref aux "k_means.ml" 182 5262 5274 "k_means.ml" 182 5262 5277
+)
+"k_means.ml" 189 5548 5560 "k_means.ml" 189 5548 5562
+type(
+  Vector.point array
+)
+ident(
+  int_ref nm "k_means.ml" 185 5403 5413 "k_means.ml" 185 5403 5415
+)
+"k_means.ml" 189 5548 5564 "k_means.ml" 189 5548 5568
+type(
+  float list -> (Vector.point * K_means.label) list array -> float list
+)
+ident(
+  int_ref test "k_means.ml" 169 4813 4819 "k_means.ml" 169 4813 4823
+)
+"k_means.ml" 189 5548 5569 "k_means.ml" 189 5548 5581
+type(
+  float list
+)
+ident(
+  int_ref acc_training "k_means.ml" 182 5262 5284 "k_means.ml" 182 5262 5296
+)
+"k_means.ml" 189 5548 5582 "k_means.ml" 189 5548 5586
+type(
+  (Vector.point * K_means.label) list array
+)
+ident(
+  int_ref p_tr "k_means.ml" 183 5309 5319 "k_means.ml" 183 5309 5323
+)
+"k_means.ml" 189 5548 5563 "k_means.ml" 189 5548 5587
+call(
+  stack
+)
+type(
+  float list
+)
+"k_means.ml" 189 5548 5589 "k_means.ml" 189 5548 5593
+type(
+  float list -> (Vector.point * K_means.label) list array -> float list
+)
+ident(
+  int_ref test "k_means.ml" 169 4813 4819 "k_means.ml" 169 4813 4823
+)
+"k_means.ml" 189 5548 5594 "k_means.ml" 189 5548 5602
+type(
+  float list
+)
+ident(
+  int_ref acc_test "k_means.ml" 182 5262 5297 "k_means.ml" 182 5262 5305
+)
+"k_means.ml" 189 5548 5603 "k_means.ml" 189 5548 5607
+type(
+  (Vector.point * K_means.label) list array
+)
+ident(
+  int_ref p_te "k_means.ml" 184 5358 5368 "k_means.ml" 184 5358 5372
+)
+"k_means.ml" 189 5548 5588 "k_means.ml" 189 5548 5608
+call(
+  stack
+)
+type(
+  float list
+)
+"k_means.ml" 189 5548 5556 "k_means.ml" 189 5548 5608
+call(
+  tail
+)
+type(
+  float array array * float list * float list
+)
+"k_means.ml" 186 5434 5440 "k_means.ml" 189 5548 5608
+type(
+  float array array * float list * float list
+)
+"k_means.ml" 185 5403 5409 "k_means.ml" 189 5548 5608
+type(
+  float array array * float list * float list
+)
+"k_means.ml" 184 5358 5364 "k_means.ml" 189 5548 5608
+type(
+  float array array * float list * float list
+)
+"k_means.ml" 183 5309 5315 "k_means.ml" 189 5548 5608
+type(
+  float array array * float list * float list
+)
+"k_means.ml" 191 5617 5621 "k_means.ml" 191 5617 5624
+type(
+  Vector.point array ->
+  float list -> float list -> float array array * float list * float list
+)
+ident(
+  int_ref aux "k_means.ml" 182 5262 5274 "k_means.ml" 182 5262 5277
+)
+"k_means.ml" 191 5617 5626 "k_means.ml" 191 5617 5654
+type(
+  int -> (Vector.point * K_means.label) array -> Vector.point array
+)
+ident(
+  int_ref K_means.shuffle_and_initialize_means "k_means.ml" 61 1455 1465 "k_means.ml" 61 1455 1493
+)
+"k_means.ml" 191 5617 5655 "k_means.ml" 191 5617 5656
+type(
+  int ref -> int
+)
+ident(
+  ext_ref Pervasives.( ! )
+)
+"k_means.ml" 191 5617 5656 "k_means.ml" 191 5617 5657
+type(
+  int ref
+)
+ident(
+  int_ref k "k_means.ml" 130 3324 3330 "k_means.ml" 130 3324 3331
+)
+"k_means.ml" 191 5617 5655 "k_means.ml" 191 5617 5657
 type(
   int
 )
-"k_means.ml" 146 4196 4229 "k_means.ml" 146 4196 4230
+"k_means.ml" 191 5617 5658 "k_means.ml" 191 5617 5671
+type(
+  (Vector.point * K_means.label) array
+)
+ident(
+  int_ref training_data "k_means.ml" 181 5224 5235 "k_means.ml" 181 5224 5248
+)
+"k_means.ml" 191 5617 5625 "k_means.ml" 191 5617 5672
+call(
+  stack
+)
+type(
+  Vector.point array
+)
+"k_means.ml" 191 5617 5673 "k_means.ml" 191 5617 5675
+type(
+  float list
+)
+"k_means.ml" 191 5617 5676 "k_means.ml" 191 5617 5678
+type(
+  float list
+)
+"k_means.ml" 191 5617 5621 "k_means.ml" 191 5617 5678
+call(
+  tail
+)
+type(
+  float array array * float list * float list
+)
+"k_means.ml" 182 5262 5266 "k_means.ml" 191 5617 5678
+type(
+  float array array * float list * float list
+)
+"k_means.ml" 195 5682 5688 "k_means.ml" 195 5682 5692
+type(
+  float list -> float list -> unit
+)
+ident(
+  def plot "k_means.ml" 209 6076 6078 "k_means.ml" 217 6302 6305
+)
+"k_means.ml" 195 5682 5693 "k_means.ml" 195 5682 5701
+type(
+  float list
+)
+ident(
+  def training "k_means.ml" 195 5682 5702 "k_means.ml" 206 6028 6069
+)
+"k_means.ml" 195 5682 5702 "k_means.ml" 195 5682 5706
+type(
+  float list
+)
+ident(
+  def test "k_means.ml" 196 5710 5714 "k_means.ml" 206 6028 6069
+)
+"k_means.ml" 196 5710 5722 "k_means.ml" 196 5710 5735
+type(
+  out_channel -> float list -> unit
+)
+ident(
+  def print_numbers "k_means.ml" 196 5710 5714 "k_means.ml" 206 6028 6069
+)
+"k_means.ml" 196 5710 5736 "k_means.ml" 196 5710 5738
+type(
+  out_channel
+)
+ident(
+  def oc "k_means.ml" 196 5710 5741 "k_means.ml" 198 5768 5832
+)
+"k_means.ml" 197 5751 5759 "k_means.ml" 197 5751 5761
+type(
+  float list
+)
+"k_means.ml" 197 5751 5765 "k_means.ml" 197 5751 5767
+type(
+  unit
+)
+"k_means.ml" 198 5768 5776 "k_means.ml" 198 5768 5777
+type(
+  float
+)
+ident(
+  def e "k_means.ml" 198 5768 5785 "k_means.ml" 198 5768 5832
+)
+"k_means.ml" 198 5768 5779 "k_means.ml" 198 5768 5781
+type(
+  float list
+)
+ident(
+  def tl "k_means.ml" 198 5768 5785 "k_means.ml" 198 5768 5832
+)
+"k_means.ml" 198 5768 5776 "k_means.ml" 198 5768 5781
+type(
+  float list
+)
+"k_means.ml" 198 5768 5785 "k_means.ml" 198 5768 5799
+type(
+  out_channel -> (float -> unit, out_channel, unit) format -> float -> unit
+)
+ident(
+  ext_ref Printf.fprintf
+)
+"k_means.ml" 198 5768 5800 "k_means.ml" 198 5768 5802
+type(
+  out_channel
+)
+ident(
+  int_ref oc "k_means.ml" 196 5710 5736 "k_means.ml" 196 5710 5738
+)
+"k_means.ml" 198 5768 5803 "k_means.ml" 198 5768 5809
+type(
+  (float -> unit, out_channel, unit) format
+)
+"k_means.ml" 198 5768 5810 "k_means.ml" 198 5768 5811
+type(
+  float
+)
+ident(
+  int_ref e "k_means.ml" 198 5768 5776 "k_means.ml" 198 5768 5777
+)
+"k_means.ml" 198 5768 5785 "k_means.ml" 198 5768 5811
+call(
+  stack
+)
+type(
+  unit
+)
+"k_means.ml" 198 5768 5813 "k_means.ml" 198 5768 5826
+type(
+  out_channel -> float list -> unit
+)
+ident(
+  int_ref print_numbers "k_means.ml" 196 5710 5722 "k_means.ml" 196 5710 5735
+)
+"k_means.ml" 198 5768 5827 "k_means.ml" 198 5768 5829
+type(
+  out_channel
+)
+ident(
+  int_ref oc "k_means.ml" 196 5710 5736 "k_means.ml" 196 5710 5738
+)
+"k_means.ml" 198 5768 5830 "k_means.ml" 198 5768 5832
+type(
+  float list
+)
+ident(
+  int_ref tl "k_means.ml" 198 5768 5779 "k_means.ml" 198 5768 5781
+)
+"k_means.ml" 198 5768 5813 "k_means.ml" 198 5768 5832
+call(
+  tail
+)
+type(
+  unit
+)
+"k_means.ml" 198 5768 5785 "k_means.ml" 198 5768 5832
+type(
+  unit
+)
+"k_means.ml" 196 5710 5741 "k_means.ml" 198 5768 5832
+type(
+  float list -> unit
+)
+"k_means.ml" 200 5840 5848 "k_means.ml" 200 5840 5850
+type(
+  out_channel
+)
+ident(
+  def tr "k_means.ml" 201 5889 5893 "k_means.ml" 206 6028 6069
+)
+"k_means.ml" 200 5840 5853 "k_means.ml" 200 5840 5861
+type(
+  string -> out_channel
+)
+ident(
+  ext_ref Pervasives.open_out
+)
+"k_means.ml" 200 5840 5862 "k_means.ml" 200 5840 5885
+type(
+  string
+)
+"k_means.ml" 200 5840 5853 "k_means.ml" 200 5840 5885
+call(
+  stack
+)
+type(
+  out_channel
+)
+"k_means.ml" 201 5889 5897 "k_means.ml" 201 5889 5899
+type(
+  out_channel
+)
+ident(
+  def te "k_means.ml" 202 5934 5938 "k_means.ml" 206 6028 6069
+)
+"k_means.ml" 201 5889 5902 "k_means.ml" 201 5889 5910
+type(
+  string -> out_channel
+)
+ident(
+  ext_ref Pervasives.open_out
+)
+"k_means.ml" 201 5889 5911 "k_means.ml" 201 5889 5930
+type(
+  string
+)
+"k_means.ml" 201 5889 5902 "k_means.ml" 201 5889 5930
+call(
+  stack
+)
+type(
+  out_channel
+)
+"k_means.ml" 202 5934 5938 "k_means.ml" 202 5934 5951
+type(
+  out_channel -> float list -> unit
+)
+ident(
+  int_ref print_numbers "k_means.ml" 196 5710 5722 "k_means.ml" 196 5710 5735
+)
+"k_means.ml" 202 5934 5952 "k_means.ml" 202 5934 5954
+type(
+  out_channel
+)
+ident(
+  int_ref tr "k_means.ml" 200 5840 5848 "k_means.ml" 200 5840 5850
+)
+"k_means.ml" 202 5934 5955 "k_means.ml" 202 5934 5963
+type(
+  float list
+)
+ident(
+  int_ref training "k_means.ml" 195 5682 5693 "k_means.ml" 195 5682 5701
+)
+"k_means.ml" 202 5934 5938 "k_means.ml" 202 5934 5963
+call(
+  stack
+)
+type(
+  unit
+)
+"k_means.ml" 203 5965 5969 "k_means.ml" 203 5965 5982
+type(
+  out_channel -> float list -> unit
+)
+ident(
+  int_ref print_numbers "k_means.ml" 196 5710 5722 "k_means.ml" 196 5710 5735
+)
+"k_means.ml" 203 5965 5983 "k_means.ml" 203 5965 5985
+type(
+  out_channel
+)
+ident(
+  int_ref te "k_means.ml" 201 5889 5897 "k_means.ml" 201 5889 5899
+)
+"k_means.ml" 203 5965 5986 "k_means.ml" 203 5965 5990
+type(
+  float list
+)
+ident(
+  int_ref test "k_means.ml" 195 5682 5702 "k_means.ml" 195 5682 5706
+)
+"k_means.ml" 203 5965 5969 "k_means.ml" 203 5965 5990
+call(
+  stack
+)
+type(
+  unit
+)
+"k_means.ml" 204 5992 5996 "k_means.ml" 204 5992 6005
+type(
+  out_channel -> unit
+)
+ident(
+  ext_ref Pervasives.close_out
+)
+"k_means.ml" 204 5992 6006 "k_means.ml" 204 5992 6008
+type(
+  out_channel
+)
+ident(
+  int_ref tr "k_means.ml" 200 5840 5848 "k_means.ml" 200 5840 5850
+)
+"k_means.ml" 204 5992 5996 "k_means.ml" 204 5992 6008
+call(
+  stack
+)
+type(
+  unit
+)
+"k_means.ml" 205 6010 6014 "k_means.ml" 205 6010 6023
+type(
+  out_channel -> unit
+)
+ident(
+  ext_ref Pervasives.close_out
+)
+"k_means.ml" 205 6010 6024 "k_means.ml" 205 6010 6026
+type(
+  out_channel
+)
+ident(
+  int_ref te "k_means.ml" 201 5889 5897 "k_means.ml" 201 5889 5899
+)
+"k_means.ml" 205 6010 6014 "k_means.ml" 205 6010 6026
+call(
+  stack
+)
+type(
+  unit
+)
+"k_means.ml" 206 6028 6032 "k_means.ml" 206 6028 6038
+type(
+  int -> unit
+)
+ident(
+  ext_ref Pervasives.ignore
+)
+"k_means.ml" 206 6028 6040 "k_means.ml" 206 6028 6051
+type(
+  string -> int
+)
+ident(
+  ext_ref Sys.command
+)
+"k_means.ml" 206 6028 6052 "k_means.ml" 206 6028 6068
+type(
+  string
+)
+"k_means.ml" 206 6028 6039 "k_means.ml" 206 6028 6069
 type(
   int
 )
-"k_means.ml" 146 4196 4208 "k_means.ml" 146 4196 4230
+"k_means.ml" 206 6028 6032 "k_means.ml" 206 6028 6069
 type(
-  '_h -> '_h array array
+  unit
 )
-"k_means.ml" 147 4235 4239 "k_means.ml" 147 4235 4243
+"k_means.ml" 205 6010 6014 "k_means.ml" 206 6028 6069
 type(
-  Vector.point array -> Vector.point array -> float array array
+  unit
+)
+"k_means.ml" 204 5992 5996 "k_means.ml" 206 6028 6069
+type(
+  unit
+)
+"k_means.ml" 203 5965 5969 "k_means.ml" 206 6028 6069
+type(
+  unit
+)
+"k_means.ml" 202 5934 5938 "k_means.ml" 206 6028 6069
+type(
+  unit
+)
+"k_means.ml" 201 5889 5893 "k_means.ml" 206 6028 6069
+type(
+  unit
+)
+"k_means.ml" 200 5840 5844 "k_means.ml" 206 6028 6069
+type(
+  unit
+)
+"k_means.ml" 196 5710 5714 "k_means.ml" 206 6028 6069
+type(
+  unit
+)
+"k_means.ml" 209 6076 6082 "k_means.ml" 209 6076 6086
+type(
+  unit
 )
 ident(
-  int_ref exec "k_means.ml" 138 3977 3989 "k_means.ml" 138 3977 3993
+  def main "k_means.ml" 214 6285 6291 "k_means.ml" 217 6302 6305
 )
-"k_means.ml" 147 4235 4244 "k_means.ml" 147 4235 4245
+"k_means.ml" 210 6089 6097 "k_means.ml" 210 6089 6101
 type(
-  '_h -> '_h array array
+  string
 )
 ident(
-  int_ref a "k_means.ml" 146 4196 4204 "k_means.ml" 146 4196 4205
+  def path "k_means.ml" 211 6120 6124 "k_means.ml" 214 6285 6291
+)
+"k_means.ml" 210 6089 6104 "k_means.ml" 210 6089 6112
+type(
+  string array
+)
+ident(
+  ext_ref Sys.argv
+)
+"k_means.ml" 210 6089 6114 "k_means.ml" 210 6089 6115
+type(
+  int
+)
+"k_means.ml" 210 6089 6104 "k_means.ml" 210 6089 6116
+type(
+  string
+)
+"k_means.ml" 211 6120 6128 "k_means.ml" 211 6120 6136
+type(
+  (float array * int) array
+)
+ident(
+  def training "k_means.ml" 212 6170 6174 "k_means.ml" 214 6285 6291
+)
+"k_means.ml" 211 6120 6138 "k_means.ml" 211 6120 6142
+type(
+  (float array * int) array
+)
+ident(
+  def test "k_means.ml" 212 6170 6174 "k_means.ml" 214 6285 6291
+)
+"k_means.ml" 211 6120 6128 "k_means.ml" 211 6120 6142
+type(
+  (float array * int) array * (float array * int) array
+)
+"k_means.ml" 211 6120 6145 "k_means.ml" 211 6120 6160
+type(
+  string -> (float array * int) array * (float array * int) array
+)
+ident(
+  int_ref preprocess_data "k_means.ml" 138 3461 3467 "k_means.ml" 138 3461 3482
+)
+"k_means.ml" 211 6120 6161 "k_means.ml" 211 6120 6165
+type(
+  string
+)
+ident(
+  int_ref path "k_means.ml" 210 6089 6097 "k_means.ml" 210 6089 6101
+)
+"k_means.ml" 211 6120 6145 "k_means.ml" 211 6120 6165
+call(
+  stack
+)
+type(
+  (float array * int) array * (float array * int) array
+)
+"k_means.ml" 212 6170 6178 "k_means.ml" 212 6170 6183
+type(
+  float array array
+)
+ident(
+  def means "k_means.ml" 213 6243 6247 "k_means.ml" 214 6285 6291
+)
+"k_means.ml" 212 6170 6185 "k_means.ml" 212 6170 6202
+type(
+  float list
+)
+ident(
+  def training_accuracy "k_means.ml" 213 6243 6247 "k_means.ml" 214 6285 6291
+)
+"k_means.ml" 212 6170 6204 "k_means.ml" 212 6170 6217
+type(
+  float list
+)
+ident(
+  def test_accuracy "k_means.ml" 213 6243 6247 "k_means.ml" 214 6285 6291
+)
+"k_means.ml" 212 6170 6178 "k_means.ml" 212 6170 6217
+type(
+  float array array * float list * float list
+)
+"k_means.ml" 212 6170 6220 "k_means.ml" 212 6170 6224
+type(
+  (Vector.point * K_means.label) array ->
+  (Vector.point * K_means.label) array ->
+  float array array * float list * float list
+)
+ident(
+  int_ref exec "k_means.ml" 181 5224 5230 "k_means.ml" 181 5224 5234
+)
+"k_means.ml" 212 6170 6225 "k_means.ml" 212 6170 6233
+type(
+  (Vector.point * K_means.label) array
+)
+ident(
+  int_ref training "k_means.ml" 211 6120 6128 "k_means.ml" 211 6120 6136
+)
+"k_means.ml" 212 6170 6234 "k_means.ml" 212 6170 6238
+type(
+  (Vector.point * K_means.label) array
+)
+ident(
+  int_ref test "k_means.ml" 211 6120 6138 "k_means.ml" 211 6120 6142
+)
+"k_means.ml" 212 6170 6220 "k_means.ml" 212 6170 6238
+call(
+  stack
+)
+type(
+  float array array * float list * float list
+)
+"k_means.ml" 213 6243 6247 "k_means.ml" 213 6243 6251
+type(
+  float list -> float list -> unit
+)
+ident(
+  int_ref plot "k_means.ml" 195 5682 5688 "k_means.ml" 195 5682 5692
+)
+"k_means.ml" 213 6243 6252 "k_means.ml" 213 6243 6269
+type(
+  float list
+)
+ident(
+  int_ref training_accuracy "k_means.ml" 212 6170 6185 "k_means.ml" 212 6170 6202
+)
+"k_means.ml" 213 6243 6270 "k_means.ml" 213 6243 6283
+type(
+  float list
+)
+ident(
+  int_ref test_accuracy "k_means.ml" 212 6170 6204 "k_means.ml" 212 6170 6217
+)
+"k_means.ml" 213 6243 6247 "k_means.ml" 213 6243 6283
+call(
+  stack
+)
+type(
+  unit
+)
+"k_means.ml" 214 6285 6289 "k_means.ml" 214 6285 6291
+type(
+  unit
+)
+"k_means.ml" 213 6243 6247 "k_means.ml" 214 6285 6291
+type(
+  unit
+)
+"k_means.ml" 212 6170 6174 "k_means.ml" 214 6285 6291
+type(
+  unit
+)
+"k_means.ml" 211 6120 6124 "k_means.ml" 214 6285 6291
+type(
+  unit
+)
+"k_means.ml" 210 6089 6093 "k_means.ml" 214 6285 6291
+type(
+  unit
+)
+"k_means.ml" 221 6312 6323 "k_means.ml" 221 6312 6350
+call(
+  stack
+)
+"k_means.ml" 222 6351 6355 "k_means.ml" 222 6351 6357
+type(
+  unit
+)
+"k_means.ml" 222 6351 6360 "k_means.ml" 222 6351 6366
+type(
+  unit
+)
+ident(
+  int_ref E.main "k_means.ml" 209 6076 6082 "k_means.ml" 209 6076 6086
 )
