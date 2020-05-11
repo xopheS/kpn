@@ -1,0 +1,1549 @@
+"kahn.ml" 20 410 416 "kahn.ml" 20 410 423
+type(
+  'a K.process -> ('a -> 'b K.process) -> 'b K.process
+)
+ident(
+  def >>= "kahn.ml" 22 442 444 "kahn.ml" 46 1157 1160
+)
+"kahn.ml" 20 410 424 "kahn.ml" 20 410 425
+type(
+  'a K.process
+)
+ident(
+  def x "kahn.ml" 20 410 426 "kahn.ml" 20 410 440
+)
+"kahn.ml" 20 410 426 "kahn.ml" 20 410 427
+type(
+  'a -> 'b K.process
+)
+ident(
+  def f "kahn.ml" 20 410 430 "kahn.ml" 20 410 440
+)
+"kahn.ml" 20 410 430 "kahn.ml" 20 410 436
+type(
+  'a K.process -> ('a -> 'b K.process) -> 'b K.process
+)
+ident(
+  int_ref K.bind "kahn.ml" 13 288 290 "kahn.ml" 13 288 346
+)
+"kahn.ml" 20 410 437 "kahn.ml" 20 410 438
+type(
+  'a K.process
+)
+ident(
+  int_ref x "kahn.ml" 20 410 424 "kahn.ml" 20 410 425
+)
+"kahn.ml" 20 410 439 "kahn.ml" 20 410 440
+type(
+  'a -> 'b K.process
+)
+ident(
+  int_ref f "kahn.ml" 20 410 426 "kahn.ml" 20 410 427
+)
+"kahn.ml" 20 410 430 "kahn.ml" 20 410 440
+call(
+  tail
+)
+type(
+  'b K.process
+)
+"kahn.ml" 22 442 448 "kahn.ml" 22 442 453
+type(
+  ('c -> 'd) -> 'c -> 'd K.process
+)
+ident(
+  def delay "kahn.ml" 25 513 515 "kahn.ml" 46 1157 1160
+)
+"kahn.ml" 22 442 454 "kahn.ml" 22 442 455
+type(
+  'c -> 'd
+)
+ident(
+  def f "kahn.ml" 22 442 456 "kahn.ml" 23 460 511
+)
+"kahn.ml" 22 442 456 "kahn.ml" 22 442 457
+type(
+  'c
+)
+ident(
+  def x "kahn.ml" 23 460 464 "kahn.ml" 23 460 511
+)
+"kahn.ml" 23 460 464 "kahn.ml" 23 460 470
+type(
+  unit K.process -> (unit -> 'd K.process) -> 'd K.process
+)
+ident(
+  int_ref K.bind "kahn.ml" 13 288 290 "kahn.ml" 13 288 346
+)
+"kahn.ml" 23 460 472 "kahn.ml" 23 460 480
+type(
+  unit -> unit K.process
+)
+ident(
+  int_ref K.return "kahn.ml" 12 257 259 "kahn.ml" 12 257 287
+)
+"kahn.ml" 23 460 481 "kahn.ml" 23 460 483
+type(
+  unit
+)
+"kahn.ml" 23 460 471 "kahn.ml" 23 460 484
+call(
+  stack
+)
+type(
+  unit K.process
+)
+"kahn.ml" 23 460 490 "kahn.ml" 23 460 492
+type(
+  unit
+)
+"kahn.ml" 23 460 496 "kahn.ml" 23 460 504
+type(
+  'd -> 'd K.process
+)
+ident(
+  int_ref K.return "kahn.ml" 12 257 259 "kahn.ml" 12 257 287
+)
+"kahn.ml" 23 460 506 "kahn.ml" 23 460 507
+type(
+  'c -> 'd
+)
+ident(
+  int_ref f "kahn.ml" 22 442 454 "kahn.ml" 22 442 455
+)
+"kahn.ml" 23 460 508 "kahn.ml" 23 460 509
+type(
+  'c
+)
+ident(
+  int_ref x "kahn.ml" 22 442 456 "kahn.ml" 22 442 457
+)
+"kahn.ml" 23 460 505 "kahn.ml" 23 460 510
+call(
+  stack
+)
+type(
+  'd
+)
+"kahn.ml" 23 460 496 "kahn.ml" 23 460 510
+call(
+  tail
+)
+type(
+  'd K.process
+)
+"kahn.ml" 23 460 485 "kahn.ml" 23 460 511
+type(
+  unit -> 'd K.process
+)
+"kahn.ml" 23 460 464 "kahn.ml" 23 460 511
+call(
+  tail
+)
+type(
+  'd K.process
+)
+"kahn.ml" 25 513 519 "kahn.ml" 25 513 526
+type(
+  ('e -> 'f) -> 'e list -> 'f list
+)
+ident(
+  def par_map "kahn.ml" 44 1080 1155 "kahn.ml" 46 1157 1160
+)
+"kahn.ml" 25 513 527 "kahn.ml" 25 513 528
+type(
+  'e -> 'f
+)
+ident(
+  def f "kahn.ml" 25 513 529 "kahn.ml" 44 1080 1155
+)
+"kahn.ml" 25 513 529 "kahn.ml" 25 513 530
+type(
+  'e list
+)
+ident(
+  def l "kahn.ml" 26 533 537 "kahn.ml" 44 1080 1155
+)
+"kahn.ml" 26 533 545 "kahn.ml" 26 533 558
+type(
+  'e list ->
+  'f K.in_port list * unit K.process list ->
+  'f K.in_port list * unit K.process list
+)
+ident(
+  def build_workers "kahn.ml" 26 533 537 "kahn.ml" 44 1080 1155
+)
+"kahn.ml" 26 533 559 "kahn.ml" 26 533 560
+type(
+  'e list
+)
+ident(
+  def l "kahn.ml" 26 533 561 "kahn.ml" 34 755 819
+)
+"kahn.ml" 26 533 562 "kahn.ml" 26 533 567
+type(
+  'f K.in_port list
+)
+ident(
+  def ports "kahn.ml" 27 580 586 "kahn.ml" 34 755 819
+)
+"kahn.ml" 26 533 569 "kahn.ml" 26 533 576
+type(
+  unit K.process list
+)
+ident(
+  def workers "kahn.ml" 27 580 586 "kahn.ml" 34 755 819
+)
+"kahn.ml" 26 533 561 "kahn.ml" 26 533 577
+type(
+  'f K.in_port list * unit K.process list
+)
+"kahn.ml" 27 580 592 "kahn.ml" 27 580 593
+type(
+  'e list
+)
+ident(
+  int_ref l "kahn.ml" 26 533 559 "kahn.ml" 26 533 560
+)
+"kahn.ml" 28 599 607 "kahn.ml" 28 599 609
+type(
+  'e list
+)
+"kahn.ml" 28 599 614 "kahn.ml" 28 599 619
+type(
+  'f K.in_port list
+)
+ident(
+  int_ref ports "kahn.ml" 26 533 562 "kahn.ml" 26 533 567
+)
+"kahn.ml" 28 599 621 "kahn.ml" 28 599 628
+type(
+  unit K.process list
+)
+ident(
+  int_ref workers "kahn.ml" 26 533 569 "kahn.ml" 26 533 576
+)
+"kahn.ml" 28 599 613 "kahn.ml" 28 599 629
+type(
+  'f K.in_port list * unit K.process list
+)
+"kahn.ml" 29 630 638 "kahn.ml" 29 630 639
+type(
+  'e
+)
+ident(
+  def x "kahn.ml" 30 648 658 "kahn.ml" 34 755 819
+)
+"kahn.ml" 29 630 643 "kahn.ml" 29 630 644
+type(
+  'e list
+)
+ident(
+  def l "kahn.ml" 30 648 658 "kahn.ml" 34 755 819
+)
+"kahn.ml" 29 630 638 "kahn.ml" 29 630 644
+type(
+  'e list
+)
+"kahn.ml" 30 648 662 "kahn.ml" 30 648 664
+type(
+  'f K.in_port
+)
+ident(
+  def qi "kahn.ml" 31 691 701 "kahn.ml" 34 755 819
+)
+"kahn.ml" 30 648 666 "kahn.ml" 30 648 668
+type(
+  'f K.out_port
+)
+ident(
+  def qo "kahn.ml" 31 691 701 "kahn.ml" 34 755 819
+)
+"kahn.ml" 30 648 662 "kahn.ml" 30 648 668
+type(
+  'f K.in_port * 'f K.out_port
+)
+"kahn.ml" 30 648 671 "kahn.ml" 30 648 684
+type(
+  unit -> 'f K.in_port * 'f K.out_port
+)
+ident(
+  int_ref K.new_channel "kahn.ml" 6 76 78 "kahn.ml" 6 76 127
+)
+"kahn.ml" 30 648 685 "kahn.ml" 30 648 687
+type(
+  unit
+)
+"kahn.ml" 30 648 671 "kahn.ml" 30 648 687
+call(
+  stack
+)
+type(
+  'f K.in_port * 'f K.out_port
+)
+"kahn.ml" 31 691 701 "kahn.ml" 31 691 714
+type(
+  'e list ->
+  'f K.in_port list * unit K.process list ->
+  'f K.in_port list * unit K.process list
+)
+ident(
+  int_ref build_workers "kahn.ml" 26 533 545 "kahn.ml" 26 533 558
+)
+"kahn.ml" 32 715 727 "kahn.ml" 32 715 728
+type(
+  'e list
+)
+ident(
+  int_ref l "kahn.ml" 29 630 643 "kahn.ml" 29 630 644
+)
+"kahn.ml" 33 729 742 "kahn.ml" 33 729 744
+type(
+  'f K.in_port
+)
+ident(
+  int_ref qi "kahn.ml" 30 648 662 "kahn.ml" 30 648 664
+)
+"kahn.ml" 33 729 748 "kahn.ml" 33 729 753
+type(
+  'f K.in_port list
+)
+ident(
+  int_ref ports "kahn.ml" 26 533 562 "kahn.ml" 26 533 567
+)
+"kahn.ml" 33 729 742 "kahn.ml" 33 729 753
+type(
+  'f K.in_port list
+)
+"kahn.ml" 34 755 770 "kahn.ml" 34 755 775
+type(
+  ('e -> 'f) -> 'e -> 'f K.process
+)
+ident(
+  int_ref delay "kahn.ml" 22 442 448 "kahn.ml" 22 442 453
+)
+"kahn.ml" 34 755 776 "kahn.ml" 34 755 777
+type(
+  'e -> 'f
+)
+ident(
+  int_ref f "kahn.ml" 25 513 527 "kahn.ml" 25 513 528
+)
+"kahn.ml" 34 755 778 "kahn.ml" 34 755 779
+type(
+  'e
+)
+ident(
+  int_ref x "kahn.ml" 29 630 638 "kahn.ml" 29 630 639
+)
+"kahn.ml" 34 755 769 "kahn.ml" 34 755 780
+call(
+  stack
+)
+type(
+  'f K.process
+)
+"kahn.ml" 34 755 781 "kahn.ml" 34 755 784
+type(
+  'f K.process -> ('f -> unit K.process) -> unit K.process
+)
+ident(
+  int_ref >>= "kahn.ml" 20 410 416 "kahn.ml" 20 410 423
+)
+"kahn.ml" 34 755 790 "kahn.ml" 34 755 791
+type(
+  'f
+)
+ident(
+  def v "kahn.ml" 34 755 795 "kahn.ml" 34 755 805
+)
+"kahn.ml" 34 755 795 "kahn.ml" 34 755 800
+type(
+  'f -> 'f K.out_port -> unit K.process
+)
+ident(
+  int_ref K.put "kahn.ml" 7 128 130 "kahn.ml" 7 128 172
+)
+"kahn.ml" 34 755 801 "kahn.ml" 34 755 802
+type(
+  'f
+)
+ident(
+  int_ref v "kahn.ml" 34 755 790 "kahn.ml" 34 755 791
+)
+"kahn.ml" 34 755 803 "kahn.ml" 34 755 805
+type(
+  'f K.out_port
+)
+ident(
+  int_ref qo "kahn.ml" 30 648 666 "kahn.ml" 30 648 668
+)
+"kahn.ml" 34 755 795 "kahn.ml" 34 755 805
+call(
+  tail
+)
+type(
+  unit K.process
+)
+"kahn.ml" 34 755 785 "kahn.ml" 34 755 806
+type(
+  'f -> unit K.process
+)
+"kahn.ml" 34 755 768 "kahn.ml" 34 755 807
+call(
+  stack
+)
+type(
+  unit K.process
+)
+"kahn.ml" 34 755 811 "kahn.ml" 34 755 818
+type(
+  unit K.process list
+)
+ident(
+  int_ref workers "kahn.ml" 26 533 569 "kahn.ml" 26 533 576
+)
+"kahn.ml" 34 755 768 "kahn.ml" 34 755 818
+type(
+  unit K.process list
+)
+"kahn.ml" 33 729 741 "kahn.ml" 34 755 819
+type(
+  'f K.in_port list * unit K.process list
+)
+"kahn.ml" 31 691 701 "kahn.ml" 34 755 819
+call(
+  tail
+)
+type(
+  'f K.in_port list * unit K.process list
+)
+"kahn.ml" 30 648 658 "kahn.ml" 34 755 819
+type(
+  'f K.in_port list * unit K.process list
+)
+"kahn.ml" 27 580 586 "kahn.ml" 34 755 819
+type(
+  'f K.in_port list * unit K.process list
+)
+"kahn.ml" 36 827 835 "kahn.ml" 36 827 840
+type(
+  'f K.in_port list
+)
+ident(
+  def ports "kahn.ml" 37 880 884 "kahn.ml" 44 1080 1155
+)
+"kahn.ml" 36 827 842 "kahn.ml" 36 827 849
+type(
+  unit K.process list
+)
+ident(
+  def workers "kahn.ml" 37 880 884 "kahn.ml" 44 1080 1155
+)
+"kahn.ml" 36 827 835 "kahn.ml" 36 827 849
+type(
+  'f K.in_port list * unit K.process list
+)
+"kahn.ml" 36 827 852 "kahn.ml" 36 827 865
+type(
+  'e list ->
+  'f K.in_port list * unit K.process list ->
+  'f K.in_port list * unit K.process list
+)
+ident(
+  int_ref build_workers "kahn.ml" 26 533 545 "kahn.ml" 26 533 558
+)
+"kahn.ml" 36 827 866 "kahn.ml" 36 827 867
+type(
+  'e list
+)
+ident(
+  int_ref l "kahn.ml" 25 513 529 "kahn.ml" 25 513 530
+)
+"kahn.ml" 36 827 869 "kahn.ml" 36 827 871
+type(
+  'f K.in_port list
+)
+"kahn.ml" 36 827 873 "kahn.ml" 36 827 875
+type(
+  unit K.process list
+)
+"kahn.ml" 36 827 868 "kahn.ml" 36 827 876
+type(
+  'f K.in_port list * unit K.process list
+)
+"kahn.ml" 36 827 852 "kahn.ml" 36 827 876
+call(
+  stack
+)
+type(
+  'f K.in_port list * unit K.process list
+)
+"kahn.ml" 37 880 892 "kahn.ml" 37 880 899
+type(
+  'g K.in_port list -> 'g list -> 'g list K.out_port -> unit K.process
+)
+ident(
+  def collect "kahn.ml" 37 880 884 "kahn.ml" 44 1080 1155
+)
+"kahn.ml" 37 880 900 "kahn.ml" 37 880 901
+type(
+  'g K.in_port list
+)
+ident(
+  def l "kahn.ml" 37 880 902 "kahn.ml" 40 957 1025
+)
+"kahn.ml" 37 880 902 "kahn.ml" 37 880 905
+type(
+  'g list
+)
+ident(
+  def acc "kahn.ml" 37 880 906 "kahn.ml" 40 957 1025
+)
+"kahn.ml" 37 880 906 "kahn.ml" 37 880 908
+type(
+  'g list K.out_port
+)
+ident(
+  def qo "kahn.ml" 38 911 917 "kahn.ml" 40 957 1025
+)
+"kahn.ml" 38 911 923 "kahn.ml" 38 911 924
+type(
+  'g K.in_port list
+)
+ident(
+  int_ref l "kahn.ml" 37 880 900 "kahn.ml" 37 880 901
+)
+"kahn.ml" 39 930 938 "kahn.ml" 39 930 940
+type(
+  'g K.in_port list
+)
+"kahn.ml" 39 930 944 "kahn.ml" 39 930 949
+type(
+  'g list -> 'g list K.out_port -> unit K.process
+)
+ident(
+  int_ref K.put "kahn.ml" 7 128 130 "kahn.ml" 7 128 172
+)
+"kahn.ml" 39 930 950 "kahn.ml" 39 930 953
+type(
+  'g list
+)
+ident(
+  int_ref acc "kahn.ml" 37 880 902 "kahn.ml" 37 880 905
+)
+"kahn.ml" 39 930 954 "kahn.ml" 39 930 956
+type(
+  'g list K.out_port
+)
+ident(
+  int_ref qo "kahn.ml" 37 880 906 "kahn.ml" 37 880 908
+)
+"kahn.ml" 39 930 944 "kahn.ml" 39 930 956
+call(
+  tail
+)
+type(
+  unit K.process
+)
+"kahn.ml" 40 957 965 "kahn.ml" 40 957 967
+type(
+  'g K.in_port
+)
+ident(
+  def qi "kahn.ml" 40 957 976 "kahn.ml" 40 957 1025
+)
+"kahn.ml" 40 957 971 "kahn.ml" 40 957 972
+type(
+  'g K.in_port list
+)
+ident(
+  def l "kahn.ml" 40 957 976 "kahn.ml" 40 957 1025
+)
+"kahn.ml" 40 957 965 "kahn.ml" 40 957 972
+type(
+  'g K.in_port list
+)
+"kahn.ml" 40 957 977 "kahn.ml" 40 957 982
+type(
+  'g K.in_port -> 'g K.process
+)
+ident(
+  int_ref K.get "kahn.ml" 8 173 175 "kahn.ml" 8 173 208
+)
+"kahn.ml" 40 957 983 "kahn.ml" 40 957 985
+type(
+  'g K.in_port
+)
+ident(
+  int_ref qi "kahn.ml" 40 957 965 "kahn.ml" 40 957 967
+)
+"kahn.ml" 40 957 976 "kahn.ml" 40 957 986
+call(
+  stack
+)
+type(
+  'g K.process
+)
+"kahn.ml" 40 957 987 "kahn.ml" 40 957 990
+type(
+  'g K.process -> ('g -> unit K.process) -> unit K.process
+)
+ident(
+  int_ref >>= "kahn.ml" 20 410 416 "kahn.ml" 20 410 423
+)
+"kahn.ml" 40 957 996 "kahn.ml" 40 957 997
+type(
+  'g
+)
+ident(
+  def v "kahn.ml" 40 957 1001 "kahn.ml" 40 957 1024
+)
+"kahn.ml" 40 957 1001 "kahn.ml" 40 957 1008
+type(
+  'g K.in_port list -> 'g list -> 'g list K.out_port -> unit K.process
+)
+ident(
+  int_ref collect "kahn.ml" 37 880 892 "kahn.ml" 37 880 899
+)
+"kahn.ml" 40 957 1009 "kahn.ml" 40 957 1010
+type(
+  'g K.in_port list
+)
+ident(
+  int_ref l "kahn.ml" 40 957 971 "kahn.ml" 40 957 972
+)
+"kahn.ml" 40 957 1012 "kahn.ml" 40 957 1013
+type(
+  'g
+)
+ident(
+  int_ref v "kahn.ml" 40 957 996 "kahn.ml" 40 957 997
+)
+"kahn.ml" 40 957 1017 "kahn.ml" 40 957 1020
+type(
+  'g list
+)
+ident(
+  int_ref acc "kahn.ml" 37 880 902 "kahn.ml" 37 880 905
+)
+"kahn.ml" 40 957 1011 "kahn.ml" 40 957 1021
+type(
+  'g list
+)
+"kahn.ml" 40 957 1022 "kahn.ml" 40 957 1024
+type(
+  'g list K.out_port
+)
+ident(
+  int_ref qo "kahn.ml" 37 880 906 "kahn.ml" 37 880 908
+)
+"kahn.ml" 40 957 1001 "kahn.ml" 40 957 1024
+call(
+  tail
+)
+type(
+  unit K.process
+)
+"kahn.ml" 40 957 991 "kahn.ml" 40 957 1025
+type(
+  'g -> unit K.process
+)
+"kahn.ml" 40 957 976 "kahn.ml" 40 957 1025
+call(
+  tail
+)
+type(
+  unit K.process
+)
+"kahn.ml" 38 911 917 "kahn.ml" 40 957 1025
+type(
+  unit K.process
+)
+"kahn.ml" 42 1033 1041 "kahn.ml" 42 1033 1043
+type(
+  'f list K.in_port
+)
+ident(
+  def qi "kahn.ml" 43 1070 1074 "kahn.ml" 44 1080 1155
+)
+"kahn.ml" 42 1033 1045 "kahn.ml" 42 1033 1047
+type(
+  'f list K.out_port
+)
+ident(
+  def qo "kahn.ml" 43 1070 1074 "kahn.ml" 44 1080 1155
+)
+"kahn.ml" 42 1033 1041 "kahn.ml" 42 1033 1047
+type(
+  'f list K.in_port * 'f list K.out_port
+)
+"kahn.ml" 42 1033 1050 "kahn.ml" 42 1033 1063
+type(
+  unit -> 'f list K.in_port * 'f list K.out_port
+)
+ident(
+  int_ref K.new_channel "kahn.ml" 6 76 78 "kahn.ml" 6 76 127
+)
+"kahn.ml" 42 1033 1064 "kahn.ml" 42 1033 1066
+type(
+  unit
+)
+"kahn.ml" 42 1033 1050 "kahn.ml" 42 1033 1066
+call(
+  stack
+)
+type(
+  'f list K.in_port * 'f list K.out_port
+)
+"kahn.ml" 43 1070 1074 "kahn.ml" 43 1070 1079
+type(
+  'f list K.process -> 'f list
+)
+ident(
+  int_ref K.run "kahn.ml" 15 348 350 "kahn.ml" 15 348 375
+)
+"kahn.ml" 44 1080 1088 "kahn.ml" 44 1080 1094
+type(
+  unit K.process list -> unit K.process
+)
+ident(
+  int_ref K.doco "kahn.ml" 10 210 212 "kahn.ml" 10 210 255
+)
+"kahn.ml" 44 1080 1097 "kahn.ml" 44 1080 1104
+type(
+  'f K.in_port list -> 'f list -> 'f list K.out_port -> unit K.process
+)
+ident(
+  int_ref collect "kahn.ml" 37 880 892 "kahn.ml" 37 880 899
+)
+"kahn.ml" 44 1080 1105 "kahn.ml" 44 1080 1110
+type(
+  'f K.in_port list
+)
+ident(
+  int_ref ports "kahn.ml" 36 827 835 "kahn.ml" 36 827 840
+)
+"kahn.ml" 44 1080 1111 "kahn.ml" 44 1080 1113
+type(
+  'f list
+)
+"kahn.ml" 44 1080 1114 "kahn.ml" 44 1080 1116
+type(
+  'f list K.out_port
+)
+ident(
+  int_ref qo "kahn.ml" 42 1033 1045 "kahn.ml" 42 1033 1047
+)
+"kahn.ml" 44 1080 1096 "kahn.ml" 44 1080 1117
+call(
+  stack
+)
+type(
+  unit K.process
+)
+"kahn.ml" 44 1080 1121 "kahn.ml" 44 1080 1128
+type(
+  unit K.process list
+)
+ident(
+  int_ref workers "kahn.ml" 36 827 842 "kahn.ml" 36 827 849
+)
+"kahn.ml" 44 1080 1095 "kahn.ml" 44 1080 1129
+type(
+  unit K.process list
+)
+"kahn.ml" 44 1080 1087 "kahn.ml" 44 1080 1130
+call(
+  stack
+)
+type(
+  unit K.process
+)
+"kahn.ml" 44 1080 1131 "kahn.ml" 44 1080 1134
+type(
+  unit K.process -> (unit -> 'f list K.process) -> 'f list K.process
+)
+ident(
+  int_ref >>= "kahn.ml" 20 410 416 "kahn.ml" 20 410 423
+)
+"kahn.ml" 44 1080 1140 "kahn.ml" 44 1080 1141
+type(
+  unit
+)
+"kahn.ml" 44 1080 1145 "kahn.ml" 44 1080 1150
+type(
+  'f list K.in_port -> 'f list K.process
+)
+ident(
+  int_ref K.get "kahn.ml" 8 173 175 "kahn.ml" 8 173 208
+)
+"kahn.ml" 44 1080 1151 "kahn.ml" 44 1080 1153
+type(
+  'f list K.in_port
+)
+ident(
+  int_ref qi "kahn.ml" 42 1033 1041 "kahn.ml" 42 1033 1043
+)
+"kahn.ml" 44 1080 1145 "kahn.ml" 44 1080 1153
+call(
+  tail
+)
+type(
+  'f list K.process
+)
+"kahn.ml" 44 1080 1135 "kahn.ml" 44 1080 1154
+type(
+  unit -> 'f list K.process
+)
+"kahn.ml" 44 1080 1086 "kahn.ml" 44 1080 1155
+call(
+  stack
+)
+type(
+  'f list K.process
+)
+"kahn.ml" 43 1070 1074 "kahn.ml" 44 1080 1155
+call(
+  tail
+)
+type(
+  'f list
+)
+"kahn.ml" 42 1033 1037 "kahn.ml" 44 1080 1155
+type(
+  'f list
+)
+"kahn.ml" 37 880 884 "kahn.ml" 44 1080 1155
+type(
+  'f list
+)
+"kahn.ml" 36 827 831 "kahn.ml" 44 1080 1155
+type(
+  'f list
+)
+"kahn.ml" 26 533 537 "kahn.ml" 44 1080 1155
+type(
+  'f list
+)
+"kahn.ml" 56 1335 1341 "kahn.ml" 56 1335 1352
+type(
+  unit -> 'a channel * 'a channel
+)
+ident(
+  def new_channel "kahn.ml" 60 1429 1431 "kahn.ml" 89 1982 1985
+)
+"kahn.ml" 56 1335 1353 "kahn.ml" 56 1335 1355
+type(
+  unit
+)
+"kahn.ml" 57 1358 1366 "kahn.ml" 57 1358 1367
+type(
+  'a channel
+)
+ident(
+  def q "kahn.ml" 58 1419 1423 "kahn.ml" 58 1419 1427
+)
+"kahn.ml" 57 1358 1376 "kahn.ml" 57 1358 1388
+type(
+  unit -> 'a Queue.t
+)
+ident(
+  ext_ref Queue.create
+)
+"kahn.ml" 57 1358 1389 "kahn.ml" 57 1358 1391
+type(
+  unit
+)
+"kahn.ml" 57 1358 1376 "kahn.ml" 57 1358 1391
+call(
+  stack
+)
+type(
+  'a Queue.t
+)
+"kahn.ml" 57 1358 1397 "kahn.ml" 57 1358 1409
+type(
+  unit -> Mutex.t
+)
+ident(
+  ext_ref Mutex.create
+)
+"kahn.ml" 57 1358 1410 "kahn.ml" 57 1358 1412
+type(
+  unit
+)
+"kahn.ml" 57 1358 1397 "kahn.ml" 57 1358 1412
+call(
+  stack
+)
+type(
+  Mutex.t
+)
+"kahn.ml" 57 1358 1370 "kahn.ml" 57 1358 1415
+type(
+  'a channel
+)
+"kahn.ml" 58 1419 1423 "kahn.ml" 58 1419 1424
+type(
+  'a channel
+)
+ident(
+  int_ref q "kahn.ml" 57 1358 1366 "kahn.ml" 57 1358 1367
+)
+"kahn.ml" 58 1419 1426 "kahn.ml" 58 1419 1427
+type(
+  'a channel
+)
+ident(
+  int_ref q "kahn.ml" 57 1358 1366 "kahn.ml" 57 1358 1367
+)
+"kahn.ml" 58 1419 1423 "kahn.ml" 58 1419 1427
+type(
+  'a channel * 'a channel
+)
+"kahn.ml" 57 1358 1362 "kahn.ml" 58 1419 1427
+type(
+  'a channel * 'a channel
+)
+"kahn.ml" 60 1429 1435 "kahn.ml" 60 1429 1438
+type(
+  'b -> 'b channel -> unit -> unit
+)
+ident(
+  def put "kahn.ml" 66 1533 1535 "kahn.ml" 89 1982 1985
+)
+"kahn.ml" 60 1429 1439 "kahn.ml" 60 1429 1440
+type(
+  'b
+)
+ident(
+  def v "kahn.ml" 60 1429 1441 "kahn.ml" 64 1512 1531
+)
+"kahn.ml" 60 1429 1441 "kahn.ml" 60 1429 1442
+type(
+  'b channel
+)
+ident(
+  def c "kahn.ml" 60 1429 1443 "kahn.ml" 64 1512 1531
+)
+"kahn.ml" 60 1429 1443 "kahn.ml" 60 1429 1445
+type(
+  unit
+)
+"kahn.ml" 61 1448 1452 "kahn.ml" 61 1448 1462
+type(
+  Mutex.t -> unit
+)
+ident(
+  ext_ref Mutex.lock
+)
+"kahn.ml" 61 1448 1463 "kahn.ml" 61 1448 1464
+type(
+  'b channel
+)
+ident(
+  int_ref c "kahn.ml" 60 1429 1441 "kahn.ml" 60 1429 1442
+)
+"kahn.ml" 61 1448 1463 "kahn.ml" 61 1448 1466
+type(
+  Mutex.t
+)
+"kahn.ml" 61 1448 1452 "kahn.ml" 61 1448 1466
+call(
+  stack
+)
+type(
+  unit
+)
+"kahn.ml" 62 1468 1472 "kahn.ml" 62 1468 1482
+type(
+  'b -> 'b Queue.t -> unit
+)
+ident(
+  ext_ref Queue.push
+)
+"kahn.ml" 62 1468 1483 "kahn.ml" 62 1468 1484
+type(
+  'b
+)
+ident(
+  int_ref v "kahn.ml" 60 1429 1439 "kahn.ml" 60 1429 1440
+)
+"kahn.ml" 62 1468 1485 "kahn.ml" 62 1468 1486
+type(
+  'b channel
+)
+ident(
+  int_ref c "kahn.ml" 60 1429 1441 "kahn.ml" 60 1429 1442
+)
+"kahn.ml" 62 1468 1485 "kahn.ml" 62 1468 1488
+type(
+  'b Queue.t
+)
+"kahn.ml" 62 1468 1472 "kahn.ml" 62 1468 1488
+call(
+  stack
+)
+type(
+  unit
+)
+"kahn.ml" 63 1490 1494 "kahn.ml" 63 1490 1506
+type(
+  Mutex.t -> unit
+)
+ident(
+  ext_ref Mutex.unlock
+)
+"kahn.ml" 63 1490 1507 "kahn.ml" 63 1490 1508
+type(
+  'b channel
+)
+ident(
+  int_ref c "kahn.ml" 60 1429 1441 "kahn.ml" 60 1429 1442
+)
+"kahn.ml" 63 1490 1507 "kahn.ml" 63 1490 1510
+type(
+  Mutex.t
+)
+"kahn.ml" 63 1490 1494 "kahn.ml" 63 1490 1510
+call(
+  stack
+)
+type(
+  unit
+)
+"kahn.ml" 64 1512 1516 "kahn.ml" 64 1512 1528
+type(
+  unit -> unit
+)
+ident(
+  ext_ref Thread.yield
+)
+"kahn.ml" 64 1512 1529 "kahn.ml" 64 1512 1531
+type(
+  unit
+)
+"kahn.ml" 64 1512 1516 "kahn.ml" 64 1512 1531
+call(
+  tail
+)
+type(
+  unit
+)
+"kahn.ml" 63 1490 1494 "kahn.ml" 64 1512 1531
+type(
+  unit
+)
+"kahn.ml" 62 1468 1472 "kahn.ml" 64 1512 1531
+type(
+  unit
+)
+"kahn.ml" 61 1448 1452 "kahn.ml" 64 1512 1531
+type(
+  unit
+)
+"kahn.ml" 66 1533 1543 "kahn.ml" 66 1533 1546
+type(
+  'c channel -> unit -> 'c
+)
+ident(
+  def get "kahn.ml" 66 1533 1535 "kahn.ml" 89 1982 1985
+)
+"kahn.ml" 66 1533 1547 "kahn.ml" 66 1533 1548
+type(
+  'c channel
+)
+ident(
+  def c "kahn.ml" 66 1533 1549 "kahn.ml" 75 1718 1732
+)
+"kahn.ml" 66 1533 1549 "kahn.ml" 66 1533 1551
+type(
+  unit
+)
+"kahn.ml" 68 1562 1568 "kahn.ml" 68 1562 1578
+type(
+  Mutex.t -> unit
+)
+ident(
+  ext_ref Mutex.lock
+)
+"kahn.ml" 68 1562 1579 "kahn.ml" 68 1562 1580
+type(
+  'c channel
+)
+ident(
+  int_ref c "kahn.ml" 66 1533 1547 "kahn.ml" 66 1533 1548
+)
+"kahn.ml" 68 1562 1579 "kahn.ml" 68 1562 1582
+type(
+  Mutex.t
+)
+"kahn.ml" 68 1562 1568 "kahn.ml" 68 1562 1582
+call(
+  stack
+)
+type(
+  unit
+)
+"kahn.ml" 69 1584 1594 "kahn.ml" 69 1584 1595
+type(
+  'c
+)
+ident(
+  def v "kahn.ml" 70 1615 1621 "kahn.ml" 71 1639 1646
+)
+"kahn.ml" 69 1584 1598 "kahn.ml" 69 1584 1607
+type(
+  'c Queue.t -> 'c
+)
+ident(
+  ext_ref Queue.pop
+)
+"kahn.ml" 69 1584 1608 "kahn.ml" 69 1584 1609
+type(
+  'c channel
+)
+ident(
+  int_ref c "kahn.ml" 66 1533 1547 "kahn.ml" 66 1533 1548
+)
+"kahn.ml" 69 1584 1608 "kahn.ml" 69 1584 1611
+type(
+  'c Queue.t
+)
+"kahn.ml" 69 1584 1598 "kahn.ml" 69 1584 1611
+call(
+  stack
+)
+type(
+  'c
+)
+"kahn.ml" 70 1615 1621 "kahn.ml" 70 1615 1633
+type(
+  Mutex.t -> unit
+)
+ident(
+  ext_ref Mutex.unlock
+)
+"kahn.ml" 70 1615 1634 "kahn.ml" 70 1615 1635
+type(
+  'c channel
+)
+ident(
+  int_ref c "kahn.ml" 66 1533 1547 "kahn.ml" 66 1533 1548
+)
+"kahn.ml" 70 1615 1634 "kahn.ml" 70 1615 1637
+type(
+  Mutex.t
+)
+"kahn.ml" 70 1615 1621 "kahn.ml" 70 1615 1637
+call(
+  stack
+)
+type(
+  unit
+)
+"kahn.ml" 71 1639 1645 "kahn.ml" 71 1639 1646
+type(
+  'c
+)
+ident(
+  int_ref v "kahn.ml" 69 1584 1594 "kahn.ml" 69 1584 1595
+)
+"kahn.ml" 70 1615 1621 "kahn.ml" 71 1639 1646
+type(
+  'c
+)
+"kahn.ml" 69 1584 1590 "kahn.ml" 71 1639 1646
+type(
+  'c
+)
+"kahn.ml" 68 1562 1568 "kahn.ml" 71 1639 1646
+type(
+  'c
+)
+"kahn.ml" 72 1647 1656 "kahn.ml" 72 1647 1667
+type(
+  exn
+)
+"kahn.ml" 73 1671 1677 "kahn.ml" 73 1671 1689
+type(
+  Mutex.t -> unit
+)
+ident(
+  ext_ref Mutex.unlock
+)
+"kahn.ml" 73 1671 1690 "kahn.ml" 73 1671 1691
+type(
+  'c channel
+)
+ident(
+  int_ref c "kahn.ml" 66 1533 1547 "kahn.ml" 66 1533 1548
+)
+"kahn.ml" 73 1671 1690 "kahn.ml" 73 1671 1693
+type(
+  Mutex.t
+)
+"kahn.ml" 73 1671 1677 "kahn.ml" 73 1671 1693
+call(
+  stack
+)
+type(
+  unit
+)
+"kahn.ml" 74 1695 1701 "kahn.ml" 74 1695 1713
+type(
+  unit -> unit
+)
+ident(
+  ext_ref Thread.yield
+)
+"kahn.ml" 74 1695 1714 "kahn.ml" 74 1695 1716
+type(
+  unit
+)
+"kahn.ml" 74 1695 1701 "kahn.ml" 74 1695 1716
+call(
+  stack
+)
+type(
+  unit
+)
+"kahn.ml" 75 1718 1724 "kahn.ml" 75 1718 1727
+type(
+  'c channel -> unit -> 'c
+)
+ident(
+  int_ref get "kahn.ml" 66 1533 1543 "kahn.ml" 66 1533 1546
+)
+"kahn.ml" 75 1718 1728 "kahn.ml" 75 1718 1729
+type(
+  'c channel
+)
+ident(
+  int_ref c "kahn.ml" 66 1533 1547 "kahn.ml" 66 1533 1548
+)
+"kahn.ml" 75 1718 1730 "kahn.ml" 75 1718 1732
+type(
+  unit
+)
+"kahn.ml" 75 1718 1724 "kahn.ml" 75 1718 1732
+call(
+  tail
+)
+type(
+  'c
+)
+"kahn.ml" 74 1695 1701 "kahn.ml" 75 1718 1732
+type(
+  'c
+)
+"kahn.ml" 73 1671 1677 "kahn.ml" 75 1718 1732
+type(
+  'c
+)
+"kahn.ml" 67 1554 1558 "kahn.ml" 75 1718 1732
+type(
+  'c
+)
+"kahn.ml" 77 1734 1740 "kahn.ml" 77 1734 1744
+type(
+  (unit -> 'd) list -> unit -> unit
+)
+ident(
+  def doco "kahn.ml" 81 1856 1858 "kahn.ml" 89 1982 1985
+)
+"kahn.ml" 77 1734 1745 "kahn.ml" 77 1734 1746
+type(
+  (unit -> 'd) list
+)
+ident(
+  def l "kahn.ml" 77 1734 1747 "kahn.ml" 79 1810 1854
+)
+"kahn.ml" 77 1734 1747 "kahn.ml" 77 1734 1749
+type(
+  unit
+)
+"kahn.ml" 78 1752 1760 "kahn.ml" 78 1752 1763
+type(
+  Thread.t list
+)
+ident(
+  def ths "kahn.ml" 79 1810 1814 "kahn.ml" 79 1810 1854
+)
+"kahn.ml" 78 1752 1766 "kahn.ml" 78 1752 1774
+type(
+  ((unit -> 'd) -> Thread.t) -> (unit -> 'd) list -> Thread.t list
+)
+ident(
+  ext_ref List.map
+)
+"kahn.ml" 78 1752 1780 "kahn.ml" 78 1752 1781
+type(
+  unit -> 'd
+)
+ident(
+  def f "kahn.ml" 78 1752 1785 "kahn.ml" 78 1752 1803
+)
+"kahn.ml" 78 1752 1785 "kahn.ml" 78 1752 1798
+type(
+  (unit -> 'd) -> unit -> Thread.t
+)
+ident(
+  ext_ref Thread.create
+)
+"kahn.ml" 78 1752 1799 "kahn.ml" 78 1752 1800
+type(
+  unit -> 'd
+)
+ident(
+  int_ref f "kahn.ml" 78 1752 1780 "kahn.ml" 78 1752 1781
+)
+"kahn.ml" 78 1752 1801 "kahn.ml" 78 1752 1803
+type(
+  unit
+)
+"kahn.ml" 78 1752 1785 "kahn.ml" 78 1752 1803
+call(
+  tail
+)
+type(
+  Thread.t
+)
+"kahn.ml" 78 1752 1775 "kahn.ml" 78 1752 1804
+type(
+  (unit -> 'd) -> Thread.t
+)
+"kahn.ml" 78 1752 1805 "kahn.ml" 78 1752 1806
+type(
+  (unit -> 'd) list
+)
+ident(
+  int_ref l "kahn.ml" 77 1734 1745 "kahn.ml" 77 1734 1746
+)
+"kahn.ml" 78 1752 1766 "kahn.ml" 78 1752 1806
+call(
+  stack
+)
+type(
+  Thread.t list
+)
+"kahn.ml" 79 1810 1814 "kahn.ml" 79 1810 1823
+type(
+  (Thread.t -> unit) -> Thread.t list -> unit
+)
+ident(
+  ext_ref List.iter
+)
+"kahn.ml" 79 1810 1829 "kahn.ml" 79 1810 1831
+type(
+  Thread.t
+)
+ident(
+  def th "kahn.ml" 79 1810 1835 "kahn.ml" 79 1810 1849
+)
+"kahn.ml" 79 1810 1835 "kahn.ml" 79 1810 1846
+type(
+  Thread.t -> unit
+)
+ident(
+  ext_ref Thread.join
+)
+"kahn.ml" 79 1810 1847 "kahn.ml" 79 1810 1849
+type(
+  Thread.t
+)
+ident(
+  int_ref th "kahn.ml" 79 1810 1829 "kahn.ml" 79 1810 1831
+)
+"kahn.ml" 79 1810 1835 "kahn.ml" 79 1810 1849
+call(
+  tail
+)
+type(
+  unit
+)
+"kahn.ml" 79 1810 1824 "kahn.ml" 79 1810 1850
+type(
+  Thread.t -> unit
+)
+"kahn.ml" 79 1810 1851 "kahn.ml" 79 1810 1854
+type(
+  Thread.t list
+)
+ident(
+  int_ref ths "kahn.ml" 78 1752 1760 "kahn.ml" 78 1752 1763
+)
+"kahn.ml" 79 1810 1814 "kahn.ml" 79 1810 1854
+call(
+  tail
+)
+type(
+  unit
+)
+"kahn.ml" 78 1752 1756 "kahn.ml" 79 1810 1854
+type(
+  unit
+)
+"kahn.ml" 81 1856 1862 "kahn.ml" 81 1856 1868
+type(
+  'e -> unit -> 'e
+)
+ident(
+  def return "kahn.ml" 83 1888 1890 "kahn.ml" 89 1982 1985
+)
+"kahn.ml" 81 1856 1869 "kahn.ml" 81 1856 1870
+type(
+  'e
+)
+ident(
+  def v "kahn.ml" 81 1856 1873 "kahn.ml" 81 1856 1886
+)
+"kahn.ml" 81 1856 1878 "kahn.ml" 81 1856 1880
+type(
+  unit
+)
+"kahn.ml" 81 1856 1884 "kahn.ml" 81 1856 1885
+type(
+  'e
+)
+ident(
+  int_ref v "kahn.ml" 81 1856 1869 "kahn.ml" 81 1856 1870
+)
+"kahn.ml" 81 1856 1873 "kahn.ml" 81 1856 1886
+type(
+  unit -> 'e
+)
+"kahn.ml" 83 1888 1894 "kahn.ml" 83 1888 1898
+type(
+  (unit -> 'f) -> ('f -> unit -> 'g) -> unit -> 'g
+)
+ident(
+  def bind "kahn.ml" 88 1963 1965 "kahn.ml" 89 1982 1985
+)
+"kahn.ml" 83 1888 1899 "kahn.ml" 83 1888 1900
+type(
+  unit -> 'f
+)
+ident(
+  def e "kahn.ml" 83 1888 1901 "kahn.ml" 86 1950 1961
+)
+"kahn.ml" 83 1888 1901 "kahn.ml" 83 1888 1903
+type(
+  'f -> unit -> 'g
+)
+ident(
+  def e' "kahn.ml" 83 1888 1904 "kahn.ml" 86 1950 1961
+)
+"kahn.ml" 83 1888 1904 "kahn.ml" 83 1888 1906
+type(
+  unit
+)
+"kahn.ml" 84 1909 1917 "kahn.ml" 84 1909 1918
+type(
+  'f
+)
+ident(
+  def v "kahn.ml" 85 1929 1933 "kahn.ml" 86 1950 1961
+)
+"kahn.ml" 84 1909 1921 "kahn.ml" 84 1909 1922
+type(
+  unit -> 'f
+)
+ident(
+  int_ref e "kahn.ml" 83 1888 1899 "kahn.ml" 83 1888 1900
+)
+"kahn.ml" 84 1909 1923 "kahn.ml" 84 1909 1925
+type(
+  unit
+)
+"kahn.ml" 84 1909 1921 "kahn.ml" 84 1909 1925
+call(
+  stack
+)
+type(
+  'f
+)
+"kahn.ml" 85 1929 1933 "kahn.ml" 85 1929 1945
+type(
+  unit -> unit
+)
+ident(
+  ext_ref Thread.yield
+)
+"kahn.ml" 85 1929 1946 "kahn.ml" 85 1929 1948
+type(
+  unit
+)
+"kahn.ml" 85 1929 1933 "kahn.ml" 85 1929 1948
+call(
+  stack
+)
+type(
+  unit
+)
+"kahn.ml" 86 1950 1954 "kahn.ml" 86 1950 1956
+type(
+  'f -> unit -> 'g
+)
+ident(
+  int_ref e' "kahn.ml" 83 1888 1901 "kahn.ml" 83 1888 1903
+)
+"kahn.ml" 86 1950 1957 "kahn.ml" 86 1950 1958
+type(
+  'f
+)
+ident(
+  int_ref v "kahn.ml" 84 1909 1917 "kahn.ml" 84 1909 1918
+)
+"kahn.ml" 86 1950 1959 "kahn.ml" 86 1950 1961
+type(
+  unit
+)
+"kahn.ml" 86 1950 1954 "kahn.ml" 86 1950 1961
+call(
+  tail
+)
+type(
+  'g
+)
+"kahn.ml" 85 1929 1933 "kahn.ml" 86 1950 1961
+type(
+  'g
+)
+"kahn.ml" 84 1909 1913 "kahn.ml" 86 1950 1961
+type(
+  'g
+)
+"kahn.ml" 88 1963 1969 "kahn.ml" 88 1963 1972
+type(
+  (unit -> 'h) -> 'h
+)
+ident(
+  def run "kahn.ml" 88 1963 1981 "kahn.ml" 89 1982 1985
+)
+"kahn.ml" 88 1963 1973 "kahn.ml" 88 1963 1974
+type(
+  unit -> 'h
+)
+ident(
+  def e "kahn.ml" 88 1963 1977 "kahn.ml" 88 1963 1981
+)
+"kahn.ml" 88 1963 1977 "kahn.ml" 88 1963 1978
+type(
+  unit -> 'h
+)
+ident(
+  int_ref e "kahn.ml" 88 1963 1973 "kahn.ml" 88 1963 1974
+)
+"kahn.ml" 88 1963 1979 "kahn.ml" 88 1963 1981
+type(
+  unit
+)
+"kahn.ml" 88 1963 1977 "kahn.ml" 88 1963 1981
+call(
+  tail
+)
+type(
+  'h
+)

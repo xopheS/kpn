@@ -1,13 +1,16 @@
 OCAMLBUILD=ocamlbuild -classic-display \
 		-tags annot,debug,thread \
-		-libs unix,graphics
+		-libs unix, graphics \
+		-ocamlc 'ocamlc str.cma' \
+		-ocamlopt 'ocamlopt str.cmxa'
+
 TARGET=native
 
 mandelbrot:
 	$(OCAMLBUILD) mandelbrot.$(TARGET)
 
-example:
-	$(OCAMLBUILD) example.$(TARGET)
+k_means:
+	$(OCAMLBUILD) k_means.$(TARGET)
 
 
 clean:
