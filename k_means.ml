@@ -57,28 +57,24 @@ module K_means (K : Kahn.S) = struct
     in
     parallel_map (fun x -> Array.fold_left (s_partition x) [] a) possible_values
     
+  let shuffle_in_place points =
+    Random.self_init ();
+    let n = Array.length points in
+    for i = 0 to n-2 do
+      let k = Random.int (n-i) in
+      let tmp = points.(i) in
+      points.(i) <- points.(i+k);
+      points.(i+k) <- tmp 
+    done
   
-  let rec shuffle_and_initialize_means (k : int) (points : (point * label) array) : point array =
-
-    let shuffle_in_place =
-      Random.self_init ();
-      let n = Array.length points in
-      for i = 0 to n-2 do
-        let k = Random.int (n-i) in
-        let tmp = points.(i) in
-        points.(i) <- points.(i+k);
-        points.(i+k) <- tmp 
-      done
-    in
-
-    shuffle_in_place;
+  let rec initialize_means (k : int) (points : (point * label) array) : point array =
     parallel_map (fun x -> fst x) (Array.sub points 0 k)
 
 
   let classify ?(distance_function = l2_distance) (points : (point*label) array) (means : point array)  =
     (* coded in imperative style otherwise too heavy on memory *)
     let find_closest (x : (point*label)) : point =
-      let n = Array.length means in 
+      let n = (Array.length means) - 1  in 
       let closest = ref (means.(0)) in 
       let minDistance = ref (distance_function means.(0) (fst x))in
       for i = 1 to n do
@@ -117,26 +113,22 @@ module K_means (K : Kahn.S) = struct
 
 
 
-  
-
 
 end
 
-module Card_fraud_K_means (K: Kahn.S) = struct 
+module Iris_K_means (K: Kahn.S) = struct 
 
   module K_means = K_means(K)
   open K_means
 
-  let k = ref 2 
-  let dimension = ref 29 
+  let k = ref 3 
   let number_of_processes = ref 10
   let epsilon = ref 0.001
   let training_perc = ref 0.9
-
-
+  let labels = [|1; 0;-1|]
 
   let preprocess_data path = 
-    let import_data path separator nbr_of_features: float array array =
+    let import_data path separator: float array array =
       let reg_separator = Str.regexp separator in
       let value_list = ref [] in
       try
@@ -146,7 +138,7 @@ module Card_fraud_K_means (K: Kahn.S) = struct
         try
           while true; do
             (* Create a list of values from a line *)
-            let line_list = Str.split reg_separator (input_line ic) in
+            let line_list = Str.split_delim reg_separator (input_line ic) in
             let tmp = Array.of_list (List.map float_of_string line_list) in
             value_list := tmp::(!value_list);
           done;
@@ -156,24 +148,24 @@ module Card_fraud_K_means (K: Kahn.S) = struct
       with
         | e -> raise e
     in 
-    let get_values_labels (data: float array array): (float array * int) array = 
-      parallel_map (fun x -> ((Array.sub x 0 !dimension), int_of_float x.(!dimension))) data
+    let get_values_labels (data: float array array): (float array * int) array =
+      let d = (Array.length (data.(0))) - 1 in
+      parallel_map (fun x -> ((Array.sub x 0 d), int_of_float x.(d))) data
     in  
     let seperate_to_training_and_test (data:(float array * int) array) : ((float array * int) array * (float array * int) array)  =
       let n = Array.length data in 
-      let l = int_of_float ((float_of_int n) *. !training_perc) in 
+      let l = int_of_float ((float_of_int n) *. !training_perc) in
+      shuffle_in_place data; 
       (Array.sub data 0 l, Array.sub data l (n-l))
     in
-    seperate_to_training_and_test (get_values_labels (import_data path  ","  ((!dimension)+1))) 
+    seperate_to_training_and_test (get_values_labels (import_data path  ",")) 
 
-  let test acc points =
-    let eval l = 
-      let n = float_of_int (List.fold_left (fun x y -> x + snd(y)) 0 l) in 
-      let s = float_of_int (List.length l) in
-      let r = n /. s in 
-      if r > 0.5 then n else s -. n
-    in 
-    let s = Array.fold_left (+.) 0. (parallel_map eval points) in 
+  let test acc points = 
+    let partition_by_label l = 
+      Array.fold_left (max) 0 (parallel_map (fun label -> List.length (fst (List.partition (fun x -> (snd x) = label) l))) labels)
+    in
+    let p = parallel_map (partition_by_label) points in
+    let s = float_of_int (Array.fold_left (+) 0 p) in 
     let q = float_of_int (Array.fold_left (fun x y -> x + (List.length y)) 0 points) in 
     (s /. q) :: acc
 
@@ -188,14 +180,15 @@ module Card_fraud_K_means (K: Kahn.S) = struct
       else 
         aux nm (test acc_training p_tr) (test acc_test p_te)
     in 
-    aux (shuffle_and_initialize_means !k training_data) [] []
+    aux (initialize_means !k training_data) [] []
 
 
 
   let plot training test = 
     let rec print_numbers oc = function 
       | [] -> ()
-      | e::tl -> Printf.fprintf oc "%f\n" e; print_numbers oc tl
+      | [e] -> Printf.fprintf oc "%f" e; ()
+      | e::tl -> Printf.fprintf oc "%f, " e; print_numbers oc tl
     in
     let tr = open_out "training_accuracy.txt" in
     let te = open_out "test_accuracy.txt" in
@@ -203,20 +196,20 @@ module Card_fraud_K_means (K: Kahn.S) = struct
     print_numbers te test;
     close_out tr;
     close_out te;
-    ignore (Sys.command "python plot.py")
+    ignore (Sys.command "python ../plot.py")
     
 
   let main =
     let path = Sys.argv.(1) in
+    K_means.number_of_proc := !number_of_processes;
     let training, test = preprocess_data path in 
     let means, training_accuracy, test_accuracy = exec training test in 
-    plot training_accuracy test_accuracy;
-    ()
+    plot training_accuracy test_accuracy
     
     
 end   
 
 
 
-module E = Card_fraud_K_means(Kahn.Th)
+module E = Iris_K_means(Kahn.Th)
 let () = E.main
