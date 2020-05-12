@@ -29,17 +29,16 @@ struct
     (in_socket, out_socket)
   
   let put value output = 
-          (fun () -> let data = Marshal.to_bytes value [] in
-          ignore( Unix.send output data 0 (Bytes.length data) []))
+    (fun () -> let data = Marshal.to_bytes value [] in
+    ignore( Unix.send output data 0 (Bytes.length data) []))
 
   let get input = 
-          (fun () ->    let header = Bytes.create Marshal.header_size in
-                        Unix.recv input header 0 Marshal.header_size [] |> ignore ;
-                        let d_size = Marshal.data_size header 0 in
-                        let data = Bytes.create d_size in
-                        Unix.recv input data 0 d_size [] |> ignore ;
-                        (Marshal.from_bytes (Bytes.cat header data) 0)
-                     )
+    (fun () -> let header = Bytes.create Marshal.header_size in
+              Unix.recv input header 0 Marshal.header_size [] |> ignore ;
+              let d_size = Marshal.data_size header 0 in
+              let data = Bytes.create d_size in
+              Unix.recv input data 0 d_size [] |> ignore ;
+              (Marshal.from_bytes (Bytes.cat header data) 0))
 
   let return value = (fun () -> value)
 
@@ -48,14 +47,14 @@ struct
   let delay f x = bind (return ()) (fun () -> return (f x))
 
   let doco l = 
-          ( fun() -> let rec sub = function 
-                  | [] -> ()
-                  | x :: th -> 
-                        begin 
-                          let thread = Thread.create x () in               
-                          sub th; Thread.join thread 
-                        end 
-           in sub l)
+    (fun() -> 
+      let rec sub = function 
+      | [] -> ()
+      | x :: th -> begin 
+                  let thread = Thread.create x () in               
+                  sub th; Thread.join thread 
+                  end 
+    in sub l)
 
   let run f = f ()
 
