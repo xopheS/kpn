@@ -1,2 +1,0 @@
-# kpn
-Kahn Process Networks

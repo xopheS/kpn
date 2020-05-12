@@ -1,0 +1,22 @@
+### Starting build.
+# Target: mandelbrot.ml.depends, tags: { package(graphics,unix), annot, debug, extension:ml, file:mandelbrot.ml, ocaml, ocamldep, quiet, thread }
+ocamlfind ocamldep -package graphics,unix -modules mandelbrot.ml > mandelbrot.ml.depends
+# Target: kahn.ml.depends, tags: { package(graphics,unix), annot, debug, extension:ml, file:kahn.ml, ocaml, ocamldep, quiet, thread }
+ocamlfind ocamldep -package graphics,unix -modules kahn.ml > kahn.ml.depends # cached
+# Target: kahn.cmo, tags: { package(graphics,unix), annot, byte, compile, debug, extension:cmo, extension:ml, file:kahn.cmo, file:kahn.ml, implem, ocaml, quiet, thread }
+ocamlfind ocamlc str.cma -c -g -annot -thread -package graphics,unix -o kahn.cmo kahn.ml # cached
+# Target: sequential.ml.depends, tags: { package(graphics,unix), annot, debug, extension:ml, file:sequential.ml, ocaml, ocamldep, quiet, thread }
+ocamlfind ocamldep -package graphics,unix -modules sequential.ml > sequential.ml.depends
+# Target: sequential.cmo, tags: { package(graphics,unix), annot, byte, compile, debug, extension:cmo, extension:ml, file:sequential.cmo, file:sequential.ml, implem, ocaml, quiet, thread }
+ocamlfind ocamlc str.cma -c -g -annot -thread -package graphics,unix -o sequential.cmo sequential.ml
+# Target: mandelbrot.cmo, tags: { package(graphics,unix), annot, byte, compile, debug, extension:cmo, extension:ml, file:mandelbrot.cmo, file:mandelbrot.ml, implem, ocaml, quiet, thread }
+ocamlfind ocamlc str.cma -c -g -annot -thread -package graphics,unix -o mandelbrot.cmo mandelbrot.ml
+# Target: kahn.cmx, tags: { package(graphics,unix), annot, compile, debug, extension:cmx, extension:ml, file:kahn.cmx, file:kahn.ml, implem, native, ocaml, quiet, thread }
+ocamlfind ocamlopt str.cmxa -c -g -annot -thread -package graphics,unix -o kahn.cmx kahn.ml # cached
+# Target: sequential.cmx, tags: { package(graphics,unix), annot, compile, debug, extension:cmx, extension:ml, file:sequential.cmx, file:sequential.ml, implem, native, ocaml, quiet, thread }
+ocamlfind ocamlopt str.cmxa -c -g -annot -thread -package graphics,unix -o sequential.cmx sequential.ml
+# Target: mandelbrot.cmx, tags: { package(graphics,unix), annot, compile, debug, extension:cmx, extension:ml, file:mandelbrot.cmx, file:mandelbrot.ml, implem, native, ocaml, quiet, thread }
+ocamlfind ocamlopt str.cmxa -c -g -annot -thread -package graphics,unix -o mandelbrot.cmx mandelbrot.ml
+# Target: mandelbrot.native, tags: { package(graphics,unix), annot, debug, dont_link_with, extension:native, file:mandelbrot.native, link, native, ocaml, program, quiet, thread }
+ocamlfind ocamlopt str.cmxa -linkpkg -g -thread -package graphics,unix kahn.cmx sequential.cmx mandelbrot.cmx -o mandelbrot.native
+# Compilation successful.

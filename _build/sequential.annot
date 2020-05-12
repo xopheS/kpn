@@ -1,0 +1,1344 @@
+"sequential.ml" 16 259 264 "sequential.ml" 16 259 275
+type(
+  unit -> 'a Queue.t * 'a Queue.t
+)
+ident(
+  def new_channel "sequential.ml" 20 320 321 "sequential.ml" 105 2177 2180
+)
+"sequential.ml" 16 259 276 "sequential.ml" 16 259 278
+type(
+  unit
+)
+"sequential.ml" 17 282 288 "sequential.ml" 17 282 289
+type(
+  'a Queue.t
+)
+ident(
+  def c "sequential.ml" 18 311 313 "sequential.ml" 18 311 318
+)
+"sequential.ml" 17 282 292 "sequential.ml" 17 282 304
+type(
+  unit -> 'a Queue.t
+)
+ident(
+  int_ref Stdlib.Queue.create "queue.mli" 33 1535 1535 "queue.mli" 33 1535 1560
+)
+"sequential.ml" 17 282 305 "sequential.ml" 17 282 307
+type(
+  unit
+)
+"sequential.ml" 17 282 292 "sequential.ml" 17 282 307
+type(
+  'a Queue.t
+)
+"sequential.ml" 18 311 313 "sequential.ml" 18 311 314
+type(
+  'a Queue.t
+)
+ident(
+  int_ref c "sequential.ml" 17 282 288 "sequential.ml" 17 282 289
+)
+"sequential.ml" 18 311 317 "sequential.ml" 18 311 318
+type(
+  'a Queue.t
+)
+ident(
+  int_ref c "sequential.ml" 17 282 288 "sequential.ml" 17 282 289
+)
+"sequential.ml" 18 311 313 "sequential.ml" 18 311 318
+type(
+  'a Queue.t * 'a Queue.t
+)
+"sequential.ml" 17 282 284 "sequential.ml" 18 311 318
+type(
+  'a Queue.t * 'a Queue.t
+)
+"sequential.ml" 20 320 329 "sequential.ml" 20 320 332
+type(
+  'b -> 'b Queue.t -> unit process
+)
+ident(
+  def put "sequential.ml" 20 320 321 "sequential.ml" 105 2177 2180
+)
+"sequential.ml" 20 320 333 "sequential.ml" 20 320 334
+type(
+  'b
+)
+ident(
+  def v "sequential.ml" 20 320 335 "sequential.ml" 23 406 416
+)
+"sequential.ml" 20 320 335 "sequential.ml" 20 320 336
+type(
+  'b Queue.t
+)
+ident(
+  def q "sequential.ml" 20 320 337 "sequential.ml" 23 406 416
+)
+"sequential.ml" 21 355 362 "sequential.ml" 21 355 363
+type(
+  unit -> action
+)
+ident(
+  def c "sequential.ml" 22 386 390 "sequential.ml" 23 406 416
+)
+"sequential.ml" 22 386 390 "sequential.ml" 22 386 400
+type(
+  'b -> 'b Queue.t -> unit
+)
+ident(
+  int_ref Stdlib.Queue.push "queue.mli" 39 1703 1703 "queue.mli" 39 1703 1732
+)
+"sequential.ml" 22 386 401 "sequential.ml" 22 386 402
+type(
+  'b
+)
+ident(
+  int_ref v "sequential.ml" 20 320 333 "sequential.ml" 20 320 334
+)
+"sequential.ml" 22 386 403 "sequential.ml" 22 386 404
+type(
+  'b Queue.t
+)
+ident(
+  int_ref q "sequential.ml" 20 320 335 "sequential.ml" 20 320 336
+)
+"sequential.ml" 22 386 390 "sequential.ml" 22 386 404
+type(
+  unit
+)
+"sequential.ml" 23 406 415 "sequential.ml" 23 406 416
+type(
+  unit -> action
+)
+ident(
+  int_ref c "sequential.ml" 21 355 362 "sequential.ml" 21 355 363
+)
+"sequential.ml" 23 406 410 "sequential.ml" 23 406 416
+type(
+  action
+)
+"sequential.ml" 22 386 390 "sequential.ml" 23 406 416
+type(
+  action
+)
+"sequential.ml" 21 355 357 "sequential.ml" 23 406 416
+type(
+  unit process
+)
+type(
+  unit process
+)
+"sequential.ml" 25 421 431 "sequential.ml" 25 421 434
+type(
+  'a0 Queue.t -> 'a0 process
+)
+ident(
+  def get "sequential.ml" 25 421 423 "sequential.ml" 105 2177 2180
+)
+"sequential.ml" 25 421 435 "sequential.ml" 25 421 436
+type(
+  'a0 Queue.t
+)
+ident(
+  def q "sequential.ml" 25 421 437 "sequential.ml" 31 564 592
+)
+"sequential.ml" 26 453 460 "sequential.ml" 26 453 461
+type(
+  'a0 -> action
+)
+ident(
+  def c "sequential.ml" 27 482 485 "sequential.ml" 31 564 592
+)
+"sequential.ml" 28 489 497 "sequential.ml" 28 489 498
+type(
+  'a0
+)
+ident(
+  def v "sequential.ml" 29 516 520 "sequential.ml" 29 516 540
+)
+"sequential.ml" 28 489 501 "sequential.ml" 28 489 510
+type(
+  'a0 Queue.t -> 'a0
+)
+ident(
+  int_ref Stdlib.Queue.pop "queue.mli" 51 2073 2073 "queue.mli" 51 2073 2093
+)
+"sequential.ml" 28 489 511 "sequential.ml" 28 489 512
+type(
+  'a0 Queue.t
+)
+ident(
+  int_ref q "sequential.ml" 25 421 435 "sequential.ml" 25 421 436
+)
+"sequential.ml" 28 489 501 "sequential.ml" 28 489 512
+type(
+  'a0
+)
+"sequential.ml" 29 516 530 "sequential.ml" 29 516 532
+type(
+  unit
+)
+"sequential.ml" 29 516 536 "sequential.ml" 29 516 537
+type(
+  'a0 -> action
+)
+ident(
+  int_ref c "sequential.ml" 26 453 460 "sequential.ml" 26 453 461
+)
+"sequential.ml" 29 516 538 "sequential.ml" 29 516 539
+type(
+  'a0
+)
+ident(
+  int_ref v "sequential.ml" 28 489 497 "sequential.ml" 28 489 498
+)
+"sequential.ml" 29 516 536 "sequential.ml" 29 516 539
+type(
+  action
+)
+"sequential.ml" 29 516 525 "sequential.ml" 29 516 540
+type(
+  unit -> action
+)
+"sequential.ml" 29 516 520 "sequential.ml" 29 516 540
+type(
+  action
+)
+"sequential.ml" 28 489 493 "sequential.ml" 29 516 540
+type(
+  action
+)
+"sequential.ml" 30 541 549 "sequential.ml" 30 541 560
+type(
+  exn
+)
+"sequential.ml" 31 564 578 "sequential.ml" 31 564 580
+type(
+  unit
+)
+"sequential.ml" 31 564 584 "sequential.ml" 31 564 587
+type(
+  'a0 Queue.t -> 'a0 process
+)
+ident(
+  int_ref get "sequential.ml" 25 421 431 "sequential.ml" 25 421 434
+)
+"sequential.ml" 31 564 588 "sequential.ml" 31 564 589
+type(
+  'a0 Queue.t
+)
+ident(
+  int_ref q "sequential.ml" 25 421 435 "sequential.ml" 25 421 436
+)
+"sequential.ml" 31 564 590 "sequential.ml" 31 564 591
+type(
+  'a0 -> action
+)
+ident(
+  int_ref c "sequential.ml" 26 453 460 "sequential.ml" 26 453 461
+)
+"sequential.ml" 31 564 584 "sequential.ml" 31 564 591
+type(
+  action
+)
+"sequential.ml" 31 564 573 "sequential.ml" 31 564 592
+type(
+  unit -> action
+)
+"sequential.ml" 31 564 568 "sequential.ml" 31 564 592
+type(
+  action
+)
+"sequential.ml" 27 482 485 "sequential.ml" 31 564 592
+type(
+  action
+)
+"sequential.ml" 26 453 455 "sequential.ml" 31 564 592
+type(
+  'a0 process
+)
+type(
+  'a0 process
+)
+"sequential.ml" 35 623 628 "sequential.ml" 35 623 635
+type(
+  ?f:('a1 -> action) -> 'a1 process -> action
+)
+ident(
+  def convert "sequential.ml" 38 700 701 "sequential.ml" 105 2177 2180
+)
+"sequential.ml" 35 623 638 "sequential.ml" 35 623 639
+type(
+  'a1 -> action
+)
+"sequential.ml" 35 623 647 "sequential.ml" 35 623 648
+type(
+  'a1
+)
+ident(
+  def c "sequential.ml" 35 623 658 "sequential.ml" 35 623 662
+)
+"sequential.ml" 35 623 658 "sequential.ml" 35 623 662
+type(
+  action
+)
+"sequential.ml" 35 623 642 "sequential.ml" 35 623 662
+type(
+  'a1 -> action
+)
+type(
+  'a1 -> action
+)
+type(
+  ('a1 -> action) option
+)
+type(
+  ('a1 -> action) option
+)
+type(
+  'a1 -> action
+)
+"sequential.ml" 35 623 665 "sequential.ml" 35 623 666
+type(
+  'a1 process
+)
+ident(
+  def p "sequential.ml" 35 623 681 "sequential.ml" 36 692 698
+)
+"sequential.ml" 36 692 695 "sequential.ml" 36 692 696
+type(
+  'a1 process
+)
+ident(
+  int_ref p "sequential.ml" 35 623 665 "sequential.ml" 35 623 666
+)
+"sequential.ml" 36 692 697 "sequential.ml" 36 692 698
+type(
+  'a1 -> action
+)
+ident(
+  int_ref f "sequential.ml" 35 623 638 "sequential.ml" 35 623 639
+)
+"sequential.ml" 36 692 695 "sequential.ml" 36 692 698
+type(
+  action
+)
+type(
+  action
+)
+"sequential.ml" 38 700 709 "sequential.ml" 38 700 715
+type(
+  action -> unit
+)
+ident(
+  def printa "sequential.ml" 38 700 701 "sequential.ml" 105 2177 2180
+)
+"sequential.ml" 38 700 717 "sequential.ml" 38 700 718
+type(
+  action
+)
+ident(
+  def a "sequential.ml" 38 700 729 "sequential.ml" 46 922 954
+)
+"sequential.ml" 38 700 744 "sequential.ml" 38 700 745
+type(
+  action
+)
+ident(
+  int_ref a "sequential.ml" 38 700 717 "sequential.ml" 38 700 718
+)
+"sequential.ml" 39 751 761 "sequential.ml" 39 751 763
+type(
+  action
+)
+ident(
+  def a1 "sequential.ml" 40 775 779 "sequential.ml" 44 858 879
+)
+"sequential.ml" 39 751 766 "sequential.ml" 39 751 768
+type(
+  action
+)
+ident(
+  def a2 "sequential.ml" 40 775 779 "sequential.ml" 44 858 879
+)
+"sequential.ml" 39 751 755 "sequential.ml" 39 751 769
+type(
+  action
+)
+"sequential.ml" 40 775 779 "sequential.ml" 40 775 792
+type(
+  (unit, Format.formatter, unit) format -> unit
+)
+ident(
+  int_ref Stdlib.Format.printf "format.mli" 1175 45899 45899 "format.mli" 1175 45899 45946
+)
+"sequential.ml" 40 775 793 "sequential.ml" 40 775 801
+type(
+  (unit, Format.formatter, unit) format
+)
+"sequential.ml" 40 775 779 "sequential.ml" 40 775 801
+type(
+  unit
+)
+"sequential.ml" 41 803 807 "sequential.ml" 41 803 813
+type(
+  action -> unit
+)
+ident(
+  int_ref printa "sequential.ml" 38 700 709 "sequential.ml" 38 700 715
+)
+"sequential.ml" 41 803 814 "sequential.ml" 41 803 816
+type(
+  action
+)
+ident(
+  int_ref a1 "sequential.ml" 39 751 761 "sequential.ml" 39 751 763
+)
+"sequential.ml" 41 803 807 "sequential.ml" 41 803 816
+type(
+  unit
+)
+"sequential.ml" 42 818 822 "sequential.ml" 42 818 835
+type(
+  (unit, Format.formatter, unit) format -> unit
+)
+ident(
+  int_ref Stdlib.Format.printf "format.mli" 1175 45899 45899 "format.mli" 1175 45899 45946
+)
+"sequential.ml" 42 818 836 "sequential.ml" 42 818 841
+type(
+  (unit, Format.formatter, unit) format
+)
+"sequential.ml" 42 818 822 "sequential.ml" 42 818 841
+type(
+  unit
+)
+"sequential.ml" 43 843 847 "sequential.ml" 43 843 853
+type(
+  action -> unit
+)
+ident(
+  int_ref printa "sequential.ml" 38 700 709 "sequential.ml" 38 700 715
+)
+"sequential.ml" 43 843 854 "sequential.ml" 43 843 856
+type(
+  action
+)
+ident(
+  int_ref a2 "sequential.ml" 39 751 766 "sequential.ml" 39 751 768
+)
+"sequential.ml" 43 843 847 "sequential.ml" 43 843 856
+type(
+  unit
+)
+"sequential.ml" 44 858 862 "sequential.ml" 44 858 875
+type(
+  (unit, Format.formatter, unit) format -> unit
+)
+ident(
+  int_ref Stdlib.Format.printf "format.mli" 1175 45899 45899 "format.mli" 1175 45899 45946
+)
+"sequential.ml" 44 858 876 "sequential.ml" 44 858 879
+type(
+  (unit, Format.formatter, unit) format
+)
+"sequential.ml" 44 858 862 "sequential.ml" 44 858 879
+type(
+  unit
+)
+"sequential.ml" 43 843 847 "sequential.ml" 44 858 879
+type(
+  unit
+)
+"sequential.ml" 42 818 822 "sequential.ml" 44 858 879
+type(
+  unit
+)
+"sequential.ml" 41 803 807 "sequential.ml" 44 858 879
+type(
+  unit
+)
+"sequential.ml" 40 775 779 "sequential.ml" 44 858 879
+type(
+  unit
+)
+"sequential.ml" 45 880 889 "sequential.ml" 45 880 891
+type(
+  unit -> action
+)
+ident(
+  def a1 "sequential.ml" 45 880 895 "sequential.ml" 45 880 921
+)
+"sequential.ml" 45 880 884 "sequential.ml" 45 880 891
+type(
+  action
+)
+"sequential.ml" 45 880 895 "sequential.ml" 45 880 908
+type(
+  (unit, Format.formatter, unit) format -> unit
+)
+ident(
+  int_ref Stdlib.Format.printf "format.mli" 1175 45899 45899 "format.mli" 1175 45899 45946
+)
+"sequential.ml" 45 880 909 "sequential.ml" 45 880 921
+type(
+  (unit, Format.formatter, unit) format
+)
+"sequential.ml" 45 880 895 "sequential.ml" 45 880 921
+type(
+  unit
+)
+"sequential.ml" 46 922 926 "sequential.ml" 46 922 930
+type(
+  action
+)
+"sequential.ml" 46 922 934 "sequential.ml" 46 922 947
+type(
+  (unit, Format.formatter, unit) format -> unit
+)
+ident(
+  int_ref Stdlib.Format.printf "format.mli" 1175 45899 45899 "format.mli" 1175 45899 45946
+)
+"sequential.ml" 46 922 948 "sequential.ml" 46 922 954
+type(
+  (unit, Format.formatter, unit) format
+)
+"sequential.ml" 46 922 934 "sequential.ml" 46 922 954
+type(
+  unit
+)
+"sequential.ml" 38 700 738 "sequential.ml" 46 922 954
+type(
+  unit
+)
+type(
+  unit
+)
+"sequential.ml" 50 980 985 "sequential.ml" 50 980 991
+type(
+  'a2 -> 'a2 process
+)
+ident(
+  def return "sequential.ml" 54 1072 1073 "sequential.ml" 105 2177 2180
+)
+"sequential.ml" 50 980 993 "sequential.ml" 50 980 994
+type(
+  'a2
+)
+ident(
+  def v "sequential.ml" 50 980 1001 "sequential.ml" 52 1046 1070
+)
+"sequential.ml" 51 1017 1024 "sequential.ml" 51 1017 1025
+type(
+  'a2 -> action
+)
+ident(
+  def c "sequential.ml" 52 1046 1050 "sequential.ml" 52 1046 1070
+)
+"sequential.ml" 52 1046 1060 "sequential.ml" 52 1046 1062
+type(
+  unit
+)
+"sequential.ml" 52 1046 1066 "sequential.ml" 52 1046 1067
+type(
+  'a2 -> action
+)
+ident(
+  int_ref c "sequential.ml" 51 1017 1024 "sequential.ml" 51 1017 1025
+)
+"sequential.ml" 52 1046 1068 "sequential.ml" 52 1046 1069
+type(
+  'a2
+)
+ident(
+  int_ref v "sequential.ml" 50 980 993 "sequential.ml" 50 980 994
+)
+"sequential.ml" 52 1046 1066 "sequential.ml" 52 1046 1069
+type(
+  action
+)
+"sequential.ml" 52 1046 1055 "sequential.ml" 52 1046 1070
+type(
+  unit -> action
+)
+"sequential.ml" 52 1046 1050 "sequential.ml" 52 1046 1070
+type(
+  action
+)
+"sequential.ml" 51 1017 1019 "sequential.ml" 52 1046 1070
+type(
+  'a2 process
+)
+type(
+  'a2 process
+)
+"sequential.ml" 54 1072 1077 "sequential.ml" 54 1072 1081
+type(
+  'a3 process -> ('a3 -> 'b0 process) -> 'b0 process
+)
+ident(
+  def bind "sequential.ml" 58 1177 1178 "sequential.ml" 105 2177 2180
+)
+"sequential.ml" 54 1072 1083 "sequential.ml" 54 1072 1085
+type(
+  'a3 process
+)
+ident(
+  def p1 "sequential.ml" 54 1072 1100 "sequential.ml" 55 1139 1174
+)
+"sequential.ml" 54 1072 1101 "sequential.ml" 54 1072 1103
+type(
+  'a3 -> 'b0 process
+)
+ident(
+  def p2 "sequential.ml" 54 1072 1124 "sequential.ml" 55 1139 1174
+)
+"sequential.ml" 55 1139 1145 "sequential.ml" 55 1139 1147
+type(
+  'b0 -> action
+)
+ident(
+  def c1 "sequential.ml" 55 1139 1151 "sequential.ml" 55 1139 1174
+)
+"sequential.ml" 55 1139 1151 "sequential.ml" 55 1139 1153
+type(
+  'a3 process
+)
+ident(
+  int_ref p1 "sequential.ml" 54 1072 1083 "sequential.ml" 54 1072 1085
+)
+"sequential.ml" 55 1139 1159 "sequential.ml" 55 1139 1161
+type(
+  'a3
+)
+ident(
+  def c2 "sequential.ml" 55 1139 1165 "sequential.ml" 55 1139 1173
+)
+"sequential.ml" 55 1139 1165 "sequential.ml" 55 1139 1167
+type(
+  'a3 -> 'b0 process
+)
+ident(
+  int_ref p2 "sequential.ml" 54 1072 1101 "sequential.ml" 54 1072 1103
+)
+"sequential.ml" 55 1139 1168 "sequential.ml" 55 1139 1170
+type(
+  'a3
+)
+ident(
+  int_ref c2 "sequential.ml" 55 1139 1159 "sequential.ml" 55 1139 1161
+)
+"sequential.ml" 55 1139 1171 "sequential.ml" 55 1139 1173
+type(
+  'b0 -> action
+)
+ident(
+  int_ref c1 "sequential.ml" 55 1139 1145 "sequential.ml" 55 1139 1147
+)
+"sequential.ml" 55 1139 1165 "sequential.ml" 55 1139 1173
+type(
+  action
+)
+"sequential.ml" 55 1139 1154 "sequential.ml" 55 1139 1174
+type(
+  'a3 -> action
+)
+"sequential.ml" 55 1139 1151 "sequential.ml" 55 1139 1174
+type(
+  action
+)
+"sequential.ml" 55 1139 1141 "sequential.ml" 55 1139 1174
+type(
+  'b0 process
+)
+type(
+  'b0 process
+)
+"sequential.ml" 58 1177 1182 "sequential.ml" 58 1177 1186
+type(
+  unit process list -> unit process
+)
+ident(
+  def doco "sequential.ml" 68 1409 1410 "sequential.ml" 105 2177 2180
+)
+"sequential.ml" 58 1177 1188 "sequential.ml" 58 1177 1189
+type(
+  unit process list
+)
+ident(
+  def l "sequential.ml" 58 1177 1211 "sequential.ml" 65 1391 1399
+)
+"sequential.ml" 58 1177 1233 "sequential.ml" 58 1177 1234
+type(
+  unit -> action
+)
+ident(
+  def c "sequential.ml" 60 1259 1261 "sequential.ml" 65 1391 1399
+)
+"sequential.ml" 60 1259 1269 "sequential.ml" 60 1259 1273
+type(
+  unit process list -> action
+)
+ident(
+  def tree "sequential.ml" 60 1259 1261 "sequential.ml" 65 1391 1399
+)
+"sequential.ml" 60 1259 1275 "sequential.ml" 60 1259 1276
+type(
+  unit process list
+)
+ident(
+  def l "sequential.ml" 60 1259 1298 "sequential.ml" 63 1355 1385
+)
+"sequential.ml" 60 1259 1315 "sequential.ml" 60 1259 1316
+type(
+  unit process list
+)
+ident(
+  int_ref l "sequential.ml" 60 1259 1275 "sequential.ml" 60 1259 1276
+)
+"sequential.ml" 61 1322 1327 "sequential.ml" 61 1322 1329
+type(
+  unit process list
+)
+"sequential.ml" 61 1322 1333 "sequential.ml" 61 1322 1334
+type(
+  unit -> action
+)
+ident(
+  int_ref c "sequential.ml" 58 1177 1233 "sequential.ml" 58 1177 1234
+)
+"sequential.ml" 61 1322 1335 "sequential.ml" 61 1322 1337
+type(
+  unit
+)
+"sequential.ml" 61 1322 1333 "sequential.ml" 61 1322 1337
+type(
+  action
+)
+"sequential.ml" 62 1338 1343 "sequential.ml" 62 1338 1344
+type(
+  unit process
+)
+ident(
+  def x "sequential.ml" 63 1355 1359 "sequential.ml" 63 1355 1385
+)
+"sequential.ml" 62 1338 1348 "sequential.ml" 62 1338 1350
+type(
+  unit process list
+)
+ident(
+  def xs "sequential.ml" 63 1355 1359 "sequential.ml" 63 1355 1385
+)
+"sequential.ml" 62 1338 1343 "sequential.ml" 62 1338 1350
+type(
+  unit process list
+)
+"sequential.ml" 63 1355 1365 "sequential.ml" 63 1355 1372
+type(
+  ?f:(unit -> action) -> unit process -> action
+)
+ident(
+  int_ref convert "sequential.ml" 35 623 628 "sequential.ml" 35 623 635
+)
+"sequential.ml" 63 1355 1373 "sequential.ml" 63 1355 1374
+type(
+  unit process
+)
+ident(
+  int_ref x "sequential.ml" 62 1338 1343 "sequential.ml" 62 1338 1344
+)
+"sequential.ml" 63 1355 1365 "sequential.ml" 63 1355 1374
+type(
+  action
+)
+"sequential.ml" 63 1355 1377 "sequential.ml" 63 1355 1381
+type(
+  unit process list -> action
+)
+ident(
+  int_ref tree "sequential.ml" 60 1259 1269 "sequential.ml" 60 1259 1273
+)
+"sequential.ml" 63 1355 1382 "sequential.ml" 63 1355 1384
+type(
+  unit process list
+)
+ident(
+  int_ref xs "sequential.ml" 62 1338 1348 "sequential.ml" 62 1338 1350
+)
+"sequential.ml" 63 1355 1377 "sequential.ml" 63 1355 1384
+type(
+  action
+)
+"sequential.ml" 63 1355 1359 "sequential.ml" 63 1355 1385
+type(
+  action
+)
+"sequential.ml" 60 1259 1309 "sequential.ml" 63 1355 1385
+type(
+  action
+)
+type(
+  action
+)
+"sequential.ml" 65 1391 1393 "sequential.ml" 65 1391 1397
+type(
+  unit process list -> action
+)
+ident(
+  int_ref tree "sequential.ml" 60 1259 1269 "sequential.ml" 60 1259 1273
+)
+"sequential.ml" 65 1391 1398 "sequential.ml" 65 1391 1399
+type(
+  unit process list
+)
+ident(
+  int_ref l "sequential.ml" 58 1177 1188 "sequential.ml" 58 1177 1189
+)
+"sequential.ml" 65 1391 1393 "sequential.ml" 65 1391 1399
+type(
+  action
+)
+"sequential.ml" 60 1259 1261 "sequential.ml" 65 1391 1399
+type(
+  action
+)
+"sequential.ml" 58 1177 1228 "sequential.ml" 65 1391 1399
+type(
+  unit process
+)
+type(
+  unit process
+)
+"sequential.ml" 68 1409 1414 "sequential.ml" 68 1409 1417
+type(
+  'a4 process -> 'a4
+)
+ident(
+  def run "sequential.ml" 101 2155 2171 "sequential.ml" 105 2177 2180
+)
+"sequential.ml" 68 1409 1419 "sequential.ml" 68 1409 1420
+type(
+  'a4 process
+)
+ident(
+  def p "sequential.ml" 70 1474 1476 "sequential.ml" 101 2155 2171
+)
+"sequential.ml" 70 1474 1480 "sequential.ml" 70 1474 1481
+type(
+  'a4 option ref
+)
+ident(
+  def a "sequential.ml" 73 1538 1540 "sequential.ml" 101 2155 2171
+)
+"sequential.ml" 70 1474 1484 "sequential.ml" 70 1474 1487
+type(
+  'a4 option -> 'a4 option ref
+)
+ident(
+  int_ref Stdlib.ref "stdlib.mli" 1162 44439 44439 "stdlib.mli" 1162 44439 44483
+)
+"sequential.ml" 70 1474 1488 "sequential.ml" 70 1474 1492
+type(
+  'a4 option
+)
+"sequential.ml" 70 1474 1484 "sequential.ml" 70 1474 1492
+type(
+  'a4 option ref
+)
+"sequential.ml" 73 1538 1544 "sequential.ml" 73 1538 1552
+type(
+  action Queue.t
+)
+ident(
+  def pipeline "sequential.ml" 76 1669 1671 "sequential.ml" 101 2155 2171
+)
+"sequential.ml" 73 1538 1572 "sequential.ml" 73 1538 1584
+type(
+  unit -> action Queue.t
+)
+ident(
+  int_ref Stdlib.Queue.create "queue.mli" 33 1535 1535 "queue.mli" 33 1535 1560
+)
+"sequential.ml" 73 1538 1585 "sequential.ml" 73 1538 1587
+type(
+  unit
+)
+"sequential.ml" 73 1538 1572 "sequential.ml" 73 1538 1587
+type(
+  action Queue.t
+)
+type(
+  action Queue.t
+)
+"sequential.ml" 76 1669 1675 "sequential.ml" 76 1669 1678
+type(
+  action
+)
+ident(
+  def act "sequential.ml" 77 1734 1736 "sequential.ml" 101 2155 2171
+)
+"sequential.ml" 76 1669 1681 "sequential.ml" 76 1669 1688
+type(
+  ?f:('a4 -> action) -> 'a4 process -> action
+)
+ident(
+  int_ref convert "sequential.ml" 35 623 628 "sequential.ml" 35 623 635
+)
+"sequential.ml" 76 1669 1698 "sequential.ml" 76 1669 1699
+type(
+  'a4
+)
+ident(
+  def x "sequential.ml" 76 1669 1709 "sequential.ml" 76 1669 1727
+)
+"sequential.ml" 76 1669 1709 "sequential.ml" 76 1669 1710
+type(
+  'a4 option ref
+)
+ident(
+  int_ref a "sequential.ml" 70 1474 1480 "sequential.ml" 70 1474 1481
+)
+"sequential.ml" 76 1669 1711 "sequential.ml" 76 1669 1713
+type(
+  'a4 option ref -> 'a4 option -> unit
+)
+ident(
+  int_ref Stdlib.( := ) "stdlib.mli" 1171 44751 44751 "stdlib.mli" 1171 44751 44804
+)
+"sequential.ml" 76 1669 1719 "sequential.ml" 76 1669 1720
+type(
+  'a4
+)
+ident(
+  int_ref x "sequential.ml" 76 1669 1698 "sequential.ml" 76 1669 1699
+)
+"sequential.ml" 76 1669 1714 "sequential.ml" 76 1669 1720
+type(
+  'a4 option
+)
+"sequential.ml" 76 1669 1709 "sequential.ml" 76 1669 1720
+type(
+  unit
+)
+"sequential.ml" 76 1669 1723 "sequential.ml" 76 1669 1727
+type(
+  action
+)
+"sequential.ml" 76 1669 1709 "sequential.ml" 76 1669 1727
+type(
+  action
+)
+"sequential.ml" 76 1669 1692 "sequential.ml" 76 1669 1728
+type(
+  'a4 -> action
+)
+"sequential.ml" 76 1669 1729 "sequential.ml" 76 1669 1730
+type(
+  'a4 process
+)
+ident(
+  int_ref p "sequential.ml" 68 1409 1419 "sequential.ml" 68 1409 1420
+)
+"sequential.ml" 76 1669 1681 "sequential.ml" 76 1669 1730
+type(
+  action
+)
+"sequential.ml" 77 1734 1736 "sequential.ml" 77 1734 1746
+type(
+  action -> action Queue.t -> unit
+)
+ident(
+  int_ref Stdlib.Queue.push "queue.mli" 39 1703 1703 "queue.mli" 39 1703 1732
+)
+"sequential.ml" 77 1734 1747 "sequential.ml" 77 1734 1750
+type(
+  action
+)
+ident(
+  int_ref act "sequential.ml" 76 1669 1675 "sequential.ml" 76 1669 1678
+)
+"sequential.ml" 77 1734 1751 "sequential.ml" 77 1734 1759
+type(
+  action Queue.t
+)
+ident(
+  int_ref pipeline "sequential.ml" 73 1538 1544 "sequential.ml" 73 1538 1552
+)
+"sequential.ml" 77 1734 1736 "sequential.ml" 77 1734 1759
+type(
+  unit
+)
+"sequential.ml" 79 1764 1774 "sequential.ml" 79 1764 1781
+type(
+  action Queue.t -> unit
+)
+ident(
+  def execute "sequential.ml" 79 1764 1766 "sequential.ml" 101 2155 2171
+)
+"sequential.ml" 79 1764 1783 "sequential.ml" 79 1764 1784
+type(
+  action Queue.t
+)
+ident(
+  def q "sequential.ml" 80 1805 1808 "sequential.ml" 93 2059 2083
+)
+"sequential.ml" 80 1805 1811 "sequential.ml" 80 1805 1825
+type(
+  action Queue.t -> bool
+)
+ident(
+  int_ref Stdlib.Queue.is_empty "queue.mli" 72 2676 2676 "queue.mli" 72 2676 2703
+)
+"sequential.ml" 80 1805 1826 "sequential.ml" 80 1805 1827
+type(
+  action Queue.t
+)
+ident(
+  int_ref q "sequential.ml" 79 1764 1783 "sequential.ml" 79 1764 1784
+)
+"sequential.ml" 80 1805 1811 "sequential.ml" 80 1805 1827
+type(
+  bool
+)
+"sequential.ml" 81 1833 1837 "sequential.ml" 81 1833 1839
+type(
+  unit
+)
+"sequential.ml" 83 1849 1857 "sequential.ml" 83 1849 1858
+type(
+  action
+)
+ident(
+  def x "sequential.ml" 84 1876 1880 "sequential.ml" 93 2059 2083
+)
+"sequential.ml" 83 1849 1861 "sequential.ml" 83 1849 1870
+type(
+  action Queue.t -> action
+)
+ident(
+  int_ref Stdlib.Queue.pop "queue.mli" 51 2073 2073 "queue.mli" 51 2073 2093
+)
+"sequential.ml" 83 1849 1871 "sequential.ml" 83 1849 1872
+type(
+  action Queue.t
+)
+ident(
+  int_ref q "sequential.ml" 79 1764 1783 "sequential.ml" 79 1764 1784
+)
+"sequential.ml" 83 1849 1861 "sequential.ml" 83 1849 1872
+type(
+  action
+)
+"sequential.ml" 84 1876 1886 "sequential.ml" 84 1876 1887
+type(
+  action
+)
+ident(
+  int_ref x "sequential.ml" 83 1849 1857 "sequential.ml" 83 1849 1858
+)
+"sequential.ml" 85 1893 1905 "sequential.ml" 85 1893 1906
+type(
+  unit -> action
+)
+ident(
+  def a "sequential.ml" 86 1910 1916 "sequential.ml" 88 1956 1971
+)
+"sequential.ml" 85 1893 1900 "sequential.ml" 85 1893 1906
+type(
+  action
+)
+"sequential.ml" 86 1910 1920 "sequential.ml" 86 1910 1922
+type(
+  action
+)
+ident(
+  def na "sequential.ml" 87 1933 1939 "sequential.ml" 88 1956 1971
+)
+"sequential.ml" 86 1910 1925 "sequential.ml" 86 1910 1926
+type(
+  unit -> action
+)
+ident(
+  int_ref a "sequential.ml" 85 1893 1905 "sequential.ml" 85 1893 1906
+)
+"sequential.ml" 86 1910 1927 "sequential.ml" 86 1910 1929
+type(
+  unit
+)
+"sequential.ml" 86 1910 1925 "sequential.ml" 86 1910 1929
+type(
+  action
+)
+"sequential.ml" 87 1933 1939 "sequential.ml" 87 1933 1949
+type(
+  action -> action Queue.t -> unit
+)
+ident(
+  int_ref Stdlib.Queue.push "queue.mli" 39 1703 1703 "queue.mli" 39 1703 1732
+)
+"sequential.ml" 87 1933 1950 "sequential.ml" 87 1933 1952
+type(
+  action
+)
+ident(
+  int_ref na "sequential.ml" 86 1910 1920 "sequential.ml" 86 1910 1922
+)
+"sequential.ml" 87 1933 1953 "sequential.ml" 87 1933 1954
+type(
+  action Queue.t
+)
+ident(
+  int_ref q "sequential.ml" 79 1764 1783 "sequential.ml" 79 1764 1784
+)
+"sequential.ml" 87 1933 1939 "sequential.ml" 87 1933 1954
+type(
+  unit
+)
+"sequential.ml" 88 1956 1962 "sequential.ml" 88 1956 1969
+type(
+  action Queue.t -> unit
+)
+ident(
+  int_ref execute "sequential.ml" 79 1764 1774 "sequential.ml" 79 1764 1781
+)
+"sequential.ml" 88 1956 1970 "sequential.ml" 88 1956 1971
+type(
+  action Queue.t
+)
+ident(
+  int_ref q "sequential.ml" 79 1764 1783 "sequential.ml" 79 1764 1784
+)
+"sequential.ml" 88 1956 1962 "sequential.ml" 88 1956 1971
+type(
+  unit
+)
+"sequential.ml" 87 1933 1939 "sequential.ml" 88 1956 1971
+type(
+  unit
+)
+"sequential.ml" 86 1910 1916 "sequential.ml" 88 1956 1971
+type(
+  unit
+)
+"sequential.ml" 89 1972 1985 "sequential.ml" 89 1972 1987
+type(
+  action
+)
+ident(
+  def a1 "sequential.ml" 90 1997 2003 "sequential.ml" 92 2043 2058
+)
+"sequential.ml" 89 1972 1990 "sequential.ml" 89 1972 1992
+type(
+  action
+)
+ident(
+  def a2 "sequential.ml" 90 1997 2003 "sequential.ml" 92 2043 2058
+)
+"sequential.ml" 89 1972 1979 "sequential.ml" 89 1972 1993
+type(
+  action
+)
+"sequential.ml" 90 1997 2003 "sequential.ml" 90 1997 2013
+type(
+  action -> action Queue.t -> unit
+)
+ident(
+  int_ref Stdlib.Queue.push "queue.mli" 39 1703 1703 "queue.mli" 39 1703 1732
+)
+"sequential.ml" 90 1997 2014 "sequential.ml" 90 1997 2016
+type(
+  action
+)
+ident(
+  int_ref a1 "sequential.ml" 89 1972 1985 "sequential.ml" 89 1972 1987
+)
+"sequential.ml" 90 1997 2017 "sequential.ml" 90 1997 2018
+type(
+  action Queue.t
+)
+ident(
+  int_ref q "sequential.ml" 79 1764 1783 "sequential.ml" 79 1764 1784
+)
+"sequential.ml" 90 1997 2003 "sequential.ml" 90 1997 2018
+type(
+  unit
+)
+"sequential.ml" 91 2020 2026 "sequential.ml" 91 2020 2036
+type(
+  action -> action Queue.t -> unit
+)
+ident(
+  int_ref Stdlib.Queue.push "queue.mli" 39 1703 1703 "queue.mli" 39 1703 1732
+)
+"sequential.ml" 91 2020 2037 "sequential.ml" 91 2020 2039
+type(
+  action
+)
+ident(
+  int_ref a2 "sequential.ml" 89 1972 1990 "sequential.ml" 89 1972 1992
+)
+"sequential.ml" 91 2020 2040 "sequential.ml" 91 2020 2041
+type(
+  action Queue.t
+)
+ident(
+  int_ref q "sequential.ml" 79 1764 1783 "sequential.ml" 79 1764 1784
+)
+"sequential.ml" 91 2020 2026 "sequential.ml" 91 2020 2041
+type(
+  unit
+)
+"sequential.ml" 92 2043 2049 "sequential.ml" 92 2043 2056
+type(
+  action Queue.t -> unit
+)
+ident(
+  int_ref execute "sequential.ml" 79 1764 1774 "sequential.ml" 79 1764 1781
+)
+"sequential.ml" 92 2043 2057 "sequential.ml" 92 2043 2058
+type(
+  action Queue.t
+)
+ident(
+  int_ref q "sequential.ml" 79 1764 1783 "sequential.ml" 79 1764 1784
+)
+"sequential.ml" 92 2043 2049 "sequential.ml" 92 2043 2058
+type(
+  unit
+)
+"sequential.ml" 91 2020 2026 "sequential.ml" 92 2043 2058
+type(
+  unit
+)
+"sequential.ml" 90 1997 2003 "sequential.ml" 92 2043 2058
+type(
+  unit
+)
+"sequential.ml" 93 2059 2066 "sequential.ml" 93 2059 2070
+type(
+  action
+)
+"sequential.ml" 93 2059 2074 "sequential.ml" 93 2059 2081
+type(
+  action Queue.t -> unit
+)
+ident(
+  int_ref execute "sequential.ml" 79 1764 1774 "sequential.ml" 79 1764 1781
+)
+"sequential.ml" 93 2059 2082 "sequential.ml" 93 2059 2083
+type(
+  action Queue.t
+)
+ident(
+  int_ref q "sequential.ml" 79 1764 1783 "sequential.ml" 79 1764 1784
+)
+"sequential.ml" 93 2059 2074 "sequential.ml" 93 2059 2083
+type(
+  unit
+)
+"sequential.ml" 84 1876 1880 "sequential.ml" 93 2059 2083
+type(
+  unit
+)
+"sequential.ml" 83 1849 1853 "sequential.ml" 93 2059 2083
+type(
+  unit
+)
+"sequential.ml" 80 1805 1808 "sequential.ml" 93 2059 2083
+type(
+  unit
+)
+"sequential.ml" 97 2092 2094 "sequential.ml" 97 2092 2101
+type(
+  action Queue.t -> unit
+)
+ident(
+  int_ref execute "sequential.ml" 79 1764 1774 "sequential.ml" 79 1764 1781
+)
+"sequential.ml" 97 2092 2102 "sequential.ml" 97 2092 2110
+type(
+  action Queue.t
+)
+ident(
+  int_ref pipeline "sequential.ml" 73 1538 1544 "sequential.ml" 73 1538 1552
+)
+"sequential.ml" 97 2092 2094 "sequential.ml" 97 2092 2110
+type(
+  unit
+)
+"sequential.ml" 99 2113 2121 "sequential.ml" 99 2113 2122
+type(
+  'a4 option ref -> 'a4 option
+)
+ident(
+  int_ref Stdlib.( ! ) "stdlib.mli" 1165 44545 44545 "stdlib.mli" 1165 44545 44586
+)
+"sequential.ml" 99 2113 2122 "sequential.ml" 99 2113 2123
+type(
+  'a4 option ref
+)
+ident(
+  int_ref a "sequential.ml" 70 1474 1480 "sequential.ml" 70 1474 1481
+)
+"sequential.ml" 99 2113 2121 "sequential.ml" 99 2113 2123
+type(
+  'a4 option
+)
+"sequential.ml" 100 2129 2134 "sequential.ml" 100 2129 2138
+type(
+  'a4 option
+)
+"sequential.ml" 100 2129 2149 "sequential.ml" 100 2129 2154
+type(
+  bool
+)
+"sequential.ml" 100 2129 2142 "sequential.ml" 100 2129 2154
+type(
+  'a4
+)
+"sequential.ml" 101 2155 2165 "sequential.ml" 101 2155 2166
+type(
+  'a4
+)
+ident(
+  def v "sequential.ml" 101 2155 2170 "sequential.ml" 101 2155 2171
+)
+"sequential.ml" 101 2155 2160 "sequential.ml" 101 2155 2166
+type(
+  'a4 option
+)
+"sequential.ml" 101 2155 2170 "sequential.ml" 101 2155 2171
+type(
+  'a4
+)
+ident(
+  int_ref v "sequential.ml" 101 2155 2165 "sequential.ml" 101 2155 2166
+)
+"sequential.ml" 99 2113 2115 "sequential.ml" 101 2155 2171
+type(
+  'a4
+)
+"sequential.ml" 97 2092 2094 "sequential.ml" 101 2155 2171
+type(
+  'a4
+)
+"sequential.ml" 79 1764 1766 "sequential.ml" 101 2155 2171
+type(
+  'a4
+)
+"sequential.ml" 77 1734 1736 "sequential.ml" 101 2155 2171
+type(
+  'a4
+)
+"sequential.ml" 76 1669 1671 "sequential.ml" 101 2155 2171
+type(
+  'a4
+)
+"sequential.ml" 73 1538 1540 "sequential.ml" 101 2155 2171
+type(
+  'a4
+)
+"sequential.ml" 70 1474 1476 "sequential.ml" 101 2155 2171
+type(
+  'a4
+)
