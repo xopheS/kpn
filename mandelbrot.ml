@@ -171,10 +171,7 @@ module Example (K : Kahn.S) = struct
 end
 
 
-
-
-
-module E = Example(Kahn.Th)
+module E = Example(Sequential.Seq)
 
 let () = E.K.run E.main
 
