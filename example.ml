@@ -23,6 +23,7 @@ end
 
 
 (* 
+module E = Example(Kahn.Th)
 module E = Example(Sequential.Seq) 
 module E = Example(Unix_pipes.Z) 
 *)

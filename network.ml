@@ -1,6 +1,4 @@
-(* This file is a quick implementation of the kahn network 
- * especially used for the example.ml *)
-
+(* Khan implementation using sockets and threads *)
 open Unix
 
 module N : Kahn.S = 
