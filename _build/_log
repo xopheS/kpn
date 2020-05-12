@@ -1,0 +1,56 @@
+### Starting build.
+# Target: tictactoe.ml.depends, tags: { package(graphics,unix), annot, debug, extension:ml, file:tictactoe.ml, ocaml, ocamldep, quiet, thread }
+ocamlfind ocamldep -package graphics,unix -modules tictactoe.ml > tictactoe.ml.depends
+# Target: kahn.ml.depends, tags: { package(graphics,unix), annot, debug, extension:ml, file:kahn.ml, ocaml, ocamldep, quiet, thread }
+ocamlfind ocamldep -package graphics,unix -modules kahn.ml > kahn.ml.depends
+# Target: network.ml.depends, tags: { package(graphics,unix), annot, debug, extension:ml, file:network.ml, ocaml, ocamldep, quiet, thread }
+ocamlfind ocamldep -package graphics,unix -modules network.ml > network.ml.depends
+# Target: kahn.cmo, tags: { package(graphics,unix), annot, byte, compile, debug, extension:cmo, extension:ml, file:kahn.cmo, file:kahn.ml, implem, ocaml, quiet, thread }
+ocamlfind ocamlc str.cma -c -g -annot -thread -package graphics,unix -o kahn.cmo kahn.ml
+# Target: network.cmo, tags: { package(graphics,unix), annot, byte, compile, debug, extension:cmo, extension:ml, file:network.cmo, file:network.ml, implem, ocaml, quiet, thread }
+ocamlfind ocamlc str.cma -c -g -annot -thread -package graphics,unix -o network.cmo network.ml
+# Target: tictactoe.cmo, tags: { package(graphics,unix), annot, byte, compile, debug, extension:cmo, extension:ml, file:tictactoe.cmo, file:tictactoe.ml, implem, ocaml, quiet, thread }
+ocamlfind ocamlc str.cma -c -g -annot -thread -package graphics,unix -o tictactoe.cmo tictactoe.ml
++ ocamlfind ocamlc str.cma -c -g -annot -thread -package graphics,unix -o tictactoe.cmo tictactoe.ml
+File "tictactoe.ml", line 39, characters 2-22:
+39 |   Graphics.clear_graph;
+       ^^^^^^^^^^^^^^^^^^^^
+Warning 10: this expression should have type unit.
+File "tictactoe.ml", line 40, characters 2-22:
+40 |   Graphics.synchronize;
+       ^^^^^^^^^^^^^^^^^^^^
+Warning 10: this expression should have type unit.
+File "tictactoe.ml", line 47, characters 2-22:
+47 |   Graphics.synchronize;
+       ^^^^^^^^^^^^^^^^^^^^
+Warning 10: this expression should have type unit.
+File "tictactoe.ml", line 171, characters 4-34:
+171 |     curr_board = waiting_server ();
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Warning 10: this expression should have type unit.
+# Target: kahn.cmx, tags: { package(graphics,unix), annot, compile, debug, extension:cmx, extension:ml, file:kahn.cmx, file:kahn.ml, implem, native, ocaml, quiet, thread }
+ocamlfind ocamlopt str.cmxa -c -g -annot -thread -package graphics,unix -o kahn.cmx kahn.ml
+# Target: network.cmx, tags: { package(graphics,unix), annot, compile, debug, extension:cmx, extension:ml, file:network.cmx, file:network.ml, implem, native, ocaml, quiet, thread }
+ocamlfind ocamlopt str.cmxa -c -g -annot -thread -package graphics,unix -o network.cmx network.ml
+# Target: tictactoe.cmx, tags: { package(graphics,unix), annot, compile, debug, extension:cmx, extension:ml, file:tictactoe.cmx, file:tictactoe.ml, implem, native, ocaml, quiet, thread }
+ocamlfind ocamlopt str.cmxa -c -g -annot -thread -package graphics,unix -o tictactoe.cmx tictactoe.ml
++ ocamlfind ocamlopt str.cmxa -c -g -annot -thread -package graphics,unix -o tictactoe.cmx tictactoe.ml
+File "tictactoe.ml", line 39, characters 2-22:
+39 |   Graphics.clear_graph;
+       ^^^^^^^^^^^^^^^^^^^^
+Warning 10: this expression should have type unit.
+File "tictactoe.ml", line 40, characters 2-22:
+40 |   Graphics.synchronize;
+       ^^^^^^^^^^^^^^^^^^^^
+Warning 10: this expression should have type unit.
+File "tictactoe.ml", line 47, characters 2-22:
+47 |   Graphics.synchronize;
+       ^^^^^^^^^^^^^^^^^^^^
+Warning 10: this expression should have type unit.
+File "tictactoe.ml", line 171, characters 4-34:
+171 |     curr_board = waiting_server ();
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Warning 10: this expression should have type unit.
+# Target: tictactoe.native, tags: { package(graphics,unix), annot, debug, dont_link_with, extension:native, file:tictactoe.native, link, native, ocaml, program, quiet, thread }
+ocamlfind ocamlopt str.cmxa -linkpkg -g -thread -package graphics,unix kahn.cmx network.cmx tictactoe.cmx -o tictactoe.native
+# Compilation successful.

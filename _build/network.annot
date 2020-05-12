@@ -1,0 +1,1142 @@
+"network.ml" 12 248 254 "network.ml" 12 248 258
+type(
+  int ref
+)
+ident(
+  def port "network.ml" 14 271 273 "network.ml" 61 1825 1828
+)
+"network.ml" 12 248 261 "network.ml" 12 248 264
+type(
+  int -> int ref
+)
+ident(
+  int_ref Stdlib.ref "stdlib.mli" 1162 44439 44439 "stdlib.mli" 1162 44439 44483
+)
+"network.ml" 12 248 265 "network.ml" 12 248 269
+type(
+  int
+)
+"network.ml" 12 248 261 "network.ml" 12 248 269
+type(
+  int ref
+)
+"network.ml" 14 271 277 "network.ml" 14 271 288
+type(
+  unit -> Unix.file_descr * Unix.file_descr
+)
+ident(
+  def new_channel "network.ml" 31 879 881 "network.ml" 61 1825 1828
+)
+"network.ml" 14 271 288 "network.ml" 14 271 290
+type(
+  unit
+)
+"network.ml" 16 350 358 "network.ml" 16 350 362
+type(
+  Unix.inet_addr
+)
+ident(
+  def host "network.ml" 18 441 445 "network.ml" 29 848 875
+)
+"network.ml" 16 350 365 "network.ml" 16 350 388
+type(
+  Unix.inet_addr
+)
+ident(
+  int_ref Unix.inet_addr_loopback "unix.mli" 1293 52819 52819 "unix.mli" 1293 52819 52853
+)
+"network.ml" 18 441 449 "network.ml" 18 441 453
+type(
+  Unix.sockaddr
+)
+ident(
+  def addr "network.ml" 19 483 487 "network.ml" 29 848 875
+)
+"network.ml" 18 441 467 "network.ml" 18 441 471
+type(
+  Unix.inet_addr
+)
+ident(
+  int_ref host "network.ml" 16 350 358 "network.ml" 16 350 362
+)
+"network.ml" 18 441 473 "network.ml" 18 441 474
+type(
+  int ref -> int
+)
+ident(
+  int_ref Stdlib.( ! ) "stdlib.mli" 1165 44545 44545 "stdlib.mli" 1165 44545 44586
+)
+"network.ml" 18 441 474 "network.ml" 18 441 478
+type(
+  int ref
+)
+ident(
+  int_ref port "network.ml" 12 248 254 "network.ml" 12 248 258
+)
+"network.ml" 18 441 473 "network.ml" 18 441 478
+type(
+  int
+)
+"network.ml" 18 441 456 "network.ml" 18 441 479
+type(
+  Unix.sockaddr
+)
+"network.ml" 19 483 487 "network.ml" 19 483 491
+type(
+  int ref
+)
+ident(
+  int_ref port "network.ml" 12 248 254 "network.ml" 12 248 258
+)
+"network.ml" 19 483 492 "network.ml" 19 483 494
+type(
+  int ref -> int -> unit
+)
+ident(
+  int_ref Stdlib.( := ) "stdlib.mli" 1171 44751 44751 "stdlib.mli" 1171 44751 44804
+)
+"network.ml" 19 483 495 "network.ml" 19 483 496
+type(
+  int ref -> int
+)
+ident(
+  int_ref Stdlib.( ! ) "stdlib.mli" 1165 44545 44545 "stdlib.mli" 1165 44545 44586
+)
+"network.ml" 19 483 496 "network.ml" 19 483 500
+type(
+  int ref
+)
+ident(
+  int_ref port "network.ml" 12 248 254 "network.ml" 12 248 258
+)
+"network.ml" 19 483 495 "network.ml" 19 483 500
+type(
+  int
+)
+"network.ml" 19 483 501 "network.ml" 19 483 502
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( + ) "stdlib.mli" 341 13435 13435 "stdlib.mli" 341 13435 13481
+)
+"network.ml" 19 483 503 "network.ml" 19 483 504
+type(
+  int
+)
+"network.ml" 19 483 495 "network.ml" 19 483 504
+type(
+  int
+)
+"network.ml" 19 483 487 "network.ml" 19 483 504
+type(
+  unit
+)
+"network.ml" 20 506 514 "network.ml" 20 506 523
+type(
+  Unix.file_descr
+)
+ident(
+  def in_socket "network.ml" 21 576 580 "network.ml" 29 848 875
+)
+"network.ml" 20 506 526 "network.ml" 20 506 532
+type(
+  ?cloexec:bool ->
+  Unix.socket_domain -> Unix.socket_type -> int -> Unix.file_descr
+)
+ident(
+  int_ref Unix.socket "unix.mli" 1334 54400 54400 "unix.mli" 1335 54413 54483
+)
+"network.ml" 20 506 534 "network.ml" 20 506 552
+type(
+  Unix.sockaddr -> Unix.socket_domain
+)
+ident(
+  int_ref Unix.domain_of_sockaddr "unix.mli" 1342 54747 54747 "unix.mli" 1342 54747 54796
+)
+"network.ml" 20 506 553 "network.ml" 20 506 557
+type(
+  Unix.sockaddr
+)
+ident(
+  int_ref addr "network.ml" 18 441 449 "network.ml" 18 441 453
+)
+"network.ml" 20 506 533 "network.ml" 20 506 558
+type(
+  Unix.socket_domain
+)
+"network.ml" 20 506 559 "network.ml" 20 506 570
+type(
+  Unix.socket_type
+)
+"network.ml" 20 506 571 "network.ml" 20 506 572
+type(
+  int
+)
+"network.ml" 20 506 526 "network.ml" 20 506 572
+type(
+  Unix.file_descr
+)
+"network.ml" 21 576 584 "network.ml" 21 576 594
+type(
+  Unix.file_descr
+)
+ident(
+  def out_socket "network.ml" 24 711 715 "network.ml" 29 848 875
+)
+"network.ml" 21 576 597 "network.ml" 21 576 603
+type(
+  ?cloexec:bool ->
+  Unix.socket_domain -> Unix.socket_type -> int -> Unix.file_descr
+)
+ident(
+  int_ref Unix.socket "unix.mli" 1334 54400 54400 "unix.mli" 1335 54413 54483
+)
+"network.ml" 21 576 605 "network.ml" 21 576 623
+type(
+  Unix.sockaddr -> Unix.socket_domain
+)
+ident(
+  int_ref Unix.domain_of_sockaddr "unix.mli" 1342 54747 54747 "unix.mli" 1342 54747 54796
+)
+"network.ml" 21 576 624 "network.ml" 21 576 628
+type(
+  Unix.sockaddr
+)
+ident(
+  int_ref addr "network.ml" 18 441 449 "network.ml" 18 441 453
+)
+"network.ml" 21 576 604 "network.ml" 21 576 629
+type(
+  Unix.socket_domain
+)
+"network.ml" 21 576 630 "network.ml" 21 576 641
+type(
+  Unix.socket_type
+)
+"network.ml" 21 576 642 "network.ml" 21 576 643
+type(
+  int
+)
+"network.ml" 21 576 597 "network.ml" 21 576 643
+type(
+  Unix.file_descr
+)
+"network.ml" 24 711 715 "network.ml" 24 711 719
+type(
+  Unix.file_descr -> Unix.sockaddr -> unit
+)
+ident(
+  int_ref Unix.bind "unix.mli" 1359 55495 55495 "unix.mli" 1359 55495 55536
+)
+"network.ml" 24 711 720 "network.ml" 24 711 730
+type(
+  Unix.file_descr
+)
+ident(
+  int_ref out_socket "network.ml" 21 576 584 "network.ml" 21 576 594
+)
+"network.ml" 24 711 731 "network.ml" 24 711 735
+type(
+  Unix.sockaddr
+)
+ident(
+  int_ref addr "network.ml" 18 441 449 "network.ml" 18 441 453
+)
+"network.ml" 24 711 715 "network.ml" 24 711 735
+type(
+  unit
+)
+"network.ml" 25 738 742 "network.ml" 25 738 748
+type(
+  Unix.file_descr -> int -> unit
+)
+ident(
+  int_ref Unix.listen "unix.mli" 1365 55659 55659 "unix.mli" 1365 55659 55697
+)
+"network.ml" 25 738 749 "network.ml" 25 738 759
+type(
+  Unix.file_descr
+)
+ident(
+  int_ref out_socket "network.ml" 21 576 584 "network.ml" 21 576 594
+)
+"network.ml" 25 738 760 "network.ml" 25 738 763
+type(
+  int
+)
+"network.ml" 25 738 742 "network.ml" 25 738 763
+type(
+  unit
+)
+"network.ml" 26 766 770 "network.ml" 26 766 777
+type(
+  Unix.file_descr -> Unix.sockaddr -> unit
+)
+ident(
+  int_ref Unix.connect "unix.mli" 1362 55574 55574 "unix.mli" 1362 55574 55618
+)
+"network.ml" 26 766 778 "network.ml" 26 766 787
+type(
+  Unix.file_descr
+)
+ident(
+  int_ref in_socket "network.ml" 20 506 514 "network.ml" 20 506 523
+)
+"network.ml" 26 766 788 "network.ml" 26 766 792
+type(
+  Unix.sockaddr
+)
+ident(
+  int_ref addr "network.ml" 18 441 449 "network.ml" 18 441 453
+)
+"network.ml" 26 766 770 "network.ml" 26 766 792
+type(
+  unit
+)
+"network.ml" 28 796 804 "network.ml" 28 796 814
+type(
+  Unix.file_descr
+)
+ident(
+  def out_socket "network.ml" 29 848 852 "network.ml" 29 848 875
+)
+"network.ml" 28 796 816 "network.ml" 28 796 824
+type(
+  Unix.sockaddr
+)
+ident(
+  def sockaddr "network.ml" 29 848 852 "network.ml" 29 848 875
+)
+"network.ml" 28 796 804 "network.ml" 28 796 824
+type(
+  Unix.file_descr * Unix.sockaddr
+)
+"network.ml" 28 796 827 "network.ml" 28 796 833
+type(
+  ?cloexec:bool -> Unix.file_descr -> Unix.file_descr * Unix.sockaddr
+)
+ident(
+  int_ref Unix.accept "unix.mli" 1352 55167 55167 "unix.mli" 1352 55167 55232
+)
+"network.ml" 28 796 834 "network.ml" 28 796 844
+type(
+  Unix.file_descr
+)
+ident(
+  int_ref out_socket "network.ml" 21 576 584 "network.ml" 21 576 594
+)
+"network.ml" 28 796 827 "network.ml" 28 796 844
+type(
+  Unix.file_descr * Unix.sockaddr
+)
+"network.ml" 29 848 853 "network.ml" 29 848 862
+type(
+  Unix.file_descr
+)
+ident(
+  int_ref in_socket "network.ml" 20 506 514 "network.ml" 20 506 523
+)
+"network.ml" 29 848 864 "network.ml" 29 848 874
+type(
+  Unix.file_descr
+)
+ident(
+  int_ref out_socket "network.ml" 28 796 804 "network.ml" 28 796 814
+)
+"network.ml" 29 848 852 "network.ml" 29 848 875
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network.ml" 28 796 800 "network.ml" 29 848 875
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network.ml" 26 766 770 "network.ml" 29 848 875
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network.ml" 25 738 742 "network.ml" 29 848 875
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network.ml" 24 711 715 "network.ml" 29 848 875
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network.ml" 21 576 580 "network.ml" 29 848 875
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network.ml" 20 506 510 "network.ml" 29 848 875
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network.ml" 19 483 487 "network.ml" 29 848 875
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network.ml" 18 441 445 "network.ml" 29 848 875
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network.ml" 16 350 354 "network.ml" 29 848 875
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network.ml" 31 879 885 "network.ml" 31 879 888
+type(
+  'a -> Unix.file_descr -> unit -> unit
+)
+ident(
+  def put "network.ml" 35 1022 1024 "network.ml" 61 1825 1828
+)
+"network.ml" 31 879 889 "network.ml" 31 879 894
+type(
+  'a
+)
+ident(
+  def value "network.ml" 31 879 895 "network.ml" 33 960 1020
+)
+"network.ml" 31 879 895 "network.ml" 31 879 901
+type(
+  Unix.file_descr
+)
+ident(
+  def output "network.ml" 32 905 909 "network.ml" 33 960 1020
+)
+"network.ml" 32 905 914 "network.ml" 32 905 916
+type(
+  unit
+)
+"network.ml" 32 905 924 "network.ml" 32 905 928
+type(
+  bytes
+)
+ident(
+  def data "network.ml" 33 960 964 "network.ml" 33 960 1019
+)
+"network.ml" 32 905 931 "network.ml" 32 905 947
+type(
+  'a -> Marshal.extern_flags list -> bytes
+)
+ident(
+  int_ref Stdlib.Marshal.to_bytes "marshal.mli" 114 6411 6411 "marshal.mli" 115 6431 6496
+)
+"network.ml" 32 905 948 "network.ml" 32 905 953
+type(
+  'a
+)
+ident(
+  int_ref value "network.ml" 31 879 889 "network.ml" 31 879 894
+)
+"network.ml" 32 905 954 "network.ml" 32 905 956
+type(
+  Marshal.extern_flags list
+)
+"network.ml" 32 905 931 "network.ml" 32 905 956
+type(
+  bytes
+)
+"network.ml" 33 960 964 "network.ml" 33 960 970
+type(
+  int -> unit
+)
+ident(
+  int_ref Stdlib.ignore "stdlib.mli" 685 25966 25966 "stdlib.mli" 685 25966 26006
+)
+"network.ml" 33 960 972 "network.ml" 33 960 981
+type(
+  Unix.file_descr -> bytes -> int -> int -> Unix.msg_flag list -> int
+)
+ident(
+  int_ref Unix.send "unix.mli" 1403 57005 57005 "unix.mli" 1403 57005 57073
+)
+"network.ml" 33 960 982 "network.ml" 33 960 988
+type(
+  Unix.file_descr
+)
+ident(
+  int_ref output "network.ml" 31 879 895 "network.ml" 31 879 901
+)
+"network.ml" 33 960 989 "network.ml" 33 960 993
+type(
+  bytes
+)
+ident(
+  int_ref data "network.ml" 32 905 924 "network.ml" 32 905 928
+)
+"network.ml" 33 960 994 "network.ml" 33 960 995
+type(
+  int
+)
+"network.ml" 33 960 997 "network.ml" 33 960 1009
+type(
+  bytes -> int
+)
+ident(
+  int_ref Stdlib.Bytes.length "bytes.mli" 45 2234 2234 "bytes.mli" 45 2234 2282
+)
+"network.ml" 33 960 1010 "network.ml" 33 960 1014
+type(
+  bytes
+)
+ident(
+  int_ref data "network.ml" 32 905 924 "network.ml" 32 905 928
+)
+"network.ml" 33 960 996 "network.ml" 33 960 1015
+type(
+  int
+)
+"network.ml" 33 960 1016 "network.ml" 33 960 1018
+type(
+  Unix.msg_flag list
+)
+"network.ml" 33 960 970 "network.ml" 33 960 1019
+type(
+  int
+)
+"network.ml" 33 960 964 "network.ml" 33 960 1019
+type(
+  unit
+)
+"network.ml" 32 905 920 "network.ml" 33 960 1019
+type(
+  unit
+)
+"network.ml" 32 905 909 "network.ml" 33 960 1020
+type(
+  unit -> unit
+)
+"network.ml" 35 1022 1028 "network.ml" 35 1022 1031
+type(
+  Unix.file_descr -> unit -> 'b
+)
+ident(
+  def get "network.ml" 43 1406 1408 "network.ml" 61 1825 1828
+)
+"network.ml" 35 1022 1032 "network.ml" 35 1022 1037
+type(
+  Unix.file_descr
+)
+ident(
+  def input "network.ml" 36 1041 1045 "network.ml" 41 1343 1404
+)
+"network.ml" 36 1041 1050 "network.ml" 36 1041 1052
+type(
+  unit
+)
+"network.ml" 36 1041 1060 "network.ml" 36 1041 1066
+type(
+  bytes
+)
+ident(
+  def header "network.ml" 37 1105 1119 "network.ml" 41 1343 1403
+)
+"network.ml" 36 1041 1069 "network.ml" 36 1041 1081
+type(
+  int -> bytes
+)
+ident(
+  int_ref Stdlib.Bytes.create "bytes.mli" 59 2750 2750 "bytes.mli" 59 2750 2802
+)
+"network.ml" 36 1041 1082 "network.ml" 36 1041 1101
+type(
+  int
+)
+ident(
+  int_ref Stdlib.Marshal.header_size "marshal.mli" 159 8286 8286 "marshal.mli" 159 8286 8307
+)
+"network.ml" 36 1041 1069 "network.ml" 36 1041 1101
+type(
+  bytes
+)
+"network.ml" 37 1105 1119 "network.ml" 37 1105 1128
+type(
+  Unix.file_descr -> bytes -> int -> int -> Unix.msg_flag list -> int
+)
+ident(
+  int_ref Unix.recv "unix.mli" 1396 56755 56755 "unix.mli" 1396 56755 56823
+)
+"network.ml" 37 1105 1129 "network.ml" 37 1105 1134
+type(
+  Unix.file_descr
+)
+ident(
+  int_ref input "network.ml" 35 1022 1032 "network.ml" 35 1022 1037
+)
+"network.ml" 37 1105 1135 "network.ml" 37 1105 1141
+type(
+  bytes
+)
+ident(
+  int_ref header "network.ml" 36 1041 1060 "network.ml" 36 1041 1066
+)
+"network.ml" 37 1105 1142 "network.ml" 37 1105 1143
+type(
+  int
+)
+"network.ml" 37 1105 1144 "network.ml" 37 1105 1163
+type(
+  int
+)
+ident(
+  int_ref Stdlib.Marshal.header_size "marshal.mli" 159 8286 8286 "marshal.mli" 159 8286 8307
+)
+"network.ml" 37 1105 1164 "network.ml" 37 1105 1166
+type(
+  Unix.msg_flag list
+)
+"network.ml" 37 1105 1119 "network.ml" 37 1105 1166
+type(
+  int
+)
+"network.ml" 37 1105 1167 "network.ml" 37 1105 1169
+type(
+  int -> (int -> unit) -> unit
+)
+ident(
+  int_ref Stdlib.( |> ) "stdlib.mli" 303 12306 12306 "stdlib.mli" 303 12306 12360
+)
+"network.ml" 37 1105 1170 "network.ml" 37 1105 1176
+type(
+  int -> unit
+)
+ident(
+  int_ref Stdlib.ignore "stdlib.mli" 685 25966 25966 "stdlib.mli" 685 25966 26006
+)
+"network.ml" 37 1105 1119 "network.ml" 37 1105 1176
+type(
+  unit
+)
+"network.ml" 38 1179 1197 "network.ml" 38 1179 1203
+type(
+  int
+)
+ident(
+  def d_size "network.ml" 39 1236 1250 "network.ml" 41 1343 1403
+)
+"network.ml" 38 1179 1206 "network.ml" 38 1179 1223
+type(
+  bytes -> int -> int
+)
+ident(
+  int_ref Stdlib.Marshal.data_size "marshal.mli" 181 9337 9337 "marshal.mli" 181 9337 9372
+)
+"network.ml" 38 1179 1224 "network.ml" 38 1179 1230
+type(
+  bytes
+)
+ident(
+  int_ref header "network.ml" 36 1041 1060 "network.ml" 36 1041 1066
+)
+"network.ml" 38 1179 1231 "network.ml" 38 1179 1232
+type(
+  int
+)
+"network.ml" 38 1179 1206 "network.ml" 38 1179 1232
+type(
+  int
+)
+"network.ml" 39 1236 1254 "network.ml" 39 1236 1258
+type(
+  bytes
+)
+ident(
+  def data "network.ml" 40 1284 1298 "network.ml" 41 1343 1403
+)
+"network.ml" 39 1236 1261 "network.ml" 39 1236 1273
+type(
+  int -> bytes
+)
+ident(
+  int_ref Stdlib.Bytes.create "bytes.mli" 59 2750 2750 "bytes.mli" 59 2750 2802
+)
+"network.ml" 39 1236 1274 "network.ml" 39 1236 1280
+type(
+  int
+)
+ident(
+  int_ref d_size "network.ml" 38 1179 1197 "network.ml" 38 1179 1203
+)
+"network.ml" 39 1236 1261 "network.ml" 39 1236 1280
+type(
+  bytes
+)
+"network.ml" 40 1284 1298 "network.ml" 40 1284 1307
+type(
+  Unix.file_descr -> bytes -> int -> int -> Unix.msg_flag list -> int
+)
+ident(
+  int_ref Unix.recv "unix.mli" 1396 56755 56755 "unix.mli" 1396 56755 56823
+)
+"network.ml" 40 1284 1308 "network.ml" 40 1284 1313
+type(
+  Unix.file_descr
+)
+ident(
+  int_ref input "network.ml" 35 1022 1032 "network.ml" 35 1022 1037
+)
+"network.ml" 40 1284 1314 "network.ml" 40 1284 1318
+type(
+  bytes
+)
+ident(
+  int_ref data "network.ml" 39 1236 1254 "network.ml" 39 1236 1258
+)
+"network.ml" 40 1284 1319 "network.ml" 40 1284 1320
+type(
+  int
+)
+"network.ml" 40 1284 1321 "network.ml" 40 1284 1327
+type(
+  int
+)
+ident(
+  int_ref d_size "network.ml" 38 1179 1197 "network.ml" 38 1179 1203
+)
+"network.ml" 40 1284 1328 "network.ml" 40 1284 1330
+type(
+  Unix.msg_flag list
+)
+"network.ml" 40 1284 1298 "network.ml" 40 1284 1330
+type(
+  int
+)
+"network.ml" 40 1284 1331 "network.ml" 40 1284 1333
+type(
+  int -> (int -> unit) -> unit
+)
+ident(
+  int_ref Stdlib.( |> ) "stdlib.mli" 303 12306 12306 "stdlib.mli" 303 12306 12360
+)
+"network.ml" 40 1284 1334 "network.ml" 40 1284 1340
+type(
+  int -> unit
+)
+ident(
+  int_ref Stdlib.ignore "stdlib.mli" 685 25966 25966 "stdlib.mli" 685 25966 26006
+)
+"network.ml" 40 1284 1298 "network.ml" 40 1284 1340
+type(
+  unit
+)
+"network.ml" 41 1343 1358 "network.ml" 41 1343 1376
+type(
+  bytes -> int -> 'b
+)
+ident(
+  int_ref Stdlib.Marshal.from_bytes "marshal.mli" 147 7822 7822 "marshal.mli" 147 7822 7857
+)
+"network.ml" 41 1343 1378 "network.ml" 41 1343 1387
+type(
+  bytes -> bytes -> bytes
+)
+ident(
+  int_ref Stdlib.Bytes.cat "bytes.mli" 149 6267 6267 "bytes.mli" 149 6267 6300
+)
+"network.ml" 41 1343 1388 "network.ml" 41 1343 1394
+type(
+  bytes
+)
+ident(
+  int_ref header "network.ml" 36 1041 1060 "network.ml" 36 1041 1066
+)
+"network.ml" 41 1343 1395 "network.ml" 41 1343 1399
+type(
+  bytes
+)
+ident(
+  int_ref data "network.ml" 39 1236 1254 "network.ml" 39 1236 1258
+)
+"network.ml" 41 1343 1377 "network.ml" 41 1343 1400
+type(
+  bytes
+)
+"network.ml" 41 1343 1401 "network.ml" 41 1343 1402
+type(
+  int
+)
+"network.ml" 41 1343 1357 "network.ml" 41 1343 1403
+type(
+  'b
+)
+"network.ml" 40 1284 1298 "network.ml" 41 1343 1403
+type(
+  'b
+)
+"network.ml" 39 1236 1250 "network.ml" 41 1343 1403
+type(
+  'b
+)
+"network.ml" 38 1179 1193 "network.ml" 41 1343 1403
+type(
+  'b
+)
+"network.ml" 37 1105 1119 "network.ml" 41 1343 1403
+type(
+  'b
+)
+"network.ml" 36 1041 1056 "network.ml" 41 1343 1403
+type(
+  'b
+)
+"network.ml" 36 1041 1045 "network.ml" 41 1343 1404
+type(
+  unit -> 'b
+)
+"network.ml" 43 1406 1412 "network.ml" 43 1406 1418
+type(
+  'c -> unit -> 'c
+)
+ident(
+  def return "network.ml" 45 1446 1448 "network.ml" 61 1825 1828
+)
+"network.ml" 43 1406 1419 "network.ml" 43 1406 1424
+type(
+  'c
+)
+ident(
+  def value "network.ml" 43 1406 1427 "network.ml" 43 1406 1444
+)
+"network.ml" 43 1406 1432 "network.ml" 43 1406 1434
+type(
+  unit
+)
+"network.ml" 43 1406 1438 "network.ml" 43 1406 1443
+type(
+  'c
+)
+ident(
+  int_ref value "network.ml" 43 1406 1419 "network.ml" 43 1406 1424
+)
+"network.ml" 43 1406 1427 "network.ml" 43 1406 1444
+type(
+  unit -> 'c
+)
+"network.ml" 45 1446 1452 "network.ml" 45 1446 1456
+type(
+  (unit -> 'd) -> ('d -> unit -> 'e) -> unit -> 'e
+)
+ident(
+  def bind "network.ml" 47 1488 1490 "network.ml" 61 1825 1828
+)
+"network.ml" 45 1446 1457 "network.ml" 45 1446 1458
+type(
+  unit -> 'd
+)
+ident(
+  def p "network.ml" 45 1446 1459 "network.ml" 45 1446 1485
+)
+"network.ml" 45 1446 1459 "network.ml" 45 1446 1460
+type(
+  'd -> unit -> 'e
+)
+ident(
+  def f "network.ml" 45 1446 1463 "network.ml" 45 1446 1485
+)
+"network.ml" 45 1446 1468 "network.ml" 45 1446 1470
+type(
+  unit
+)
+"network.ml" 45 1446 1474 "network.ml" 45 1446 1475
+type(
+  'd -> unit -> 'e
+)
+ident(
+  int_ref f "network.ml" 45 1446 1459 "network.ml" 45 1446 1460
+)
+"network.ml" 45 1446 1477 "network.ml" 45 1446 1478
+type(
+  unit -> 'd
+)
+ident(
+  int_ref p "network.ml" 45 1446 1457 "network.ml" 45 1446 1458
+)
+"network.ml" 45 1446 1478 "network.ml" 45 1446 1480
+type(
+  unit
+)
+"network.ml" 45 1446 1476 "network.ml" 45 1446 1481
+type(
+  'd
+)
+"network.ml" 45 1446 1482 "network.ml" 45 1446 1484
+type(
+  unit
+)
+"network.ml" 45 1446 1474 "network.ml" 45 1446 1484
+type(
+  'e
+)
+"network.ml" 45 1446 1463 "network.ml" 45 1446 1485
+type(
+  unit -> 'e
+)
+"network.ml" 47 1488 1494 "network.ml" 47 1488 1499
+type(
+  ('f -> 'g) -> 'f -> unit -> 'g
+)
+ident(
+  def delay "network.ml" 49 1549 1551 "network.ml" 61 1825 1828
+)
+"network.ml" 47 1488 1500 "network.ml" 47 1488 1501
+type(
+  'f -> 'g
+)
+ident(
+  def f "network.ml" 47 1488 1502 "network.ml" 47 1488 1547
+)
+"network.ml" 47 1488 1502 "network.ml" 47 1488 1503
+type(
+  'f
+)
+ident(
+  def x "network.ml" 47 1488 1506 "network.ml" 47 1488 1547
+)
+"network.ml" 47 1488 1506 "network.ml" 47 1488 1510
+type(
+  (unit -> unit) -> (unit -> unit -> 'g) -> unit -> 'g
+)
+ident(
+  int_ref bind "network.ml" 45 1446 1452 "network.ml" 45 1446 1456
+)
+"network.ml" 47 1488 1512 "network.ml" 47 1488 1518
+type(
+  unit -> unit -> unit
+)
+ident(
+  int_ref return "network.ml" 43 1406 1412 "network.ml" 43 1406 1418
+)
+"network.ml" 47 1488 1519 "network.ml" 47 1488 1521
+type(
+  unit
+)
+"network.ml" 47 1488 1511 "network.ml" 47 1488 1522
+type(
+  unit -> unit
+)
+"network.ml" 47 1488 1528 "network.ml" 47 1488 1530
+type(
+  unit
+)
+"network.ml" 47 1488 1534 "network.ml" 47 1488 1540
+type(
+  'g -> unit -> 'g
+)
+ident(
+  int_ref return "network.ml" 43 1406 1412 "network.ml" 43 1406 1418
+)
+"network.ml" 47 1488 1542 "network.ml" 47 1488 1543
+type(
+  'f -> 'g
+)
+ident(
+  int_ref f "network.ml" 47 1488 1500 "network.ml" 47 1488 1501
+)
+"network.ml" 47 1488 1544 "network.ml" 47 1488 1545
+type(
+  'f
+)
+ident(
+  int_ref x "network.ml" 47 1488 1502 "network.ml" 47 1488 1503
+)
+"network.ml" 47 1488 1541 "network.ml" 47 1488 1546
+type(
+  'g
+)
+"network.ml" 47 1488 1534 "network.ml" 47 1488 1546
+type(
+  unit -> 'g
+)
+"network.ml" 47 1488 1523 "network.ml" 47 1488 1547
+type(
+  unit -> unit -> 'g
+)
+"network.ml" 47 1488 1506 "network.ml" 47 1488 1547
+type(
+  unit -> 'g
+)
+"network.ml" 49 1549 1555 "network.ml" 49 1549 1559
+type(
+  (unit -> 'h) list -> unit -> unit
+)
+ident(
+  def doco "network.ml" 59 1805 1807 "network.ml" 61 1825 1828
+)
+"network.ml" 49 1549 1560 "network.ml" 49 1549 1561
+type(
+  (unit -> 'h) list
+)
+ident(
+  def l "network.ml" 50 1565 1569 "network.ml" 57 1790 1803
+)
+"network.ml" 50 1565 1573 "network.ml" 50 1565 1575
+type(
+  unit
+)
+"network.ml" 51 1580 1594 "network.ml" 51 1580 1597
+type(
+  (unit -> 'i) list -> unit
+)
+ident(
+  def sub "network.ml" 51 1580 1586 "network.ml" 57 1790 1802
+)
+"network.ml" 52 1610 1618 "network.ml" 52 1610 1620
+type(
+  (unit -> 'i) list
+)
+"network.ml" 52 1610 1624 "network.ml" 52 1610 1626
+type(
+  unit
+)
+"network.ml" 53 1627 1635 "network.ml" 53 1627 1636
+type(
+  unit -> 'i
+)
+ident(
+  def x "network.ml" 53 1627 1646 "network.ml" 56 1767 1788
+)
+"network.ml" 53 1627 1640 "network.ml" 53 1627 1642
+type(
+  (unit -> 'i) list
+)
+ident(
+  def th "network.ml" 53 1627 1646 "network.ml" 56 1767 1788
+)
+"network.ml" 53 1627 1635 "network.ml" 53 1627 1642
+type(
+  (unit -> 'i) list
+)
+"network.ml" 54 1653 1675 "network.ml" 54 1653 1681
+type(
+  Thread.t
+)
+ident(
+  def thread "network.ml" 55 1721 1739 "network.ml" 55 1721 1765
+)
+"network.ml" 54 1653 1684 "network.ml" 54 1653 1697
+type(
+  (unit -> 'i) -> unit -> Thread.t
+)
+ident(
+  int_ref Thread.create "thread.mli" 23 1225 1225 "thread.mli" 23 1225 1259
+)
+"network.ml" 54 1653 1698 "network.ml" 54 1653 1699
+type(
+  unit -> 'i
+)
+ident(
+  int_ref x "network.ml" 53 1627 1635 "network.ml" 53 1627 1636
+)
+"network.ml" 54 1653 1700 "network.ml" 54 1653 1702
+type(
+  unit
+)
+"network.ml" 54 1653 1684 "network.ml" 54 1653 1702
+type(
+  Thread.t
+)
+"network.ml" 55 1721 1739 "network.ml" 55 1721 1742
+type(
+  (unit -> 'i) list -> unit
+)
+ident(
+  int_ref sub "network.ml" 51 1580 1594 "network.ml" 51 1580 1597
+)
+"network.ml" 55 1721 1743 "network.ml" 55 1721 1745
+type(
+  (unit -> 'i) list
+)
+ident(
+  int_ref th "network.ml" 53 1627 1640 "network.ml" 53 1627 1642
+)
+"network.ml" 55 1721 1739 "network.ml" 55 1721 1745
+type(
+  unit
+)
+"network.ml" 55 1721 1747 "network.ml" 55 1721 1758
+type(
+  Thread.t -> unit
+)
+ident(
+  int_ref Thread.join "thread.mli" 57 2544 2544 "thread.mli" 57 2544 2564
+)
+"network.ml" 55 1721 1759 "network.ml" 55 1721 1765
+type(
+  Thread.t
+)
+ident(
+  int_ref thread "network.ml" 54 1653 1675 "network.ml" 54 1653 1681
+)
+"network.ml" 55 1721 1747 "network.ml" 55 1721 1765
+type(
+  unit
+)
+"network.ml" 55 1721 1739 "network.ml" 55 1721 1765
+type(
+  unit
+)
+"network.ml" 53 1627 1646 "network.ml" 56 1767 1788
+type(
+  unit
+)
+"network.ml" 51 1580 1600 "network.ml" 56 1767 1788
+type(
+  (unit -> 'i) list -> unit
+)
+"network.ml" 57 1790 1797 "network.ml" 57 1790 1800
+type(
+  (unit -> 'h) list -> unit
+)
+ident(
+  int_ref sub "network.ml" 51 1580 1594 "network.ml" 51 1580 1597
+)
+"network.ml" 57 1790 1801 "network.ml" 57 1790 1802
+type(
+  (unit -> 'h) list
+)
+ident(
+  int_ref l "network.ml" 49 1549 1560 "network.ml" 49 1549 1561
+)
+"network.ml" 57 1790 1797 "network.ml" 57 1790 1802
+type(
+  unit
+)
+"network.ml" 51 1580 1586 "network.ml" 57 1790 1802
+type(
+  unit
+)
+"network.ml" 50 1565 1569 "network.ml" 57 1790 1803
+type(
+  unit -> unit
+)
+"network.ml" 59 1805 1811 "network.ml" 59 1805 1814
+type(
+  (unit -> 'j) -> 'j
+)
+ident(
+  def run "network.ml" 59 1805 1823 "network.ml" 61 1825 1828
+)
+"network.ml" 59 1805 1815 "network.ml" 59 1805 1816
+type(
+  unit -> 'j
+)
+ident(
+  def f "network.ml" 59 1805 1819 "network.ml" 59 1805 1823
+)
+"network.ml" 59 1805 1819 "network.ml" 59 1805 1820
+type(
+  unit -> 'j
+)
+ident(
+  int_ref f "network.ml" 59 1805 1815 "network.ml" 59 1805 1816
+)
+"network.ml" 59 1805 1821 "network.ml" 59 1805 1823
+type(
+  unit
+)
+"network.ml" 59 1805 1819 "network.ml" 59 1805 1823
+type(
+  'j
+)
