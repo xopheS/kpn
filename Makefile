@@ -1,9 +1,13 @@
 OCAMLBUILD=ocamlbuild -classic-display \
 		-tags annot,debug,thread \
 		-libs unix
-		# -use-ocamlfind -pkg graphics \
+		#-use-ocamlfind -pkg graphics\
+		#-libs unix
 
 TARGET=native
+
+tictactoe:
+	$(OCAMLBUILD) tictactoe.$(TARGET)
 
 #mandelbrot:
 #	$(OCAMLBUILD) mandelbrot.$(TARGET)

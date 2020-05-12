@@ -9,19 +9,20 @@ struct
   type 'a in_port = Unix.file_descr
   type 'a out_port = Unix.file_descr
 
-  let port = 1024
+  let port = ref 1024
 
   let new_channel() = 
     (* Create a STREAM socket with IPv4/IPv6 address *)
     let host = Unix.inet_addr_loopback in
     (* let host = Unix.inet6_addr_loopback in *)
-    let addr = ADDR_INET (host, port) in
+    let addr = ADDR_INET (host, !port) in
+    port := !port + 1;
     let in_socket = socket (domain_of_sockaddr addr) SOCK_STREAM 0 in
     let out_socket = socket (domain_of_sockaddr addr) SOCK_STREAM 0 in
     
     (* Connect/Bind/Listen input and the output sockets *)
     bind out_socket addr ;
-    listen out_socket 1 ;
+    listen out_socket 100 ;
     connect in_socket addr ;
 
     let out_socket, sockaddr = accept out_socket in
@@ -29,8 +30,7 @@ struct
   
   let put value output = 
           (fun () -> let data = Marshal.to_bytes value [] in
-          ignore( Unix.send output data 0 (Bytes.length data) [])
-                     )
+          ignore( Unix.send output data 0 (Bytes.length data) []))
 
   let get input = 
           (fun () ->    let header = Bytes.create Marshal.header_size in
@@ -38,12 +38,14 @@ struct
                         let d_size = Marshal.data_size header 0 in
                         let data = Bytes.create d_size in
                         Unix.recv input data 0 d_size [] |> ignore ;
-                        Marshal.from_bytes (Bytes.cat header data) 0
+                        (Marshal.from_bytes (Bytes.cat header data) 0)
                      )
 
   let return value = (fun () -> value)
 
   let bind p f = (fun () -> f (p()) ()) 
+
+  let delay f x = bind (return ()) (fun () -> return (f x))
 
   let doco l = 
           ( fun() -> let rec sub = function 
