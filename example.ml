@@ -21,6 +21,6 @@ module Example (K : Kahn.S) = struct
 
 end
 
-module E = Example(Sequential.Seq)
+module E = Example(Network.N)
 
 let () = E.K.run E.main
