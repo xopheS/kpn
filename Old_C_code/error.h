@@ -28,6 +28,9 @@ extern "C"
         ERR_NONE = 0, // no error
         ERR_BAD_PARAMETER,
         ERR_SIZE,   // wrong size
+        ERR_PIPELINE_FIFO,
+        ERR_MEM,
+        ERR_PROCESS
     } error_code;
 
 // ======================================================================
@@ -61,7 +64,9 @@ extern "C"
     {                                  \
         debug_print(fmt, __VA_ARGS__); \
         exit(0);                       \
-    } while (0)
+    } while (0)     
+
+
 
 // ----------------------------------------------------------------------
 /**
@@ -159,6 +164,9 @@ extern "C"
  */
 #define M_REQUIRE_NON_NULL(arg) \
     M_REQUIRE_NON_NULL_CUSTOM_ERR(arg, ERR_BAD_PARAMETER)
+
+#define M_REQUIRE_NON_CLOSED(arg) \
+    M_REQUIRE(arg != -1, ERR_BAD_PARAMETER, "closed port")
 
 #ifdef __cplusplus
 }

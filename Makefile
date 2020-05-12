@@ -1,6 +1,8 @@
 OCAMLBUILD=ocamlbuild -classic-display \
 		-tags annot,debug,thread \
-		-use-ocamlfind -pkg graphics,unix 
+		-use-ocamlfind -pkg graphics,unix \
+		-ocamlc 'ocamlc str.cma' \
+		-ocamlopt 'ocamlopt str.cmxa'
 
 TARGET=native
 
@@ -10,8 +12,8 @@ tictactoe:
 mandelbrot:
 	$(OCAMLBUILD) mandelbrot.$(TARGET)
 
-example:
-	$(OCAMLBUILD) example.$(TARGET)
+k_means:
+	$(OCAMLBUILD) k_means.$(TARGET)
 
 
 clean:
