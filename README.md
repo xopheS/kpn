@@ -12,8 +12,9 @@
 
 :fire: **Compile**
 
-To compile all run `make`. 
 To compile a particular application run: 
   * `make mandelbrot`
   * `make k_means`
   * `make tictactoe`
+  
+To clean `make clean` or `make realclean`
