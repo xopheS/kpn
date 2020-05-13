@@ -19,14 +19,7 @@ To compile a particular application run:
   
 To clean `make clean` or `make realclean`
 
-## Tic Tac Toe
-### Running mandelbrot
-`make tictactoe`
-
-## Mandelbrot
-
-### Running mandelbrot
-
+## Mandelbrot:
 The mandelbrot application can be run with arguments
 (`arg default type`)
 
