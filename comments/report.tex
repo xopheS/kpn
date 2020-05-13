@@ -118,7 +118,7 @@ The client host (server as referred in the code) does most of the computation of
 \subsubsection{Client }
 The client has a simplier process. It only receives messages from the host and acts accordingly to the type of message received:
 \begin{enumerate}
-\item \texttt{MYM} message; it makes a move by clicking on the board; the move is converted into an index of the array and then send it to the host.
+\item \texttt{MYM} makes a move by clicking on the board; the move is converted into an index of the array and then sent to the host.
 \item \texttt{FYI} gets the board and displays it
 \item \texttt{ERR} the client made a wrong move
 \item \texttt{STS} receives the status of the game. 

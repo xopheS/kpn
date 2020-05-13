@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  14 MAY 2020 00:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  14 MAY 2020 00:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -947,7 +947,7 @@ ve/2018/texmf-dist/fonts/type1/public/kpfonts/jkpmi.pfb></usr/local/texlive/201
 xmf-dist/fonts/type1/public/kpfonts/jkpmne.pfb></usr/local/texlive/2018/texmf-d
 ist/fonts/type1/public/kpfonts/jkpsy.pfb></usr/local/texlive/2018/texmf-dist/fo
 nts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on report.pdf (5 pages, 60146 bytes).
+Output written on report.pdf (5 pages, 60140 bytes).
 PDF statistics:
  154 PDF objects out of 1000 (max. 8388607)
  139 compressed objects within 2 object streams
