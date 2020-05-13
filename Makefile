@@ -1,6 +1,6 @@
 OCAMLBUILD=ocamlbuild -classic-display \
 		-tags annot,debug,thread \
-		-libs unix, graphics \
+		-libs unix,graphics \
 		-ocamlc 'ocamlc str.cma' \
 		-ocamlopt 'ocamlopt str.cmxa'
 
