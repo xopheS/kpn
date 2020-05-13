@@ -229,7 +229,7 @@ let server_main receiver sender lw ww l w =
           | Win P2 -> begin display_text "Winner is Player 2\n";
                     draw_board l w curr_board;
                     let msg = create_msg STS "Winner is player 2" in 
-                    K.put msg sender 
+                    K.put msg sender
                   end 
           | Draw -> begin display_text "Draw!\n";
                     draw_board l w curr_board;
@@ -266,8 +266,8 @@ let main =
   delay K.new_channel () >>= 
   fun (sock_inp1, sock_out1) -> K.return (K.new_channel()) >>=
   fun (sock_inp2, sock_out2) -> 
-    K.doco[ server_main sock_inp2 sock_out1 lw ww l w; 
+    K.doco[ server_main sock_inp2 sock_out1 lw ww l w ; 
             client_main sock_inp1 sock_out2 lw ww l w] >>=
-    (fun () -> delay (Unix.sleep) 1)
+    (fun () -> delay (Unix.sleep) 1) 
 
 let () = K.run main

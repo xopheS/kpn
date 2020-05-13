@@ -2,8 +2,13 @@
 \usepackage{hyperref}
 \usepackage{xcolor}
 \usepackage{enumitem}
-
-
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{kpfonts}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{wrapfig}
 \title{Kahn}
 \author{Nizar Ghandri, Megi Dervishi, Christophe Saad}
 \date{\today}
@@ -77,53 +82,55 @@ The mandelbrot application can be ran with arguments (\texttt{arg default type})
 	\item \texttt{-xo -0.235125 -yo 0.827215 -z 0.00004}
 	\item \texttt{-xo -0.81153120295763 -yo 0.20142958206181 -z 0.0003}
 \end{itemize}\section{Network}
-This implementation of Khan aims at distributing  ... in parallel . It uses the module Unix and Marshal. Unix for creating sockets. Marshal to convert the particular value into bytes in order to send it through a socket. The communication between sockets its a very simple tcp communication using an IPv4 or IPv6 address. the put function makes use of the unix function send to send the particular value through a socket and the get function makes use of receiv to receive the byte value.
-the doco function has been coded using threads i.e. the communication between the process has been done in parallel. 
+This implementation of Khan aims at distributing the processes in multiple computers in parallel. It makes use of the module \texttt{Unix} for creating a classic TCP socket communication with an IPv4 or IPv6 address; makes use of the module \texttt{Marshal} to convert the value into bytes in order to be sent/received in the channel. The \texttt{put value output} function makes use of the unix function \texttt{Unix.send } to send the particular value through the socket \texttt{ output} and the \texttt{get input} function makes use of \texttt{Unix.receiv} to receive a particular value. The \texttt{doco} function takes a list of processes and runs them in parallel through the \texttt{Thread} module.
 
 \section{Tic Tac Toe game}
 
-This application makes use of the Khan network with threads implementation. It aims at creating a classic tic tac toe game between two players. 
+This application makes use of the above Khan implementation. It aims at creating a classic Tic Tac Toe game between two players. The file is \texttt{tictactoe.ml}.
 
 \subsection{Design of the communication }
 
-In a classic client/server architecture, the server would have to decide where the process execute and communicate between the khan processes.  However this implementation is a bit of over kill on the server side. In this one the communication happens directly with the clients where one of them becomes the host. This is done in the main function of tictactoe.ml file. After parsing the arguments and creating a new channel the doco function will run the server\_main function and the client\_main function establishing the communication as in the following scheme:
+In a classic client/server architecture, the server would have to decide the execution and communication of the khan processes between the two clients. However this implementation is a bit of over kill on the server side. In our implementation the communication happens directly between the clients where one of them becomes the host as in the following scheme:
 
 %include graph her Client (server_hos) <=> Other Client 
 
-In this implementation we use one terminal which outputs both players. it may seem that since there aren't two communicating terminals then the connection with sockets has not been establish but in fact the "client host" and the "client" are two khan processes that are executed in parallel and communicate with each other only through khan channels. An improvement would be two terminals communicating separately.
+In this implementation we use one terminal and one graphics window. It may seem that since there are not two communicating terminals/graphic windows the connection between the sockets has not been established, but in fact the "client host" and the "client" are two khan processes that are executed in parallel and communicate with each other only through khan channels. An improvement of this can be to establish the communication in two terminals and two graphic windows. To achieve the second is best to use a different module beside \texttt{Graphics}. 
 
-
-\subsubsection*{Structure of messages}
-- messges 
-- Board a matrix
-
-\subsubsection*{Client (host)}
-The client host in which for short in the code i refer to it as a server does most of the computation of the game.  The "server" recursively does the following in the $server_main$ function
+\subsubsection{Structure of messages}
+The messages that are sent through the channel fall into four categories (\texttt{MYM}, \texttt{FYI}, \texttt{STS}, \texttt{ERR}). When a message string is composed the first three letters of it are one of the above. Hence the receiving party can recognize the type of message being sent and act accordingly :
+\begin{itemize}
+\item \texttt{MYM} (Make your move) - messages the client-host asks the client to make their move
+\item \texttt{FYI} (For your information) - usually send the tic tac toe board
+\item \texttt{STS} (Status) - send the stage/status of the game i.e \texttt{Win of player}, \texttt{Draw}, \texttt{Continue}
+\item \texttt{ERR} (Error) - There is an invalid move happening.
+\end{itemize} 
+As mentioned above the \texttt{FYI} send the tic tac toe board which is an \texttt{Array} of size 9. 
+\subsubsection{Client (host)}
+The client host (server as referred in the code) does most of the computation of the game.  The "server" recursively does the following in the \texttt{server\_main}
 \begin{enumerate}
 \item Waits for himself to make a valid move (a move inside the board that was not previously filled).
-\item updates the board with the current move
-\item checks if there is a winner or draw, it sends to the other client: game has ended and then quits the game
-\item Otherwise sends the board to the other client and waits for a response
-\item when the client sends move checks that the move is valid otherwise repeat step 4 
-\item if the move is valid repeat 2 -3. If game has not ended then go back to 1.
+\item Updates the board with the current move
+\item Checks if there is a winner or draw; If yes then it sends the status to the client and game ends i.e. stops the connection.
+\item Otherwise sends the board to the client and waits for a response.
+\item When the client sends a move the host checks if the move is valid. If not then repeat step 4. 
+\item Otherwise repeat step 2 and 3. If game has not ended then go back to step 1.
 \end{enumerate}
-\subsubsection*{Client }
-The client has a simplier process. It only receives messages from the host and acts accordingly to the message received:
-If a message has the $MYM$ that is it asks the client to make a move. then the client makes the move and sends it back.
-If it is an $FYI$ (for your information) then the client only receives the board to display it
-if an $Err$ that means that the move made is an error
-if and $STS$ then the host is receiving the status of the game from the host i.e. the state of the game is Win of player , Draw, Continue
-\subsection*{Challenge}
-- graphics
-- doing things in two terminals
-- connecting everything as khan processes (delay)
-\section*{usage}
-\subsection*{Run}
-- make tictactoe
-- ./tictactoe
-you would get a graphic window in which the player can click for the  the possition. If the position is valid then you would have the appering symbol if not it would appear in  the terminal what the message
-
-The default graphic window is 1000 by 620 with a board that is 600 by  600. The user can change it through the following arguments 
+\subsubsection{Client }
+The client has a simplier process. It only receives messages from the host and acts accordingly to the type of message received:
+\begin{enumerate}
+\item \texttt{MYM} message; it makes a move by clicking on the board; the move is converted into an index of the array and then send it to the host.
+\item \texttt{FYI} gets the board and displays it
+\item \texttt{ERR} the client made a wrong move
+\item \texttt{STS} receives the status of the game. 
+\end{enumerate}
+All the following can be found in the \texttt{client\_main} function.
+\subsection{Usage}
+\subsubsection{Run}
+To play the game Tic Tac Toe run:\\\\
+\text{\texttt{make tictactoe}}\\
+\text{\texttt{./tictactoe}}\\\\
+Upon execution there is a graphic window appearing. The default measurements for the window are 1000 by 620 and the board is 600 by 600. The players could insert a move by simply clicking the position they like. The first player to play is \texttt{X} and the second \texttt{O}. If you want to customize the measurements of the window you could run the following code:\\\\
+\texttt{./tictactoe -length\_window x -width\_window x -length x -width x}
   
 
 
