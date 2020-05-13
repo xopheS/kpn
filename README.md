@@ -1,4 +1,7 @@
 # Kahn Process Networks  (kpn)
+```math
+a^2+b^2=c^2
+```
 
 :fire: **Implementations**
 - Sequential (sequential.ml)
