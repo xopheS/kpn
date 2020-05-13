@@ -123,14 +123,14 @@ let is_full board =
 let check_winner board = 
     let token = 
       match board with
-        | [|x1; x2; x3; _; _; _; _; _; _|] when x1 = x2 && x2 = x3 -> x1
-        | [|_; _; _; x1; x2; x3; _; _; _|] when x1 = x2 && x2 = x3 -> x1
-        | [|_; _; _; _; _; _; x1; x2; x3|] when x1 = x2 && x2 = x3 -> x1
-        | [|x1; _; _; x2; _; _; x3; _; _|] when x1 = x2 && x2 = x3 -> x1
-        | [|_;x1; _; _;x2; _; _; x3; _|] when x1 = x2 && x2 = x3 -> x1
-        | [|_; _; x1; _; _; x2; _; _; x3|] when x1 = x2 && x2 = x3 -> x1
-        | [|x1; _; _; _; x2; _; _; _; x3|] when x1 = x2 && x2 = x3 -> x1
-        | [|_; _; x1; _; x2; _; x3; _; _|] when x1 = x2 && x2 = x3 -> x1
+        | [|x1; x2; x3; _; _; _; _; _; _|] when x1 = x2 && x2 = x3 && x1 <> " " -> x1
+        | [|_; _; _; x1; x2; x3; _; _; _|] when x1 = x2 && x2 = x3 && x1 <> " "-> x1
+        | [|_; _; _; _; _; _; x1; x2; x3|] when x1 = x2 && x2 = x3 && x1 <> " " -> x1
+        | [|x1; _; _; x2; _; _; x3; _; _|] when x1 = x2 && x2 = x3 && x1 <> " "-> x1
+        | [|_;x1; _; _;x2; _; _; x3; _|] when x1 = x2 && x2 = x3 && x1 <> " "-> x1
+        | [|_; _; x1; _; _; x2; _; _; x3|] when x1 = x2 && x2 = x3 && x1 <> " " -> x1
+        | [|x1; _; _; _; x2; _; _; _; x3|] when x1 = x2 && x2 = x3 && x1 <> " "-> x1
+        | [|_; _; x1; _; x2; _; x3; _; _|] when x1 = x2 && x2 = x3 && x1 <> " "-> x1
         | _ -> " "
     in 
     if is_full board then 
@@ -198,7 +198,8 @@ let server_main receiver sender lw ww l w =
                     let msg = create_msg STS "Draw" in 
                     K.put msg sender )
                 end 
-      | _ ->  begin
+      | _ ->  begin 
+        display_text "Continue case\n";
         let msg = create_msg FYI (board_to_string curr_board) in
         K.put msg sender >>= (fun () ->
         let rec waiting_client () =
@@ -209,7 +210,7 @@ let server_main receiver sender lw ww l w =
           match b with 
             | false -> begin 
                         let msg = create_msg ERR "Wrong move\n" in 
-                        K.put msg sender >>= waiting_client
+                        K.put msg sender >>= waiting_client 
                       end
             | true -> delay (fun () -> cb) ()
           )

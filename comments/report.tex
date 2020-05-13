@@ -77,12 +77,54 @@ The mandelbrot application can be ran with arguments (\texttt{arg default type})
 	\item \texttt{-xo -0.235125 -yo 0.827215 -z 0.00004}
 	\item \texttt{-xo -0.81153120295763 -yo 0.20142958206181 -z 0.0003}
 \end{itemize}\section{Network}
+This implementation of Khan aims at distributing  ... in parallel . It uses the module Unix and Marshal. Unix for creating sockets. Marshal to convert the particular value into bytes in order to send it through a socket. The communication between sockets its a very simple tcp communication using an IPv4 or IPv6 address. the put function makes use of the unix function send to send the particular value through a socket and the get function makes use of receiv to receive the byte value.
+the doco function has been coded using threads i.e. the communication between the process has been done in parallel. 
 
 \section{Tic Tac Toe game}
 
+This application makes use of the Khan network with threads implementation. It aims at creating a classic tic tac toe game between two players. 
+
+\subsection{Design of the communication }
+
+In a classic client/server architecture, the server would have to decide where the process execute and communicate between the khan processes.  However this implementation is a bit of over kill on the server side. In this one the communication happens directly with the clients where one of them becomes the host. This is done in the main function of tictactoe.ml file. After parsing the arguments and creating a new channel the doco function will run the server\_main function and the client\_main function establishing the communication as in the following scheme:
+
+%include graph her Client (server_hos) <=> Other Client 
+
+In this implementation we use one terminal which outputs both players. it may seem that since there aren't two communicating terminals then the connection with sockets has not been establish but in fact the "client host" and the "client" are two khan processes that are executed in parallel and communicate with each other only through khan channels. An improvement would be two terminals communicating separately.
 
 
+\subsubsection*{Structure of messages}
+- messges 
+- Board a matrix
 
+\subsubsection*{Client (host)}
+The client host in which for short in the code i refer to it as a server does most of the computation of the game.  The "server" recursively does the following in the $server_main$ function
+\begin{enumerate}
+\item Waits for himself to make a valid move (a move inside the board that was not previously filled).
+\item updates the board with the current move
+\item checks if there is a winner or draw, it sends to the other client: game has ended and then quits the game
+\item Otherwise sends the board to the other client and waits for a response
+\item when the client sends move checks that the move is valid otherwise repeat step 4 
+\item if the move is valid repeat 2 -3. If game has not ended then go back to 1.
+\end{enumerate}
+\subsubsection*{Client }
+The client has a simplier process. It only receives messages from the host and acts accordingly to the message received:
+If a message has the $MYM$ that is it asks the client to make a move. then the client makes the move and sends it back.
+If it is an $FYI$ (for your information) then the client only receives the board to display it
+if an $Err$ that means that the move made is an error
+if and $STS$ then the host is receiving the status of the game from the host i.e. the state of the game is Win of player , Draw, Continue
+\subsection*{Challenge}
+- graphics
+- doing things in two terminals
+- connecting everything as khan processes (delay)
+\section*{usage}
+\subsection*{Run}
+- make tictactoe
+- ./tictactoe
+you would get a graphic window in which the player can click for the  the possition. If the position is valid then you would have the appering symbol if not it would appear in  the terminal what the message
+
+The default graphic window is 1000 by 620 with a board that is 600 by  600. The user can change it through the following arguments 
+  
 
 
 
