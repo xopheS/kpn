@@ -5,7 +5,7 @@
 
 
 \title{Kahn}
-\author{Christophe Saad}
+\author{Christophe Saad, Nizar Ghandri}
 \date{\today}
 
 \begin{document}
@@ -14,14 +14,14 @@
 \maketitle
 
 \section{Sequential}
-The implentation of the sequencial part is manly taken from the paper  A poor man’s concurrency monad. We consider the process as a monad transformer which takes an action (which contains the actual computation) and link it a continuation. Its type is $$\texttt{type 'a process = ('a -> action) -> action}$$
+The implentation of the sequential part is mainly taken from the paper  A poor man’s concurrency monad. We consider the process as a monad transformer which takes an action (which contains the actual computation) and link it a continuation. Its type is $$\texttt{type 'a process = ('a -> action) -> action}$$
 The type action is $$\texttt{type action  = Atom of (unit -> action) | Fork of action * action | Stop}$$
-We use \texttt{Fork} to instanciate new processes and \texttt{Atom} to represent a computation.\\
+We use \texttt{Fork} to instantiate new processes and \texttt{Atom} to represent a computation.\\
 In the \texttt{run} function, we recreate a pipeline containing the first \texttt{Fork} action to execute. Each time a \texttt{Fork} is executed, we push the two actions in the pipeline. When an \texttt{Atom} is read, we execute its computation and store his continuation back in the pipeline. This procedures ends when all the continuations are \texttt{Stop}.
 
 \section{Mandelbrot}
-This application consits of the computation and visualization of the Mandelbrot set using the implemented kahn network.
-\subsection{Madelbrot set}
+This application consists of the computation and visualization of the Mandelbrot set using the implemented Kahn network.
+\subsection{Mandelbrot set}
 The Mandelbrot set $\mathcal{M}$ is the set of complex numbers $c$ such that the point $z = 0$ of the polynomial $P_c(z) = z^2 + c$ has an orbit which remains bounded. \\
 In other words, this set can be seen as the set of complex numbers $c$ for which the application $z_{n+1} = z_n + c$ starting from $0$ for $n \rightarrow \infty$ remains bounded.
 
@@ -80,8 +80,34 @@ The mandelbrot application can be ran with arguments (\texttt{arg default type})
 \end{itemize}
 
 
+\section{Unix processes}
+The implentation of the Unix processes part is mainly based on the POSIX interface. Its type is $$\texttt{type 'a process = unit -> 'a}$$
+Computation is mostly based on the generation of heavy Unix processes through the $\texttt{fork}$ method from the Unix library.
+Communication channel is an unnamed pipe access through it's channel in/out which are file descriptors.
+
+\section{K means}
+
+"k-means clustering is a method of vector quantization, originally from signal processing, that aims to partition n observations into k clusters in which each observation belongs to the cluster with the nearest mean (cluster centers or cluster centroid), serving as a prototype of the cluster." 
+-Wikipedia
+
+K-means is an example of a bulk synchronous parallel algorithm (BSP). BSP algorithms are composed from a sequence of supersteps, each of which contains:
+\begin{itemize}
+    \item parallel computation, in which processes independently perform local computations and produce some values
+    \item communication, in which processes exchange data
+    \item barrier synchronisation, during which processes wait until every process finishes
+
+\end{itemize}
 
 
+
+
+Data-parallel programming models are typically a good fit for BSP algorithms, as each bulk synchronous phase can correspond to some number of data-parallel operations.
+
+
+\subsection{Usage}
+
+Running the algorithm requires only one argument which is the number of processes used: $$\texttt{make k\_means}$$ \\ $$\texttt{./k\_means.native 8}$$ 
+It will run automatically on the Iris data set. 
 
 
 
@@ -91,3 +117,4 @@ The mandelbrot application can be ran with arguments (\texttt{arg default type})
 
 
 \end{document}
+
