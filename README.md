@@ -6,9 +6,9 @@
 - Network with thread (network.ml)
 
 :fire: **Applications**
-- Mandelbrot (mandelbrot.ml) using the Sequential Kahn
-- k_Means (k_means.ml) using the Pipes implementation
-- Tic Tac Toe game (tictactoe.ml) using the network (sockets) with thread implementation
+- Mandelbrot (mandelbrot.ml)
+- k_Means (k_means.ml)
+- Tic Tac Toe game (tictactoe.ml)
 
 :fire: **Compile**
 
@@ -18,3 +18,49 @@ To compile a particular application run:
   * `make tictactoe`
   
 To clean `make clean` or `make realclean`
+
+## Tic Tac Toe
+### Running mandelbrot
+`make tictactoe`
+
+## Mandelbrot
+
+### Running mandelbrot
+
+The mandelbrot application can be run with arguments
+(`arg default type`)
+
+-   `-w 1300 int` Width of the window
+
+-   `-h 1000 int` Height of the window
+
+-   `-n 1000 int` Number of iterations
+
+-   `-p 1 int` Number of processes for computation (must divide width)
+
+-   `-xo -0.5 float` Real part of origin
+
+-   `-yo 0. float` Imaginary part of origin
+
+-   `-z 1. float` Zoom value (radius around origin)
+
+-   `-r 4. float` Escape radius value
+
+### Some views
+
+-   `-xo -0.7463 -yo 0.1102 -z 0.005`
+
+-   `-xo -0.7453 -yo 0.1127 -z 0.00065`
+
+-   `-xo -0.16 -yo 1.0405 -z 0.026`
+
+-   `-xo -0.925 -yo 0.266 -z 0.032`
+
+-   `-xo -0.748 -yo 0.1 -z 0.0014`
+
+-   `-xo -0.722 -yo 0.246 -z 0.019`
+
+-   `-xo -0.235125 -yo 0.827215 -z 0.00004`
+
+-   `-xo -0.81153120295763 -yo 0.20142958206181 -z 0.0003`
+
