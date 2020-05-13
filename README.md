@@ -19,12 +19,15 @@ To compile a particular application run:
   
 To clean `make clean` or `make realclean`
 
+## Tic Tac Toe
+### Running mandelbrot
+`make tictactoe`
 
 ## Mandelbrot
 
 ### Running mandelbrot
 
-The mandelbrot application can be ran with arguments
+The mandelbrot application can be run with arguments
 (`arg default type`)
 
 -   `-w 1300 int` Width of the window
@@ -60,3 +63,4 @@ The mandelbrot application can be ran with arguments
 -   `-xo -0.235125 -yo 0.827215 -z 0.00004`
 
 -   `-xo -0.81153120295763 -yo 0.20142958206181 -z 0.0003`
+
