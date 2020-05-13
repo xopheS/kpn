@@ -16,7 +16,6 @@ mandelbrot:
 k_means:
 	$(OCAMLBUILD) k_means.$(TARGET)
 
-
 clean:
 	$(OCAMLBUILD) -clean
 

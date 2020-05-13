@@ -126,6 +126,9 @@ module Iris_K_means (K: Kahn.S) = struct
   let epsilon = ref 0.001
   let training_perc = ref 0.9
   let labels = [|1; 0;-1|]
+  let show = ref true
+  let x_axis = ref 2
+  let y_axis = ref 1 
 
   let preprocess_data path = 
     let import_data path separator: float array array =
@@ -176,13 +179,66 @@ module Iris_K_means (K: Kahn.S) = struct
       let p_te = classify test_data means in
       let nm = update p_tr in 
       if (stop_cnd means nm !epsilon) then 
-        nm, (List.rev acc_training), (List.rev acc_test) 
+        nm, (List.rev acc_training), (List.rev acc_test), p_tr
       else 
         aux nm (test acc_training p_tr) (test acc_test p_te)
     in 
     aux (initialize_means !k training_data) [] []
 
-
+  let show_points points centers =
+    let width = float_of_int @@ Graphics.size_x () in
+    let height = float_of_int @@ Graphics.size_y () in
+    let get_min (x_min, x_max, y_min, y_max) point =
+      let x_min = min x_min (fst point).(!x_axis) in
+      let x_max = max x_max (fst point).(!x_axis) in
+      let y_min = min y_min (fst point).(!y_axis) in
+      let y_max = max y_max (fst point).(!y_axis) in
+      x_min, x_max, y_min, y_max
+    in
+    let arr = 
+      parallel_map 
+      (fun x -> 
+        let p = (fst (List.hd x)) in 
+        List.fold_left get_min 
+        (p.(!x_axis), p.(!x_axis), p.(!y_axis), p.(!y_axis)) 
+        x
+      ) 
+      points
+    in 
+    let x_min, x_max, y_min, y_max =
+      Array.fold_left 
+      (fun (x_min, x_max, y_min, y_max) (x_min', x_max', y_min', y_max') -> 
+      let x_min = min x_min x_min' in
+      let x_max = max x_max x_max' in
+      let y_min = min y_min y_min' in
+      let y_max = max y_max y_max' in
+      x_min, x_max, y_min, y_max) 
+      arr.(0)
+      arr
+    in
+    let x_margin = (x_max -. x_min) /. 15. in
+    let y_margin = (y_max -. y_min) /. 15. in
+    let x_min = x_min -. x_margin in
+    let x_max = x_max +. x_margin in
+    let y_min = y_min -. y_margin in
+    let y_max = y_max +. y_margin in
+    let plt_point point =
+      let x_int = int_of_float @@ ((fst point).(!x_axis)-.x_min) /. (x_max-.x_min) *. width in
+      let y_int = int_of_float @@ ((fst point).(!y_axis)-.y_min) /. (y_max-.y_min) *. height in
+      Graphics.fill_circle x_int y_int 5
+    in
+    let plt_center point =
+      let x_int = int_of_float @@ (point.(!x_axis)-.x_min) /. (x_max-.x_min) *. width in
+      let y_int = int_of_float @@ (point.(!y_axis)-.y_min) /. (y_max-.y_min) *. height in
+      Graphics.fill_circle x_int y_int 10
+    in
+    List.iter (plt_point) points.(0);
+    Graphics.set_color Graphics.red;
+    List.iter (plt_point) points.(1);
+    Graphics.set_color Graphics.green;
+    List.iter (plt_point) points.(2);
+    Graphics.set_color Graphics.blue;
+    Array.iter (plt_center) centers
 
   let plot training test = 
     let rec print_numbers oc = function 
@@ -196,15 +252,18 @@ module Iris_K_means (K: Kahn.S) = struct
     print_numbers te test;
     close_out tr;
     close_out te;
-    ignore (Sys.command "python ../plot.py")
+    ignore (Sys.command "python plot.py")
     
 
   let main =
     let path = Sys.argv.(1) in
     K_means.number_of_proc := !number_of_processes;
     let training, test = preprocess_data path in 
-    let means, training_accuracy, test_accuracy = exec training test in 
-    plot training_accuracy test_accuracy
+    let means, training_accuracy, test_accuracy, points_classified = exec training test in
+    plot training_accuracy test_accuracy;
+    Graphics.open_graph ""; 
+    show_points points_classified means;
+    ignore (Graphics.read_key ())
     
     
 end   
