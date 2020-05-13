@@ -68,3 +68,8 @@ The mandelbrot application can be run with arguments
 
 `make k_means`
 `./k_means.native 10` where 10 is the maximum number of processes used by the algorithm
+
+## Tic tac Toe:
+`make tictactoe`
+`./tictactoe` (default window length,width = (1000,620) and board length,width = (600,600))
+`./tictactoe -length_window x -width_window x -length x -width x` to change the default settings
