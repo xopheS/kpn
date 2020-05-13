@@ -19,13 +19,8 @@ To compile a particular application run:
   
 To clean `make clean` or `make realclean`
 
----
-author:
-- Christophe Saad
-title: Kahn
----
 
-# Mandelbrot
+## Mandelbrot
 
 ### Running mandelbrot
 
