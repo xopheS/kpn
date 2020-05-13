@@ -19,7 +19,7 @@ To compile a particular application run:
   
 To clean `make clean` or `make realclean`
 
-\section{Sequential}
+# Sequential
 The implentation of the sequencial part is manly taken from the paper  A poor man’s concurrency monad. We consider the process as a monad transformer which takes an action (which contains the actual computation) and link it a continuation. Its type is $$\texttt{type 'a process = ('a -> action) -> action}$$
 The type action is $$\texttt{type action  = Atom of (unit -> action) | Fork of action * action | Stop}$$
 We use \texttt{Fork} to instanciate new processes and \texttt{Atom} to represent a computation.\\
