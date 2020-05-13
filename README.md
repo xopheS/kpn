@@ -64,3 +64,7 @@ The mandelbrot application can be run with arguments
 
 -   `-xo -0.81153120295763 -yo 0.20142958206181 -z 0.0003`
 
+## K means:
+
+`make k_means`
+`./k_means.native 10` where 10 is the maximum number of processes used by the algorithm

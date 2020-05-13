@@ -256,7 +256,8 @@ module Iris_K_means (K: Kahn.S) = struct
     
 
   let main =
-    let path = Sys.argv.(1) in
+    let path = "iris.data" in
+    number_of_processes := int_of_string Sys.argv.(1); 
     K_means.number_of_proc := !number_of_processes;
     let training, test = preprocess_data path in 
     let means, training_accuracy, test_accuracy, points_classified = exec training test in
