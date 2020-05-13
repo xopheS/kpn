@@ -1,5 +1,4 @@
-(* This file is a quick implementation of the kahn network 
- * especially used for the example.ml *)
+(* This file is a quick implementation of the kahn network *)
 
 open Unix
 
@@ -43,8 +42,6 @@ struct
   let return value = (fun () -> value)
 
   let bind p f = (fun () -> f (p()) ()) 
-
-  let delay f x = bind (return ()) (fun () -> return (f x))
 
   let doco l = 
     (fun() -> 
