@@ -6,6 +6,7 @@ OCAMLBUILD=ocamlbuild -classic-display \
 
 TARGET=native
 
+
 tictactoe:
 	$(OCAMLBUILD) tictactoe.$(TARGET)
 
