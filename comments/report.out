@@ -10,11 +10,13 @@
 \BOOKMARK [2][-]{subsection.2.4}{Usage}{section.2}% 10
 \BOOKMARK [3][-]{subsubsection.2.4.1}{Running mandelbrot}{subsection.2.4}% 11
 \BOOKMARK [3][-]{subsubsection.2.4.2}{Some views}{subsection.2.4}% 12
-\BOOKMARK [1][-]{section.3}{Network}{}% 13
-\BOOKMARK [1][-]{section.4}{Tic Tac Toe game}{}% 14
-\BOOKMARK [2][-]{subsection.4.1}{Design of the communication }{section.4}% 15
-\BOOKMARK [3][-]{subsubsection.4.1.1}{Structure of messages}{subsection.4.1}% 16
-\BOOKMARK [3][-]{subsubsection.4.1.2}{Client \(host\)}{subsection.4.1}% 17
-\BOOKMARK [3][-]{subsubsection.4.1.3}{Client }{subsection.4.1}% 18
-\BOOKMARK [2][-]{subsection.4.2}{Usage}{section.4}% 19
-\BOOKMARK [3][-]{subsubsection.4.2.1}{Run}{subsection.4.2}% 20
+\BOOKMARK [1][-]{section.3}{K means}{}% 13
+\BOOKMARK [2][-]{subsection.3.1}{Usage}{section.3}% 14
+\BOOKMARK [1][-]{section.4}{Network}{}% 15
+\BOOKMARK [1][-]{section.5}{Tic Tac Toe game}{}% 16
+\BOOKMARK [2][-]{subsection.5.1}{Design of the communication }{section.5}% 17
+\BOOKMARK [3][-]{subsubsection.5.1.1}{Structure of messages}{subsection.5.1}% 18
+\BOOKMARK [3][-]{subsubsection.5.1.2}{Client \(host\)}{subsection.5.1}% 19
+\BOOKMARK [3][-]{subsubsection.5.1.3}{Client }{subsection.5.1}% 20
+\BOOKMARK [2][-]{subsection.5.2}{Usage}{section.5}% 21
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Run}{subsection.5.2}% 22

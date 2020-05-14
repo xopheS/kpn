@@ -81,7 +81,37 @@ The mandelbrot application can be ran with arguments (\texttt{arg default type})
 	\item \texttt{-xo -0.722 -yo 0.246 -z 0.019}
 	\item \texttt{-xo -0.235125 -yo 0.827215 -z 0.00004}
 	\item \texttt{-xo -0.81153120295763 -yo 0.20142958206181 -z 0.0003}
-\end{itemize}\section{Network}
+\end{itemize}
+section{Unix processes}
+The implentation of the Unix processes part is mainly based on the POSIX interface. Its type is $$\texttt{type 'a process = unit -> 'a}$$
+Computation is mostly based on the generation of heavy Unix processes through the $\texttt{fork}$ method from the Unix library.
+Communication channel is an unnamed pipe access through it's channel in/out which are file descriptors.
+
+\section{K means}
+
+"k-means clustering is a method of vector quantization, originally from signal processing, that aims to partition n observations into k clusters in which each observation belongs to the cluster with the nearest mean (cluster centers or cluster centroid), serving as a prototype of the cluster." 
+-Wikipedia
+
+K-means is an example of a bulk synchronous parallel algorithm (BSP). BSP algorithms are composed from a sequence of supersteps, each of which contains:
+\begin{itemize}
+    \item parallel computation, in which processes independently perform local computations and produce some values
+    \item communication, in which processes exchange data
+    \item barrier synchronisation, during which processes wait until every process finishes
+
+\end{itemize}
+
+
+
+
+Data-parallel programming models are typically a good fit for BSP algorithms, as each bulk synchronous phase can correspond to some number of data-parallel operations.
+
+
+\subsection{Usage}
+
+Running the algorithm requires only one argument which is the number of processes used: $$\texttt{make k\_means}$$ \\ $$\texttt{./k\_means.native 8}$$ 
+It will run automatically on the Iris data set.
+
+\section{Network}
 This implementation of Khan aims at distributing the processes in multiple computers in parallel. It makes use of the module \texttt{Unix} for creating a classic TCP socket communication with an IPv4 or IPv6 address; makes use of the module \texttt{Marshal} to convert the value into bytes in order to be sent/received in the channel. The \texttt{put value output} function makes use of the unix function \texttt{Unix.send } to send the particular value through the socket \texttt{ output} and the \texttt{get input} function makes use of \texttt{Unix.receiv} to receive a particular value. The \texttt{doco} function takes a list of processes and runs them in parallel through the \texttt{Thread} module.
 
 \section{Tic Tac Toe game}
