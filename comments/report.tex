@@ -33,7 +33,7 @@
 explain scheme 
 
 \subsection{Network}
-
+This implementation of Khan aims at distributing the processes in multiple computers in parallel. It makes use of the module \texttt{Unix} for creating a classic TCP socket communication with an IPv4 or IPv6 address; makes use of the module \texttt{Marshal} to convert the value into bytes in order to be sent/received in the channel. The \texttt{put value output} function makes use of the unix function \texttt{Unix.send } to send the particular value through the socket \texttt{ output} and the \texttt{get input} function makes use of \texttt{Unix.receiv} to receive a particular value. The \texttt{doco} function takes a list of processes and runs them in parallel through the \texttt{Thread} module.
 
 \subsection{Sequential}
 The implentation of the sequencial part is manly taken from the paper  A poor man’s concurrency monad. We consider the process as a monad transformer which takes an action (which contains the actual computation) and link it a continuation. Its type is $$\texttt{type 'a process = ('a -> action) -> action}$$
