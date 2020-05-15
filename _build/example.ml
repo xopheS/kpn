@@ -42,22 +42,20 @@ module Example (K : Kahn.S) = struct
       | Normal -> 
         (delay K.new_channel ()) >>=
         (fun (q_in, q_out) -> K.doco [ integers q_out ; output q_in ; ])
-      |  Server -> delay K.set_port p >>= fun () ->
-        (delay K.connect_by_name ip) >>=
-        (fun (q_in, q_out) ->  output q_in )
-      | Client -> 
+      | Server -> 
         (delay K.new_channel ()) >>=
         (fun (q_in, q_out) -> integers q_out)
+      | Client -> delay K.set_port p >>= fun () ->
+        (delay K.connect_by_name ip) >>=
+        (fun (q_in, q_out) ->  output q_in )
 end
 
 
 (* 
-module E = Example(Sequential.Seq) 
-module E = Example(Unix_pipes.Z)
-module E = Example(Network.N) 
-module E = Example(Network2window.N2W)
-*)
 module E = Example(Kahn.Th)
-
+module E = Example(Sequential.Seq) 
+module E = Example(Unix_pipes.Z) 
+*)
+module E = Example(Network2window.N2W)
 
 let () = E.K.run E.main

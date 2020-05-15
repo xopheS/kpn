@@ -12,7 +12,6 @@ module Seq : Kahn.S = struct
 	type 'a in_port = 'a Queue.t
 	type 'a out_port = 'a Queue.t
 	
-	
 	let new_channel () = 
 		let c = Queue.create () in
 		c , c
@@ -100,7 +99,11 @@ module Seq : Kahn.S = struct
 			| None -> assert false
 			| Some v -> v
 	
-	
+	(* These two functions were neccessary for network2window.ml  *)
+	(* Kahn implementation but are not useful for the Sequential one *)
+  let connect_by_name s = assert false 
+  let set_port i = assert false 
+	let close_channel i o = assert false
 
 end
 

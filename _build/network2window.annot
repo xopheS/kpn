@@ -1,0 +1,1998 @@
+"network2window.ml" 16 490 496 "network2window.ml" 16 490 500
+type(
+  int ref
+)
+ident(
+  def port "network2window.ml" 17 512 514 "network2window.ml" 98 3503 3506
+)
+"network2window.ml" 16 490 503 "network2window.ml" 16 490 506
+type(
+  int -> int ref
+)
+ident(
+  int_ref Stdlib.ref "stdlib.mli" 1162 44439 44439 "stdlib.mli" 1162 44439 44483
+)
+"network2window.ml" 16 490 507 "network2window.ml" 16 490 511
+type(
+  int
+)
+"network2window.ml" 16 490 503 "network2window.ml" 16 490 511
+type(
+  int ref
+)
+"network2window.ml" 17 512 518 "network2window.ml" 17 512 526
+type(
+  int -> unit
+)
+ident(
+  def set_port "network2window.ml" 19 590 592 "network2window.ml" 98 3503 3506
+)
+"network2window.ml" 17 512 527 "network2window.ml" 17 512 533
+type(
+  int
+)
+ident(
+  def portnb "network2window.ml" 17 512 536 "network2window.ml" 17 512 588
+)
+"network2window.ml" 17 512 536 "network2window.ml" 17 512 549
+type(
+  (int -> unit, Format.formatter, unit) format -> int -> unit
+)
+ident(
+  int_ref Stdlib.Format.printf "format.mli" 1175 45899 45899 "format.mli" 1175 45899 45946
+)
+"network2window.ml" 17 512 550 "network2window.ml" 17 512 563
+type(
+  (int -> unit, Format.formatter, unit) format
+)
+"network2window.ml" 17 512 565 "network2window.ml" 17 512 571
+ident(
+  int_ref portnb "network2window.ml" 17 512 527 "network2window.ml" 17 512 533
+)
+"network2window.ml" 17 512 564 "network2window.ml" 17 512 572
+type(
+  int
+)
+"network2window.ml" 17 512 536 "network2window.ml" 17 512 572
+type(
+  unit
+)
+"network2window.ml" 17 512 574 "network2window.ml" 17 512 578
+type(
+  int ref
+)
+ident(
+  int_ref port "network2window.ml" 16 490 496 "network2window.ml" 16 490 500
+)
+"network2window.ml" 17 512 579 "network2window.ml" 17 512 581
+type(
+  int ref -> int -> unit
+)
+ident(
+  int_ref Stdlib.( := ) "stdlib.mli" 1171 44751 44751 "stdlib.mli" 1171 44751 44804
+)
+"network2window.ml" 17 512 582 "network2window.ml" 17 512 588
+type(
+  int
+)
+ident(
+  int_ref portnb "network2window.ml" 17 512 527 "network2window.ml" 17 512 533
+)
+"network2window.ml" 17 512 574 "network2window.ml" 17 512 588
+type(
+  unit
+)
+"network2window.ml" 17 512 536 "network2window.ml" 17 512 588
+type(
+  unit
+)
+"network2window.ml" 19 590 596 "network2window.ml" 19 590 607
+type(
+  unit -> Unix.file_descr * Unix.file_descr
+)
+ident(
+  def new_channel "network2window.ml" 46 1672 1674 "network2window.ml" 98 3503 3506
+)
+"network2window.ml" 19 590 608 "network2window.ml" 19 590 610
+type(
+  unit
+)
+"network2window.ml" 20 614 622 "network2window.ml" 20 614 626
+type(
+  Unix.inet_addr
+)
+ident(
+  def host "network2window.ml" 21 652 656 "network2window.ml" 44 1643 1670
+)
+"network2window.ml" 20 614 629 "network2window.ml" 20 614 647
+type(
+  Unix.inet_addr
+)
+ident(
+  int_ref Unix.inet_addr_any "unix.mli" 1289 52655 52655 "unix.mli" 1289 52655 52684
+)
+"network2window.ml" 21 652 656 "network2window.ml" 21 652 669
+type(
+  (string -> int -> unit, Format.formatter, unit) format ->
+  string -> int -> unit
+)
+ident(
+  int_ref Stdlib.Format.printf "format.mli" 1175 45899 45899 "format.mli" 1175 45899 45946
+)
+"network2window.ml" 21 652 670 "network2window.ml" 21 652 707
+type(
+  (string -> int -> unit, Format.formatter, unit) format
+)
+"network2window.ml" 21 652 709 "network2window.ml" 21 652 733
+type(
+  Unix.inet_addr -> string
+)
+ident(
+  int_ref Unix.string_of_inet_addr "unix.mli" 1284 52443 52443 "unix.mli" 1284 52443 52488
+)
+"network2window.ml" 21 652 734 "network2window.ml" 21 652 738
+type(
+  Unix.inet_addr
+)
+ident(
+  int_ref host "network2window.ml" 20 614 622 "network2window.ml" 20 614 626
+)
+"network2window.ml" 21 652 708 "network2window.ml" 21 652 739
+type(
+  string
+)
+"network2window.ml" 21 652 740 "network2window.ml" 21 652 741
+type(
+  int ref -> int
+)
+ident(
+  int_ref Stdlib.( ! ) "stdlib.mli" 1165 44545 44545 "stdlib.mli" 1165 44545 44586
+)
+"network2window.ml" 21 652 741 "network2window.ml" 21 652 745
+type(
+  int ref
+)
+ident(
+  int_ref port "network2window.ml" 16 490 496 "network2window.ml" 16 490 500
+)
+"network2window.ml" 21 652 740 "network2window.ml" 21 652 745
+type(
+  int
+)
+"network2window.ml" 21 652 656 "network2window.ml" 21 652 745
+type(
+  unit
+)
+"network2window.ml" 22 747 755 "network2window.ml" 22 747 759
+type(
+  Unix.sockaddr
+)
+ident(
+  def addr "network2window.ml" 23 789 793 "network2window.ml" 44 1643 1670
+)
+"network2window.ml" 22 747 773 "network2window.ml" 22 747 777
+type(
+  Unix.inet_addr
+)
+ident(
+  int_ref host "network2window.ml" 20 614 622 "network2window.ml" 20 614 626
+)
+"network2window.ml" 22 747 779 "network2window.ml" 22 747 780
+type(
+  int ref -> int
+)
+ident(
+  int_ref Stdlib.( ! ) "stdlib.mli" 1165 44545 44545 "stdlib.mli" 1165 44545 44586
+)
+"network2window.ml" 22 747 780 "network2window.ml" 22 747 784
+type(
+  int ref
+)
+ident(
+  int_ref port "network2window.ml" 16 490 496 "network2window.ml" 16 490 500
+)
+"network2window.ml" 22 747 779 "network2window.ml" 22 747 784
+type(
+  int
+)
+"network2window.ml" 22 747 762 "network2window.ml" 22 747 785
+type(
+  Unix.sockaddr
+)
+"network2window.ml" 23 789 797 "network2window.ml" 23 789 807
+type(
+  Unix.file_descr
+)
+ident(
+  def out_socket "network2window.ml" 24 861 865 "network2window.ml" 44 1643 1670
+)
+"network2window.ml" 23 789 810 "network2window.ml" 23 789 816
+type(
+  ?cloexec:bool ->
+  Unix.socket_domain -> Unix.socket_type -> int -> Unix.file_descr
+)
+ident(
+  int_ref Unix.socket "unix.mli" 1334 54400 54400 "unix.mli" 1335 54413 54483
+)
+"network2window.ml" 23 789 818 "network2window.ml" 23 789 836
+type(
+  Unix.sockaddr -> Unix.socket_domain
+)
+ident(
+  int_ref Unix.domain_of_sockaddr "unix.mli" 1342 54747 54747 "unix.mli" 1342 54747 54796
+)
+"network2window.ml" 23 789 837 "network2window.ml" 23 789 841
+type(
+  Unix.sockaddr
+)
+ident(
+  int_ref addr "network2window.ml" 22 747 755 "network2window.ml" 22 747 759
+)
+"network2window.ml" 23 789 817 "network2window.ml" 23 789 842
+type(
+  Unix.socket_domain
+)
+"network2window.ml" 23 789 843 "network2window.ml" 23 789 854
+type(
+  Unix.socket_type
+)
+"network2window.ml" 23 789 855 "network2window.ml" 23 789 856
+type(
+  int
+)
+"network2window.ml" 23 789 810 "network2window.ml" 23 789 856
+type(
+  Unix.file_descr
+)
+"network2window.ml" 24 861 869 "network2window.ml" 24 861 871
+type(
+  unit
+)
+"network2window.ml" 24 861 874 "network2window.ml" 24 861 889
+type(
+  Unix.file_descr -> Unix.socket_bool_option -> bool -> unit
+)
+ident(
+  int_ref Unix.setsockopt "unix.mli" 1471 59955 59955 "unix.mli" 1471 59955 60020
+)
+"network2window.ml" 24 861 890 "network2window.ml" 24 861 900
+type(
+  Unix.file_descr
+)
+ident(
+  int_ref out_socket "network2window.ml" 23 789 797 "network2window.ml" 23 789 807
+)
+"network2window.ml" 24 861 901 "network2window.ml" 24 861 918
+type(
+  Unix.socket_bool_option
+)
+"network2window.ml" 24 861 919 "network2window.ml" 24 861 923
+type(
+  bool
+)
+"network2window.ml" 24 861 874 "network2window.ml" 24 861 923
+type(
+  unit
+)
+"network2window.ml" 26 928 932 "network2window.ml" 26 928 936
+type(
+  Unix.file_descr -> Unix.sockaddr -> unit
+)
+ident(
+  int_ref Unix.bind "unix.mli" 1359 55495 55495 "unix.mli" 1359 55495 55536
+)
+"network2window.ml" 26 928 937 "network2window.ml" 26 928 947
+type(
+  Unix.file_descr
+)
+ident(
+  int_ref out_socket "network2window.ml" 23 789 797 "network2window.ml" 23 789 807
+)
+"network2window.ml" 26 928 948 "network2window.ml" 26 928 952
+type(
+  Unix.sockaddr
+)
+ident(
+  int_ref addr "network2window.ml" 22 747 755 "network2window.ml" 22 747 759
+)
+"network2window.ml" 26 928 932 "network2window.ml" 26 928 952
+type(
+  unit
+)
+"network2window.ml" 27 955 959 "network2window.ml" 27 955 972
+type(
+  (unit, Format.formatter, unit) format -> unit
+)
+ident(
+  int_ref Stdlib.Format.printf "format.mli" 1175 45899 45899 "format.mli" 1175 45899 45946
+)
+"network2window.ml" 27 955 973 "network2window.ml" 27 955 1003
+type(
+  (unit, Format.formatter, unit) format
+)
+"network2window.ml" 27 955 959 "network2window.ml" 27 955 1003
+type(
+  unit
+)
+"network2window.ml" 28 1005 1009 "network2window.ml" 28 1005 1015
+type(
+  Unix.file_descr -> int -> unit
+)
+ident(
+  int_ref Unix.listen "unix.mli" 1365 55659 55659 "unix.mli" 1365 55659 55697
+)
+"network2window.ml" 28 1005 1016 "network2window.ml" 28 1005 1026
+type(
+  Unix.file_descr
+)
+ident(
+  int_ref out_socket "network2window.ml" 23 789 797 "network2window.ml" 23 789 807
+)
+"network2window.ml" 28 1005 1027 "network2window.ml" 28 1005 1028
+type(
+  int
+)
+"network2window.ml" 28 1005 1009 "network2window.ml" 28 1005 1028
+type(
+  unit
+)
+"network2window.ml" 30 1032 1041 "network2window.ml" 30 1032 1051
+type(
+  Unix.file_descr
+)
+ident(
+  def out_socket "network2window.ml" 31 1083 1087 "network2window.ml" 44 1643 1670
+)
+"network2window.ml" 30 1032 1053 "network2window.ml" 30 1032 1058
+type(
+  Unix.sockaddr
+)
+ident(
+  def addr2 "network2window.ml" 31 1083 1087 "network2window.ml" 44 1643 1670
+)
+"network2window.ml" 30 1032 1040 "network2window.ml" 30 1032 1059
+type(
+  Unix.file_descr * Unix.sockaddr
+)
+"network2window.ml" 30 1032 1062 "network2window.ml" 30 1032 1068
+type(
+  ?cloexec:bool -> Unix.file_descr -> Unix.file_descr * Unix.sockaddr
+)
+ident(
+  int_ref Unix.accept "unix.mli" 1352 55167 55167 "unix.mli" 1352 55167 55232
+)
+"network2window.ml" 30 1032 1069 "network2window.ml" 30 1032 1079
+type(
+  Unix.file_descr
+)
+ident(
+  int_ref out_socket "network2window.ml" 23 789 797 "network2window.ml" 23 789 807
+)
+"network2window.ml" 30 1032 1062 "network2window.ml" 30 1032 1079
+type(
+  Unix.file_descr * Unix.sockaddr
+)
+"network2window.ml" 31 1083 1091 "network2window.ml" 31 1083 1102
+type(
+  Unix.inet_addr
+)
+ident(
+  def client_name "network2window.ml" 35 1189 1193 "network2window.ml" 44 1643 1670
+)
+"network2window.ml" 31 1083 1111 "network2window.ml" 31 1083 1116
+type(
+  Unix.sockaddr
+)
+ident(
+  int_ref addr2 "network2window.ml" 30 1032 1053 "network2window.ml" 30 1032 1058
+)
+"network2window.ml" 32 1123 1142 "network2window.ml" 32 1123 1143
+type(
+  Unix.inet_addr
+)
+ident(
+  def a "network2window.ml" 32 1123 1150 "network2window.ml" 32 1123 1151
+)
+"network2window.ml" 32 1123 1144 "network2window.ml" 32 1123 1145
+type(
+  int
+)
+ident(
+  def p "network2window.ml" 32 1123 1150 "network2window.ml" 32 1123 1151
+)
+"network2window.ml" 32 1123 1131 "network2window.ml" 32 1123 1146
+type(
+  Unix.sockaddr
+)
+"network2window.ml" 32 1123 1150 "network2window.ml" 32 1123 1151
+type(
+  Unix.inet_addr
+)
+ident(
+  int_ref a "network2window.ml" 32 1123 1142 "network2window.ml" 32 1123 1143
+)
+"network2window.ml" 33 1152 1160 "network2window.ml" 33 1152 1161
+type(
+  Unix.sockaddr
+)
+"network2window.ml" 33 1152 1165 "network2window.ml" 33 1152 1170
+type(
+  exn -> Unix.inet_addr
+)
+ident(
+  int_ref Stdlib.raise "stdlib.mli" 30 1602 1602 "stdlib.mli" 30 1602 1639
+)
+"network2window.ml" 33 1152 1171 "network2window.ml" 33 1152 1181
+type(
+  exn
+)
+"network2window.ml" 33 1152 1165 "network2window.ml" 33 1152 1181
+type(
+  Unix.inet_addr
+)
+"network2window.ml" 31 1083 1105 "network2window.ml" 33 1152 1181
+type(
+  Unix.inet_addr
+)
+"network2window.ml" 35 1189 1193 "network2window.ml" 35 1189 1206
+type(
+  (string -> int -> unit, Format.formatter, unit) format ->
+  string -> int -> unit
+)
+ident(
+  int_ref Stdlib.Format.printf "format.mli" 1175 45899 45899 "format.mli" 1175 45899 45946
+)
+"network2window.ml" 35 1189 1207 "network2window.ml" 35 1189 1246
+type(
+  (string -> int -> unit, Format.formatter, unit) format
+)
+"network2window.ml" 35 1189 1248 "network2window.ml" 35 1189 1272
+type(
+  Unix.inet_addr -> string
+)
+ident(
+  int_ref Unix.string_of_inet_addr "unix.mli" 1284 52443 52443 "unix.mli" 1284 52443 52488
+)
+"network2window.ml" 35 1189 1273 "network2window.ml" 35 1189 1284
+type(
+  Unix.inet_addr
+)
+ident(
+  int_ref client_name "network2window.ml" 31 1083 1091 "network2window.ml" 31 1083 1102
+)
+"network2window.ml" 35 1189 1247 "network2window.ml" 35 1189 1285
+type(
+  string
+)
+"network2window.ml" 35 1189 1286 "network2window.ml" 35 1189 1287
+type(
+  int ref -> int
+)
+ident(
+  int_ref Stdlib.( ! ) "stdlib.mli" 1165 44545 44545 "stdlib.mli" 1165 44545 44586
+)
+"network2window.ml" 35 1189 1287 "network2window.ml" 35 1189 1291
+type(
+  int ref
+)
+ident(
+  int_ref port "network2window.ml" 16 490 496 "network2window.ml" 16 490 500
+)
+"network2window.ml" 35 1189 1286 "network2window.ml" 35 1189 1291
+type(
+  int
+)
+"network2window.ml" 35 1189 1193 "network2window.ml" 35 1189 1291
+type(
+  unit
+)
+"network2window.ml" 36 1293 1297 "network2window.ml" 36 1293 1301
+type(
+  int ref
+)
+ident(
+  int_ref port "network2window.ml" 16 490 496 "network2window.ml" 16 490 500
+)
+"network2window.ml" 36 1293 1302 "network2window.ml" 36 1293 1304
+type(
+  int ref -> int -> unit
+)
+ident(
+  int_ref Stdlib.( := ) "stdlib.mli" 1171 44751 44751 "stdlib.mli" 1171 44751 44804
+)
+"network2window.ml" 36 1293 1305 "network2window.ml" 36 1293 1306
+type(
+  int ref -> int
+)
+ident(
+  int_ref Stdlib.( ! ) "stdlib.mli" 1165 44545 44545 "stdlib.mli" 1165 44545 44586
+)
+"network2window.ml" 36 1293 1306 "network2window.ml" 36 1293 1310
+type(
+  int ref
+)
+ident(
+  int_ref port "network2window.ml" 16 490 496 "network2window.ml" 16 490 500
+)
+"network2window.ml" 36 1293 1305 "network2window.ml" 36 1293 1310
+type(
+  int
+)
+"network2window.ml" 36 1293 1311 "network2window.ml" 36 1293 1312
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( + ) "stdlib.mli" 341 13435 13435 "stdlib.mli" 341 13435 13481
+)
+"network2window.ml" 36 1293 1313 "network2window.ml" 36 1293 1314
+type(
+  int
+)
+"network2window.ml" 36 1293 1305 "network2window.ml" 36 1293 1314
+type(
+  int
+)
+"network2window.ml" 36 1293 1297 "network2window.ml" 36 1293 1314
+type(
+  unit
+)
+"network2window.ml" 38 1343 1351 "network2window.ml" 38 1343 1362
+type(
+  Unix.sockaddr
+)
+ident(
+  def client_addr "network2window.ml" 40 1456 1460 "network2window.ml" 44 1643 1670
+)
+"network2window.ml" 38 1343 1381 "network2window.ml" 38 1343 1392
+type(
+  Unix.inet_addr
+)
+ident(
+  int_ref client_name "network2window.ml" 31 1083 1091 "network2window.ml" 31 1083 1102
+)
+"network2window.ml" 38 1343 1394 "network2window.ml" 38 1343 1395
+type(
+  int ref -> int
+)
+ident(
+  int_ref Stdlib.( ! ) "stdlib.mli" 1165 44545 44545 "stdlib.mli" 1165 44545 44586
+)
+"network2window.ml" 38 1343 1395 "network2window.ml" 38 1343 1399
+type(
+  int ref
+)
+ident(
+  int_ref port "network2window.ml" 16 490 496 "network2window.ml" 16 490 500
+)
+"network2window.ml" 38 1343 1394 "network2window.ml" 38 1343 1399
+type(
+  int
+)
+"network2window.ml" 38 1343 1365 "network2window.ml" 38 1343 1400
+type(
+  Unix.sockaddr
+)
+"network2window.ml" 40 1456 1464 "network2window.ml" 40 1456 1473
+type(
+  Unix.file_descr
+)
+ident(
+  def in_socket "network2window.ml" 41 1534 1538 "network2window.ml" 44 1643 1670
+)
+"network2window.ml" 40 1456 1476 "network2window.ml" 40 1456 1482
+type(
+  ?cloexec:bool ->
+  Unix.socket_domain -> Unix.socket_type -> int -> Unix.file_descr
+)
+ident(
+  int_ref Unix.socket "unix.mli" 1334 54400 54400 "unix.mli" 1335 54413 54483
+)
+"network2window.ml" 40 1456 1484 "network2window.ml" 40 1456 1502
+type(
+  Unix.sockaddr -> Unix.socket_domain
+)
+ident(
+  int_ref Unix.domain_of_sockaddr "unix.mli" 1342 54747 54747 "unix.mli" 1342 54747 54796
+)
+"network2window.ml" 40 1456 1503 "network2window.ml" 40 1456 1514
+type(
+  Unix.sockaddr
+)
+ident(
+  int_ref client_addr "network2window.ml" 38 1343 1351 "network2window.ml" 38 1343 1362
+)
+"network2window.ml" 40 1456 1483 "network2window.ml" 40 1456 1515
+type(
+  Unix.socket_domain
+)
+"network2window.ml" 40 1456 1516 "network2window.ml" 40 1456 1527
+type(
+  Unix.socket_type
+)
+"network2window.ml" 40 1456 1528 "network2window.ml" 40 1456 1529
+type(
+  int
+)
+"network2window.ml" 40 1456 1476 "network2window.ml" 40 1456 1529
+type(
+  Unix.file_descr
+)
+"network2window.ml" 41 1534 1538 "network2window.ml" 41 1534 1545
+type(
+  Unix.file_descr -> Unix.sockaddr -> unit
+)
+ident(
+  int_ref Unix.connect "unix.mli" 1362 55574 55574 "unix.mli" 1362 55574 55618
+)
+"network2window.ml" 41 1534 1546 "network2window.ml" 41 1534 1555
+type(
+  Unix.file_descr
+)
+ident(
+  int_ref in_socket "network2window.ml" 40 1456 1464 "network2window.ml" 40 1456 1473
+)
+"network2window.ml" 41 1534 1556 "network2window.ml" 41 1534 1567
+type(
+  Unix.sockaddr
+)
+ident(
+  int_ref client_addr "network2window.ml" 38 1343 1351 "network2window.ml" 38 1343 1362
+)
+"network2window.ml" 41 1534 1538 "network2window.ml" 41 1534 1567
+type(
+  unit
+)
+"network2window.ml" 42 1569 1573 "network2window.ml" 42 1569 1586
+type(
+  (unit, Format.formatter, unit) format -> unit
+)
+ident(
+  int_ref Stdlib.Format.printf "format.mli" 1175 45899 45899 "format.mli" 1175 45899 45946
+)
+"network2window.ml" 42 1569 1587 "network2window.ml" 42 1569 1615
+type(
+  (unit, Format.formatter, unit) format
+)
+"network2window.ml" 42 1569 1573 "network2window.ml" 42 1569 1615
+type(
+  unit
+)
+"network2window.ml" 43 1617 1621 "network2window.ml" 43 1617 1634
+type(
+  (unit, Format.formatter, unit) format -> unit
+)
+ident(
+  int_ref Stdlib.Format.printf "format.mli" 1175 45899 45899 "format.mli" 1175 45899 45946
+)
+"network2window.ml" 43 1617 1635 "network2window.ml" 43 1617 1641
+type(
+  (unit, Format.formatter, unit) format
+)
+"network2window.ml" 43 1617 1621 "network2window.ml" 43 1617 1641
+type(
+  unit
+)
+"network2window.ml" 44 1643 1648 "network2window.ml" 44 1643 1657
+type(
+  Unix.file_descr
+)
+ident(
+  int_ref in_socket "network2window.ml" 40 1456 1464 "network2window.ml" 40 1456 1473
+)
+"network2window.ml" 44 1643 1659 "network2window.ml" 44 1643 1669
+type(
+  Unix.file_descr
+)
+ident(
+  int_ref out_socket "network2window.ml" 30 1032 1041 "network2window.ml" 30 1032 1051
+)
+"network2window.ml" 44 1643 1647 "network2window.ml" 44 1643 1670
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 43 1617 1621 "network2window.ml" 44 1643 1670
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 42 1569 1573 "network2window.ml" 44 1643 1670
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 41 1534 1538 "network2window.ml" 44 1643 1670
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 40 1456 1460 "network2window.ml" 44 1643 1670
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 38 1343 1347 "network2window.ml" 44 1643 1670
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 36 1293 1297 "network2window.ml" 44 1643 1670
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 35 1189 1193 "network2window.ml" 44 1643 1670
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 31 1083 1087 "network2window.ml" 44 1643 1670
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 30 1032 1036 "network2window.ml" 44 1643 1670
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 28 1005 1009 "network2window.ml" 44 1643 1670
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 27 955 959 "network2window.ml" 44 1643 1670
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 26 928 932 "network2window.ml" 44 1643 1670
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 24 861 865 "network2window.ml" 44 1643 1670
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 23 789 793 "network2window.ml" 44 1643 1670
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 22 747 751 "network2window.ml" 44 1643 1670
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 21 652 656 "network2window.ml" 44 1643 1670
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 20 614 618 "network2window.ml" 44 1643 1670
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 46 1672 1678 "network2window.ml" 46 1672 1693
+type(
+  string -> Unix.file_descr * Unix.file_descr
+)
+ident(
+  def connect_by_name "network2window.ml" 66 2507 2509 "network2window.ml" 98 3503 3506
+)
+"network2window.ml" 46 1672 1694 "network2window.ml" 46 1672 1701
+type(
+  string
+)
+ident(
+  def host_ip "network2window.ml" 47 1704 1708 "network2window.ml" 64 2477 2504
+)
+"network2window.ml" 47 1704 1708 "network2window.ml" 47 1704 1721
+type(
+  (string -> int -> unit, Format.formatter, unit) format ->
+  string -> int -> unit
+)
+ident(
+  int_ref Stdlib.Format.printf "format.mli" 1175 45899 45899 "format.mli" 1175 45899 45946
+)
+"network2window.ml" 47 1704 1722 "network2window.ml" 47 1704 1759
+type(
+  (string -> int -> unit, Format.formatter, unit) format
+)
+"network2window.ml" 47 1704 1761 "network2window.ml" 47 1704 1768
+ident(
+  int_ref host_ip "network2window.ml" 46 1672 1694 "network2window.ml" 46 1672 1701
+)
+"network2window.ml" 47 1704 1760 "network2window.ml" 47 1704 1769
+type(
+  string
+)
+"network2window.ml" 47 1704 1770 "network2window.ml" 47 1704 1771
+type(
+  int ref -> int
+)
+ident(
+  int_ref Stdlib.( ! ) "stdlib.mli" 1165 44545 44545 "stdlib.mli" 1165 44545 44586
+)
+"network2window.ml" 47 1704 1771 "network2window.ml" 47 1704 1775
+type(
+  int ref
+)
+ident(
+  int_ref port "network2window.ml" 16 490 496 "network2window.ml" 16 490 500
+)
+"network2window.ml" 47 1704 1770 "network2window.ml" 47 1704 1775
+type(
+  int
+)
+"network2window.ml" 47 1704 1708 "network2window.ml" 47 1704 1775
+type(
+  unit
+)
+"network2window.ml" 48 1777 1785 "network2window.ml" 48 1777 1794
+type(
+  Unix.inet_addr
+)
+ident(
+  def localhost "network2window.ml" 49 1819 1823 "network2window.ml" 64 2477 2504
+)
+"network2window.ml" 48 1777 1797 "network2window.ml" 48 1777 1815
+type(
+  Unix.inet_addr
+)
+ident(
+  int_ref Unix.inet_addr_any "unix.mli" 1289 52655 52655 "unix.mli" 1289 52655 52684
+)
+"network2window.ml" 49 1819 1827 "network2window.ml" 49 1819 1831
+type(
+  Unix.sockaddr
+)
+ident(
+  def addr "network2window.ml" 50 1866 1870 "network2window.ml" 64 2477 2504
+)
+"network2window.ml" 49 1819 1845 "network2window.ml" 49 1819 1854
+type(
+  Unix.inet_addr
+)
+ident(
+  int_ref localhost "network2window.ml" 48 1777 1785 "network2window.ml" 48 1777 1794
+)
+"network2window.ml" 49 1819 1856 "network2window.ml" 49 1819 1857
+type(
+  int ref -> int
+)
+ident(
+  int_ref Stdlib.( ! ) "stdlib.mli" 1165 44545 44545 "stdlib.mli" 1165 44545 44586
+)
+"network2window.ml" 49 1819 1857 "network2window.ml" 49 1819 1861
+type(
+  int ref
+)
+ident(
+  int_ref port "network2window.ml" 16 490 496 "network2window.ml" 16 490 500
+)
+"network2window.ml" 49 1819 1856 "network2window.ml" 49 1819 1861
+type(
+  int
+)
+"network2window.ml" 49 1819 1834 "network2window.ml" 49 1819 1862
+type(
+  Unix.sockaddr
+)
+"network2window.ml" 50 1866 1874 "network2window.ml" 50 1866 1884
+type(
+  Unix.file_descr
+)
+ident(
+  def out_socket "network2window.ml" 51 1938 1942 "network2window.ml" 64 2477 2504
+)
+"network2window.ml" 50 1866 1887 "network2window.ml" 50 1866 1893
+type(
+  ?cloexec:bool ->
+  Unix.socket_domain -> Unix.socket_type -> int -> Unix.file_descr
+)
+ident(
+  int_ref Unix.socket "unix.mli" 1334 54400 54400 "unix.mli" 1335 54413 54483
+)
+"network2window.ml" 50 1866 1895 "network2window.ml" 50 1866 1913
+type(
+  Unix.sockaddr -> Unix.socket_domain
+)
+ident(
+  int_ref Unix.domain_of_sockaddr "unix.mli" 1342 54747 54747 "unix.mli" 1342 54747 54796
+)
+"network2window.ml" 50 1866 1914 "network2window.ml" 50 1866 1918
+type(
+  Unix.sockaddr
+)
+ident(
+  int_ref addr "network2window.ml" 49 1819 1827 "network2window.ml" 49 1819 1831
+)
+"network2window.ml" 50 1866 1894 "network2window.ml" 50 1866 1919
+type(
+  Unix.socket_domain
+)
+"network2window.ml" 50 1866 1920 "network2window.ml" 50 1866 1931
+type(
+  Unix.socket_type
+)
+"network2window.ml" 50 1866 1932 "network2window.ml" 50 1866 1933
+type(
+  int
+)
+"network2window.ml" 50 1866 1887 "network2window.ml" 50 1866 1933
+type(
+  Unix.file_descr
+)
+"network2window.ml" 51 1938 1946 "network2window.ml" 51 1938 1955
+type(
+  Unix.file_descr
+)
+ident(
+  def in_socket "network2window.ml" 53 2010 2014 "network2window.ml" 64 2477 2504
+)
+"network2window.ml" 51 1938 1958 "network2window.ml" 51 1938 1964
+type(
+  ?cloexec:bool ->
+  Unix.socket_domain -> Unix.socket_type -> int -> Unix.file_descr
+)
+ident(
+  int_ref Unix.socket "unix.mli" 1334 54400 54400 "unix.mli" 1335 54413 54483
+)
+"network2window.ml" 51 1938 1966 "network2window.ml" 51 1938 1984
+type(
+  Unix.sockaddr -> Unix.socket_domain
+)
+ident(
+  int_ref Unix.domain_of_sockaddr "unix.mli" 1342 54747 54747 "unix.mli" 1342 54747 54796
+)
+"network2window.ml" 51 1938 1985 "network2window.ml" 51 1938 1989
+type(
+  Unix.sockaddr
+)
+ident(
+  int_ref addr "network2window.ml" 49 1819 1827 "network2window.ml" 49 1819 1831
+)
+"network2window.ml" 51 1938 1965 "network2window.ml" 51 1938 1990
+type(
+  Unix.socket_domain
+)
+"network2window.ml" 51 1938 1991 "network2window.ml" 51 1938 2002
+type(
+  Unix.socket_type
+)
+"network2window.ml" 51 1938 2003 "network2window.ml" 51 1938 2004
+type(
+  int
+)
+"network2window.ml" 51 1938 1958 "network2window.ml" 51 1938 2004
+type(
+  Unix.file_descr
+)
+"network2window.ml" 53 2010 2014 "network2window.ml" 53 2010 2018
+type(
+  Unix.file_descr -> Unix.sockaddr -> unit
+)
+ident(
+  int_ref Unix.bind "unix.mli" 1359 55495 55495 "unix.mli" 1359 55495 55536
+)
+"network2window.ml" 53 2010 2019 "network2window.ml" 53 2010 2029
+type(
+  Unix.file_descr
+)
+ident(
+  int_ref out_socket "network2window.ml" 50 1866 1874 "network2window.ml" 50 1866 1884
+)
+"network2window.ml" 53 2010 2030 "network2window.ml" 53 2010 2034
+type(
+  Unix.sockaddr
+)
+ident(
+  int_ref addr "network2window.ml" 49 1819 1827 "network2window.ml" 49 1819 1831
+)
+"network2window.ml" 53 2010 2014 "network2window.ml" 53 2010 2034
+type(
+  unit
+)
+"network2window.ml" 54 2036 2040 "network2window.ml" 54 2036 2053
+type(
+  (unit, Format.formatter, unit) format -> unit
+)
+ident(
+  int_ref Stdlib.Format.printf "format.mli" 1175 45899 45899 "format.mli" 1175 45899 45946
+)
+"network2window.ml" 54 2036 2054 "network2window.ml" 54 2036 2080
+type(
+  (unit, Format.formatter, unit) format
+)
+"network2window.ml" 54 2036 2040 "network2window.ml" 54 2036 2080
+type(
+  unit
+)
+"network2window.ml" 55 2082 2086 "network2window.ml" 55 2082 2092
+type(
+  Unix.file_descr -> int -> unit
+)
+ident(
+  int_ref Unix.listen "unix.mli" 1365 55659 55659 "unix.mli" 1365 55659 55697
+)
+"network2window.ml" 55 2082 2093 "network2window.ml" 55 2082 2103
+type(
+  Unix.file_descr
+)
+ident(
+  int_ref out_socket "network2window.ml" 50 1866 1874 "network2window.ml" 50 1866 1884
+)
+"network2window.ml" 55 2082 2104 "network2window.ml" 55 2082 2105
+type(
+  int
+)
+"network2window.ml" 55 2082 2086 "network2window.ml" 55 2082 2105
+type(
+  unit
+)
+"network2window.ml" 57 2108 2116 "network2window.ml" 57 2108 2120
+type(
+  Unix.inet_addr
+)
+ident(
+  def host "network2window.ml" 59 2241 2245 "network2window.ml" 64 2477 2504
+)
+"network2window.ml" 57 2108 2123 "network2window.ml" 57 2108 2147
+type(
+  string -> Unix.inet_addr
+)
+ident(
+  int_ref Unix.inet_addr_of_string "unix.mli" 1276 52035 52035 "unix.mli" 1276 52035 52080
+)
+"network2window.ml" 57 2108 2148 "network2window.ml" 57 2108 2155
+type(
+  string
+)
+ident(
+  int_ref host_ip "network2window.ml" 46 1672 1694 "network2window.ml" 46 1672 1701
+)
+"network2window.ml" 57 2108 2123 "network2window.ml" 57 2108 2155
+type(
+  Unix.inet_addr
+)
+"network2window.ml" 59 2241 2249 "network2window.ml" 59 2241 2258
+type(
+  Unix.sockaddr
+)
+ident(
+  def host_addr "network2window.ml" 60 2323 2327 "network2window.ml" 64 2477 2504
+)
+"network2window.ml" 59 2241 2277 "network2window.ml" 59 2241 2281
+type(
+  Unix.inet_addr
+)
+ident(
+  int_ref host "network2window.ml" 57 2108 2116 "network2window.ml" 57 2108 2120
+)
+"network2window.ml" 59 2241 2283 "network2window.ml" 59 2241 2284
+type(
+  int ref -> int
+)
+ident(
+  int_ref Stdlib.( ! ) "stdlib.mli" 1165 44545 44545 "stdlib.mli" 1165 44545 44586
+)
+"network2window.ml" 59 2241 2284 "network2window.ml" 59 2241 2288
+type(
+  int ref
+)
+ident(
+  int_ref port "network2window.ml" 16 490 496 "network2window.ml" 16 490 500
+)
+"network2window.ml" 59 2241 2283 "network2window.ml" 59 2241 2288
+type(
+  int
+)
+"network2window.ml" 59 2241 2289 "network2window.ml" 59 2241 2290
+type(
+  int -> int -> int
+)
+ident(
+  int_ref Stdlib.( - ) "stdlib.mli" 346 13584 13584 "stdlib.mli" 346 13584 13630
+)
+"network2window.ml" 59 2241 2291 "network2window.ml" 59 2241 2292
+type(
+  int
+)
+"network2window.ml" 59 2241 2283 "network2window.ml" 59 2241 2292
+type(
+  int
+)
+"network2window.ml" 59 2241 2261 "network2window.ml" 59 2241 2293
+type(
+  Unix.sockaddr
+)
+"network2window.ml" 60 2323 2327 "network2window.ml" 60 2323 2334
+type(
+  Unix.file_descr -> Unix.sockaddr -> unit
+)
+ident(
+  int_ref Unix.connect "unix.mli" 1362 55574 55574 "unix.mli" 1362 55574 55618
+)
+"network2window.ml" 60 2323 2335 "network2window.ml" 60 2323 2344
+type(
+  Unix.file_descr
+)
+ident(
+  int_ref in_socket "network2window.ml" 51 1938 1946 "network2window.ml" 51 1938 1955
+)
+"network2window.ml" 60 2323 2345 "network2window.ml" 60 2323 2354
+type(
+  Unix.sockaddr
+)
+ident(
+  int_ref host_addr "network2window.ml" 59 2241 2249 "network2window.ml" 59 2241 2258
+)
+"network2window.ml" 60 2323 2327 "network2window.ml" 60 2323 2354
+type(
+  unit
+)
+"network2window.ml" 61 2356 2365 "network2window.ml" 61 2356 2375
+type(
+  Unix.file_descr
+)
+ident(
+  def out_socket "network2window.ml" 62 2403 2407 "network2window.ml" 64 2477 2504
+)
+"network2window.ml" 61 2356 2377 "network2window.ml" 61 2356 2378
+type(
+  Unix.sockaddr
+)
+"network2window.ml" 61 2356 2364 "network2window.ml" 61 2356 2379
+type(
+  Unix.file_descr * Unix.sockaddr
+)
+"network2window.ml" 61 2356 2382 "network2window.ml" 61 2356 2388
+type(
+  ?cloexec:bool -> Unix.file_descr -> Unix.file_descr * Unix.sockaddr
+)
+ident(
+  int_ref Unix.accept "unix.mli" 1352 55167 55167 "unix.mli" 1352 55167 55232
+)
+"network2window.ml" 61 2356 2389 "network2window.ml" 61 2356 2399
+type(
+  Unix.file_descr
+)
+ident(
+  int_ref out_socket "network2window.ml" 50 1866 1874 "network2window.ml" 50 1866 1884
+)
+"network2window.ml" 61 2356 2382 "network2window.ml" 61 2356 2399
+type(
+  Unix.file_descr * Unix.sockaddr
+)
+"network2window.ml" 62 2403 2407 "network2window.ml" 62 2403 2420
+type(
+  (unit, Format.formatter, unit) format -> unit
+)
+ident(
+  int_ref Stdlib.Format.printf "format.mli" 1175 45899 45899 "format.mli" 1175 45899 45946
+)
+"network2window.ml" 62 2403 2421 "network2window.ml" 62 2403 2449
+type(
+  (unit, Format.formatter, unit) format
+)
+"network2window.ml" 62 2403 2407 "network2window.ml" 62 2403 2449
+type(
+  unit
+)
+"network2window.ml" 63 2451 2455 "network2window.ml" 63 2451 2468
+type(
+  (unit, Format.formatter, unit) format -> unit
+)
+ident(
+  int_ref Stdlib.Format.printf "format.mli" 1175 45899 45899 "format.mli" 1175 45899 45946
+)
+"network2window.ml" 63 2451 2469 "network2window.ml" 63 2451 2475
+type(
+  (unit, Format.formatter, unit) format
+)
+"network2window.ml" 63 2451 2455 "network2window.ml" 63 2451 2475
+type(
+  unit
+)
+"network2window.ml" 64 2477 2482 "network2window.ml" 64 2477 2491
+type(
+  Unix.file_descr
+)
+ident(
+  int_ref in_socket "network2window.ml" 51 1938 1946 "network2window.ml" 51 1938 1955
+)
+"network2window.ml" 64 2477 2493 "network2window.ml" 64 2477 2503
+type(
+  Unix.file_descr
+)
+ident(
+  int_ref out_socket "network2window.ml" 61 2356 2365 "network2window.ml" 61 2356 2375
+)
+"network2window.ml" 64 2477 2481 "network2window.ml" 64 2477 2504
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 63 2451 2455 "network2window.ml" 64 2477 2504
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 62 2403 2407 "network2window.ml" 64 2477 2504
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 61 2356 2360 "network2window.ml" 64 2477 2504
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 60 2323 2327 "network2window.ml" 64 2477 2504
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 59 2241 2245 "network2window.ml" 64 2477 2504
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 57 2108 2112 "network2window.ml" 64 2477 2504
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 55 2082 2086 "network2window.ml" 64 2477 2504
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 54 2036 2040 "network2window.ml" 64 2477 2504
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 53 2010 2014 "network2window.ml" 64 2477 2504
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 51 1938 1942 "network2window.ml" 64 2477 2504
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 50 1866 1870 "network2window.ml" 64 2477 2504
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 49 1819 1823 "network2window.ml" 64 2477 2504
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 48 1777 1781 "network2window.ml" 64 2477 2504
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 47 1704 1708 "network2window.ml" 64 2477 2504
+type(
+  Unix.file_descr * Unix.file_descr
+)
+"network2window.ml" 66 2507 2513 "network2window.ml" 66 2507 2526
+type(
+  Unix.file_descr -> Unix.file_descr -> unit
+)
+ident(
+  def close_channel "network2window.ml" 70 2618 2620 "network2window.ml" 98 3503 3506
+)
+"network2window.ml" 66 2507 2527 "network2window.ml" 66 2507 2534
+type(
+  Unix.file_descr
+)
+ident(
+  def in_sock "network2window.ml" 66 2507 2535 "network2window.ml" 68 2582 2616
+)
+"network2window.ml" 66 2507 2535 "network2window.ml" 66 2507 2543
+type(
+  Unix.file_descr
+)
+ident(
+  def out_sock "network2window.ml" 67 2547 2551 "network2window.ml" 68 2582 2616
+)
+"network2window.ml" 67 2547 2551 "network2window.ml" 67 2547 2559
+type(
+  Unix.file_descr -> Unix.shutdown_command -> unit
+)
+ident(
+  int_ref Unix.shutdown "unix.mli" 1376 56060 56060 "unix.mli" 1376 56060 56113
+)
+"network2window.ml" 67 2547 2560 "network2window.ml" 67 2547 2567
+type(
+  Unix.file_descr
+)
+ident(
+  int_ref in_sock "network2window.ml" 66 2507 2527 "network2window.ml" 66 2507 2534
+)
+"network2window.ml" 67 2547 2568 "network2window.ml" 67 2547 2580
+type(
+  Unix.shutdown_command
+)
+"network2window.ml" 67 2547 2551 "network2window.ml" 67 2547 2580
+type(
+  unit
+)
+"network2window.ml" 68 2582 2586 "network2window.ml" 68 2582 2594
+type(
+  Unix.file_descr -> Unix.shutdown_command -> unit
+)
+ident(
+  int_ref Unix.shutdown "unix.mli" 1376 56060 56060 "unix.mli" 1376 56060 56113
+)
+"network2window.ml" 68 2582 2595 "network2window.ml" 68 2582 2603
+type(
+  Unix.file_descr
+)
+ident(
+  int_ref out_sock "network2window.ml" 66 2507 2535 "network2window.ml" 66 2507 2543
+)
+"network2window.ml" 68 2582 2604 "network2window.ml" 68 2582 2616
+type(
+  Unix.shutdown_command
+)
+"network2window.ml" 68 2582 2586 "network2window.ml" 68 2582 2616
+type(
+  unit
+)
+"network2window.ml" 67 2547 2551 "network2window.ml" 68 2582 2616
+type(
+  unit
+)
+"network2window.ml" 70 2618 2624 "network2window.ml" 70 2618 2627
+type(
+  'a -> Unix.file_descr -> unit -> unit
+)
+ident(
+  def put "network2window.ml" 74 2761 2763 "network2window.ml" 98 3503 3506
+)
+"network2window.ml" 70 2618 2628 "network2window.ml" 70 2618 2633
+type(
+  'a
+)
+ident(
+  def value "network2window.ml" 70 2618 2634 "network2window.ml" 72 2699 2759
+)
+"network2window.ml" 70 2618 2634 "network2window.ml" 70 2618 2640
+type(
+  Unix.file_descr
+)
+ident(
+  def output "network2window.ml" 71 2644 2648 "network2window.ml" 72 2699 2759
+)
+"network2window.ml" 71 2644 2653 "network2window.ml" 71 2644 2655
+type(
+  unit
+)
+"network2window.ml" 71 2644 2663 "network2window.ml" 71 2644 2667
+type(
+  bytes
+)
+ident(
+  def data "network2window.ml" 72 2699 2703 "network2window.ml" 72 2699 2758
+)
+"network2window.ml" 71 2644 2670 "network2window.ml" 71 2644 2686
+type(
+  'a -> Marshal.extern_flags list -> bytes
+)
+ident(
+  int_ref Stdlib.Marshal.to_bytes "marshal.mli" 114 6411 6411 "marshal.mli" 115 6431 6496
+)
+"network2window.ml" 71 2644 2687 "network2window.ml" 71 2644 2692
+type(
+  'a
+)
+ident(
+  int_ref value "network2window.ml" 70 2618 2628 "network2window.ml" 70 2618 2633
+)
+"network2window.ml" 71 2644 2693 "network2window.ml" 71 2644 2695
+type(
+  Marshal.extern_flags list
+)
+"network2window.ml" 71 2644 2670 "network2window.ml" 71 2644 2695
+type(
+  bytes
+)
+"network2window.ml" 72 2699 2703 "network2window.ml" 72 2699 2709
+type(
+  int -> unit
+)
+ident(
+  int_ref Stdlib.ignore "stdlib.mli" 685 25966 25966 "stdlib.mli" 685 25966 26006
+)
+"network2window.ml" 72 2699 2711 "network2window.ml" 72 2699 2720
+type(
+  Unix.file_descr -> bytes -> int -> int -> Unix.msg_flag list -> int
+)
+ident(
+  int_ref Unix.send "unix.mli" 1403 57005 57005 "unix.mli" 1403 57005 57073
+)
+"network2window.ml" 72 2699 2721 "network2window.ml" 72 2699 2727
+type(
+  Unix.file_descr
+)
+ident(
+  int_ref output "network2window.ml" 70 2618 2634 "network2window.ml" 70 2618 2640
+)
+"network2window.ml" 72 2699 2728 "network2window.ml" 72 2699 2732
+type(
+  bytes
+)
+ident(
+  int_ref data "network2window.ml" 71 2644 2663 "network2window.ml" 71 2644 2667
+)
+"network2window.ml" 72 2699 2733 "network2window.ml" 72 2699 2734
+type(
+  int
+)
+"network2window.ml" 72 2699 2736 "network2window.ml" 72 2699 2748
+type(
+  bytes -> int
+)
+ident(
+  int_ref Stdlib.Bytes.length "bytes.mli" 45 2234 2234 "bytes.mli" 45 2234 2282
+)
+"network2window.ml" 72 2699 2749 "network2window.ml" 72 2699 2753
+type(
+  bytes
+)
+ident(
+  int_ref data "network2window.ml" 71 2644 2663 "network2window.ml" 71 2644 2667
+)
+"network2window.ml" 72 2699 2735 "network2window.ml" 72 2699 2754
+type(
+  int
+)
+"network2window.ml" 72 2699 2755 "network2window.ml" 72 2699 2757
+type(
+  Unix.msg_flag list
+)
+"network2window.ml" 72 2699 2709 "network2window.ml" 72 2699 2758
+type(
+  int
+)
+"network2window.ml" 72 2699 2703 "network2window.ml" 72 2699 2758
+type(
+  unit
+)
+"network2window.ml" 71 2644 2659 "network2window.ml" 72 2699 2758
+type(
+  unit
+)
+"network2window.ml" 71 2644 2648 "network2window.ml" 72 2699 2759
+type(
+  unit -> unit
+)
+"network2window.ml" 74 2761 2767 "network2window.ml" 74 2761 2770
+type(
+  Unix.file_descr -> unit -> 'b
+)
+ident(
+  def get "network2window.ml" 82 3145 3147 "network2window.ml" 98 3503 3506
+)
+"network2window.ml" 74 2761 2771 "network2window.ml" 74 2761 2776
+type(
+  Unix.file_descr
+)
+ident(
+  def input "network2window.ml" 75 2780 2784 "network2window.ml" 80 3082 3143
+)
+"network2window.ml" 75 2780 2789 "network2window.ml" 75 2780 2791
+type(
+  unit
+)
+"network2window.ml" 75 2780 2799 "network2window.ml" 75 2780 2805
+type(
+  bytes
+)
+ident(
+  def header "network2window.ml" 76 2844 2858 "network2window.ml" 80 3082 3142
+)
+"network2window.ml" 75 2780 2808 "network2window.ml" 75 2780 2820
+type(
+  int -> bytes
+)
+ident(
+  int_ref Stdlib.Bytes.create "bytes.mli" 59 2750 2750 "bytes.mli" 59 2750 2802
+)
+"network2window.ml" 75 2780 2821 "network2window.ml" 75 2780 2840
+type(
+  int
+)
+ident(
+  int_ref Stdlib.Marshal.header_size "marshal.mli" 159 8286 8286 "marshal.mli" 159 8286 8307
+)
+"network2window.ml" 75 2780 2808 "network2window.ml" 75 2780 2840
+type(
+  bytes
+)
+"network2window.ml" 76 2844 2858 "network2window.ml" 76 2844 2867
+type(
+  Unix.file_descr -> bytes -> int -> int -> Unix.msg_flag list -> int
+)
+ident(
+  int_ref Unix.recv "unix.mli" 1396 56755 56755 "unix.mli" 1396 56755 56823
+)
+"network2window.ml" 76 2844 2868 "network2window.ml" 76 2844 2873
+type(
+  Unix.file_descr
+)
+ident(
+  int_ref input "network2window.ml" 74 2761 2771 "network2window.ml" 74 2761 2776
+)
+"network2window.ml" 76 2844 2874 "network2window.ml" 76 2844 2880
+type(
+  bytes
+)
+ident(
+  int_ref header "network2window.ml" 75 2780 2799 "network2window.ml" 75 2780 2805
+)
+"network2window.ml" 76 2844 2881 "network2window.ml" 76 2844 2882
+type(
+  int
+)
+"network2window.ml" 76 2844 2883 "network2window.ml" 76 2844 2902
+type(
+  int
+)
+ident(
+  int_ref Stdlib.Marshal.header_size "marshal.mli" 159 8286 8286 "marshal.mli" 159 8286 8307
+)
+"network2window.ml" 76 2844 2903 "network2window.ml" 76 2844 2905
+type(
+  Unix.msg_flag list
+)
+"network2window.ml" 76 2844 2858 "network2window.ml" 76 2844 2905
+type(
+  int
+)
+"network2window.ml" 76 2844 2906 "network2window.ml" 76 2844 2908
+type(
+  int -> (int -> unit) -> unit
+)
+ident(
+  int_ref Stdlib.( |> ) "stdlib.mli" 303 12306 12306 "stdlib.mli" 303 12306 12360
+)
+"network2window.ml" 76 2844 2909 "network2window.ml" 76 2844 2915
+type(
+  int -> unit
+)
+ident(
+  int_ref Stdlib.ignore "stdlib.mli" 685 25966 25966 "stdlib.mli" 685 25966 26006
+)
+"network2window.ml" 76 2844 2858 "network2window.ml" 76 2844 2915
+type(
+  unit
+)
+"network2window.ml" 77 2918 2936 "network2window.ml" 77 2918 2942
+type(
+  int
+)
+ident(
+  def d_size "network2window.ml" 78 2975 2989 "network2window.ml" 80 3082 3142
+)
+"network2window.ml" 77 2918 2945 "network2window.ml" 77 2918 2962
+type(
+  bytes -> int -> int
+)
+ident(
+  int_ref Stdlib.Marshal.data_size "marshal.mli" 181 9337 9337 "marshal.mli" 181 9337 9372
+)
+"network2window.ml" 77 2918 2963 "network2window.ml" 77 2918 2969
+type(
+  bytes
+)
+ident(
+  int_ref header "network2window.ml" 75 2780 2799 "network2window.ml" 75 2780 2805
+)
+"network2window.ml" 77 2918 2970 "network2window.ml" 77 2918 2971
+type(
+  int
+)
+"network2window.ml" 77 2918 2945 "network2window.ml" 77 2918 2971
+type(
+  int
+)
+"network2window.ml" 78 2975 2993 "network2window.ml" 78 2975 2997
+type(
+  bytes
+)
+ident(
+  def data "network2window.ml" 79 3023 3037 "network2window.ml" 80 3082 3142
+)
+"network2window.ml" 78 2975 3000 "network2window.ml" 78 2975 3012
+type(
+  int -> bytes
+)
+ident(
+  int_ref Stdlib.Bytes.create "bytes.mli" 59 2750 2750 "bytes.mli" 59 2750 2802
+)
+"network2window.ml" 78 2975 3013 "network2window.ml" 78 2975 3019
+type(
+  int
+)
+ident(
+  int_ref d_size "network2window.ml" 77 2918 2936 "network2window.ml" 77 2918 2942
+)
+"network2window.ml" 78 2975 3000 "network2window.ml" 78 2975 3019
+type(
+  bytes
+)
+"network2window.ml" 79 3023 3037 "network2window.ml" 79 3023 3046
+type(
+  Unix.file_descr -> bytes -> int -> int -> Unix.msg_flag list -> int
+)
+ident(
+  int_ref Unix.recv "unix.mli" 1396 56755 56755 "unix.mli" 1396 56755 56823
+)
+"network2window.ml" 79 3023 3047 "network2window.ml" 79 3023 3052
+type(
+  Unix.file_descr
+)
+ident(
+  int_ref input "network2window.ml" 74 2761 2771 "network2window.ml" 74 2761 2776
+)
+"network2window.ml" 79 3023 3053 "network2window.ml" 79 3023 3057
+type(
+  bytes
+)
+ident(
+  int_ref data "network2window.ml" 78 2975 2993 "network2window.ml" 78 2975 2997
+)
+"network2window.ml" 79 3023 3058 "network2window.ml" 79 3023 3059
+type(
+  int
+)
+"network2window.ml" 79 3023 3060 "network2window.ml" 79 3023 3066
+type(
+  int
+)
+ident(
+  int_ref d_size "network2window.ml" 77 2918 2936 "network2window.ml" 77 2918 2942
+)
+"network2window.ml" 79 3023 3067 "network2window.ml" 79 3023 3069
+type(
+  Unix.msg_flag list
+)
+"network2window.ml" 79 3023 3037 "network2window.ml" 79 3023 3069
+type(
+  int
+)
+"network2window.ml" 79 3023 3070 "network2window.ml" 79 3023 3072
+type(
+  int -> (int -> unit) -> unit
+)
+ident(
+  int_ref Stdlib.( |> ) "stdlib.mli" 303 12306 12306 "stdlib.mli" 303 12306 12360
+)
+"network2window.ml" 79 3023 3073 "network2window.ml" 79 3023 3079
+type(
+  int -> unit
+)
+ident(
+  int_ref Stdlib.ignore "stdlib.mli" 685 25966 25966 "stdlib.mli" 685 25966 26006
+)
+"network2window.ml" 79 3023 3037 "network2window.ml" 79 3023 3079
+type(
+  unit
+)
+"network2window.ml" 80 3082 3097 "network2window.ml" 80 3082 3115
+type(
+  bytes -> int -> 'b
+)
+ident(
+  int_ref Stdlib.Marshal.from_bytes "marshal.mli" 147 7822 7822 "marshal.mli" 147 7822 7857
+)
+"network2window.ml" 80 3082 3117 "network2window.ml" 80 3082 3126
+type(
+  bytes -> bytes -> bytes
+)
+ident(
+  int_ref Stdlib.Bytes.cat "bytes.mli" 149 6267 6267 "bytes.mli" 149 6267 6300
+)
+"network2window.ml" 80 3082 3127 "network2window.ml" 80 3082 3133
+type(
+  bytes
+)
+ident(
+  int_ref header "network2window.ml" 75 2780 2799 "network2window.ml" 75 2780 2805
+)
+"network2window.ml" 80 3082 3134 "network2window.ml" 80 3082 3138
+type(
+  bytes
+)
+ident(
+  int_ref data "network2window.ml" 78 2975 2993 "network2window.ml" 78 2975 2997
+)
+"network2window.ml" 80 3082 3116 "network2window.ml" 80 3082 3139
+type(
+  bytes
+)
+"network2window.ml" 80 3082 3140 "network2window.ml" 80 3082 3141
+type(
+  int
+)
+"network2window.ml" 80 3082 3096 "network2window.ml" 80 3082 3142
+type(
+  'b
+)
+"network2window.ml" 79 3023 3037 "network2window.ml" 80 3082 3142
+type(
+  'b
+)
+"network2window.ml" 78 2975 2989 "network2window.ml" 80 3082 3142
+type(
+  'b
+)
+"network2window.ml" 77 2918 2932 "network2window.ml" 80 3082 3142
+type(
+  'b
+)
+"network2window.ml" 76 2844 2858 "network2window.ml" 80 3082 3142
+type(
+  'b
+)
+"network2window.ml" 75 2780 2795 "network2window.ml" 80 3082 3142
+type(
+  'b
+)
+"network2window.ml" 75 2780 2784 "network2window.ml" 80 3082 3143
+type(
+  unit -> 'b
+)
+"network2window.ml" 82 3145 3151 "network2window.ml" 82 3145 3157
+type(
+  'c -> unit -> 'c
+)
+ident(
+  def return "network2window.ml" 84 3185 3187 "network2window.ml" 98 3503 3506
+)
+"network2window.ml" 82 3145 3158 "network2window.ml" 82 3145 3163
+type(
+  'c
+)
+ident(
+  def value "network2window.ml" 82 3145 3166 "network2window.ml" 82 3145 3183
+)
+"network2window.ml" 82 3145 3171 "network2window.ml" 82 3145 3173
+type(
+  unit
+)
+"network2window.ml" 82 3145 3177 "network2window.ml" 82 3145 3182
+type(
+  'c
+)
+ident(
+  int_ref value "network2window.ml" 82 3145 3158 "network2window.ml" 82 3145 3163
+)
+"network2window.ml" 82 3145 3166 "network2window.ml" 82 3145 3183
+type(
+  unit -> 'c
+)
+"network2window.ml" 84 3185 3191 "network2window.ml" 84 3185 3195
+type(
+  (unit -> 'd) -> ('d -> unit -> 'e) -> unit -> 'e
+)
+ident(
+  def bind "network2window.ml" 86 3227 3229 "network2window.ml" 98 3503 3506
+)
+"network2window.ml" 84 3185 3196 "network2window.ml" 84 3185 3197
+type(
+  unit -> 'd
+)
+ident(
+  def p "network2window.ml" 84 3185 3198 "network2window.ml" 84 3185 3224
+)
+"network2window.ml" 84 3185 3198 "network2window.ml" 84 3185 3199
+type(
+  'd -> unit -> 'e
+)
+ident(
+  def f "network2window.ml" 84 3185 3202 "network2window.ml" 84 3185 3224
+)
+"network2window.ml" 84 3185 3207 "network2window.ml" 84 3185 3209
+type(
+  unit
+)
+"network2window.ml" 84 3185 3213 "network2window.ml" 84 3185 3214
+type(
+  'd -> unit -> 'e
+)
+ident(
+  int_ref f "network2window.ml" 84 3185 3198 "network2window.ml" 84 3185 3199
+)
+"network2window.ml" 84 3185 3216 "network2window.ml" 84 3185 3217
+type(
+  unit -> 'd
+)
+ident(
+  int_ref p "network2window.ml" 84 3185 3196 "network2window.ml" 84 3185 3197
+)
+"network2window.ml" 84 3185 3217 "network2window.ml" 84 3185 3219
+type(
+  unit
+)
+"network2window.ml" 84 3185 3215 "network2window.ml" 84 3185 3220
+type(
+  'd
+)
+"network2window.ml" 84 3185 3221 "network2window.ml" 84 3185 3223
+type(
+  unit
+)
+"network2window.ml" 84 3185 3213 "network2window.ml" 84 3185 3223
+type(
+  'e
+)
+"network2window.ml" 84 3185 3202 "network2window.ml" 84 3185 3224
+type(
+  unit -> 'e
+)
+"network2window.ml" 86 3227 3233 "network2window.ml" 86 3227 3237
+type(
+  (unit -> 'f) list -> unit -> unit
+)
+ident(
+  def doco "network2window.ml" 96 3483 3485 "network2window.ml" 98 3503 3506
+)
+"network2window.ml" 86 3227 3238 "network2window.ml" 86 3227 3239
+type(
+  (unit -> 'f) list
+)
+ident(
+  def l "network2window.ml" 87 3243 3247 "network2window.ml" 94 3468 3481
+)
+"network2window.ml" 87 3243 3251 "network2window.ml" 87 3243 3253
+type(
+  unit
+)
+"network2window.ml" 88 3258 3272 "network2window.ml" 88 3258 3275
+type(
+  (unit -> 'g) list -> unit
+)
+ident(
+  def sub "network2window.ml" 88 3258 3264 "network2window.ml" 94 3468 3480
+)
+"network2window.ml" 89 3288 3296 "network2window.ml" 89 3288 3298
+type(
+  (unit -> 'g) list
+)
+"network2window.ml" 89 3288 3302 "network2window.ml" 89 3288 3304
+type(
+  unit
+)
+"network2window.ml" 90 3305 3313 "network2window.ml" 90 3305 3314
+type(
+  unit -> 'g
+)
+ident(
+  def x "network2window.ml" 90 3305 3324 "network2window.ml" 93 3445 3466
+)
+"network2window.ml" 90 3305 3318 "network2window.ml" 90 3305 3320
+type(
+  (unit -> 'g) list
+)
+ident(
+  def th "network2window.ml" 90 3305 3324 "network2window.ml" 93 3445 3466
+)
+"network2window.ml" 90 3305 3313 "network2window.ml" 90 3305 3320
+type(
+  (unit -> 'g) list
+)
+"network2window.ml" 91 3331 3353 "network2window.ml" 91 3331 3359
+type(
+  Thread.t
+)
+ident(
+  def thread "network2window.ml" 92 3399 3417 "network2window.ml" 92 3399 3443
+)
+"network2window.ml" 91 3331 3362 "network2window.ml" 91 3331 3375
+type(
+  (unit -> 'g) -> unit -> Thread.t
+)
+ident(
+  int_ref Thread.create "thread.mli" 23 1225 1225 "thread.mli" 23 1225 1259
+)
+"network2window.ml" 91 3331 3376 "network2window.ml" 91 3331 3377
+type(
+  unit -> 'g
+)
+ident(
+  int_ref x "network2window.ml" 90 3305 3313 "network2window.ml" 90 3305 3314
+)
+"network2window.ml" 91 3331 3378 "network2window.ml" 91 3331 3380
+type(
+  unit
+)
+"network2window.ml" 91 3331 3362 "network2window.ml" 91 3331 3380
+type(
+  Thread.t
+)
+"network2window.ml" 92 3399 3417 "network2window.ml" 92 3399 3420
+type(
+  (unit -> 'g) list -> unit
+)
+ident(
+  int_ref sub "network2window.ml" 88 3258 3272 "network2window.ml" 88 3258 3275
+)
+"network2window.ml" 92 3399 3421 "network2window.ml" 92 3399 3423
+type(
+  (unit -> 'g) list
+)
+ident(
+  int_ref th "network2window.ml" 90 3305 3318 "network2window.ml" 90 3305 3320
+)
+"network2window.ml" 92 3399 3417 "network2window.ml" 92 3399 3423
+type(
+  unit
+)
+"network2window.ml" 92 3399 3425 "network2window.ml" 92 3399 3436
+type(
+  Thread.t -> unit
+)
+ident(
+  int_ref Thread.join "thread.mli" 57 2544 2544 "thread.mli" 57 2544 2564
+)
+"network2window.ml" 92 3399 3437 "network2window.ml" 92 3399 3443
+type(
+  Thread.t
+)
+ident(
+  int_ref thread "network2window.ml" 91 3331 3353 "network2window.ml" 91 3331 3359
+)
+"network2window.ml" 92 3399 3425 "network2window.ml" 92 3399 3443
+type(
+  unit
+)
+"network2window.ml" 92 3399 3417 "network2window.ml" 92 3399 3443
+type(
+  unit
+)
+"network2window.ml" 90 3305 3324 "network2window.ml" 93 3445 3466
+type(
+  unit
+)
+"network2window.ml" 88 3258 3278 "network2window.ml" 93 3445 3466
+type(
+  (unit -> 'g) list -> unit
+)
+"network2window.ml" 94 3468 3475 "network2window.ml" 94 3468 3478
+type(
+  (unit -> 'f) list -> unit
+)
+ident(
+  int_ref sub "network2window.ml" 88 3258 3272 "network2window.ml" 88 3258 3275
+)
+"network2window.ml" 94 3468 3479 "network2window.ml" 94 3468 3480
+type(
+  (unit -> 'f) list
+)
+ident(
+  int_ref l "network2window.ml" 86 3227 3238 "network2window.ml" 86 3227 3239
+)
+"network2window.ml" 94 3468 3475 "network2window.ml" 94 3468 3480
+type(
+  unit
+)
+"network2window.ml" 88 3258 3264 "network2window.ml" 94 3468 3480
+type(
+  unit
+)
+"network2window.ml" 87 3243 3247 "network2window.ml" 94 3468 3481
+type(
+  unit -> unit
+)
+"network2window.ml" 96 3483 3489 "network2window.ml" 96 3483 3492
+type(
+  (unit -> 'h) -> 'h
+)
+ident(
+  def run "network2window.ml" 96 3483 3501 "network2window.ml" 98 3503 3506
+)
+"network2window.ml" 96 3483 3493 "network2window.ml" 96 3483 3494
+type(
+  unit -> 'h
+)
+ident(
+  def f "network2window.ml" 96 3483 3497 "network2window.ml" 96 3483 3501
+)
+"network2window.ml" 96 3483 3497 "network2window.ml" 96 3483 3498
+type(
+  unit -> 'h
+)
+ident(
+  int_ref f "network2window.ml" 96 3483 3493 "network2window.ml" 96 3483 3494
+)
+"network2window.ml" 96 3483 3499 "network2window.ml" 96 3483 3501
+type(
+  unit
+)
+"network2window.ml" 96 3483 3497 "network2window.ml" 96 3483 3501
+type(
+  'h
+)

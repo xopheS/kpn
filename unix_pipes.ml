@@ -3,7 +3,7 @@ module Z : Kahn.S = struct
   type 'a process = unit -> 'a
   type 'a in_port = Unix.file_descr
   type 'a out_port = Unix.file_descr
-
+  
   let new_channel () =
     Unix.pipe()
 
@@ -57,4 +57,10 @@ module Z : Kahn.S = struct
             end
       in sub_routine l
     )
+
+	(* These two functions were neccessary for network2window.ml  *)
+	(* Kahn implementation but are not useful for the Pipes one *)
+  let connect_by_name s = assert false 
+  let set_port i = assert false 
+  let close_channel i o = assert false
 end
