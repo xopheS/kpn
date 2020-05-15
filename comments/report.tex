@@ -1,12 +1,15 @@
-\documentclass{article}
-\usepackage{hyperref}
-\usepackage{xcolor}
-\usepackage{enumitem}
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{graphicx}
 \usepackage{lmodern}
 \usepackage{kpfonts}
 \usepackage{subcaption}
+\usepackage{dsfont}
+\usepackage{wrapfig}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{hyperref}
+\usepackage{xcolor}
 \usepackage{enumitem}
 \usepackage{wrapfig}
 \title{Kahn}
@@ -18,24 +21,42 @@
 
 \maketitle
 
-\section{Sequential}
+\section{Remarks }
+\begin{itemize}
+\item addition of functions
+\item difference between network2window and the rest of khan implemnetation
+\item explain this with the Example.ml
+\end{itemize}
+
+\section{Khan implementations }
+\subsection{Network2window}
+explain scheme 
+
+\subsection{Network}
+
+
+\subsection{Sequential}
 The implentation of the sequencial part is manly taken from the paper  A poor man’s concurrency monad. We consider the process as a monad transformer which takes an action (which contains the actual computation) and link it a continuation. Its type is $$\texttt{type 'a process = ('a -> action) -> action}$$
 The type action is $$\texttt{type action  = Atom of (unit -> action) | Fork of action * action | Stop}$$
 We use \texttt{Fork} to instanciate new processes and \texttt{Atom} to represent a computation.\\
 In the \texttt{run} function, we recreate a pipeline containing the first \texttt{Fork} action to execute. Each time a \texttt{Fork} is executed, we push the two actions in the pipeline. When an \texttt{Atom} is read, we execute its computation and store his continuation back in the pipeline. This procedures ends when all the continuations are \texttt{Stop}.
 
-\section{Mandelbrot}
+\subsection{Pipes}
+
+
+
+\section{Applications}
+\subsection{Mandelbrot}
 This application consits of the computation and visualization of the Mandelbrot set using the implemented kahn network.
-\subsection{Madelbrot set}
 The Mandelbrot set $\mathcal{M}$ is the set of complex numbers $c$ such that the point $z = 0$ of the polynomial $P_c(z) = z^2 + c$ has an orbit which remains bounded. \\
 In other words, this set can be seen as the set of complex numbers $c$ for which the application $z_{n+1} = z_n + c$ starting from $0$ for $n \rightarrow \infty$ remains bounded.
 
-\subsection{Properties}
+\subsubsection{Properties}
 A very useful property of the mandelbrot set which will make its computation easier is the following:
 	$$c \in \mathcal{M}  \quad \Longleftrightarrow \quad |\mathcal{P}^n_c(0)| \leq 2 \quad \forall n\geq 0$$
 The sequence is certainly divergent if the modulus of z crosses 2.
 
-\subsection{Implementation}
+\subsubsection{Implementation}
 We give here a quick description of our implementation.
 
 \subsubsection{Objective}
@@ -56,7 +77,6 @@ This technique stays coherent in the sense that $V(c) = 0$ if and only if $c \in
 We divide the output window into sections, each one will be handled by a process. We use one last process for plotting the resulting values of the processes computations.\\
 Computing processes send points values (coordinates and color assigned) to the channel where they wait to be retrieved by the plotting process.
 
-\subsection{Usage}
 \subsubsection{Running mandelbrot}
 The mandelbrot application can be ran with arguments (\texttt{arg default type})
 \begin{itemize}[label={}]
@@ -87,7 +107,7 @@ The implentation of the Unix processes part is mainly based on the POSIX interfa
 Computation is mostly based on the generation of heavy Unix processes through the $\texttt{fork}$ method from the Unix library.
 Communication channel is an unnamed pipe access through it's channel in/out which are file descriptors.
 
-\section{K means}
+\subsection{K means}
 
 "k-means clustering is a method of vector quantization, originally from signal processing, that aims to partition n observations into k clusters in which each observation belongs to the cluster with the nearest mean (cluster centers or cluster centroid), serving as a prototype of the cluster." 
 -Wikipedia
@@ -106,19 +126,16 @@ K-means is an example of a bulk synchronous parallel algorithm (BSP). BSP algori
 Data-parallel programming models are typically a good fit for BSP algorithms, as each bulk synchronous phase can correspond to some number of data-parallel operations.
 
 
-\subsection{Usage}
+\subsubsection{Usage}
 
 Running the algorithm requires only one argument which is the number of processes used: $$\texttt{make k\_means}$$ \\ $$\texttt{./k\_means.native 8}$$ 
 It will run automatically on the Iris data set.
 
-\section{Network}
-This implementation of Khan aims at distributing the processes in multiple computers in parallel. It makes use of the module \texttt{Unix} for creating a classic TCP socket communication with an IPv4 or IPv6 address; makes use of the module \texttt{Marshal} to convert the value into bytes in order to be sent/received in the channel. The \texttt{put value output} function makes use of the unix function \texttt{Unix.send } to send the particular value through the socket \texttt{ output} and the \texttt{get input} function makes use of \texttt{Unix.receiv} to receive a particular value. The \texttt{doco} function takes a list of processes and runs them in parallel through the \texttt{Thread} module.
-
-\section{Tic Tac Toe game}
+\subsection*{Tictactoe}
 
 This application makes use of the above Khan implementation. It aims at creating a classic Tic Tac Toe game between two players. The file is \texttt{tictactoe.ml}.
 
-\subsection{Design of the communication }
+\subsubsection{Design of the communication }
 
 In a classic client/server architecture, the server would have to decide the execution and communication of the khan processes between the two clients. However this implementation is a bit of over kill on the server side. In our implementation the communication happens directly between the clients where one of them becomes the host as in the following scheme:
 
@@ -161,6 +178,8 @@ To play the game Tic Tac Toe run:\\\\
 \text{\texttt{./tictactoe}}\\\\
 Upon execution there is a graphic window appearing. The default measurements for the window are 1000 by 620 and the board is 600 by 600. The players could insert a move by simply clicking the position they like. The first player to play is \texttt{X} and the second \texttt{O}. If you want to customize the measurements of the window you could run the following code:\\\\
 \texttt{./tictactoe -length\_window x -width\_window x -length x -width x}
+  
+
   
 
 
