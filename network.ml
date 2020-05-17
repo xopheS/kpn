@@ -1,4 +1,4 @@
-(* This file is a quick implementation of the kahn network *)
+(* This implementation is a Khan with sockets running on one terminal *)
 
 open Unix
 
@@ -9,6 +9,7 @@ struct
   type 'a out_port = Unix.file_descr
 
   let port = ref 1024
+  let bool_client_server = ref false
 
   let new_channel() = 
     (* Create a STREAM socket with IPv4/IPv6 address *)
@@ -21,7 +22,7 @@ struct
     
     (* Connect/Bind/Listen input and the output sockets *)
     bind out_socket addr ;
-    listen out_socket 100 ;
+    listen out_socket 1 ;
     connect in_socket addr ;
 
     let out_socket, sockaddr = accept out_socket in
@@ -55,5 +56,10 @@ struct
 
   let run f = f ()
 
-end
+  (* These two functions were neccessary for network2window.ml *)
+  (*  But are not useful for the network one *)
+  let connect_by_name s = assert false 
+  let set_port i = assert false 
+  let close_channel i o = assert false
 
+end

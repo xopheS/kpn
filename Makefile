@@ -6,6 +6,18 @@ OCAMLBUILD=ocamlbuild -classic-display \
 
 TARGET=native
 
+all: 
+	$(OCAMLBUILD) example.$(TARGET)
+
+example:
+	$(OCAMLBUILD) example.$(TARGET)
+
+tictactoe: 
+	$(OCAMLBUILD) tictactoe.$(TARGET)
+
+tictactoe2:
+	$(OCAMLBUILD) tictactoe2window.$(TARGET)
+
 mandelbrot:
 	$(OCAMLBUILD) mandelbrot.$(TARGET)
 

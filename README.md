@@ -19,14 +19,7 @@ To compile a particular application run:
   
 To clean `make clean` or `make realclean`
 
-## Tic Tac Toe
-### Running mandelbrot
-`make tictactoe`
-
-## Mandelbrot
-
-### Running mandelbrot
-
+## Mandelbrot:
 The mandelbrot application can be run with arguments
 (`arg default type`)
 
@@ -63,4 +56,28 @@ The mandelbrot application can be run with arguments
 -   `-xo -0.235125 -yo 0.827215 -z 0.00004`
 
 -   `-xo -0.81153120295763 -yo 0.20142958206181 -z 0.0003`
+
+## K means:
+
+`make k_means`
+
+`./k_means.native 10` where 10 is the maximum number of processes used by the algorithm
+
+## Tic tac Toe:
+`make tictactoe`
+
+`./tictactoe` (default window length,width = (1000,620) and board length,width = (600,600))
+
+`./tictactoe -length_window x -width_window x -length x -width x` to change the default settings
+
+## Comparisons 
+The following table summarizes the time it took for each application to be executed by different Khan implementations.
+
+|                 | Example     | Mandelbrot  | K-means     | Tic Tac Toe  |
+| --------------- |:-----------:| -----------:|:-----------:| ------------:|
+| Sequential      |             |             |             | 0            |
+| Pipes           |             |             |             | 0            |
+| Sockets         |             |             |             | 0            |
+
+
 

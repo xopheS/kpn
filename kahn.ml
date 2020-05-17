@@ -3,7 +3,7 @@ module type S = sig
   type 'a in_port
   type 'a out_port
 
-  val new_channel: unit -> 'a in_port * 'a out_port
+  val new_channel: unit -> 'a in_port * 'a out_port 
   val put: 'a -> 'a out_port -> unit process
   val get: 'a in_port -> 'a process
 
@@ -13,6 +13,11 @@ module type S = sig
   val bind: 'a process -> ('a -> 'b process) -> 'b process
 
   val run: 'a process -> 'a
+
+  (* used to implement network2window.ml *)
+  val set_port: int -> unit  
+  val connect_by_name: string -> 'a in_port *'a out_port 
+  val close_channel: 'a in_port -> 'a out_port -> unit
 end
 
 module Lib (K : S) = struct
@@ -86,5 +91,13 @@ module Th: S = struct
     e' v ()
 
   let run e = e ()
+
+
+	(* These two functions were neccessary to for network2window.ml  *)
+	(* Kahn implementation but are not useful for the Sequential one *)
+  let connect_by_name s = assert false 
+  let set_port i = assert false 
+  let close_channel i o = assert false
+  
 end
 

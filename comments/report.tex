@@ -1,9 +1,17 @@
-\documentclass{article}
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{kpfonts}
+\usepackage{subcaption}
+\usepackage{dsfont}
+\usepackage{wrapfig}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \usepackage{hyperref}
 \usepackage{xcolor}
 \usepackage{enumitem}
-
-
+\usepackage{wrapfig}
 \title{Kahn}
 \author{Nizar Ghandri, Megi Dervishi, Christophe Saad}
 \date{\today}
@@ -13,24 +21,42 @@
 
 \maketitle
 
-\section{Sequential}
-The implentation of the sequential part is mainly taken from the paper  A poor man’s concurrency monad. We consider the process as a monad transformer which takes an action (which contains the actual computation) and link it a continuation. Its type is $$\texttt{type 'a process = ('a -> action) -> action}$$
+\section{Remarks }
+\begin{itemize}
+\item addition of functions
+\item difference between network2window and the rest of khan implemnetation
+\item explain this with the Example.ml
+\end{itemize}
+
+\section{Khan implementations }
+\subsection{Network2window}
+explain scheme 
+
+\subsection{Network}
+This implementation of Khan aims at distributing the processes in multiple computers in parallel. It makes use of the module \texttt{Unix} for creating a classic TCP socket communication with an IPv4 or IPv6 address; makes use of the module \texttt{Marshal} to convert the value into bytes in order to be sent/received in the channel. The \texttt{put value output} function makes use of the unix function \texttt{Unix.send } to send the particular value through the socket \texttt{ output} and the \texttt{get input} function makes use of \texttt{Unix.receiv} to receive a particular value. The \texttt{doco} function takes a list of processes and runs them in parallel through the \texttt{Thread} module.
+
+\subsection{Sequential}
+The implentation of the sequencial part is manly taken from the paper  A poor man’s concurrency monad. We consider the process as a monad transformer which takes an action (which contains the actual computation) and link it a continuation. Its type is $$\texttt{type 'a process = ('a -> action) -> action}$$
 The type action is $$\texttt{type action  = Atom of (unit -> action) | Fork of action * action | Stop}$$
-We use \texttt{Fork} to instantiate new processes and \texttt{Atom} to represent a computation.\\
+We use \texttt{Fork} to instanciate new processes and \texttt{Atom} to represent a computation.\\
 In the \texttt{run} function, we recreate a pipeline containing the first \texttt{Fork} action to execute. Each time a \texttt{Fork} is executed, we push the two actions in the pipeline. When an \texttt{Atom} is read, we execute its computation and store his continuation back in the pipeline. This procedures ends when all the continuations are \texttt{Stop}.
 
-\section{Mandelbrot}
-This application consists of the computation and visualization of the Mandelbrot set using the implemented Kahn network.
-\subsection{Mandelbrot set}
+\subsection{Pipes}
+
+
+
+\section{Applications}
+\subsection{Mandelbrot}
+This application consits of the computation and visualization of the Mandelbrot set using the implemented kahn network.
 The Mandelbrot set $\mathcal{M}$ is the set of complex numbers $c$ such that the point $z = 0$ of the polynomial $P_c(z) = z^2 + c$ has an orbit which remains bounded. \\
 In other words, this set can be seen as the set of complex numbers $c$ for which the application $z_{n+1} = z_n + c$ starting from $0$ for $n \rightarrow \infty$ remains bounded.
 
-\subsection{Properties}
+\subsubsection{Properties}
 A very useful property of the mandelbrot set which will make its computation easier is the following:
 	$$c \in \mathcal{M}  \quad \Longleftrightarrow \quad |\mathcal{P}^n_c(0)| \leq 2 \quad \forall n\geq 0$$
 The sequence is certainly divergent if the modulus of z crosses 2.
 
-\subsection{Implementation}
+\subsubsection{Implementation}
 We give here a quick description of our implementation.
 
 \subsubsection{Objective}
@@ -51,7 +77,6 @@ This technique stays coherent in the sense that $V(c) = 0$ if and only if $c \in
 We divide the output window into sections, each one will be handled by a process. We use one last process for plotting the resulting values of the processes computations.\\
 Computing processes send points values (coordinates and color assigned) to the channel where they wait to be retrieved by the plotting process.
 
-\subsection{Usage}
 \subsubsection{Running mandelbrot}
 The mandelbrot application can be ran with arguments (\texttt{arg default type})
 \begin{itemize}[label={}]
@@ -76,17 +101,13 @@ The mandelbrot application can be ran with arguments (\texttt{arg default type})
 	\item \texttt{-xo -0.722 -yo 0.246 -z 0.019}
 	\item \texttt{-xo -0.235125 -yo 0.827215 -z 0.00004}
 	\item \texttt{-xo -0.81153120295763 -yo 0.20142958206181 -z 0.0003}
-\end{itemize}\section{Network}
-
-\section{Tic Tac Toe game}
-
-
-\section{Unix processes}
+\end{itemize}
+section{Unix processes}
 The implentation of the Unix processes part is mainly based on the POSIX interface. Its type is $$\texttt{type 'a process = unit -> 'a}$$
 Computation is mostly based on the generation of heavy Unix processes through the $\texttt{fork}$ method from the Unix library.
 Communication channel is an unnamed pipe access through it's channel in/out which are file descriptors.
 
-\section{K means}
+\subsection{K means}
 
 "k-means clustering is a method of vector quantization, originally from signal processing, that aims to partition n observations into k clusters in which each observation belongs to the cluster with the nearest mean (cluster centers or cluster centroid), serving as a prototype of the cluster." 
 -Wikipedia
@@ -101,14 +122,65 @@ K-means is an example of a bulk synchronous parallel algorithm (BSP). BSP algori
 
 
 
-This will be perfect for a kahn process.
+
 Data-parallel programming models are typically a good fit for BSP algorithms, as each bulk synchronous phase can correspond to some number of data-parallel operations.
 
 
-\subsection{Usage}
+\subsubsection{Usage}
 
 Running the algorithm requires only one argument which is the number of processes used: $$\texttt{make k\_means}$$ \\ $$\texttt{./k\_means.native 8}$$ 
-It will run automatically on the Iris data set. 
+It will run automatically on the Iris data set.
+
+\subsection*{Tictactoe}
+
+This application makes use of the above Khan implementation. It aims at creating a classic Tic Tac Toe game between two players. The file is \texttt{tictactoe.ml}.
+
+\subsubsection{Design of the communication }
+
+In a classic client/server architecture, the server would have to decide the execution and communication of the khan processes between the two clients. However this implementation is a bit of over kill on the server side. In our implementation the communication happens directly between the clients where one of them becomes the host as in the following scheme:
+
+%include graph her Client (server_hos) <=> Other Client 
+
+In this implementation we use one terminal and one graphics window. It may seem that since there are not two communicating terminals/graphic windows the connection between the sockets has not been established, but in fact the "client host" and the "client" are two khan processes that are executed in parallel and communicate with each other only through khan channels. An improvement of this can be to establish the communication in two terminals and two graphic windows. To achieve the second is best to use a different module beside \texttt{Graphics}. 
+
+\subsubsection{Structure of messages}
+The messages that are sent through the channel fall into four categories (\texttt{MYM}, \texttt{FYI}, \texttt{STS}, \texttt{ERR}). When a message string is composed the first three letters of it are one of the above. Hence the receiving party can recognize the type of message being sent and act accordingly :
+\begin{itemize}
+\item \texttt{MYM} (Make your move) - messages the client-host asks the client to make their move
+\item \texttt{FYI} (For your information) - usually send the tic tac toe board
+\item \texttt{STS} (Status) - send the stage/status of the game i.e \texttt{Win of player}, \texttt{Draw}, \texttt{Continue}
+\item \texttt{ERR} (Error) - There is an invalid move happening.
+\end{itemize} 
+As mentioned above the \texttt{FYI} send the tic tac toe board which is an \texttt{Array} of size 9. 
+\subsubsection{Client (host)}
+The client host (server as referred in the code) does most of the computation of the game.  The "server" recursively does the following in the \texttt{server\_main}
+\begin{enumerate}
+\item Waits for himself to make a valid move (a move inside the board that was not previously filled).
+\item Updates the board with the current move
+\item Checks if there is a winner or draw; If yes then it sends the status to the client and game ends i.e. stops the connection.
+\item Otherwise sends the board to the client and waits for a response.
+\item When the client sends a move the host checks if the move is valid. If not then repeat step 4. 
+\item Otherwise repeat step 2 and 3. If game has not ended then go back to step 1.
+\end{enumerate}
+\subsubsection{Client }
+The client has a simplier process. It only receives messages from the host and acts accordingly to the type of message received:
+\begin{enumerate}
+\item \texttt{MYM} makes a move by clicking on the board; the move is converted into an index of the array and then sent to the host.
+\item \texttt{FYI} gets the board and displays it
+\item \texttt{ERR} the client made a wrong move
+\item \texttt{STS} receives the status of the game. 
+\end{enumerate}
+All the following can be found in the \texttt{client\_main} function.
+\subsection{Usage}
+\subsubsection{Run}
+To play the game Tic Tac Toe run:\\\\
+\text{\texttt{make tictactoe}}\\
+\text{\texttt{./tictactoe}}\\\\
+Upon execution there is a graphic window appearing. The default measurements for the window are 1000 by 620 and the board is 600 by 600. The players could insert a move by simply clicking the position they like. The first player to play is \texttt{X} and the second \texttt{O}. If you want to customize the measurements of the window you could run the following code:\\\\
+\texttt{./tictactoe -length\_window x -width\_window x -length x -width x}
+  
+
+  
 
 
 
@@ -118,4 +190,3 @@ It will run automatically on the Iris data set.
 
 
 \end{document}
-

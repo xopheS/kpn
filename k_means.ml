@@ -118,6 +118,8 @@ end
 
 module Iris_K_means (K: Kahn.S) = struct 
 
+  module K = K
+  module Lib = Kahn.Lib(K)
   module K_means = K_means(K)
   open K_means
 
@@ -255,21 +257,23 @@ module Iris_K_means (K: Kahn.S) = struct
     ignore (Sys.command "python plot.py")
     
 
-  let main =
-    let path = "iris.data" in
-    number_of_processes := int_of_string Sys.argv.(1); 
-    K_means.number_of_proc := !number_of_processes;
-    let training, test = preprocess_data path in 
-    let means, training_accuracy, test_accuracy, points_classified = exec training test in
-    plot training_accuracy test_accuracy;
-    Graphics.open_graph ""; 
-    show_points points_classified means;
-    ignore (Graphics.read_key ())
-    
+  let main : unit K.process =
+    let run () =  
+      let path = "iris.data" in
+      number_of_processes := int_of_string Sys.argv.(1); 
+      K_means.number_of_proc := !number_of_processes;
+      let training, test = preprocess_data path in 
+      let means, training_accuracy, test_accuracy, points_classified = exec training test in
+      plot training_accuracy test_accuracy;
+      Graphics.open_graph ""; 
+      show_points points_classified means;
+      ignore (Graphics.read_key ())
+    in
+    Lib.delay run ()
     
 end   
 
 
 
 module E = Iris_K_means(Kahn.Th)
-let () = E.main
+let () = E.K.run(E.main)
