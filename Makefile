@@ -1,6 +1,6 @@
 OCAMLBUILD=ocamlbuild -classic-display \
 		-tags annot,debug,thread \
-		-use-ocamlfind -pkg graphics,unix \
+		-libs unix,graphics \
 		-ocamlc 'ocamlc str.cma' \
 		-ocamlopt 'ocamlopt str.cmxa'
 
@@ -23,6 +23,7 @@ mandelbrot:
 
 k_means:
 	$(OCAMLBUILD) k_means.$(TARGET)
+
 
 clean:
 	$(OCAMLBUILD) -clean
