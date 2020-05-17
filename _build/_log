@@ -1,0 +1,16 @@
+### Starting build.
+# Target: k_means.ml.depends, tags: { package(graphics,unix), annot, debug, extension:ml, file:k_means.ml, ocaml, ocamldep, quiet, thread }
+ocamlfind ocamldep -package graphics,unix -modules k_means.ml > k_means.ml.depends
+# Target: kahn.ml.depends, tags: { package(graphics,unix), annot, debug, extension:ml, file:kahn.ml, ocaml, ocamldep, quiet, thread }
+ocamlfind ocamldep -package graphics,unix -modules kahn.ml > kahn.ml.depends # cached
+# Target: kahn.cmo, tags: { package(graphics,unix), annot, byte, compile, debug, extension:cmo, extension:ml, file:kahn.cmo, file:kahn.ml, implem, ocaml, quiet, thread }
+ocamlfind ocamlc str.cma -c -g -annot -thread -package graphics,unix -o kahn.cmo kahn.ml # cached
+# Target: k_means.cmo, tags: { package(graphics,unix), annot, byte, compile, debug, extension:cmo, extension:ml, file:k_means.cmo, file:k_means.ml, implem, ocaml, quiet, thread }
+ocamlfind ocamlc str.cma -c -g -annot -thread -package graphics,unix -o k_means.cmo k_means.ml
+# Target: kahn.cmx, tags: { package(graphics,unix), annot, compile, debug, extension:cmx, extension:ml, file:kahn.cmx, file:kahn.ml, implem, native, ocaml, quiet, thread }
+ocamlfind ocamlopt str.cmxa -c -g -annot -thread -package graphics,unix -o kahn.cmx kahn.ml
+# Target: k_means.cmx, tags: { package(graphics,unix), annot, compile, debug, extension:cmx, extension:ml, file:k_means.cmx, file:k_means.ml, implem, native, ocaml, quiet, thread }
+ocamlfind ocamlopt str.cmxa -c -g -annot -thread -package graphics,unix -o k_means.cmx k_means.ml
+# Target: k_means.native, tags: { package(graphics,unix), annot, debug, dont_link_with, extension:native, file:k_means.native, link, native, ocaml, program, quiet, thread }
+ocamlfind ocamlopt str.cmxa -linkpkg -g -thread -package graphics,unix kahn.cmx k_means.cmx -o k_means.native
+# Compilation successful.
