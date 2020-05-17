@@ -1,7 +1,7 @@
 (* --------------------------------------------------------- *)
 (* Tic Tac Toe game running for two computers                *)
 (* works only with Networ2window.N2W  module                 *)
-(* Edit by: Megi DERVISHI                                    *)
+(*                                                           *)
 (* --------------------------------------------------------- *)
 
 module K = Network2window.N2W

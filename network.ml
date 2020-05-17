@@ -44,7 +44,7 @@ struct
 
   let bind p f = (fun () -> f (p()) ()) 
 
-  let doco l = 
+  (*let doco l = 
     (fun() -> 
       let rec sub = function 
       | [] -> ()
@@ -52,7 +52,28 @@ struct
                   let thread = Thread.create x () in               
                   sub th; Thread.join thread 
                   end 
-    in sub l)
+    in sub l)*)
+  
+  let doco l = 
+    (fun () ->
+      let rec sub = function
+        | [] -> ()
+        | p :: r -> 
+            begin 
+                let pid = Unix.fork () in 
+                if pid = 0 then (
+                  p (); exit 0 ()
+                )
+                else if pid = -1 then (
+                  exit 0 ()
+                ) 
+                else (
+                  sub r;
+                  Unix.wait () |> ignore
+                )
+            end
+      in sub l
+    )
 
   let run f = f ()
 

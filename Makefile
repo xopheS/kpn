@@ -1,13 +1,10 @@
 OCAMLBUILD=ocamlbuild -classic-display \
 		-tags annot,debug,thread \
-		-libs unix,graphics \
+		-use-ocamlfind -pkg graphics,unix \
 		-ocamlc 'ocamlc str.cma' \
 		-ocamlopt 'ocamlopt str.cmxa'
 
 TARGET=native
-
-all: 
-	$(OCAMLBUILD) example.$(TARGET)
 
 example:
 	$(OCAMLBUILD) example.$(TARGET)
@@ -23,7 +20,6 @@ mandelbrot:
 
 k_means:
 	$(OCAMLBUILD) k_means.$(TARGET)
-
 
 clean:
 	$(OCAMLBUILD) -clean

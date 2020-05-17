@@ -94,7 +94,7 @@ module Th: S = struct
 
 
 	(* These two functions were neccessary to for network2window.ml  *)
-	(* Kahn implementation but are not useful for the Sequential one *)
+	(* Kahn implementation but are not useful for this one *)
   let connect_by_name s = assert false 
   let set_port i = assert false 
   let close_channel i o = assert false

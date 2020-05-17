@@ -1,6 +1,10 @@
 (* Tic Tac Toe Game *)
+(* 
+module K = Sequential.Seq
+module K = Unix_pipes.Z
+module K = Kahn.Th *)
 
-module K = Network2window.N2W 
+module K = Network.N 
 module Lib = Kahn.Lib(K)
 open Lib
 open Format
@@ -175,27 +179,27 @@ let server_main receiver sender lw ww l w =
 
     match check_winner curr_board  with
       | Win P1 -> begin 
-                    display_text "Winner is Player 1!\n";
+                    display_text "====* Winner is Player 1!!! *====\n";
                     draw_board l w curr_board;
                     let msg = create_msg FYI (board_to_string curr_board) in
                     K.put msg sender >>= (fun () -> 
-                    let msg = create_msg STS "Winner is player 1" in 
+                    let msg = create_msg STS "====* Winner is Player 1!!! *====\n" in 
                     K.put msg sender )
                   end 
       | Win P2 -> begin 
-                    display_text "Winner is Player 2\n";
+                    display_text "====* Winner is Player 2!!! *====\n";
                     draw_board l w curr_board;
                     let msg = create_msg FYI (board_to_string curr_board) in
                     K.put msg sender >>= (fun () ->
-                    let msg = create_msg STS "Winner is player 2" in 
+                    let msg = create_msg STS "====* Winner is Player 2!!! *====\n" in 
                     K.put msg sender )
                   end 
       | Draw -> begin 
-                    display_text "Draw!\n";
+                    display_text "====*          DRAW         *====\n";
                     draw_board l w curr_board;
                     let msg = create_msg FYI (board_to_string curr_board) in
                     K.put msg sender >>= (fun () ->
-                    let msg = create_msg STS "Draw" in 
+                    let msg = create_msg STS "====*          DRAW         *====\n" in 
                     K.put msg sender )
                 end 
       | _ ->  begin 
@@ -221,19 +225,19 @@ let server_main receiver sender lw ww l w =
         let msg = create_msg FYI (board_to_string curr_board) in
         K.put msg sender >>= (fun () ->
         match check_winner curr_board with
-          | Win P1 -> begin display_text "Winner is Player 1\n";
+          | Win P1 -> begin display_text "====* Winner is Player 1!!! *====\n";
                     draw_board l w curr_board;
-                    let msg = create_msg STS "Winner is player 1" in 
+                    let msg = create_msg STS "====* Winner is Player 1!!! *====\n" in 
                     K.put msg sender 
                   end 
-          | Win P2 -> begin display_text "Winner is Player 2\n";
+          | Win P2 -> begin display_text "====* Winner is Player 2!!! *====\n";
                     draw_board l w curr_board;
-                    let msg = create_msg STS "Winner is player 2" in 
+                    let msg = create_msg STS "====* Winner is Player 2!!! *====\n" in 
                     K.put msg sender
                   end 
-          | Draw -> begin display_text "Draw!\n";
+          | Draw -> begin display_text "====*          DRAW         *====\n";
                     draw_board l w curr_board;
-                    let msg = create_msg STS "Draw!" in 
+                    let msg = create_msg STS "====*          DRAW         *====\n" in 
                     K.put msg sender 
                   end 
           | _ -> play_server (curr_board)

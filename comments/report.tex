@@ -21,7 +21,7 @@
 
 \maketitle
 \section{Introduction}
-There are three main implementations of Khan that we have achieved: Sequential, Pipes and Network. For the network there are two sub-implementations: one running in one machine (section 1.1) referred in the rest of the report as just Network and one running in two machines (section 1.2) referred in the report as Network2window. There are also the applications: Mandelbrot, Tictactoe, K-means and Example.ml. These applications should run normally no matter if the kahn implementation is Sequential, Pipes or Network. However when the kahn implementation is Network2window then the applications which are able to work with it are only Tictactoe2window and Example.ml. Hence why we have two sub-implementation of the Network. We shall explain the reason behind it in the following section. The github repository for the project is \href{https://github.com/xopheS/kpn}{\color{blue}Github}.
+There are three main implementations of Khan that we have achieved: Sequential, Pipes and Network. For the network there are two sub-implementations: one running in one machine (section 1.1) referred in the rest of the report as just Network and one running in two machines (section 1.2) referred in the report as Network2window. There are also the applications: Mandelbrot, Tictactoe, K-means and Example.ml. These applications should run normally no matter if the kahn implementation is Sequential, Pipes or Network. However when the kahn implementation is Network2window then the applications which are able to work with it are only Tictactoe2window and Example.ml. Hence why we have two sub-implementations of the Network. We shall explain the reason behind it in the following section. The github repository for the project is \href{https://github.com/xopheS/kpn}{\color{blue}Github}.
 
 \section{Khan implementations }
 
@@ -161,12 +161,12 @@ All the following can be found in the \texttt{client\_main} function.
 \subsubsection{Run}
 To play the game Tic Tac Toe using the Network, Sequential or Pipes implementations run:\\\\
 \text{\texttt{make tictactoe}}\\
-\text{\texttt{./tictactoe}}\\\\
+\text{\texttt{./tictactoe.native}}\\\\
 To play the game Tic Tac Toe using the Network2Window implementation run:\\\\
-\text{\texttt{make tictactoe2window}}\\
-\text{\texttt{./tictactoe2window -server}} \quad and \quad \text{\texttt{./tictactoe2window -client -ipaddr 0.0.0.0}}\\\\
-Upon execution there is a graphic window appearing. The default measurements for the window are 1000 by 620 and the board is 600 by 600. The players could insert a move by simply clicking the position they like. The first player to play is \texttt{X} and the second \texttt{O}. If you want to customize the measurements of the window or the port in which you play you could run the following code:\\\\
-\texttt{./tictactoe -port x -length\_window x -width\_window x -length x -width x}
+\text{\texttt{make tictactoe2}}\\
+\text{\texttt{./tictactoe2window.native}} \quad and \quad \text{\texttt{./tictactoe2window.native -client -ipaddr [hostip]}}\\\\
+Upon execution there is a graphic window appearing. The default measurements for the window are 1000 by 620 and the board is 600 by 600. The players could insert a move by simply clicking the position they like. The first player to play is \texttt{X} and the second \texttt{O}. If you want to customize the measurements of the window or port in which you play you could add the following arguments:\\\\
+\texttt{-port x -length\_window x -width\_window x -length x -width x}
 \subsection{K means}
 
 "k-means clustering is a method of vector quantization, originally from signal processing, that aims to partition n observations into k clusters in which each observation belongs to the cluster with the nearest mean (cluster centers or cluster centroid), serving as a prototype of the cluster."

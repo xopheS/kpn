@@ -36,18 +36,22 @@ module Example (K : Kahn.S) = struct
     in
     loop ()
 
+
+(* There are three modes: 
+  . Normal: to run example in one machine
+  . Client/Server to run example in two machines *)
   let main : unit K.process =
     delay parse_arg () >>= fun (mode,ip, p) -> 
     match mode with 
       | Normal -> 
         (delay K.new_channel ()) >>=
         (fun (q_in, q_out) -> K.doco [ integers q_out ; output q_in ; ])
-      |  Server -> delay K.set_port p >>= fun () ->
+      |  Client -> delay K.set_port p >>= fun () ->
         (delay K.connect_by_name ip) >>=
-        (fun (q_in, q_out) ->  output q_in )
-      | Client -> 
+        (fun (q_in, q_out) -> integers q_out )
+      | Server -> 
         (delay K.new_channel ()) >>=
-        (fun (q_in, q_out) -> integers q_out)
+        (fun (q_in, q_out) -> output q_in )
 end
 
 
@@ -57,6 +61,8 @@ module E = Example(Unix_pipes.Z)
 module E = Example(Network.N) 
 module E = Example(Network2window.N2W)
 *)
+
+
 module E = Example(Kahn.Th)
 
 

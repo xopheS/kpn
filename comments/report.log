@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  17 MAY 2020 23:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  18 MAY 2020 01:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -963,25 +963,25 @@ LaTeX Font Info:    Try loading font information for OT1+jkptt on input line 29
 (/usr/local/texlive/2018/texmf-dist/tex/latex/kpfonts/ot1jkptt.fd
 File: ot1jkptt.fd 2007/01/26 Fontinst v1.928 font definitions for OT1/jkptt.
 )
-<diagram1.png, id=97, 690.1785pt x 314.3745pt>
+<diagram1.png, id=97, 687.7695pt x 313.17pt>
 File: diagram1.png Graphic file (type png)
 <use diagram1.png>
 Package pdftex.def Info: diagram1.png  used on input line 32.
-(pdftex.def)             Requested size: 362.77264pt x 165.24574pt.
+(pdftex.def)             Requested size: 362.77264pt x 165.18605pt.
  [1
 
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./diagr
 am1.png>]
-<diagram3.png, id=108, 437.83575pt x 446.8695pt>
+<diagram3.png, id=108, 446.26724pt x 448.074pt>
 File: diagram3.png Graphic file (type png)
 <use diagram3.png>
 Package pdftex.def Info: diagram3.png  used on input line 42.
-(pdftex.def)             Requested size: 241.84843pt x 246.83588pt.
-<diagram2.png, id=109, 758.23276pt x 364.36125pt>
+(pdftex.def)             Requested size: 241.84843pt x 242.82465pt.
+<diagram2.png, id=109, 751.00575pt x 359.54324pt>
 File: diagram2.png Graphic file (type png)
 <use diagram2.png>
 Package pdftex.def Info: diagram2.png  used on input line 51.
-(pdftex.def)             Requested size: 362.77264pt x 174.32431pt.
+(pdftex.def)             Requested size: 362.77264pt x 173.67603pt.
 
 [2 <./diagram3.png> <./diagram2.png>] [3] [4]
 LaTeX Font Info:    Try loading font information for TS1+jkp on input line 136.
@@ -1045,7 +1045,7 @@ ve/2018/texmf-dist/fonts/type1/public/kpfonts/jkpmi.pfb></usr/local/texlive/201
 xmf-dist/fonts/type1/public/kpfonts/jkpmne.pfb></usr/local/texlive/2018/texmf-d
 ist/fonts/type1/public/kpfonts/jkpsy.pfb></usr/local/texlive/2018/texmf-dist/fo
 nts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on report.pdf (6 pages, 156827 bytes).
+Output written on report.pdf (6 pages, 156360 bytes).
 PDF statistics:
  181 PDF objects out of 1000 (max. 8388607)
  162 compressed objects within 2 object streams
