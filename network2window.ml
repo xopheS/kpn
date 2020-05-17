@@ -1,8 +1,11 @@
-(* --------------------------------------------------------- *)
-(* socket implementation of Khan running in two computers    *)
-(* For more explanation on the "CHEAT"-comments check report *)
-(* Edit by: Megi DERVISHI                                    *)
-(* --------------------------------------------------------- *)
+(* ---------------------------------------------------------         *)
+(* socket implementation of Khan running in two computers            *)
+(* To run the code in one machine with 2 terminals uncomment/comment *)
+(* these lines "(*Uncomment for LOCAL *)" and in the cmd make sure   *)
+(* to have the port number for the client 1 more than the port       *)
+(* number for the server i.e. -port 1025                             *)
+(* Edit by: Megi DERVISHI                                            *)
+(* ---------------------------------------------------------         *)
 
 open Unix
 exception Superweird
@@ -33,10 +36,10 @@ module N2W : Kahn.S = struct
       | _ -> raise Superweird
     in
     Format.printf "%! Got Client IP address %s:%i@\n@?\n" (Unix.string_of_inet_addr client_name) !port;
-    port := !port + 1; (* Uncomment for CHEAT *)
+    port := !port + 1; (* Uncomment for LOCAL *)
 
     let client_addr = Unix.ADDR_INET (client_name, !port) in 
-    (*port := !port + 1;*) (* Comment for CHEAT *)
+    (*port := !port + 1;*) (* Comment for LOCAL *)
     let in_socket = socket (domain_of_sockaddr client_addr) SOCK_STREAM 0 in 
     connect in_socket client_addr;
     Format.printf "%! Connection established.";
@@ -55,8 +58,8 @@ module N2W : Kahn.S = struct
     listen out_socket 1;
 
     let host = Unix.inet_addr_of_string host_ip in
-    (* let host_addr = Unix.ADDR_INET (host, !port) in *) (* Comment for CHEAT *)
-    let host_addr = Unix.ADDR_INET (host, !port - 1) in (* Uncomment for CHEAT *)
+    (* let host_addr = Unix.ADDR_INET (host, !port) in *) (* Comment for LOCAL *)
+    let host_addr = Unix.ADDR_INET (host, !port - 1) in (* Uncomment for LOCAL *)
     connect in_socket host_addr;
     let (out_socket, _) = accept out_socket in
     Format.printf "%! Connection established.";

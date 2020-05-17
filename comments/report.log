@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  15 MAY 2020 18:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  17 MAY 2020 23:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -790,7 +790,14 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enit@inbox=\box29
 \enitdp@description=\count123
 )
-(./report.aux)
+(./report.aux
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+)
 \openout1 = `report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 19.
@@ -805,6 +812,7 @@ LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
 LaTeX Font Info:    ... okay on input line 19.
 LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 19.
 LaTeX Font Info:    Try loading font information for OMS+jkp on input line 19.
+
 (/usr/local/texlive/2018/texmf-dist/tex/latex/kpfonts/omsjkp.fd
 File: omsjkp.fd 2006/08/15 v1.0
 )
@@ -949,69 +957,98 @@ LaTeX Font Info:    Try loading font information for U+jkpsyc on input line 23.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/kpfonts/ujkpsyc.fd
 File: ujkpsyc.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Try loading font information for TS1+jkp on input line 26.
-
-(/usr/local/texlive/2018/texmf-dist/tex/latex/kpfonts/ts1jkp.fd
-File: ts1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for TS1/jkp.
-)
-LaTeX Font Info:    Try loading font information for OT1+jkptt on input line 36
+LaTeX Font Info:    Try loading font information for OT1+jkptt on input line 29
 .
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/kpfonts/ot1jkptt.fd
 File: ot1jkptt.fd 2007/01/26 Fontinst v1.928 font definitions for OT1/jkptt.
-) [1
+)
+<diagram1.png, id=97, 690.1785pt x 314.3745pt>
+File: diagram1.png Graphic file (type png)
+<use diagram1.png>
+Package pdftex.def Info: diagram1.png  used on input line 32.
+(pdftex.def)             Requested size: 362.77264pt x 165.24574pt.
+ [1
 
-{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 131--131
+{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./diagr
+am1.png>]
+<diagram3.png, id=108, 437.83575pt x 446.8695pt>
+File: diagram3.png Graphic file (type png)
+<use diagram3.png>
+Package pdftex.def Info: diagram3.png  used on input line 42.
+(pdftex.def)             Requested size: 241.84843pt x 246.83588pt.
+<diagram2.png, id=109, 758.23276pt x 364.36125pt>
+File: diagram2.png Graphic file (type png)
+<use diagram2.png>
+Package pdftex.def Info: diagram2.png  used on input line 51.
+(pdftex.def)             Requested size: 362.77264pt x 174.32431pt.
+
+[2 <./diagram3.png> <./diagram2.png>] [3] [4]
+LaTeX Font Info:    Try loading font information for TS1+jkp on input line 136.
+
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/kpfonts/ts1jkp.fd
+File: ts1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for TS1/jkp.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 162--170
 
  []
 
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 176--181
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--170
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 176--181
+Underfull \hbox (badness 10000) in paragraph at lines 162--170
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 176--181
+Underfull \hbox (badness 10000) in paragraph at lines 162--170
 
  []
 
-[4]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 192.
- [5]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 192.
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--170
+
+ []
+
+[5]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 207.
+ [6]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 207.
  (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 192.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 192.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 207.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 207.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 31A87A427BE8222A443070487BB74BA9;1568.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 192.
+(rerunfilecheck)             Checksum: 601CD926808071D7D9B17AC379510D5E;1520.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 207.
  ) 
 Here is how much of TeX's memory you used:
- 10033 strings out of 492649
- 146355 string characters out of 6129622
- 248214 words of memory out of 5000000
- 13724 multiletter control sequences out of 15000+600000
+ 10054 strings out of 492649
+ 146670 string characters out of 6129622
+ 248371 words of memory out of 5000000
+ 13739 multiletter control sequences out of 15000+600000
  37545 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,6n,40p,799b,448s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
-exlive/2018/texmf-dist/fonts/enc/dvips/kpfonts/kpfonts-expert.enc}</usr/local/t
+ 42i,7n,40p,1406b,345s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/kpfonts/kpfonts-expert.en
+c}{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2018/texmf-dist/fonts/type1/public/kpfonts/jkpbn8a.pfb></usr/local/texli
 ve/2018/texmf-dist/fonts/type1/public/kpfonts/jkpmi.pfb></usr/local/texlive/201
 8/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb></usr/local/texlive/2018/te
 xmf-dist/fonts/type1/public/kpfonts/jkpmne.pfb></usr/local/texlive/2018/texmf-d
 ist/fonts/type1/public/kpfonts/jkpsy.pfb></usr/local/texlive/2018/texmf-dist/fo
 nts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on report.pdf (5 pages, 62365 bytes).
+Output written on report.pdf (6 pages, 156827 bytes).
 PDF statistics:
- 174 PDF objects out of 1000 (max. 8388607)
- 159 compressed objects within 2 object streams
- 41 named destinations out of 1000 (max. 500000)
- 193 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 181 PDF objects out of 1000 (max. 8388607)
+ 162 compressed objects within 2 object streams
+ 43 named destinations out of 1000 (max. 500000)
+ 200 words of extra memory for PDF output out of 10000 (max. 10000000)
 
