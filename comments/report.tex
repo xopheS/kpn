@@ -43,7 +43,9 @@ In the \texttt{run} function, we recreate a pipeline containing the first \textt
 
 \subsection{Pipes}
 
-
+The implentation of the Unix processes part is mainly based on the POSIX interface. Its type is $$\texttt{type 'a process = unit -> 'a}$$
+Computation is mostly based on the generation of heavy Unix processes through the $\texttt{fork}$ method from the Unix library.
+Communication channel is an unnamed pipe, which is a file accessed through its channel in/out which are Unix file descriptors. Sending and receiving data (put and get functions) use the module \texttt{Marshal} to convert the value into bytes in order to be sent/received in the channel, and mostly rely on the Unix functions (write, read).
 
 \section{Applications}
 \subsection{Mandelbrot}
@@ -102,10 +104,6 @@ The mandelbrot application can be ran with arguments (\texttt{arg default type})
 	\item \texttt{-xo -0.235125 -yo 0.827215 -z 0.00004}
 	\item \texttt{-xo -0.81153120295763 -yo 0.20142958206181 -z 0.0003}
 \end{itemize}
-section{Unix processes}
-The implentation of the Unix processes part is mainly based on the POSIX interface. Its type is $$\texttt{type 'a process = unit -> 'a}$$
-Computation is mostly based on the generation of heavy Unix processes through the $\texttt{fork}$ method from the Unix library.
-Communication channel is an unnamed pipe access through it's channel in/out which are file descriptors.
 
 \subsection{K means}
 
@@ -117,13 +115,26 @@ K-means is an example of a bulk synchronous parallel algorithm (BSP). BSP algori
     \item parallel computation, in which processes independently perform local computations and produce some values
     \item communication, in which processes exchange data
     \item barrier synchronisation, during which processes wait until every process finishes
-
+    
 \end{itemize}
 
 
-
-
 Data-parallel programming models are typically a good fit for BSP algorithms, as each bulk synchronous phase can correspond to some number of data-parallel operations.
+
+    
+The whole implementation thus relies on the implementation of a  \texttt{split\_workload} function that divides the data structure (Array) into equal parts. The number of parts is usually equal to the maximum number of processes that can be used. 
+Then every worker performs the computations (Array.map) on every part.
+This would give us a \texttt{parallel\_map} that can only use up \texttt{number\_of\_processes} processes.
+From there we use the \texttt{parallel\_map} with a fold left to code a parallel group by function.
+Using these functions we code the K\_means module representing the core K means algorithm.
+We also then add another module to run the K means algorithm on the Iris data set. 
+We use the Str library and their regex expressions to parse  comma separated values files and import the data set.
+Finally, we add two graphical components to the algorithm launcher:
+\begin{itemize}
+    \item \texttt{plot.py}: A python module that plots the accuracy of the K means on the test and training data: the accuracy here is measure by the purity of the clusters.
+    
+    \item \texttt{show\_points}: A use of the Graphics module in ocaml to plot the points the clusters and the means depending on any two features selected in the variables x\_axis and y\_axis.
+\end{itemize}
 
 
 \subsubsection{Usage}
