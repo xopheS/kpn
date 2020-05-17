@@ -70,14 +70,5 @@ The mandelbrot application can be run with arguments
 
 `./tictactoe -length_window x -width_window x -length x -width x` to change the default settings
 
-## Comparisons 
-The following table summarizes the time it took for each application to be executed by different Khan implementations.
-
-|                 | Example     | Mandelbrot  | K-means     | Tic Tac Toe  |
-| --------------- |:-----------:| -----------:|:-----------:| ------------:|
-| Sequential      |             |             |             | 0            |
-| Pipes           |             |             |             | 0            |
-| Sockets         |             |             |             | 0            |
-
 
 
