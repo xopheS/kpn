@@ -3,12 +3,14 @@
 :fire: **Implementations**
 - Sequential (sequential.ml)
 - Pipes (unix_pipes.ml)
-- Network with thread (network.ml)
+- Network in one machine (network.ml)
+- Network in two machines (network2window.ml)
 
 :fire: **Applications**
 - Mandelbrot (mandelbrot.ml)
 - k_Means (k_means.ml)
-- Tic Tac Toe game (tictactoe.ml)
+- Tic Tac Toe game for one machine (tictactoe.ml)
+- Tic Tac Toe game for two machines (tictactoe2window.ml) 
 
 :fire: **Compile**
 
@@ -16,6 +18,7 @@ To compile a particular application run:
   * `make mandelbrot`
   * `make k_means`
   * `make tictactoe`
+  * `make tictactoe2`
   
 To clean `make clean` or `make realclean`
 
@@ -66,9 +69,16 @@ The mandelbrot application can be run with arguments
 ## Tic tac Toe:
 `make tictactoe`
 
-`./tictactoe` (default window length,width = (1000,620) and board length,width = (600,600))
+`./tictactoe.native` (default window length,width = (1000,620) and board length,width = (600,600))
 
-`./tictactoe -length_window x -width_window x -length x -width x` to change the default settings
+`./tictactoe.native -length_window x -width_window x -length x -width x` to change the default settings
 
+`make tictactoe2`
+
+`./tictactoe2window.native` (runs the server with default port 1024)
+
+`./tictactoe2window.native -client -ipaddr 0.0.0.0 -port x` (runs the client)
+
+`./tictactoe2window.native -length_window x -width_window x -length x -width x` to change the default settings
 
 
