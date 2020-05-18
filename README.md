@@ -80,8 +80,8 @@ The mandelbrot application can be run with arguments
 
 `./tictactoe2window.native` (runs the server with default port 1024)
 
-`./tictactoe2window.native -client -ipaddr 0.0.0.0 -port x` (runs the client)
+`./tictactoe2window.native -client -ipaddr [hostip]` (runs the client)
 
-`./tictactoe2window.native -length_window x -width_window x -length x -width x` to change the default settings
+`./tictactoe2window.native -port x -length_window x -width_window x -length x -width x` to change the default settings
 
 
