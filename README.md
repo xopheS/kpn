@@ -1,5 +1,8 @@
 # Kahn Process Networks  (kpn)
 
+:fire: **Final Report**: 
+ [Report](report.pdf)
+
 :fire: **Implementations**
 - Sequential (sequential.ml)
 - Pipes (unix_pipes.ml)
